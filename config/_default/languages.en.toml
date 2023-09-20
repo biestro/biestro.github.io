@@ -1,16 +1,27 @@
-title = "Alberto Ruiz Biestro"
-logo = "img/wave.png"
-copyright = "Alberto Ruiz, CC-BY-SA -- based on J Park's theme"
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Blowfish"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "img/blowfish_logo_transparent.png"
+  # secondaryLogo = "PATH"
+  description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  # copyright = "Copy, _right?_ :thinking_face:"
 
 [author]
-name = "Alberto Ruiz Biestro"
-image = "img/me_ictp.jpeg"
-headline = "Engineering Physics"
-group = "**[Nano & Microstructures RG](https://sites.google.com/tec.mx/nanomicrostructures/)**"
-bio = "Engineering Physics student from Monterrey's Institute of Technology"
-img = "me-at-ictp.jpg"
-caption = "**[ICTP -- Quantinuum quantum hackathon](https://indico.ictp.it/event/10163)** award ceremony"
-links = [
-  { github = "https://github.com/modifiedbear" },
-  { email = "mailto:A01707550@tec.mx"}
-]
+  name = "Blowfish"
+  image = "img/blowfish_logo.png"
+  headline = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  bio = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  links = [
+    { twitter = "https://twitter.com/burufugu" },
+    { mastodon = "https://masto.ai/@blowfish" },
+    { github = "https://github.com/nunocoracao/blowfish" },
+  ]
+
+  

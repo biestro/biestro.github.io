@@ -1,3 +1,4 @@
+{{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 <article
   class="{{ if not .Site.Params.homepage.showRecent }}
     h-full
@@ -7,9 +8,11 @@
     {{ with .Site.Author.image }}
       {{ $authorImage := resources.Get . }}
       {{ if $authorImage }}
-        {{ $authorImage := $authorImage.Fill "288x288" }}
+        {{ if not $disableImageOptimization }}
+        {{ $authorImage = $authorImage.Fill "288x288" }}
+        {{ end }}
         <img
-          class="mb-2 rounded-full h-36 w-36 img-fluid"
+          class="mb-2 rounded-full h-36 w-36"
           width="144"
           height="144"
           alt="{{ $.Site.Author.name | default "Author" }}"
@@ -20,26 +23,17 @@
     <h1 class="text-4xl font-extrabold">
       {{ .Site.Author.name | default .Site.Title }}
     </h1>
-    {{ with .Site.Author }}
+    {{ with .Site.Author.headline }}
       <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
-        {{ .headline | markdownify | emojify }} · {{ .group | markdownify }}  
+        {{ . | markdownify | emojify }}
       </h2>
     {{ end }}
     <div class="mt-1 text-2xl">
-      {{- partialCached "author-links.html" . -}}
+      {{ partialCached "author-links.html" . }}
     </div>
   </header>
-  
-  <section class="flex text-justify">{{- .Content | emojify -}}</section>
-  {{ with .Site.Author.img }}
-    <img src="{{ . }}" class="flex">
-  {{ end }}
-  {{ with .Site.Author.caption }}
-    <div class="mt-1 text-2x1">{{ . | markdownify | emojify }}</div>
-  {{ end }}
-  
-
+  <section class="prose dark:prose-invert">{{ .Content | emojify }}</section>
 </article>
 <section>
-  {{- partial "recent-articles.html" . -}}
+  {{ partial "recent-articles/main.html" . }}
 </section>
