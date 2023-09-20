@@ -1,0 +1,6 @@
+# Name and Title
+To modify this, change the "languages" file under config/_default
+
+Change stuff in layouts/partials/home/profile.html
+
+Change pagination to true in config.toml when enough posts are made
