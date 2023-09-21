@@ -6,13 +6,13 @@
 # https://blowfish.page/docs/configuration/#theme-parameters
 
 colorScheme = "congo"
-defaultAppearance = "light" # valid options: light or dark
+defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["docs"]
+mainSections = ["posts"]
 # robots = ""
 
 disableImageOptimization = false
@@ -38,7 +38,7 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
-  # homepageImage = "/img/iceland.jpg" # used in: hero, and card
+  homepageImage = "/img/waves/wavebarr_crop_2.gif" # used in: hero, and card
   showRecent = true
   showRecentItems = 12
   showMoreLink = true
@@ -49,8 +49,8 @@ smartTOCHideUnfocusedChildren = false
 
 [article]
   showDate = false
-  showViews = true
-  showLikes = true
+  showViews = false
+  showLikes = false
   showDateUpdated = false
   showAuthor = true
   showHero = true
@@ -72,7 +72,7 @@ smartTOCHideUnfocusedChildren = false
   showTaxonomies = true 
   showAuthorsBadges = true 
   showWordCount = false
-  sharingLinks = [ "linkedin", "twitter", "reddit", "whatsapp", "telegram", "pinterest", "facebook", "email"]
+  sharingLinks = [ "linkedin", "twitter", "whatsapp", "facebook", "email"]
 
 [list]
   showHero = true
@@ -80,7 +80,7 @@ smartTOCHideUnfocusedChildren = false
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showViews = true
   showLikes = true
   showTableOfContents = true
@@ -127,12 +127,12 @@ smartTOCHideUnfocusedChildren = false
   # site = "ABC12345"
   # domain = "llama.yoursite.com"
 
-[buymeacoffee]
-  identifier = "nunocoracao"
-  globalWidget = true
-  globalWidgetMessage = ""
-  globalWidgetColor = "#FFDD00"
-  globalWidgetPosition = "Right"
+#[buymeacoffee]
+#  identifier = "nunocoracao"
+#  globalWidget = true
+#  globalWidgetMessage = ""
+#  globalWidgetColor = "#FFDD00"
+#  globalWidgetPosition = "Right"
 
 [verification]
   # google = ""
