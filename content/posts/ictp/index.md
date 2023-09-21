@@ -6,7 +6,7 @@ category: ["International"]
 tags: ["Quantum Computing", "Quantum Chemistry", "Quantum Mechanics", "Simulation", "Hackathons"]
 ---
 
-
+## Introduction
 
 [We won! (second place)](https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced). After a week of lectures and 48 hours of intense coding and learning, I'm proud to announce that our team was awarded the **Best Team Project** prize by [Quantinuum](https://www.quantinuum.com/) and the [International Centre for Theoretical Physics](https://www.ictp.it/).
 

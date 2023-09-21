@@ -79,7 +79,7 @@ smartTOCHideUnfocusedChildren = false
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showSummary = true
   showViews = true
   showLikes = true
@@ -89,6 +89,8 @@ smartTOCHideUnfocusedChildren = false
   cardView = true
   cardViewScreenWidth = false
   constrainItemsWidth = false
+  [related]
+    showSummary = false
 
 [sitemap]
   excludedKinds = ["taxonomy","term"]
