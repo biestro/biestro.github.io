@@ -37,7 +37,7 @@ smartTOCHideUnfocusedChildren = false
   showMoreLink = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
+  layout = "custom" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "/img/iceland.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 12

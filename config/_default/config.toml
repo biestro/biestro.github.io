@@ -8,7 +8,7 @@ enableRobotsTXT = true
 paginate = 20
 summaryLength = 30
 
-timeout = 100000
+timeout = 100000 # pa las imágenes grandotas
 
 category = 'categories'
 tag = 'tags'
