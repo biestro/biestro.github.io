@@ -8,6 +8,8 @@ enableRobotsTXT = true
 paginate = 20
 summaryLength = 30
 
+timeout = 100000
+
 category = 'categories'
 tag = 'tags'
 
