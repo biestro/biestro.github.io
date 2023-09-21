@@ -9,7 +9,7 @@ tags: ["Numerical Analysis","Stochastics", "Simulation"]
 ## Introduction
 
 Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.
-<!--more-->
+
 
 ## Methodology
 
