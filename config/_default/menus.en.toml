@@ -6,6 +6,11 @@
   weight = 10
 
 [[main]]
+  name = "Resume"
+  url = "https://raw.githubusercontent.com/ModifiedBear/ModifiedBear/main/ALBERTO_RUIZ_CV_2023.pdf"
+  weight = 40
+
+[[main]]
   name = "GitHub"
   url = "https://github.com/modifiedbear"
   weight = 40
