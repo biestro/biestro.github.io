@@ -12,7 +12,8 @@ The Mandelbrot set is a captivating and intricate mathematical object that has f
 The set is defined as follows
 
 {{< katex >}}
-\\[M = \\left\\{c \in \mathbb{C} \\, : \\, z_{n+1} = z_n^2 + c \\text{ remains bounded for all } n \geq 0 \\text{ and } z_0 = 0\right\\}\\]
+\\[M = \\left\\{c \in \mathbb{C} \\, : \\, z_{n+1} = z_n^2 + c \right\\}\\]
+Where \\(z_{n+1}\\) remains bounded for all  \\(n \geq 0\\) and \\(z_0 = 0\\).
 
 Where:
 - \\(M\\): The Mandelbrot set.
