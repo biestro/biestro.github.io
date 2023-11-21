@@ -931,6 +931,7 @@ select {
 .prose :where(figure > *):not(:where([class~="not-prose"] *)) {
   margin-top: 0;
   margin-bottom: 0;
+  /* align-self: center; */
 }
 
 .prose :where(figcaption):not(:where([class~="not-prose"] *)) {
@@ -938,6 +939,15 @@ select {
   font-size: 0.875em;
   line-height: 1.4285714;
   margin-top: 0.8571429em;
+  text-align: center;
+  background-color: #00000040;
+  border-radius: 0.0rem;
+  outline: 10px solid #00000040;
+  /* width: 50%; */
+  /* align-content: center; */
+  /* border: 2px solid white; */
+  /* border-radius: 0.5rem; */
+
 }
 
 .prose :where(code):not(:where([class~="not-prose"] *)) {
@@ -1119,6 +1129,7 @@ select {
 .prose :where(figure):not(:where([class~="not-prose"] *)) {
   margin-top: 2em;
   margin-bottom: 2em;
+
 }
 
 .prose :where(li):not(:where([class~="not-prose"] *)) {
