@@ -5,7 +5,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/configuration/#theme-parameters
 
-colorScheme = "congo"
+colorScheme = "avocado" # ocean, fire, slate, avocado, blowfish, forest, congo, autumn, terminal
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
@@ -24,8 +24,9 @@ highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
+
 [header]
-  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
+  layout = "fixed-fill" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
 
 [footer]
   showCopyright = true
@@ -34,14 +35,14 @@ smartTOCHideUnfocusedChildren = false
   showScrollToTop = true
   showRecent = true
   showRecentItems = 3
-  showMoreLink = true
+  showMoreLink = false
 
 [homepage]
-  layout = "custom" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "/img/waves/wavebarr_crop_2.gif" # used in: hero, and card
+  layout = "card" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "/img/layout.png" # used in: hero, and card
   showRecent = true
   showRecentItems = 12
-  showMoreLink = true
+  showMoreLink = false
   showMoreLinkDest = "posts"
   cardView = true
   cardViewScreenWidth = false
@@ -76,7 +77,7 @@ smartTOCHideUnfocusedChildren = false
 
 [list]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = true

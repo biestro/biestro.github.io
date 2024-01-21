@@ -6,8 +6,6 @@ category: ["Research"]
 tags: ["Numerical Analysis","Stochastics", "Simulation"]
 ---
 
-## Introduction
-
 Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.
 
 
@@ -34,5 +32,5 @@ end
 
 Useful applications for the Simulated Annealing metaheuristic are combinatorial problems, such as the Travelling Salesman Problem. Here, the \\(\delta E\\) is interpreted as being proportional to the total distance of a loop starting from any point on the grid.
 
-![TSP GIF](img/tsp/tsp_qatar.gif)
+![TSP GIF](feature.gif)
 <!-- ![TSP GIF](/images/waves/wave_barriers.gif) -->

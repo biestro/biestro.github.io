@@ -8,9 +8,9 @@ tags: ["Quantum Computing", "Quantum Chemistry", "Quantum Mechanics", "Simulatio
 
 [We won! (second place)](https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced). After a week of lectures and 48 hours of intense coding and learning, I'm proud to announce that our team was awarded the **Best Team Project** prize by [Quantinuum](https://www.quantinuum.com/) and the [International Centre for Theoretical Physics](https://www.ictp.it/).
 
-
-
 From the [event's website](https://indico.ictp.it/event/10163), "*The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.*" 
+
+
 
 ## The challenge
 

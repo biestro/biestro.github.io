@@ -17,5 +17,3 @@ When using Finite Difference Schemes alongside ABCs, one must remember to apply 
 The absorbing boundary conditions (ABCs) implemented what Gerrit Mur derived in a [1981 IEEE Transactions article](https://ieeexplore.ieee.org/abstract/document/4091495).
 
 Although Perfectly-Matched-Layer (PML) method is far more robust than traditional ABCs, it has been coded by various software developers (such as in COMSOL) far better than I could. As a rule of thumb, use a PML thickness similar to half the largest wavelength.
-
-<!-- ![WAVE BARR](img/waves/wavebarr.gif) -->
