@@ -43,7 +43,7 @@ smartTOCHideUnfocusedChildren = false
   showRecentItems = 12
   showMoreLink = true
   showMoreLinkDest = "posts"
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 

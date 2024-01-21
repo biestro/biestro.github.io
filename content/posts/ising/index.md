@@ -22,16 +22,17 @@ Since the Hamiltonian depends strictly on nearest-neighbours interactions, [it c
 
 For this example, we consider a warping grid of size \\(N\\), where the \\(N+1\\)th index is congruent to the first index \\(\text{mod } N\\). All these fancy words state that the grid behaves as when Pac-Man portals to the opposite side of the screen. This is done in the vertical direction as well, as stated by the expressions ```mod(k,n) + 1, ...)``` (the ```+ 1```s are there just due to ```Julia```'s indexing convention.)
 
-The following function finds the energy in a set of indices \\(\{ii,jj\}\\) (I use this notation to avoid confusion with imaginary numbers.) 
+The following function finds the Hamiltonian (or energy) for a matrix element \\(M_{ij}\\) with the interaction between its neighbours, as described by the expression above. It also accounts for external interaction of a magnetic field.
 
 ```julia
-function energy(mat, J, B, ii, jj)
-  N = size(mat, 1);
-  H = mat[mod(ii,N),jj]+
-      mat[ii,mod(jj,N)+1+mat];
-  H *= J;
-  H += B;
-  return H
+function hamiltonian(selected_spin, space, interaction, external, locs)
+
+neighbour_spin        = view(space, fill(selected_spin,length(locs)) + locs)
+neighbour_interaction = view(interaction,fill(selected_spin,length(locs)) + locs)
+H = (-dot(neighbour_interaction, neighbour_spin) * view(space, selected_spin))[1]
+
+H -= sum(view(external, neighbour_spin))
+return H
 end
 ```
 
