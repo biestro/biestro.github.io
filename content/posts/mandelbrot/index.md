@@ -1,6 +1,6 @@
 ---
 title: "Mandelbrot Sets"
-date: 2023-10-07T21:37:24+09:00
+date: 2021-10-07T21:37:24+09:00
 draft: false
 category: ["Fun"]
 tags: ["Mathematics", "Programming"]
