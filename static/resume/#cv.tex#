@@ -1,0 +1,191 @@
+\documentclass[a4paper,10pt,notitlepage]{article}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=.8cm,bottom=1.6cm]{geometry}
+%\usepackage[cm,empty]{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{pdfpages}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{pdfsync}
+\usepackage[scaled=.94]{helvet}
+\usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{ifthen}
+\AtBeginDocument{\color{darkgray}}
+
+\definecolor{infoboxcolor}{gray}{.97}
+
+\usepackage[]{hyperref}
+\hypersetup{
+	pdftitle={Jonas Markussen},
+	pdfauthor={Jonas Markussen},
+	pdfsubject={CV for Jonas Markussen},
+	pdfkeywords={resumé, résumé, curriculum vitae, CV, experience, education, software, enfiskutensykkel,
+	engineer, developer, Linux, PCIe, GPU, NVMe, SSD, RDMA, networking, IP, TCP, TCP/IP, C, C++, Python},
+	pdfpagemode=UseOutlines,
+	breaklinks,
+	linktoc=all,
+	colorlinks=true,
+	urlcolor=darkgray,
+	linkcolor=darkgray,
+	citecolor=darkgray
+}
+
+\input{icons}
+
+% Set spacing and stuff
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2em}
+\linespread{1.1}
+\renewcommand{\baselinestretch}{.82}
+\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=2pt}
+
+
+% Override fonts
+\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\bfdefault}{sb}
+\titleformat{\section}[hang]{\normalsize}{}{0pt}{\textsc}[\titlerule]
+\titlespacing{\section}{0pt}{0pt}{1em}
+\titleformat{\subsection}[hang]{\normalsize}{}{0pt}{\textsc}[\titlerule]
+\titlespacing{\subsection}{0pt}{0pt}{1em}
+
+
+% Set size of columns
+\newcommand{\hmargin}{1.7cm} % 1.8cm or more is ideal
+\newcommand{\lcolsize}{.60\textwidth}
+\newcommand{\rcolsize}{.35\textwidth}
+
+
+% Position
+% Arguments: Title, from, to
+\newcommand{\position}[3]{%
+	\parbox{\linewidth}{%
+		{\ignorespaces \textbf{#1}}
+		\hfill
+		{\ignorespaces {#2}} --- {\ignorespaces {#3}}
+	}\smallskip
+}
+
+
+% Contributions
+\newenvironment{contribs}{%
+	\begin{normalsize}%
+		\begin{itemize}
+
+}{%
+		\end{itemize}%
+	\end{normalsize}
+}
+
+% Education
+% Arguments: Degree, from, to, institution, additional explanation
+\newcommand{\education}[6][]{%
+	\parbox[t][][t]{\linewidth}{%
+		\parbox{\linewidth}{%
+			{\ignorespaces \textbf{#2}}
+			\hfill
+			{\ignorespaces {#3}} --- {\ignorespaces {#4}}
+		}
+		\smallskip
+		\parbox{\linewidth}{{\ignorespaces {#5}}}
+		\parbox{\linewidth}{{\ignorespaces {#6}}}
+	}\ifthenelse{\equal{#1}{}}{\medskip\bigskip}{}
+}
+
+% Experience environment
+% Arguments: Company, position(s)
+\newenvironment{experience}[3][]{%
+	\ifthenelse{\equal{#1}{}}{\def\last{false}}{\def\last{true}}
+	{\ignorespaces #3}
+	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
+	\\[1em]
+	\begin{normalsize}%
+	\ignorespaces%
+}{%
+	\ignorespacesafterend%
+	\end{normalsize}%
+	\ifthenelse{\equal{\last}{true}}{}{\medskip\bigskip}%
+}
+
+% Short-hand command for experience (without explanation)
+% Arguments: Company, position(s)
+\newcommand{\shortexperience}[3][]{%
+	\parbox{\linewidth}{\ignorespaces #3}
+	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
+	\ifthenelse{\equal{#1}{}}{\medskip\bigskip}{}%
+}
+
+
+% Publication
+% Arguments: DOI, Date, Venue, Volume/Issue, Authors, Title
+% TODO: DeclareCommand and use key-value (type=xxx)
+\newcommand{\publication}[7][proceedings]{%
+	\small{\noindent\ignorespaces{#6}}.
+    \small{\justifying\noindent\ignorespaces{``{\href{https://doi.org/#2}{#7}}''}}.
+    %\small{In: \noindent\ignorespaces{\textit{\ifthenelse{\equal{#1}{proceedings}}{Proceedings of the}{}#4}}%
+    \small{\textit{\noindent\ignorespaces{#4}}%
+    \noindent\ignorespaces{\ifthenelse{\equal{#5}{}}{}{%
+        \ifthenelse{\equal{#1}{proceedings}}{ (\noindent\ignorespaces{#5})}{, \noindent\ignorespaces{#5}}%
+    }.} \noindent\ignorespaces{#3}.
+	DOI:~{\href{https://doi.org/#2}{#2}}}
+}
+
+
+% Generic entry (skills, projects, etc)
+% Arguments: title, description
+\newcommand{\entry}[3][]{%
+	\parbox{\linewidth}{%
+	\begin{small}\justifying%
+	\textbf{\noindent\ignorespaces{#2}} -- {\noindent\ignorespaces#3}%
+	\end{small}%
+	}\ifthenelse{\equal{#1}{}}{\bigskip}{}%
+}
+
+
+
+\begin{document}
+\pagestyle{empty}
+\begin{minipage}[t][\hmargin][c]{\lcolsize}
+	{\huge\textbf{Jonas Markussen}}\\[1.1em]
+	{\Large{R\&D Systems Software Engineer}}
+\end{minipage}%
+\hfill%
+\protect\begin{minipage}[t][\hmargin][c]{\rcolsize}
+	\begin{adjustbox}{max width=\textwidth}
+	\fcolorbox{black}{infoboxcolor}{
+		%\centering
+		\begin{tabular*}{\linewidth}{r|l}
+			\large{\mobilephonesymbol{}} & 
+			{\href{tel:+4740862630}{{+47}~{408}~{62}~{630}}}\\
+			\large{\emailsymbol{}} &
+			{\href{mailto:jonassm@ifi.uio.no}{{{jonassm}@ifi.uio.no}}} \\
+			\large{\linkedinsymbol{}} &
+			{\href{https://www.linkedin.com/in/jonasmarkussen}{{jonasmarkussen}}} \\
+			\large{\githubsymbol{}} &
+			{\href{https://github.com/enfiskutensykkel}{{enfiskutensykkel}}} \\
+		\end{tabular*}
+	}
+	\end{adjustbox}
+\end{minipage}
+
+\begin{minipage}[t][][t]{\lcolsize}
+	\input{exp}
+\end{minipage}%
+\hfill%
+\begin{minipage}[t][][t]{\rcolsize}
+	\input{edu}
+	\bigskip
+	\medskip
+	\input{part}
+	\bigskip
+	\input{skills}
+\end{minipage}
+\vfill
+\begin{minipage}[b][][b]{\linewidth}
+	\input{pub}
+\end{minipage}
+
+\end{document}

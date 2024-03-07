@@ -1,0 +1,211 @@
+\documentclass[a4paper,11pt,notitlepage]{article}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=.8cm,bottom=1.cm]{geometry}
+%\usepackage[cm,empty]{fullpage}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{pdfpages}
+\usepackage{adjustbox}
+\usepackage{enumitem}
+\usepackage{bibentry}
+\usepackage{natbib}
+
+\usepackage{xurl}
+%\fontfamily{cmr}
+\usepackage{marvosym} % symbols
+\usepackage{academicons}
+\usepackage{outlines}
+%\usepackage{pdfsync}
+\usepackage[scaled=.94]{helvet}
+\usepackage{xcolor}
+%\usepackage{ragged2e}
+\usepackage{tabularx}
+\usepackage{ifthen}
+%\AtBeginDocument{\color{darkgray}}
+\usepackage{textcomp}
+\usepackage{orcidlink}  %% orcidID
+
+%% Orcid ID
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\S\thesection}{1em}{}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\newcommand*{\webpage}{(see my \href{https://biestro.github.io}{website})}
+
+\definecolor{infoboxcolor}{gray}{0.97}
+\definecolor{myblue}{RGB}{0,0,202}
+
+\usepackage[]{hyperref}
+\hypersetup{
+	pdftitle={CV Alberto Ruiz B},
+	pdfauthor={Alberto Ruiz B},
+	pdfsubject={CV from Alberto Ruiz Biestro},
+	pdfpagemode=UseOutlines,
+	breaklinks,
+	linktoc=all,
+	colorlinks=true,
+	urlcolor=myblue,
+	linkcolor=myblue,
+	citecolor=darkgray
+}
+
+\input{icons}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/alberto-ruiz-63553b241/}{\Huge{\linkedinsymbol{}}}}
+% Set spacing and stuff
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.0em}
+
+%\linespread{2.5}
+%\renewcommand{\baselinestretch}{.82}
+\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=2pt}
+
+
+% Override fonts
+\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\bfdefault}{sb}
+\titleformat{\section}[hang]{\large}{}{0pt}{\textsc}[\titlerule]
+\titlespacing{\section}{0pt}{0pt}{1em}
+\titleformat{\subsection}[hang]{\normalsize}{}{0pt}{\textsc}[\titlerule]
+\titlespacing{\subsection}{0pt}{0pt}{1em}
+
+
+% Set size of columns
+\newcommand{\hmargin}{1.7cm} % 1.8cm or more is ideal
+\newcommand{\lcolsize}{.13\textwidth}
+\newcommand{\rcolsize}{.85\textwidth}
+
+
+\begin{document}
+%\makeauthorbold{Alberto}
+\pagestyle{empty}
+%\protect\begin{minipage}[t][\hmargin][c]{0.1\textwidth}
+%  \includegraphics[width=\textwidth]{img3 (2).png}
+%\end{minipage}
+%\hspace{0.2cm}
+\begin{minipage}[t][\hmargin][c]{0.75\textwidth}
+	
+    {\Huge\textbf{\color{black}Alberto Ruiz-Biestro} }\\[0.8em]
+	{\Large{B.Sc. Engineering Physics}} -- {\Large \href{https://biestro.github.io/posts/}{See my website \faGithubSquare}}
+	
+\end{minipage}
+\hfill
+\protect\begin{minipage}[t][\hmargin][c]{0.25\textwidth}
+	\begin{adjustbox}{max width=\textwidth}\label{sec:website}
+	%\fcolorbox{darkgray}{infoboxcolor}{
+		%\centering
+		\begin{tabular*}{\linewidth}{r|l}
+			%\large{\mobilephonesymbol{}} & 
+            &  Monterrey, N.L., México\\
+            &
+%			{\href{tel:+524481161610}{({+52}) {448} {116} {1610}}}\\
+            {\Mobilefone \ \href{tel:+524481161610}{({+52}) {448} {116} {1610}}}\\
+			%\large{\emailsymbol{}} &
+        %    &
+		%	{\href{mailto:alberto.ruiz@opticamember.org}%{{alberto.ruiz@opticamember.org}}} \\
+            &
+			%{\href{mailto:A01707550@tec.mx}{{A01707550@tec.mx}}} \\
+            {\Letter \ \href{mailto:A01707550@tec.mx}{{A01707550@tec.mx}}} \\
+			%\large{\linkedinsymbol{}} &
+			%{\href{https://www.linkedin.com/in/alberto-r-63553b241/}{{alberto-r}}} \\
+			%\large{\githubsymbol{}} &
+            %&
+			%{\href{https://github.com/ModifiedBear}%{{ModifiedBear@GitHub}}} \\
+            %& 
+            %{\href{https://modifiedbear.github.io}
+            %{{Website}}}, {\href{https://www.linkedin.com/in/alberto-ruiz-63553b241/}{Linkedin}}
+            %{\href{https://biestro.github.io/posts}
+            %{{{\githubsymbol{}}GitHub / Projects}}}\\
+            & {\linkedinsymbol{}\href{https://www.linkedin.com/in/alberto-ruiz-biestro/}{alberto-ruiz-biestro}}
+			 %\includegraphics[width=0.07\textwidth]{matrix.png} &
+			 %{\includegraphics[width=0.1\textwidth]{1280px-SPIE_logo.svg.png}} &
+			%{\href{https://spie.org/profile/alberto-ruiz-b}{{Alberto Ruiz @ SPIE.org}}} \\
+		\end{tabular*}
+	%}
+	\end{adjustbox}
+\end{minipage}
+
+
+
+\bigskip
+
+\section{Education}
+%% TEC
+
+\begin{minipage}[t][][t]{\textwidth}
+{\bf\large Monterrey Institute of Technology} \hfill {\bf Aug 2020 -- Jun 2024}\\[0.3em]
+{\large \bf B.Sc. Engineering Physics} (expected) \hfill 
+{\bf Current GPA}: 3.87 (Percent Grade: 96.71/100) \\[0.3em]
+\textbf{TOEFL iBT} Score: 108 \hfill CEFR equivalence: C1
+(%\href{mailto:A01707550@tec.mx?subject=Request%20for%20iBT%20grade%20(.PDF%20Document)&body=Dear%20Alberto%20Ruiz%2C%0D%0A%0D%0A%3C%20add%20intro%20%3E.%20I%20am%20kindly%20asking%20for%20your%20TOEFL%20iBT%20Scores.%20%0D%0A%0D%0ABest%20regards%2C%0D%0A%3C%20your%20info%20%3E}{contact me} for a .PDF copy) \hfill CEFR equivalence: C1
+
+\end{minipage}%
+\bigskip
+\input{publications}
+\medskip
+\input{talks}
+\bigskip
+\input{awards}
+\medskip
+\input{skills}
+\medskip
+\input{experience}
+\medskip
+\section{Leadership}
+\begin{itemize}
+\setlength{\itemsep}{0.7em}
+\item Undergraduate \textbf{Quantum Computing Club} co-founder and VP\dotfill{\bf Aug 2022 -- Dec 2023}
+\begin{itemize}
+\setlength{\itemsep}{0.7em}
+\item Founded the group with the intent of teaching areas of quantum mechanics and quantum computing to interested students that may not have had similar classes. Organized seminars, including one with \href{https://scholar.google.co.za/citations?user=JudpAs4AAAAJ&hl=en}{Dr. Benjamín Perez-García} on the implementation of Deutsch's algorithm with linear optics, as well as a variety of courses that gave undergraduate students tools to program and analyze quantum algorithms.
+\item Active participation in the organization of my institution's first \textbf{quantum hackathon}. Helped with dissemination and spreading the invitation to external faculty and students.
+\item Co and teaching of workshops in colaboration with the \emph{Physics Student Society} (AEF in Spanish) from Nuevo-Leon's Autonomous University (\href{https://www.uanl.mx/en/}{UANL}).
+\item Organization, planning, and direction of quantum computing bootcamps, offering intensive courses to students from ITESM as well as from other universities. Our outreach has grown beyond the state of Nuevo León.
+\end{itemize}
+        
+\item Given talks and short courses on Julia, Python, \LaTeX \dotfill {\bf Aug 2022 -- Sep 2023}
+\item \href{https://spie.org}{\textbf{SPIE}} Student Chapter President and \href{https://www.optica.org/en-us/home/}{\textbf{OSA}} member \dotfill {\bf Jan -- Nov 2023}
+\begin{itemize}
+\item Provided sponsorship opportunities for the \textbf{International Physics Symposium}.
+            % \item Created webpage for Photonics research group for it to display current research and activities.
+\end{itemize}
+        
+\item Virtual poster presentation \dotfill {\bf 2021}
+\begin{itemize}
+\item Presented a Raman spectrometer design for biosignature detection in a rover for the National Space Activity Congress (\href{https://haciaelespacio.aem.gob.mx/revistadigital/articul.php?interior=1176}{CONACES}), organized by the Mexican Space Agency.
+\end{itemize}
+
+\end{itemize}
+\medskip
+
+\section{Teaching Experience}
+\begin{outline}
+    \1 {\bf Course assistant for Mathematical Methods for Physics} \dotfill {\bf Aug -- Dec 2023}
+    \2 Graded homework and exams; held weekly advisory sessions.
+    \1 {\bf Course assistant for Modern Electrodynamics}  \dotfill {\bf Aug 2022 -- Jun 2023}
+    \2 Graded homework and exams; held weekly advisory sessions.
+%    \1 {\bf Mathematics course tutor}, \textit{Instituto Biling\"ue Victoria}
+%    \2 Taught math to a group of 20 kids from secondary school \dotfill {\bf Jan - May 2020}
+%   
+\end{outline}
+\medskip
+%\begin{minipage}[t][][c]{\textwidth}
+    \section{Activities and Interests}
+    \emph{Social Services} \hfill Teaching at low income communities in Mexico.\\
+    \emph{Sports} \hfill Former state rugby player (long ago).\\
+    \phantom{text}\hfill Enjoy hiking, biking, avid bouldering and rock climbing, and the outdoors.\\
+    \emph{Music}\hfill I play the piano since secondary-school, enjoy making music in my free time.\\
+%\end{minipage}%
+\vfill
+
+\end{document}
