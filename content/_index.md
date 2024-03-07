@@ -13,8 +13,8 @@ description: "Main page of modifiedbear.github.io"
   <span class="flex items-center justify-between grow dark:text-neutral-300">
     <!-- <span class="prose dark:prose-invert">Recent paper</span> -->
     <span class="prose dark:prose-invert">
-    <a href="https://arxiv.org/abs/2312.07396" class="px-0 !text-neutral !no-underline rounded-md hover:!bg-primary-500  dark:hover:!bg-primary-700 justify-simple">
-    <b>Alberto Ruiz-Biestro</b>, Julio C. Gutierrez-Vega, <i class="justify-simple">Solutions of the Lippmann-Schwinger equation for mesoscopic confocal parabolic billiards.</i>  https://arxiv.org/abs/2312.07396
+    <a href="https://journals.aps.org/pre/accepted/1807fRe0Zb414f2731d948755d2a7ebb897555d86" class="px-0 !text-neutral !no-underline rounded-md hover:!bg-primary-500  dark:hover:!bg-primary-700 justify-simple">
+    <b>Alberto Ruiz-Biestro</b>, Julio C. Gutierrez-Vega, <i class="justify-simple">Solutions of the Lippmann-Schwinger equation for confocal parabolic billiards.</i>  https://journals.aps.org/pre/accepted...
     </a>
     <!-- Check out my submitted preprint: </a> -->
     <!-- <br>z -->
