@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gallery on Beto</title>
+    <link>http://localhost:1313/categories/gallery/</link>
+    <description>Recent content in Gallery on Beto</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Billiards</title>
+      <link>http://localhost:1313/gallery/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/gallery/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;../billar3.png&#34; alt=&#34;b3&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/beam_splitter.png&#34; alt=&#34;b3&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/feature.gif&#34; alt=&#34;b3&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/lattice.png&#34; alt=&#34;b3&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/lattice_defects.png&#34; alt=&#34;b3&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

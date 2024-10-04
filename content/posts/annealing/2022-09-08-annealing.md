@@ -1,6 +1,6 @@
 ---
 title: "Simulated Annealing"
-date: 2022-09-08T21:37:24+09:00
+date: '2022-09-08'
 draft: false
 categories: 
 - Posts

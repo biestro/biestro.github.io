@@ -18,7 +18,7 @@
     <item>
       <title>Simulated Annealing</title>
       <link>http://localhost:1313/posts/annealing/2022-09-08-annealing/</link>
-      <pubDate>Thu, 08 Sep 2022 21:37:24 +0900</pubDate>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/annealing/2022-09-08-annealing/</guid>
       <description>&lt;p&gt;Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.&lt;/p&gt;&#xA;&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;&#xA;&lt;p&gt;The probability of choosing or accepting a state with higher energy is given by&lt;/p&gt;&#xA;$$ P_a(\delta E) = \exp\left(-\frac{\delta E}{k_BT}\right)$$&lt;p&gt;Where \(T\) is the temperature function \(T = T(t)\). Several cooling schedules are available on the web.&lt;/p&gt;</description>
     </item>

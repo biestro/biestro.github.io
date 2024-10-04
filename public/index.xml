@@ -25,7 +25,7 @@
     <item>
       <title>Simulated Annealing</title>
       <link>http://localhost:1313/posts/annealing/2022-09-08-annealing/</link>
-      <pubDate>Thu, 08 Sep 2022 21:37:24 +0900</pubDate>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/annealing/2022-09-08-annealing/</guid>
       <description>&lt;p&gt;Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.&lt;/p&gt;&#xA;&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;&#xA;&lt;p&gt;The probability of choosing or accepting a state with higher energy is given by&lt;/p&gt;&#xA;$$ P_a(\delta E) = \exp\left(-\frac{\delta E}{k_BT}\right)$$&lt;p&gt;Where \(T\) is the temperature function \(T = T(t)\). Several cooling schedules are available on the web.&lt;/p&gt;</description>
     </item>
@@ -35,6 +35,13 @@
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/ising/2022-08-08-ising/</guid>
       <description>&lt;p&gt;The Metropolis-Hastings algorithm for simulating the Lenz-Ising model is an excellent example of a Markov chain, since the former is actually a version of a Markov chain Monte Carlo (MCMC) simulation. I present examples based on cartesian and isometric grids.&lt;/p&gt;&#xA;&lt;p&gt;It follows the Hamiltonian&#xA;&lt;/p&gt;&#xA;\[&#xA;H(\sigma)=-\sum_{\{i,j\}}J_{ij}\sigma_i\sigma_j-\mu\sum_jh_j\sigma_j\ ,&#xA;\]&lt;p&gt;Since the Hamiltonian depends strictly on nearest-neighbours interactions, &lt;a href=&#34;https://ci.ovgu.de/Team/Palina+Bartashevich/Publications/_/Bartashevich2019-Ising.pdf&#34;&gt;it can be used as a model for opinion/voter dynamics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;For this example, we consider a warping grid of size \(N\), where the \(N+1\)th index is congruent to the first index modulo \(N\). All these fancy words state that the grid behaves as when Pac-Man portals to the opposite side of the screen. This is done in the vertical direction as well, as stated by the expressions &lt;code&gt;mod(k,n) + 1, ...)&lt;/code&gt; (the &lt;code&gt;+ 1&lt;/code&gt;s are there just due to &lt;code&gt;Julia&lt;/code&gt;&amp;rsquo;s indexing convention.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Gallery</title>
+      <link>http://localhost:1313/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/gallery/</guid>
+      <description>&lt;p&gt;Compilation of images that did not make it to other posts.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../posts/boundary-wall/parabolic.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/billar3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/beam_splitter.png) --&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../posts/boundary-wall/feature.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/lattice.png) --&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/lattice_defects.png) --&gt;</description>
     </item>
     <item>
       <title>Resume</title>
