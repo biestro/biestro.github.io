@@ -1,7 +1,7 @@
-baseurl: "https://biestro.github.io/"  # please update this to your actual URL
+baseurl: "https://example.org/"  # please update this to your actual URL
 languageCode: "en-us"
-title: "Beto"
-# theme: "hugo-xmin"
+title: "A minimal Hugo website"
+theme: "hugo-xmin"
 googleAnalytics: ""
 disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
@@ -16,21 +16,21 @@ menu:
     - name: Home
       url: ""
       weight: 1
-    - name: Resume
-      url: "resume/"
+    - name: About
+      url: "about/"
       weight: 2
-    - name: Posts
-      url: "posts/"
+    - name: Categories
+      url: "categories/"
       weight: 3
-    - name: Contact
-      url: "mailto:alberto.ruiz.biestro@rice.edu"
-      weight: 3
-    - name: GitHub
-      url: "https://github.com/modifiedbear"
+    - name: Tags
+      url: "tags/"
+      weight: 4
+    - name: Subscribe
+      url: "index.xml"
 
 params:
-  description: "website built through Hugo and blogdown."
-  footer: "&copy; Alberto R. | [Github](https://github.com/modifiedbear) | A fork of [XMin](https://github.com/yihui/hugo-xmin)"
+  description: "A website built through Hugo and blogdown."
+  footer: "&copy; [Yihui Xie](https://yihui.org) 2017 -- {Year} | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
 
 markup:
   highlight:
