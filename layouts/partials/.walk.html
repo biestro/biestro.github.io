@@ -1,0 +1,10 @@
+{{$path := .}}
+<ul>
+    {{range (readDir $path) }}
+        <li> {{.Name}}
+        {{if .IsDir}}
+            {{ partial "walk.html" (path.Join $path .Name) }}
+        {{end}}
+        </li>
+{{end}}    
+</ul>

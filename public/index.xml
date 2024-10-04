@@ -6,42 +6,14 @@
     <description>Recent content in Home on Beto</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Boundary Wall Method</title>
-      <link>http://localhost:1313/posts/boundary-wall/2024-05-14-bwm/</link>
-      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/boundary-wall/2024-05-14-bwm/</guid>
-      <description>&lt;p&gt;Essentially, a Boundary Integral Method (BIM) reduces the degrees of freedom of a problem to those of the boundary. It also means that the problem becomes meshless, which means that there is no need for simple domains.&lt;/p&gt;&#xA;&lt;p&gt;However, the method relies on a more abstract notion of integral operators (rather than differential equations). Furthermore, most of the matrices are dense, which While numerical integration can be more stable than numerical differentiation, one may need to project the continuous integral onto a finite-dimensional space of functions, which can be tricky to account for corners (infinite information in Fourier spectrum).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ICTP - Quantinuum Hackathon</title>
-      <link>http://localhost:1313/posts/ictp/2023-04-17-ictp/</link>
-      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ictp/2023-04-17-ictp/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Simulated Annealing</title>
-      <link>http://localhost:1313/posts/annealing/2022-09-08-annealing/</link>
-      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/annealing/2022-09-08-annealing/</guid>
-      <description>&lt;p&gt;Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.&lt;/p&gt;&#xA;&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;&#xA;&lt;p&gt;The probability of choosing or accepting a state with higher energy is given by&lt;/p&gt;&#xA;$$ P_a(\delta E) = \exp\left(-\frac{\delta E}{k_BT}\right)$$&lt;p&gt;Where \(T\) is the temperature function \(T = T(t)\). Several cooling schedules are available on the web.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ising model</title>
-      <link>http://localhost:1313/posts/ising/2022-08-08-ising/</link>
-      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ising/2022-08-08-ising/</guid>
-      <description>&lt;p&gt;The Metropolis-Hastings algorithm for simulating the Lenz-Ising model is an excellent example of a Markov chain, since the former is actually a version of a Markov chain Monte Carlo (MCMC) simulation. I present examples based on cartesian and isometric grids.&lt;/p&gt;&#xA;&lt;p&gt;It follows the Hamiltonian&#xA;&lt;/p&gt;&#xA;\[&#xA;H(\sigma)=-\sum_{\{i,j\}}J_{ij}\sigma_i\sigma_j-\mu\sum_jh_j\sigma_j\ ,&#xA;\]&lt;p&gt;Since the Hamiltonian depends strictly on nearest-neighbours interactions, &lt;a href=&#34;https://ci.ovgu.de/Team/Palina+Bartashevich/Publications/_/Bartashevich2019-Ising.pdf&#34;&gt;it can be used as a model for opinion/voter dynamics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;For this example, we consider a warping grid of size \(N\), where the \(N+1\)th index is congruent to the first index modulo \(N\). All these fancy words state that the grid behaves as when Pac-Man portals to the opposite side of the screen. This is done in the vertical direction as well, as stated by the expressions &lt;code&gt;mod(k,n) + 1, ...)&lt;/code&gt; (the &lt;code&gt;+ 1&lt;/code&gt;s are there just due to &lt;code&gt;Julia&lt;/code&gt;&amp;rsquo;s indexing convention.)&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Gallery</title>
       <link>http://localhost:1313/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/gallery/</guid>
-      <description>&lt;p&gt;Compilation of images that did not make it to other posts.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../posts/boundary-wall/parabolic.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/billar3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/beam_splitter.png) --&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../posts/boundary-wall/feature.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/lattice.png) --&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/lattice_defects.png) --&gt;</description>
+      <description>&lt;p&gt;Compilation of images that did not make it to other posts.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../posts/boundary-wall/parabolic.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/billar3.png&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/waves/wave.png&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/waves/gimp.png&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/bg.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/beam_splitter.png) --&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../../posts/boundary-wall/feature.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/circle2.gif&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;../../../posts/boundary-wall/GRID.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/lattice.png) --&gt;&#xA;&lt;!-- ![](../../../posts/boundary-wall/lattice_defects.png) --&gt;</description>
     </item>
     <item>
       <title>Resume</title>
