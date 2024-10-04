@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optics on Beto</title>
+    <link>http://localhost:1313/tags/optics/</link>
+    <description>Recent content in Optics on Beto</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/optics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Boundary Wall Method</title>
+      <link>http://localhost:1313/posts/boundary-wall/2024-05-14-bwm/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/2024-05-14-bwm/</guid>
+      <description>&lt;p&gt;Essentially, a Boundary Integral Method (BIM) reduces the degrees of freedom of a problem to those of the boundary. It also means that the problem becomes meshless, which means that there is no need for simple domains.&lt;/p&gt;&#xA;&lt;p&gt;However, the method relies on a more abstract notion of integral operators (rather than differential equations). Furthermore, most of the matrices are dense, which While numerical integration can be more stable than numerical differentiation, one may need to project the continuous integral onto a finite-dimensional space of functions, which can be tricky to account for corners (infinite information in Fourier spectrum).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

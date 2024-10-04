@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ising model | Beto</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/resume/">Resume</a></li>
+      
+      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="https://github.com/modifiedbear">GitHub</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Ising model</span></h1>
+
+<h2 class="date">2022/08/08</h2>
+</div>
+
+<main>
+<p>The Metropolis-Hastings algorithm for simulating the Lenz-Ising model is an excellent example of a Markov chain, since the former is actually a version of a Markov chain Monte Carlo (MCMC) simulation. I present examples based on cartesian and isometric grids.</p>
+<p>It follows the Hamiltonian
+</p>
+\[
+H(\sigma)=-\sum_{\{i,j\}}J_{ij}\sigma_i\sigma_j-\mu\sum_jh_j\sigma_j\ ,
+\]<p>Since the Hamiltonian depends strictly on nearest-neighbours interactions, <a href="https://ci.ovgu.de/Team/Palina+Bartashevich/Publications/_/Bartashevich2019-Ising.pdf">it can be used as a model for opinion/voter dynamics</a>.</p>
+<p>For this example, we consider a warping grid of size \(N\), where the \(N+1\)th index is congruent to the first index modulo \(N\). All these fancy words state that the grid behaves as when Pac-Man portals to the opposite side of the screen. This is done in the vertical direction as well, as stated by the expressions <code>mod(k,n) + 1, ...)</code> (the <code>+ 1</code>s are there just due to <code>Julia</code>&rsquo;s indexing convention.)</p>
+<p>The following function finds the Hamiltonian (or energy) for a matrix element \(M_{ij}\) with the interaction between its neighbours, as described by the expression above. It also accounts for external interaction of a magnetic field.</p>
+<pre><code class="language-julia">function hamiltonian(selected_spin, space, interaction, external, locs)
+
+neighbour_spin        = view(space, fill(selected_spin,length(locs)) + locs)
+neighbour_interaction = view(interaction,fill(selected_spin,length(locs)) + locs)
+H = (-dot(neighbour_interaction, neighbour_spin) * view(space, selected_spin))[1]
+
+H -= sum(view(external, neighbour_spin))
+return H
+end
+</code></pre>
+<p>If the resulting configuration is preferable (<em>i.e. it has a lower energy</em>), then the system accepts this new state. This allows us to only compute the change in energy at the desired index, instead of the whole array.</p>
+<p>I use the <a href="https://github.com/Vexatos/CircularArrays.jl">CircularArrays.jl</a> package, which aided in the construction of periodic boundaries.</p>
+<h2 id="2d-example">2D example</h2>
+<p>I present a 2D example of the algorithm in action.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Tvvh6Dj0KIo?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<h2 id="3d-example">3D example</h2>
+<p>The above code is robust to changes in dimensions (as well as the use of graphs). In principle, one would only need to update the corresponding <code>locs</code> and <code>space</code> dimensions, and the algorithm would do the rest. One can see that it also permits an arbitrary <code>neighbour_spin</code> definition, whether it be the original <em>5 point stencil</em> (in 2D) or any other setting.</p>
+<p>For demonstration purposes, I show a 3D simulation for \(n_z\in\left\{5,9\right\}\) whith a <em>9 point stencil</em> Hamiltonian.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/NyufiY0Mc6o?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/znPnVB2-duQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<p>The plots were done using <a href="https://docs.makie.org/stable/reference/plots/volume">Makie&rsquo;s volume plot</a>.</p>
+
+</main>
+
+  <footer>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+
+
+<script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+  
+  <hr/>
+  © Alberto R. | <a href="https://github.com/modifiedbear">Github</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
+  
+  </footer>
+  </body>
+</html>
+

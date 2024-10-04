@@ -1,0 +1,52 @@
+baseurl: "https://modifiedbear.github.io/"  # please update this to your actual URL
+languageCode: "en-us"
+title: "Beto"
+theme: "hugo-xmin"
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  note: "/note/:year/:month/:day/:slug/"
+  post: "/post/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: Resume
+      url: "resume/"
+      weight: 2
+    - name: Posts
+      url: "posts/"
+      weight: 3
+    - name: Contact
+      url: "mailto:alberto.ruiz.biestro@rice.edu"
+      weight: 3
+    - name: GitHub
+      url: "https://github.com/modifiedbear"
+
+params:
+  description: "website built through Hugo and blogdown."
+  footer: "&copy; Alberto R. | [Github](https://github.com/modifiedbear) | A fork of [XMin](https://github.com/yihui/hugo-xmin)"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
