@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simulated Annealing on Beto</title>
+    <link>https://biestro.github.io/posts/annealing/</link>
+    <description>Recent content in Simulated Annealing on Beto</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://biestro.github.io/posts/annealing/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

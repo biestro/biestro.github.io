@@ -34,5 +34,5 @@ end
 
 Useful applications for the Simulated Annealing metaheuristic are combinatorial problems, such as the Travelling Salesman Problem. Here, the \\(\delta E\\) is interpreted as being proportional to the total distance of a loop starting from any point on the grid.
 
-{{< video src=tsp.mp4 width="600px" loop="true" autoplay="true" >}}
+<!-- {{< video src=tsp.mp4 width="600px" loop="true" autoplay="true" >}} -->
 <!-- ![TSP GIF](/images/waves/wave_barriers.gif) -->

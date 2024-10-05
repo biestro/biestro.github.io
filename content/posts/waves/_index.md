@@ -8,5 +8,5 @@ tags:
     - Simulation
 ---
 
-{{< video src=tesseract.mp4 width="500px" loop="true" >}}
+{{< video src=tesseract.mp4 width="500px" loop="true" autoplay="true">}}
 

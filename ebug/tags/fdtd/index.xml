@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FDTD on Beto</title>
+    <link>https://biestro.github.io/tags/fdtd/</link>
+    <description>Recent content in FDTD on Beto</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://biestro.github.io/tags/fdtd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wave simulation</title>
+      <link>https://biestro.github.io/posts/waves/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://biestro.github.io/posts/waves/</guid>
+      <description>&lt;video controls preload=&#34;auto&#34; width=&#34;500px&#34;  autoplay loop playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;https://biestro.github.io/posts/waves/tesseract.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;&lt;/span&gt;&#xA;&lt;/video&gt;</description>
+    </item>
+  </channel>
+</rss>
