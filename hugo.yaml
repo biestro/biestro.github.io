@@ -33,6 +33,9 @@ menu:
     - name: Gallery
       url: "gallery/"
       weight: 5
+    - name: Software
+      url: "software"
+      weight: 6
     - name: GitHub
       url: "https://github.com/biestro"
 

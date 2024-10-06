@@ -79,8 +79,12 @@ scattering problem,
 where \\(\\hat{x}\_\\ell\\hat{x}\_m\\) represents a dyad.
 
 
-# Further steps
+## Further steps
 
 The growth of the operator compared to the boundary resolution implies the need 
 for either heriarchical matrices or preconditioning using wavelets. As far as my
 work goes, I think I might take a rest from this algorithm for a while.
+
+## Julia Package
+
+See the [BoundaryWall.jl]({{< ref "/software.md" >}}) description of the available code.
