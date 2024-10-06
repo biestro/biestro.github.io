@@ -5,30 +5,20 @@
 {{ end }}
 
 {{ .Content }}
+<!-- where (site.GetPage "index/companies").Pages -->
+<!-- range (where $pages.ByTitle "Section" "=" "posts")  -->
 
 <ul>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.Pages }}{{ end }} 
-  {{ range (where $pages "Section" "!=" "")}} 
+  {{ range  (site.GetPage "posts").Pages}} 
+  {{ if $pages}}
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
   </li>
   {{ end }}
-</ul>
-
-<!-- <ul>
-  {{ range (readDir "content/posts/") }}
-  {{ if .IsDir }}
-    <p>{{ .Name | title }}</p>
-    <ul>
-    {{ $path := printf "blog/%s/" .Name }}
-    {{ range where (where $.Site.RegularPages "Type" "blog") "File.Dir" $path }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-    </ul>
   {{ end }}
-{{ end }}
-</ul> -->
+</ul>
 
 {{ partial "footer.html" . }}
