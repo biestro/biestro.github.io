@@ -37,6 +37,12 @@
 
 
 <p>Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.</p>
+<center>
+<video controls preload="auto" width="600px"  autoplay loop playsinline class="html-video">
+    <source src="/posts/annealing/tsp.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
 <h2 id="methodology">Methodology</h2>
 <p>The probability of choosing or accepting a state with higher energy is given by</p>
 $$ P_a(\delta E) = \exp\left(-\frac{\delta E}{k_BT}\right)$$<p>Where \(T\) is the temperature function \(T = T(t)\). Several cooling schedules are available on the web.</p>
@@ -49,12 +55,11 @@ end
 ...
 </code></pre>
 <h2 id="applications-tsp">Applications: TSP</h2>
-<p>Useful applications for the Simulated Annealing metaheuristic are combinatorial problems, such as the Travelling Salesman Problem. Here, the \(\delta E\) is interpreted as being proportional to the total distance of a loop starting from any point on the grid.</p>
-<video controls preload="auto" width="600px"  autoplay loop playsinline class="html-video">
-    <source src="/posts/annealing/tsp.mp4" type="video/mp4">
-  <span></span>
-</video>
+<p>Useful applications for the Simulated Annealing metaheuristic are combinatorial problems, such as the Travelling Salesman Problem. Here, the \(\delta E\) is interpreted as being proportional to the total distance of a loop starting from any point on the grid. This example is seen at the top of the page.</p>
 <!-- ![TSP GIF](/images/waves/wave_barriers.gif) -->
+<h3 id="more-posts">More posts:</h3>
+
+
 
 
 
@@ -62,7 +67,6 @@ end
   
   
    
-  
    
   <li>
     <span class="date">2024/05/01</span>
@@ -86,7 +90,7 @@ end
    
   <li>
     <span class="date">2022/01/11</span>
-    <a href="/posts/waves/">Wave simulation</a>
+    <a href="/posts/waves/">Wave simulations</a>
   </li>
   
 </ul>
@@ -107,6 +111,8 @@ end
 </script>
   
   <hr/>
+  <a href="http://localhost:1313/">Home</a>
+  | 
   © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
   
   </footer>

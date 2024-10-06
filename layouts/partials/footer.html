@@ -2,6 +2,8 @@
   {{ partial "foot_custom.html" . }}
   {{ with .Site.Params.footer }}
   <hr/>
+  <a href="{{ site.Home.Permalink }}">Home</a>
+  | 
   {{ replace . "{Year}" now.Year | markdownify}}
   {{ end }}
   </footer>

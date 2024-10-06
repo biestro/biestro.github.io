@@ -55,3 +55,5 @@ For demonstration purposes, I show a 3D simulation for \\(n_z\in\left\\{5,9\righ
 {{< youtube znPnVB2-duQ >}}
 
 The plots were done using [Makie's volume plot](https://docs.makie.org/stable/reference/plots/volume).
+
+### More posts:

@@ -8,11 +8,11 @@
 <!-- where (site.GetPage "index/companies").Pages -->
 <!-- range (where $pages.ByTitle "Section" "=" "posts")  -->
 
+
 <ul>
   <!--  $pages := .Pages  -->
   {{ $pages := (site.GetPage "posts").Pages}}
   {{ if .IsHome }}{{ $pages := (site.GetPage "posts").Pages }}{{ end }} 
-  <!-- {{ if .IsHome }}{{ $pages := (site.GetPage "posts").Pages }}{{ end }}  -->
   {{ range $pages }} 
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
