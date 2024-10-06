@@ -9,4 +9,3 @@ tags:
 ---
 
 {{< video src=tesseract.mp4 width="500px" loop="true" autoplay="true">}}
-

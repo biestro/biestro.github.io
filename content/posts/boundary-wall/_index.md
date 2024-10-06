@@ -37,7 +37,7 @@ of the form
 
 effectively molds plane waves into another beam, determined by its spectrum \(A(\mathbf{k})\). A simple beam to test is a *Gaussian beam*, since its spectrum is also a Gaussian.
 
-![Gaussian](../gaussian.png)
+![Gaussian](gaussian.png)
 
 
 
@@ -49,7 +49,7 @@ creating a lattice with ellipse-like boundaries, it can imitate a meta-optical
 surface, where by adjusting angles and certain parameters, one can have a non-linear 
 response for different frequencies (i.e. multiplexing).
 
-![defects](../lattice_defects.png)
+![defects](lattice_defects.png)
 
 ## Banded matrices
 
