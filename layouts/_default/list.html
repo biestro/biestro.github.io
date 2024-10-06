@@ -5,17 +5,20 @@
 {{ end }}
 
 {{ .Content }}
+<!-- where (site.GetPage "index/companies").Pages -->
+<!-- range (where $pages.ByTitle "Section" "=" "posts")  -->
 
 <ul>
   {{ $pages := .Pages }}
-  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-  {{ range (where $pages "Section" "!=" "") }}
+  {{ if .IsHome }}{{ $pages = .Site.Pages }}{{ end }} 
+  {{ range  (site.GetPage "posts").Pages}} 
+  {{ if $pages}}
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
   </li>
   {{ end }}
+  {{ end }}
 </ul>
 
 {{ partial "footer.html" . }}
-
