@@ -9,6 +9,8 @@ tags:
   - Simulation
 ---
 
+{{< video src=circle.mp4 width="600px" loop="true" autoplay="true" controls="false">}}
+
 Essentially, a Boundary Integral Method (BIM) reduces the degrees of freedom of a problem to those of the boundary. It also means that the problem becomes meshless, which means that there is no need for simple domains.
 
 However, the method relies on a more abstract notion of integral operators (rather than differential equations). Furthermore, most of the matrices are dense, which While numerical integration can be more stable than numerical differentiation, one may need to project the continuous integral onto a finite-dimensional space of functions, which can be tricky to account for corners (infinite information in Fourier spectrum).
