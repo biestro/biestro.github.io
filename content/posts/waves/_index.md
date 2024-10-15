@@ -10,7 +10,7 @@ tags:
 
 Wave simulations are essential in optics and electrodynamics. Here are some of the simulations I've done for wave propagation using finite-difference schemes.
 
-{{< video src=tesseract.mp4 width="500px" loop="true" autoplay="true">}}
+{{< video src=tesseract.mp4 width="500px" loop="true" autoplay="true" controls="false">}}
 
 ## Discrete wave equation
 
@@ -26,10 +26,10 @@ with \(\Delta\) being Laplace's operator. One can also add a source term, \(\phi
 
 \[\mathbf{D}^2_{(i,j,k=-1)}=
 \begin{pmatrix}
-0\&0\&0\\
-0\&1\&0\\
-0\&0\&0\\
-\end{pmatrix},\quad \mathbf{D}^2_{(i,j,k=0)}=\begin{pmatrix}0\&1\&0\\1\&-6\&1\\0\&1\&0\end{pmatrix},\quad\mathbf{D}^2_{(i,j,k=1)}=\begin{pmatrix}0\&0\&0\\0\&1\&0\\0\&0\&0\end{pmatrix}\]
+0&0&0\\
+0&1&0\\
+0&0&0\\
+\end{pmatrix},\quad \mathbf{D}^2_{(i,j,k=0)}=\begin{pmatrix}0&1&0\\1&-6&1\\0&1&0\end{pmatrix},\quad\mathbf{D}^2_{(i,j,k=1)}=\begin{pmatrix}0&0&0\\0&1&0\\0&0&0\end{pmatrix}\]
 
 In fact, image processing software and tools use this types of convolution kernels for filters and other algorithms. For hicher precision, one replaces the centered difference with its respective weights (these are listed in [this page](https://en.wikipedia.org/wiki/Finite_difference_coefficient)). Although more precise, it has the disadvantage of requiring a bigger stencil and having wider boundaries.
 
