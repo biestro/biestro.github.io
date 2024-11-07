@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Small oscillations &amp; Condensed Matter | Beto</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/resume/">Resume</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
+      
+      <li><a href="/gallery/">Gallery</a></li>
+      
+      <li><a href="/software">Software</a></li>
+      
+      <li><a href="https://github.com/biestro">GitHub</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<h1>Small oscillations &amp; Condensed Matter</h1>
+
+
+<h2 id="derivation-and-examples">Derivation and examples</h2>
+<p>WORK IN PROGRESS</p>
+\[
+  T = \begin{bmatrix}
+    2k & -k & 0 & \cdots & -k \\
+    -k & 2k& -k & \cdots & 0 \\
+    0 & -k & 2k & \cdots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & -k \\
+   -k & 0 & 0 & -k & 2k
+\end{bmatrix}
+\]<p>The solution for the displacements follows the picture below.</p>
+<p><img src="multipleosc.png" alt="Plot"></p>
+<p>The periodic chain behaves as the following video shows.</p>
+<center>
+<video preload="auto" width="100%"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/oscillator_website_flat.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
+<p>One can also rearrange this chain into a circle in order to improve our visualization of periodic boundary conditions (PBC); another reason why we call the variable to be \(\theta\).</p>
+<center>
+<video preload="auto" width="700px"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/oscillator_website_40.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
+<p>This works as an approximation for a chain of springs arranged in a 1D patter only for large \(N\), as we are making the assumption that \(d
+\approx r\theta\). We also set unit radius (just for simplicity).</p>
+<h2 id="non-homogeneous-springs">Non-homogeneous springs</h2>
+<p>One can, however, wonder what happens one removes the homogeneity of the stiffness matrix. What do I mean by this? Consider two sets of oscillators, both driven by a function \(F_0\delta_{0,j}\cos(\omega_D t)\) (i.e. acts only on the first mass), but whose stiffness constant between \(m_i\) and \(m_{i+1}\) is set to be variable.</p>
+\[
+  T = \begin{bmatrix}
+    k_N+k_1 & -k_1 & 0 & \cdots & -k_N \\
+    -k_1 & k_1 + k_2 & -k_2 & \cdots & 0 \\
+    0 & -k_2 & k_2 + k_3 & \cdots & 0 \\
+    \vdots & \vdots & \vdots & \ddots & -k_{N-1} \\
+   -k_N & 0 & 0 & -k_{N-1} & k_{N-1}+k_{N}
+\end{bmatrix}.
+\]<p>We see that the case \(k_i=k\;\forall_i\) gives the same matrix as in the previous section. We also set the frequency to be extremely low. The following animations show the comparison for the homogeneous case and a particular non-homogeneous matrix, where one constructs the stiffness matrix out of a stiffness vector
+</p>
+\[\mathbf{k}=[ {\color{olive}k_1}, {\color{teal}k_2}, {\color{olive}k_1},  {\color{teal}k_2},{\color{olive}k_1},\dots].\]<p>
+I denote this as \(n-\)periodicity, where for the example above, we had a 2-periodic vector.</p>
+<!-- <center>
+<video preload="auto" width="500px"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/homogeneous.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center> -->
+<center>
+<video preload="auto" width="900px"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/side_by_side.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
+<p>There appears to be a noticeable grouping by pairs of masses. One can also plot the 1D chain for the previous model, and it appears to exhibit much more unpredictable behaviour than the homogeneous case. The following examples are for a 3-periodic chain (i.e. \([k_1,k_2,k_3,k_1,k_2,k_3,\dots]\)).</p>
+<center>
+<video preload="auto" width="100%"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/oscillator_website_flat_3.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
+<p>Making the force act on two masses in the system makes the effect be more noticeable.</p>
+<center>
+<video preload="auto" width="500px"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/oscillator_website_two_forces.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
+<!-- <center>
+<video preload="auto" width="100%"  autoplay loop playsinline class="html-video">
+    <source src="/posts/chain/oscillator_website_10.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center> -->
+<h3 id="more-posts">More posts:</h3>
+
+
+
+
+
+<ul>
+  
+  
+   
+   
+  <li>
+    <span class="date">2024/11/06</span>
+    <a href="/posts/chain/">Small oscillations &amp; Condensed Matter</a>
+  </li>
+   
+  <li>
+    <span class="date">2024/05/01</span>
+    <a href="/posts/boundary-wall/">Boundary Wall Method</a>
+  </li>
+   
+  <li>
+    <span class="date">2023/04/17</span>
+    <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
+  </li>
+   
+  <li>
+    <span class="date">2022/09/08</span>
+    <a href="/posts/annealing/">Simulated Annealing</a>
+  </li>
+   
+  <li>
+    <span class="date">2022/08/08</span>
+    <a href="/posts/ising/">Ising model</a>
+  </li>
+   
+  <li>
+    <span class="date">2022/01/11</span>
+    <a href="/posts/waves/">Wave simulations</a>
+  </li>
+  
+</ul>
+
+  <footer>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+
+
+<script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+  
+  <hr/>
+  <a href="http://localhost:1313/">Home</a>
+  | 
+  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
+  
+  </footer>
+  </body>
+</html>
