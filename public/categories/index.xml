@@ -6,20 +6,20 @@
     <description>Recent content in Categories on Beto</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Posts</title>
+      <link>http://localhost:1313/categories/posts/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/posts/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Software</title>
       <link>http://localhost:1313/categories/software/</link>
       <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/software/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Posts</title>
-      <link>http://localhost:1313/categories/posts/</link>
-      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/posts/</guid>
       <description></description>
     </item>
     <item>

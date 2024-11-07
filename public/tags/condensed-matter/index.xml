@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Condensed Matter on Beto</title>
+    <link>http://localhost:1313/tags/condensed-matter/</link>
+    <description>Recent content in Condensed Matter on Beto</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/condensed-matter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1D chains</title>
+      <link>http://localhost:1313/posts/chain/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/chain/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;multiple_osc.png&#34; alt=&#34;Plot&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;more-posts&#34;&gt;More posts:&lt;/h3&gt;</description>
+    </item>
+  </channel>
+</rss>
