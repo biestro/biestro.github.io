@@ -42,7 +42,9 @@ I use the [CircularArrays.jl](https://github.com/Vexatos/CircularArrays.jl) pack
 ## 2D example
 I present a 2D example of the algorithm in action.
 
-{{< youtube Tvvh6Dj0KIo >}}
+<!-- {{< youtube Tvvh6Dj0KIo >}} -->
+{{< video src="Ising 2d.mp4" width="600px" loop="true" autoplay="true" controls="true">}}
+
 
 ## 3D example
 
@@ -50,9 +52,10 @@ The above code is robust to changes in dimensions (as well as the use of graphs)
 
 For demonstration purposes, I show a 3D simulation for \\(n_z\in\left\\{5,9\right\\}\\) whith a *9 point stencil* Hamiltonian.
 
-{{< youtube NyufiY0Mc6o >}}
+<!-- {{< youtube NyufiY0Mc6o >}} -->
+{{< video src="Ising 3d short.mp4" width="600px" loop="true" autoplay="true" controls="true">}}
 
-{{< youtube znPnVB2-duQ >}}
+{{< video src="Ising 3D tall.mp4" width="600px" loop="true" autoplay="true" controls="true">}}
 
 The plots were done using [Makie's volume plot](https://docs.makie.org/stable/reference/plots/volume).
 
