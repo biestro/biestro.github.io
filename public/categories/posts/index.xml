@@ -20,7 +20,7 @@
       <link>http://localhost:1313/posts/boundary-wall/</link>
       <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/boundary-wall/</guid>
-      <description>&lt;!-- &lt;center&gt;&#xA;&lt;video preload=&#34;auto&#34; width=&#34;600px&#34;  autoplay loop playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/posts/boundary-wall/circle.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;&lt;/span&gt;&#xA;&lt;/video&gt;&#xA;&lt;/center&gt; --&gt;&#xA;&lt;p&gt;&lt;a href=&#34;./docs/overview&#34;&gt;Overview&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;./docs/overview&#34;&gt;Tutorials&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;more-posts&#34;&gt;More posts:&lt;/h3&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/overview&#34;&gt;Overview&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Tutorials&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/tutorials/photonic&#34;&gt;Photonic Crystal&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/tutorials/mirror&#34;&gt;Beam Splitter &amp;amp; Bragg Mirror&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- + [Photonic Crystal](./docs/tutorials/photonic) --&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;more-posts&#34;&gt;More posts:&lt;/h3&gt;</description>
     </item>
     <item>
       <title>ICTP - Quantinuum Hackathon</title>

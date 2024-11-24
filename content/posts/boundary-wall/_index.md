@@ -1,5 +1,5 @@
 ---
-title: Boundary Wall Method
+title: BoundaryWall.jl
 date: '2024-05-01'
 categories:
   - Posts
@@ -9,15 +9,15 @@ tags:
   - Simulation
 ---
 
-<!-- {{< video src=circle.mp4 width="600px" loop="true" autoplay="true" controls="false">}} -->
+<!-- class="center"/> -->
+<img src="docs/src/assets/logo.svg" alt="logo" width="150"/>
 
++ [Overview](./docs/overview)
++ Tutorials
+  + [Photonic Crystal](./docs/tutorials/photonic)
+  + [Beam Splitter & Bragg Mirror](./docs/tutorials/mirror)
+  <!-- + [Photonic Crystal](./docs/tutorials/photonic) -->
 
-
-
-[Overview](./docs/overview)
-
-[Tutorials](./docs/overview)
-
-
+The [source code](https://github.com/biestro/BoundaryWall.jl) is available on github.
 
 ### More posts:
