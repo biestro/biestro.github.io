@@ -34,7 +34,7 @@ menu:
       url: "gallery/"
       weight: 5
     - name: Software
-      url: "software"
+      url: "posts/boundary-wall/"
       weight: 6
     - name: GitHub
       url: "https://github.com/biestro"

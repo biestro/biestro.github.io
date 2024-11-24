@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BoundaryWall.jl, a quick overview | Beto</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/resume/">Resume</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
+      
+      <li><a href="/gallery/">Gallery</a></li>
+      
+      <li><a href="/posts/boundary-wall/">Software</a></li>
+      
+      <li><a href="https://github.com/biestro">GitHub</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">BoundaryWall.jl, a quick overview</span></h1>
+
+
+</div>
+
+<main>
+<p>Simple toolbox that implements an integral method for solving for an incident (TM) wave with well behaved scatterers.</p>
+<h2 id="overview">Overview</h2>
+<p><strong>BoundaryWall.jl</strong> provides a collection of algorithms and tools for
+calculating the scattering of arbitrary boundaries, based upon the work of
+<a href="https://doi.org/10.1103/PhysRevE.56.2496">M. G. E. da Luz, A. S. Lupu-Sax, and E. J. Heller on Quantum Scattering</a>,
+written in pure Julia.</p>
+<p>The design of this project was motivated for calculating eigenstates
+and scattering wavefunctions in billiards (<a href="https://doi.org/10.1016/j.aop.2008.01.008">F.M. Zanetti et al.</a>,
+<a href="https://doi.org/10.1103/PhysRevE.109.034203">A. Ruiz-Biestro et al.</a>).</p>
+<p>This raises an important detail about possible applications. This is a <strong>Boundary Integral Method</strong>,
+which limits the applicable domains to 2D curves consisting of: <a href="https://mathworld.wolfram.com/SimplyConnected.html">simply
+connected curves</a>, open curves, or a collection of the previous two.
+Boundaries with intersections and inner loops <strong>will generally not work</strong>.
+While the method does not require a parametrization of the boundary, it
+does require certain homogeneity in arc length. For more details about
+the implementation and theoretical foundations, see the <a href="geometry.md">Geometry</a>
+section.</p>
+<!-- ![Permissible shapes](../src/assets/drawing) -->
+<p><img src="../src/assets/drawing.svg" alt="alt text"></p>
+<p>If you have questions or would like to brainstorm ideas, don&rsquo;t hesitate
+to contact me. I&rsquo;d be happy to talk about the project and improve the
+toolbox in general.</p>
+
+</main>
+
+  <footer>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+
+
+<script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+  
+  <hr/>
+  <a href="http://localhost:1313/">Home</a>
+  | 
+  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
+  
+  </footer>
+  </body>
+</html>
+

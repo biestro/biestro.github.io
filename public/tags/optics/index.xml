@@ -6,14 +6,21 @@
     <description>Recent content in Optics on Beto</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/optics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Software</title>
+      <link>http://localhost:1313/software/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/software/</guid>
+      <description>&lt;h1 id=&#34;boundarywalljl&#34;&gt;BoundaryWall.jl&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/biestro/BoundaryWall.jl&#34;&gt;BoundaryWall.jl&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Boundary Wall Method</title>
       <link>http://localhost:1313/posts/boundary-wall/</link>
       <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/boundary-wall/</guid>
-      <description>&lt;center&gt;&#xA;&lt;video preload=&#34;auto&#34; width=&#34;600px&#34;  autoplay loop playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/posts/boundary-wall/circle.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;&lt;/span&gt;&#xA;&lt;/video&gt;&#xA;&lt;/center&gt;&#xA;&lt;p&gt;Essentially, a Boundary Integral Method (BIM) reduces the degrees of freedom of a problem to those of the boundary. It also means that the problem becomes meshless, which means that there is no need for simple domains.&lt;/p&gt;&#xA;&lt;p&gt;However, the method relies on a more abstract notion of integral operators (rather than differential equations). Furthermore, most of the matrices are dense, which While numerical integration can be more stable than numerical differentiation, one may need to project the continuous integral onto a finite-dimensional space of functions, which can be tricky to account for corners (infinite information in Fourier spectrum).&lt;/p&gt;</description>
+      <description>&lt;!-- &lt;center&gt;&#xA;&lt;video preload=&#34;auto&#34; width=&#34;600px&#34;  autoplay loop playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/posts/boundary-wall/circle.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;&lt;/span&gt;&#xA;&lt;/video&gt;&#xA;&lt;/center&gt; --&gt;&#xA;&lt;p&gt;&lt;a href=&#34;./docs/overview&#34;&gt;Overview&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;./docs/overview&#34;&gt;Tutorials&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;more-posts&#34;&gt;More posts:&lt;/h3&gt;</description>
     </item>
   </channel>
 </rss>
