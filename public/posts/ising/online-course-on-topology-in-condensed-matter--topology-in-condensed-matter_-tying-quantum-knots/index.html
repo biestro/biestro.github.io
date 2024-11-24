@@ -1,0 +1,3983 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> | Beto</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/resume/">Resume</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
+      
+      <li><a href="/gallery/">Gallery</a></li>
+      
+      <li><a href="/posts/boundary-wall/">Software</a></li>
+      
+      <li><a href="https://github.com/biestro">GitHub</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title"></span></h1>
+
+
+</div>
+
+<main>
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="bk" type="text/css">
+.bk-root {
+  position: relative;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+.bk-root .bk,
+.bk-root .bk:before,
+.bk-root .bk:after {
+  box-sizing: inherit;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-image: none;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.42857143;
+}
+.bk-root pre.bk {
+  font-family: Courier, monospace;
+}
+
+.bk-root .bk-logo {
+  margin: 5px;
+  position: relative;
+  display: block;
+  background-repeat: no-repeat;
+}
+.bk-root .bk-logo.bk-grey {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+.bk-root .bk-logo-small {
+  width: 20px;
+  height: 20px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+}
+.bk-root .bk-logo-notebook {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* notebook specific tweaks so no black outline and matching padding
+/* can't be wrapped inside bk-root. here are the offending jupyter lines:
+/* https://github.com/jupyter/notebook/blob/master/notebook/static/notebook/less/renderedhtml.less#L59-L76 */
+.rendered_html .bk-root .bk-tooltip table,
+.rendered_html .bk-root .bk-tooltip tr,
+.rendered_html .bk-root .bk-tooltip th,
+.rendered_html .bk-root .bk-tooltip td {
+  border: none;
+  padding: 1px;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Online course on topology in condensed matter">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://topocondmat.org/index.html">
+  <meta property="og:description" content="This is a open online course on topology in condensed matter. Initially developed for the edX platform in 2015, its development continues here. After following this course you will: Discover how to...">
+  <meta property="og:image" content="https://topocondmat.org/_static/logo_small.jpg">
+  <meta property="og:image:alt" content="Online course on topology in condensed matter">
+  
+    <title>Online course on topology in condensed matter — Topology in condensed matter: tying quantum knots</title>
+    
+  <link href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/theme.css" rel="stylesheet">
+  <link href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://topocondmat.org/_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://topocondmat.org/_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/togglebutton.css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/copybutton.css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/mystnb.css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/sphinx-thebe.css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/mystnb.css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css">
+    <link rel="stylesheet" type="text/css" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/panels-variables.06eb56fa6e07937060861dad626602ad.css">
+    
+  <link rel="preload" as="script" href="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/documentation_options.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/jquery.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/underscore.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/doctools.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/togglebutton.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/clipboard.min.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/copybutton.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/matomo.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/sphinx-thebe.js"></script>
+    <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/require.min.js"></script>
+    <script crossorigin="anonymous" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/bokeh-2.2.3.min.js"></script>
+    <script crossorigin="anonymous" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/bokeh-widgets-2.2.3.min.js"></script>
+    <script crossorigin="anonymous" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/bokeh-tables-2.2.3.min.js"></script>
+    <script crossorigin="anonymous" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/panel.min.js"></script><style media="screen">.json-formatter-row {
+  font-family: monospace;
+}
+.json-formatter-row,
+.json-formatter-row a,
+.json-formatter-row a:hover {
+  color: black;
+  text-decoration: none;
+}
+.json-formatter-row .json-formatter-row {
+  margin-left: 1rem;
+}
+.json-formatter-row .json-formatter-children.json-formatter-empty {
+  opacity: 0.5;
+  margin-left: 1rem;
+}
+.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+  display: none;
+}
+.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+  content: "No properties";
+}
+.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+  content: "[]";
+}
+.json-formatter-row .json-formatter-string,
+.json-formatter-row .json-formatter-stringifiable {
+  color: green;
+  white-space: pre;
+  word-wrap: break-word;
+}
+.json-formatter-row .json-formatter-number {
+  color: blue;
+}
+.json-formatter-row .json-formatter-boolean {
+  color: red;
+}
+.json-formatter-row .json-formatter-null {
+  color: #855A00;
+}
+.json-formatter-row .json-formatter-undefined {
+  color: #ca0b69;
+}
+.json-formatter-row .json-formatter-function {
+  color: #FF20ED;
+}
+.json-formatter-row .json-formatter-date {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.json-formatter-row .json-formatter-url {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+.json-formatter-row .json-formatter-bracket {
+  color: blue;
+}
+.json-formatter-row .json-formatter-key {
+  color: #00008B;
+  padding-right: 0.2rem;
+}
+.json-formatter-row .json-formatter-toggler-link {
+  cursor: pointer;
+}
+.json-formatter-row .json-formatter-toggler {
+  line-height: 1.2rem;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  opacity: 0.6;
+  cursor: pointer;
+  padding-right: 0.2rem;
+}
+.json-formatter-row .json-formatter-toggler:after {
+  display: inline-block;
+  transition: transform 100ms ease-in;
+  content: "►";
+}
+.json-formatter-row > a > .json-formatter-preview-text {
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+  font-style: italic;
+}
+.json-formatter-row:hover > a > .json-formatter-preview-text {
+  opacity: 0.6;
+}
+.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+  transform: rotate(90deg);
+}
+.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+  display: inline-block;
+}
+.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+  display: none;
+}
+.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+  display: block;
+}
+.json-formatter-dark.json-formatter-row {
+  font-family: monospace;
+}
+.json-formatter-dark.json-formatter-row,
+.json-formatter-dark.json-formatter-row a,
+.json-formatter-dark.json-formatter-row a:hover {
+  color: white;
+  text-decoration: none;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-row {
+  margin-left: 1rem;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {
+  opacity: 0.5;
+  margin-left: 1rem;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {
+  display: none;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {
+  content: "No properties";
+}
+.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {
+  content: "[]";
+}
+.json-formatter-dark.json-formatter-row .json-formatter-string,
+.json-formatter-dark.json-formatter-row .json-formatter-stringifiable {
+  color: #31F031;
+  white-space: pre;
+  word-wrap: break-word;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-number {
+  color: #66C2FF;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-boolean {
+  color: #EC4242;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-null {
+  color: #EEC97D;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-undefined {
+  color: #ef8fbe;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-function {
+  color: #FD48CB;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-date {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.json-formatter-dark.json-formatter-row .json-formatter-url {
+  text-decoration: underline;
+  color: #027BFF;
+  cursor: pointer;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-bracket {
+  color: #9494FF;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-key {
+  color: #23A0DB;
+  padding-right: 0.2rem;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-toggler-link {
+  cursor: pointer;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-toggler {
+  line-height: 1.2rem;
+  font-size: 0.7rem;
+  vertical-align: middle;
+  opacity: 0.6;
+  cursor: pointer;
+  padding-right: 0.2rem;
+}
+.json-formatter-dark.json-formatter-row .json-formatter-toggler:after {
+  display: inline-block;
+  transition: transform 100ms ease-in;
+  content: "►";
+}
+.json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+  font-style: italic;
+}
+.json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {
+  opacity: 0.6;
+}
+.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {
+  transform: rotate(90deg);
+}
+.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {
+  display: inline-block;
+}
+.json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {
+  display: none;
+}
+.json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {
+  display: block;
+}
+</style>
+    <link rel="index" title="Index" href="https://topocondmat.org/genindex.html">
+    <link rel="search" title="Search" href="https://topocondmat.org/search.html">
+    <link rel="next" title="About this course" href="https://topocondmat.org/w0_background/intro.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+    
+  <style>/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  height: 300px;
+  color: black;
+  direction: ltr;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  background-color: white; /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid #ddd;
+  background-color: #f7f7f7;
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #999;
+  white-space: nowrap;
+}
+
+.CodeMirror-guttermarker { color: black; }
+.CodeMirror-guttermarker-subtle { color: #999; }
+
+/* CURSOR */
+
+.CodeMirror-cursor {
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: #7e7;
+}
+.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+.cm-fat-cursor-mark {
+  background-color: rgba(20, 255, 20, 0.5);
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+}
+.cm-animate-fat-cursor {
+  width: auto;
+  border: 0;
+  -webkit-animation: blink 1.06s steps(1) infinite;
+  -moz-animation: blink 1.06s steps(1) infinite;
+  animation: blink 1.06s steps(1) infinite;
+  background-color: #7e7;
+}
+@-moz-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@-webkit-keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+@keyframes blink {
+  0% {}
+  50% { background-color: transparent; }
+  100% {}
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror-overwrite .CodeMirror-cursor {}
+
+.cm-tab { display: inline-block; text-decoration: inherit; }
+
+.CodeMirror-rulers {
+  position: absolute;
+  left: 0; right: 0; top: -50px; bottom: -20px;
+  overflow: hidden;
+}
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  top: 0; bottom: 0;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-header {color: blue;}
+.cm-s-default .cm-quote {color: #090;}
+.cm-negative {color: #d44;}
+.cm-positive {color: #292;}
+.cm-header, .cm-strong {font-weight: bold;}
+.cm-em {font-style: italic;}
+.cm-link {text-decoration: underline;}
+.cm-strikethrough {text-decoration: line-through;}
+
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
+.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-def {color: #00f;}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property,
+.cm-s-default .cm-operator {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string-2 {color: #f50;}
+.cm-s-default .cm-meta {color: #555;}
+.cm-s-default .cm-qualifier {color: #555;}
+.cm-s-default .cm-builtin {color: #30a;}
+.cm-s-default .cm-bracket {color: #997;}
+.cm-s-default .cm-tag {color: #170;}
+.cm-s-default .cm-attribute {color: #00c;}
+.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-link {color: #00c;}
+
+.cm-s-default .cm-error {color: #f00;}
+.cm-invalidchar {color: #f00;}
+
+.CodeMirror-composing { border-bottom: 2px solid; }
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {color: #0b0;}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}
+.CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+.CodeMirror-activeline-background {background: #e8f2ff;}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+   the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 30px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -30px; margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 30px solid transparent;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+   before actual scrolling happens, thus preventing shaking and
+   flickering artifacts. */
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0; top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0; left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0; bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0; bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute; left: 0; top: 0;
+  min-height: 100%;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -30px;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutter-background {
+  position: absolute;
+  top: 0; bottom: 0;
+  z-index: 4;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper ::selection { background-color: transparent }
+.CodeMirror-gutter-wrapper ::-moz-selection { background-color: transparent }
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre {
+  /* Reset some styles that the rest of the page might have set */
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-variant-ligatures: contextual;
+  font-variant-ligatures: contextual;
+}
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  padding: 0.1px; /* Force widget margins to stay inside of the container */
+}
+
+.CodeMirror-widget {}
+
+.CodeMirror-rtl pre { direction: rtl; }
+
+.CodeMirror-code {
+  outline: none;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.CodeMirror-cursor {
+  position: absolute;
+  pointer-events: none;
+}
+.CodeMirror-measure pre { position: static; }
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+div.CodeMirror-dragcursors {
+  visibility: visible;
+}
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected { background: #d9d9d9; }
+.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
+
+.cm-searching {
+  background-color: #ffa;
+  background-color: rgba(255, 255, 0, .4);
+}
+
+/* Used to force a border model for a node */
+.cm-force-border { padding-right: .1px; }
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after { content: ''; }
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext { background: none; }
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jupyter-widgets.widget-output .jp-OutputArea-prompt {
+    display: none;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-Widget {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+
+.p-Widget.p-mod-hidden {
+  display: none !important;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-CommandPalette {
+  display: flex;
+  flex-direction: column;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.p-CommandPalette-search {
+  flex: 0 0 auto;
+}
+
+
+.p-CommandPalette-content {
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  overflow: auto;
+  list-style-type: none;
+}
+
+
+.p-CommandPalette-header {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.p-CommandPalette-item {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.p-CommandPalette-itemIcon {
+  flex: 0 0 auto;
+}
+
+
+.p-CommandPalette-itemContent {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+
+.p-CommandPalette-itemShortcut {
+  flex: 0 0 auto;
+}
+
+
+.p-CommandPalette-itemLabel {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-DockPanel {
+  z-index: 0;
+}
+
+
+.p-DockPanel-widget {
+  z-index: 0;
+}
+
+
+.p-DockPanel-tabBar {
+  z-index: 1;
+}
+
+
+.p-DockPanel-handle {
+  z-index: 2;
+}
+
+
+.p-DockPanel-handle.p-mod-hidden {
+  display: none !important;
+}
+
+
+.p-DockPanel-handle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+
+.p-DockPanel-handle[data-orientation='horizontal'] {
+  cursor: ew-resize;
+}
+
+
+.p-DockPanel-handle[data-orientation='vertical'] {
+  cursor: ns-resize;
+}
+
+
+.p-DockPanel-handle[data-orientation='horizontal']:after {
+  left: 50%;
+  min-width: 8px;
+  transform: translateX(-50%);
+}
+
+
+.p-DockPanel-handle[data-orientation='vertical']:after {
+  top: 50%;
+  min-height: 8px;
+  transform: translateY(-50%);
+}
+
+
+.p-DockPanel-overlay {
+  z-index: 3;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+
+.p-DockPanel-overlay.p-mod-hidden {
+  display: none !important;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-Menu {
+  z-index: 10000;
+  position: absolute;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.p-Menu-content {
+  margin: 0;
+  padding: 0;
+  display: table;
+  list-style-type: none;
+}
+
+
+.p-Menu-item {
+  display: table-row;
+}
+
+
+.p-Menu-item.p-mod-hidden,
+.p-Menu-item.p-mod-collapsed {
+  display: none !important;
+}
+
+
+.p-Menu-itemIcon,
+.p-Menu-itemSubmenuIcon {
+  display: table-cell;
+  text-align: center;
+}
+
+
+.p-Menu-itemLabel {
+  display: table-cell;
+  text-align: left;
+}
+
+
+.p-Menu-itemShortcut {
+  display: table-cell;
+  text-align: right;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-MenuBar {
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.p-MenuBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+
+.p-MenuBar-item {
+  box-sizing: border-box;
+}
+
+
+.p-MenuBar-itemIcon,
+.p-MenuBar-itemLabel {
+  display: inline-block;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-ScrollBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.p-ScrollBar[data-orientation='horizontal'] {
+  flex-direction: row;
+}
+
+
+.p-ScrollBar[data-orientation='vertical'] {
+  flex-direction: column;
+}
+
+
+.p-ScrollBar-button {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+
+.p-ScrollBar-track {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+
+
+.p-ScrollBar-thumb {
+  box-sizing: border-box;
+  position: absolute;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-SplitPanel-child {
+  z-index: 0;
+}
+
+
+.p-SplitPanel-handle {
+  z-index: 1;
+}
+
+
+.p-SplitPanel-handle.p-mod-hidden {
+  display: none !important;
+}
+
+
+.p-SplitPanel-handle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+
+.p-SplitPanel[data-orientation='horizontal'] > .p-SplitPanel-handle {
+  cursor: ew-resize;
+}
+
+
+.p-SplitPanel[data-orientation='vertical'] > .p-SplitPanel-handle {
+  cursor: ns-resize;
+}
+
+
+.p-SplitPanel[data-orientation='horizontal'] > .p-SplitPanel-handle:after {
+  left: 50%;
+  min-width: 8px;
+  transform: translateX(-50%);
+}
+
+
+.p-SplitPanel[data-orientation='vertical'] > .p-SplitPanel-handle:after {
+  top: 50%;
+  min-height: 8px;
+  transform: translateY(-50%);
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-TabBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.p-TabBar[data-orientation='horizontal'] {
+  flex-direction: row;
+}
+
+
+.p-TabBar[data-orientation='vertical'] {
+  flex-direction: column;
+}
+
+
+.p-TabBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 1 auto;
+  list-style-type: none;
+}
+
+
+.p-TabBar[data-orientation='horizontal'] > .p-TabBar-content {
+  flex-direction: row;
+}
+
+
+.p-TabBar[data-orientation='vertical'] > .p-TabBar-content {
+  flex-direction: column;
+}
+
+
+.p-TabBar-tab {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.p-TabBar-tabIcon,
+.p-TabBar-tabCloseIcon {
+  flex: 0 0 auto;
+}
+
+
+.p-TabBar-tabLabel {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.p-TabBar-tab.p-mod-hidden {
+  display: none !important;
+}
+
+
+.p-TabBar.p-mod-dragging .p-TabBar-tab {
+  position: relative;
+}
+
+
+.p-TabBar.p-mod-dragging[data-orientation='horizontal'] .p-TabBar-tab {
+  left: 0;
+  transition: left 150ms ease;
+}
+
+
+.p-TabBar.p-mod-dragging[data-orientation='vertical'] .p-TabBar-tab {
+  top: 0;
+  transition: top 150ms ease;
+}
+
+
+.p-TabBar.p-mod-dragging .p-TabBar-tab.p-mod-dragging {
+  transition: none;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+
+
+.p-TabPanel-tabBar {
+  z-index: 1;
+}
+
+
+.p-TabPanel-stackedPanel {
+  z-index: 0;
+}
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) 2014-2017, PhosphorJS Contributors
+|
+| Distributed under the terms of the BSD 3-Clause License.
+|
+| The full license is in the file LICENSE, distributed with this software.
+|----------------------------------------------------------------------------*/
+</style><style>/**
+ * The material design colors are adapted from google-material-color v1.2.6
+ * https://github.com/danlevan/google-material-color
+ * https://github.com/danlevan/google-material-color/blob/f67ca5f4028b2f1b34862f64b0ca67323f91b088/dist/palette.var.css
+ *
+ * The license for the material design color CSS variables is as follows (see
+ * https://github.com/danlevan/google-material-color/blob/f67ca5f4028b2f1b34862f64b0ca67323f91b088/LICENSE)
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014 Dan Le Van
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+:root {
+  --md-red-50: #FFEBEE;
+  --md-red-100: #FFCDD2;
+  --md-red-200: #EF9A9A;
+  --md-red-300: #E57373;
+  --md-red-400: #EF5350;
+  --md-red-500: #F44336;
+  --md-red-600: #E53935;
+  --md-red-700: #D32F2F;
+  --md-red-800: #C62828;
+  --md-red-900: #B71C1C;
+  --md-red-A100: #FF8A80;
+  --md-red-A200: #FF5252;
+  --md-red-A400: #FF1744;
+  --md-red-A700: #D50000;
+
+  --md-pink-50: #FCE4EC;
+  --md-pink-100: #F8BBD0;
+  --md-pink-200: #F48FB1;
+  --md-pink-300: #F06292;
+  --md-pink-400: #EC407A;
+  --md-pink-500: #E91E63;
+  --md-pink-600: #D81B60;
+  --md-pink-700: #C2185B;
+  --md-pink-800: #AD1457;
+  --md-pink-900: #880E4F;
+  --md-pink-A100: #FF80AB;
+  --md-pink-A200: #FF4081;
+  --md-pink-A400: #F50057;
+  --md-pink-A700: #C51162;
+
+  --md-purple-50: #F3E5F5;
+  --md-purple-100: #E1BEE7;
+  --md-purple-200: #CE93D8;
+  --md-purple-300: #BA68C8;
+  --md-purple-400: #AB47BC;
+  --md-purple-500: #9C27B0;
+  --md-purple-600: #8E24AA;
+  --md-purple-700: #7B1FA2;
+  --md-purple-800: #6A1B9A;
+  --md-purple-900: #4A148C;
+  --md-purple-A100: #EA80FC;
+  --md-purple-A200: #E040FB;
+  --md-purple-A400: #D500F9;
+  --md-purple-A700: #AA00FF;
+
+  --md-deep-purple-50: #EDE7F6;
+  --md-deep-purple-100: #D1C4E9;
+  --md-deep-purple-200: #B39DDB;
+  --md-deep-purple-300: #9575CD;
+  --md-deep-purple-400: #7E57C2;
+  --md-deep-purple-500: #673AB7;
+  --md-deep-purple-600: #5E35B1;
+  --md-deep-purple-700: #512DA8;
+  --md-deep-purple-800: #4527A0;
+  --md-deep-purple-900: #311B92;
+  --md-deep-purple-A100: #B388FF;
+  --md-deep-purple-A200: #7C4DFF;
+  --md-deep-purple-A400: #651FFF;
+  --md-deep-purple-A700: #6200EA;
+
+  --md-indigo-50: #E8EAF6;
+  --md-indigo-100: #C5CAE9;
+  --md-indigo-200: #9FA8DA;
+  --md-indigo-300: #7986CB;
+  --md-indigo-400: #5C6BC0;
+  --md-indigo-500: #3F51B5;
+  --md-indigo-600: #3949AB;
+  --md-indigo-700: #303F9F;
+  --md-indigo-800: #283593;
+  --md-indigo-900: #1A237E;
+  --md-indigo-A100: #8C9EFF;
+  --md-indigo-A200: #536DFE;
+  --md-indigo-A400: #3D5AFE;
+  --md-indigo-A700: #304FFE;
+
+  --md-blue-50: #E3F2FD;
+  --md-blue-100: #BBDEFB;
+  --md-blue-200: #90CAF9;
+  --md-blue-300: #64B5F6;
+  --md-blue-400: #42A5F5;
+  --md-blue-500: #2196F3;
+  --md-blue-600: #1E88E5;
+  --md-blue-700: #1976D2;
+  --md-blue-800: #1565C0;
+  --md-blue-900: #0D47A1;
+  --md-blue-A100: #82B1FF;
+  --md-blue-A200: #448AFF;
+  --md-blue-A400: #2979FF;
+  --md-blue-A700: #2962FF;
+
+  --md-light-blue-50: #E1F5FE;
+  --md-light-blue-100: #B3E5FC;
+  --md-light-blue-200: #81D4FA;
+  --md-light-blue-300: #4FC3F7;
+  --md-light-blue-400: #29B6F6;
+  --md-light-blue-500: #03A9F4;
+  --md-light-blue-600: #039BE5;
+  --md-light-blue-700: #0288D1;
+  --md-light-blue-800: #0277BD;
+  --md-light-blue-900: #01579B;
+  --md-light-blue-A100: #80D8FF;
+  --md-light-blue-A200: #40C4FF;
+  --md-light-blue-A400: #00B0FF;
+  --md-light-blue-A700: #0091EA;
+
+  --md-cyan-50: #E0F7FA;
+  --md-cyan-100: #B2EBF2;
+  --md-cyan-200: #80DEEA;
+  --md-cyan-300: #4DD0E1;
+  --md-cyan-400: #26C6DA;
+  --md-cyan-500: #00BCD4;
+  --md-cyan-600: #00ACC1;
+  --md-cyan-700: #0097A7;
+  --md-cyan-800: #00838F;
+  --md-cyan-900: #006064;
+  --md-cyan-A100: #84FFFF;
+  --md-cyan-A200: #18FFFF;
+  --md-cyan-A400: #00E5FF;
+  --md-cyan-A700: #00B8D4;
+
+  --md-teal-50: #E0F2F1;
+  --md-teal-100: #B2DFDB;
+  --md-teal-200: #80CBC4;
+  --md-teal-300: #4DB6AC;
+  --md-teal-400: #26A69A;
+  --md-teal-500: #009688;
+  --md-teal-600: #00897B;
+  --md-teal-700: #00796B;
+  --md-teal-800: #00695C;
+  --md-teal-900: #004D40;
+  --md-teal-A100: #A7FFEB;
+  --md-teal-A200: #64FFDA;
+  --md-teal-A400: #1DE9B6;
+  --md-teal-A700: #00BFA5;
+
+  --md-green-50: #E8F5E9;
+  --md-green-100: #C8E6C9;
+  --md-green-200: #A5D6A7;
+  --md-green-300: #81C784;
+  --md-green-400: #66BB6A;
+  --md-green-500: #4CAF50;
+  --md-green-600: #43A047;
+  --md-green-700: #388E3C;
+  --md-green-800: #2E7D32;
+  --md-green-900: #1B5E20;
+  --md-green-A100: #B9F6CA;
+  --md-green-A200: #69F0AE;
+  --md-green-A400: #00E676;
+  --md-green-A700: #00C853;
+
+  --md-light-green-50: #F1F8E9;
+  --md-light-green-100: #DCEDC8;
+  --md-light-green-200: #C5E1A5;
+  --md-light-green-300: #AED581;
+  --md-light-green-400: #9CCC65;
+  --md-light-green-500: #8BC34A;
+  --md-light-green-600: #7CB342;
+  --md-light-green-700: #689F38;
+  --md-light-green-800: #558B2F;
+  --md-light-green-900: #33691E;
+  --md-light-green-A100: #CCFF90;
+  --md-light-green-A200: #B2FF59;
+  --md-light-green-A400: #76FF03;
+  --md-light-green-A700: #64DD17;
+
+  --md-lime-50: #F9FBE7;
+  --md-lime-100: #F0F4C3;
+  --md-lime-200: #E6EE9C;
+  --md-lime-300: #DCE775;
+  --md-lime-400: #D4E157;
+  --md-lime-500: #CDDC39;
+  --md-lime-600: #C0CA33;
+  --md-lime-700: #AFB42B;
+  --md-lime-800: #9E9D24;
+  --md-lime-900: #827717;
+  --md-lime-A100: #F4FF81;
+  --md-lime-A200: #EEFF41;
+  --md-lime-A400: #C6FF00;
+  --md-lime-A700: #AEEA00;
+
+  --md-yellow-50: #FFFDE7;
+  --md-yellow-100: #FFF9C4;
+  --md-yellow-200: #FFF59D;
+  --md-yellow-300: #FFF176;
+  --md-yellow-400: #FFEE58;
+  --md-yellow-500: #FFEB3B;
+  --md-yellow-600: #FDD835;
+  --md-yellow-700: #FBC02D;
+  --md-yellow-800: #F9A825;
+  --md-yellow-900: #F57F17;
+  --md-yellow-A100: #FFFF8D;
+  --md-yellow-A200: #FFFF00;
+  --md-yellow-A400: #FFEA00;
+  --md-yellow-A700: #FFD600;
+
+  --md-amber-50: #FFF8E1;
+  --md-amber-100: #FFECB3;
+  --md-amber-200: #FFE082;
+  --md-amber-300: #FFD54F;
+  --md-amber-400: #FFCA28;
+  --md-amber-500: #FFC107;
+  --md-amber-600: #FFB300;
+  --md-amber-700: #FFA000;
+  --md-amber-800: #FF8F00;
+  --md-amber-900: #FF6F00;
+  --md-amber-A100: #FFE57F;
+  --md-amber-A200: #FFD740;
+  --md-amber-A400: #FFC400;
+  --md-amber-A700: #FFAB00;
+
+  --md-orange-50: #FFF3E0;
+  --md-orange-100: #FFE0B2;
+  --md-orange-200: #FFCC80;
+  --md-orange-300: #FFB74D;
+  --md-orange-400: #FFA726;
+  --md-orange-500: #FF9800;
+  --md-orange-600: #FB8C00;
+  --md-orange-700: #F57C00;
+  --md-orange-800: #EF6C00;
+  --md-orange-900: #E65100;
+  --md-orange-A100: #FFD180;
+  --md-orange-A200: #FFAB40;
+  --md-orange-A400: #FF9100;
+  --md-orange-A700: #FF6D00;
+
+  --md-deep-orange-50: #FBE9E7;
+  --md-deep-orange-100: #FFCCBC;
+  --md-deep-orange-200: #FFAB91;
+  --md-deep-orange-300: #FF8A65;
+  --md-deep-orange-400: #FF7043;
+  --md-deep-orange-500: #FF5722;
+  --md-deep-orange-600: #F4511E;
+  --md-deep-orange-700: #E64A19;
+  --md-deep-orange-800: #D84315;
+  --md-deep-orange-900: #BF360C;
+  --md-deep-orange-A100: #FF9E80;
+  --md-deep-orange-A200: #FF6E40;
+  --md-deep-orange-A400: #FF3D00;
+  --md-deep-orange-A700: #DD2C00;
+
+  --md-brown-50: #EFEBE9;
+  --md-brown-100: #D7CCC8;
+  --md-brown-200: #BCAAA4;
+  --md-brown-300: #A1887F;
+  --md-brown-400: #8D6E63;
+  --md-brown-500: #795548;
+  --md-brown-600: #6D4C41;
+  --md-brown-700: #5D4037;
+  --md-brown-800: #4E342E;
+  --md-brown-900: #3E2723;
+
+  --md-grey-50: #FAFAFA;
+  --md-grey-100: #F5F5F5;
+  --md-grey-200: #EEEEEE;
+  --md-grey-300: #E0E0E0;
+  --md-grey-400: #BDBDBD;
+  --md-grey-500: #9E9E9E;
+  --md-grey-600: #757575;
+  --md-grey-700: #616161;
+  --md-grey-800: #424242;
+  --md-grey-900: #212121;
+
+  --md-blue-grey-50: #ECEFF1;
+  --md-blue-grey-100: #CFD8DC;
+  --md-blue-grey-200: #B0BEC5;
+  --md-blue-grey-300: #90A4AE;
+  --md-blue-grey-400: #78909C;
+  --md-blue-grey-500: #607D8B;
+  --md-blue-grey-600: #546E7A;
+  --md-blue-grey-700: #455A64;
+  --md-blue-grey-800: #37474F;
+  --md-blue-grey-900: #263238;
+}</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*
+This file is copied from the JupyterLab project to define default styling for
+when the widget styling is compiled down to eliminate CSS variables. We make one
+change - we comment out the font import below.
+*/
+
+/*
+The following CSS variables define the main, public API for styling JupyterLab.
+These variables should be used by all plugins wherever possible. In other
+words, plugins should not define custom colors, sizes, etc unless absolutely
+necessary. This enables users to change the visual theme of JupyterLab
+by changing these variables.
+
+Many variables appear in an ordered sequence (0,1,2,3). These sequences
+are designed to work well together, so for example, `--jp-border-color1` should
+be used with `--jp-layout-color1`. The numbers have the following meanings:
+
+* 0: super-primary, reserved for special emphasis
+* 1: primary, most important under normal situations
+* 2: secondary, next most important under normal situations
+* 3: tertiary, next most important under normal situations
+
+Throughout JupyterLab, we are mostly following principles from Google's
+Material Design when selecting colors. We are not, however, following
+all of MD as it is not optimized for dense, information rich UIs.
+*/
+
+
+/*
+ * Optional monospace font for input/output prompt.
+ */
+ /* Commented out in ipywidgets since we don't need it. */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto+Mono'); */
+
+/*
+ * Added for compabitility with output area
+ */
+:root {
+  --jp-icon-search: none;
+  --jp-ui-select-caret: none;
+}
+
+
+:root {
+
+  /* Borders
+
+  The following variables, specify the visual styling of borders in JupyterLab.
+   */
+
+  --jp-border-width: 1px;
+  --jp-border-color0: var(--md-grey-700);
+  --jp-border-color1: var(--md-grey-500);
+  --jp-border-color2: var(--md-grey-300);
+  --jp-border-color3: var(--md-grey-100);
+
+  /* UI Fonts
+
+  The UI font CSS variables are used for the typography all of the JupyterLab
+  user interface elements that are not directly user generated content.
+  */
+
+  --jp-ui-font-scale-factor: 1.2;
+  --jp-ui-font-size0: calc(var(--jp-ui-font-size1)/var(--jp-ui-font-scale-factor));
+  --jp-ui-font-size1: 13px; /* Base font size */
+  --jp-ui-font-size2: calc(var(--jp-ui-font-size1)*var(--jp-ui-font-scale-factor));
+  --jp-ui-font-size3: calc(var(--jp-ui-font-size2)*var(--jp-ui-font-scale-factor));
+  --jp-ui-icon-font-size: 14px; /* Ensures px perfect FontAwesome icons */
+  --jp-ui-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Use these font colors against the corresponding main layout colors.
+     In a light theme, these go from dark to light.
+  */
+
+  --jp-ui-font-color0: rgba(0,0,0,1.0);
+  --jp-ui-font-color1: rgba(0,0,0,0.8);
+  --jp-ui-font-color2: rgba(0,0,0,0.5);
+  --jp-ui-font-color3: rgba(0,0,0,0.3);
+
+  /* Use these against the brand/accent/warn/error colors.
+     These will typically go from light to darker, in both a dark and light theme
+   */
+
+  --jp-inverse-ui-font-color0: rgba(255,255,255,1);
+  --jp-inverse-ui-font-color1: rgba(255,255,255,1.0);
+  --jp-inverse-ui-font-color2: rgba(255,255,255,0.7);
+  --jp-inverse-ui-font-color3: rgba(255,255,255,0.5);
+
+  /* Content Fonts
+
+  Content font variables are used for typography of user generated content.
+  */
+
+  --jp-content-font-size: 13px;
+  --jp-content-line-height: 1.5;
+  --jp-content-font-color0: black;
+  --jp-content-font-color1: black;
+  --jp-content-font-color2: var(--md-grey-700);
+  --jp-content-font-color3: var(--md-grey-500);
+
+  --jp-ui-font-scale-factor: 1.2;
+  --jp-ui-font-size0: calc(var(--jp-ui-font-size1)/var(--jp-ui-font-scale-factor));
+  --jp-ui-font-size1: 13px; /* Base font size */
+  --jp-ui-font-size2: calc(var(--jp-ui-font-size1)*var(--jp-ui-font-scale-factor));
+  --jp-ui-font-size3: calc(var(--jp-ui-font-size2)*var(--jp-ui-font-scale-factor));
+
+  --jp-code-font-size: 13px;
+  --jp-code-line-height: 1.307;
+  --jp-code-padding: 5px;
+  --jp-code-font-family: monospace;
+
+
+  /* Layout
+
+  The following are the main layout colors use in JupyterLab. In a light
+  theme these would go from light to dark.
+  */
+
+  --jp-layout-color0: white;
+  --jp-layout-color1: white;
+  --jp-layout-color2: var(--md-grey-200);
+  --jp-layout-color3: var(--md-grey-400);
+
+  /* Brand/accent */
+
+  --jp-brand-color0: var(--md-blue-700);
+  --jp-brand-color1: var(--md-blue-500);
+  --jp-brand-color2: var(--md-blue-300);
+  --jp-brand-color3: var(--md-blue-100);
+
+  --jp-accent-color0: var(--md-green-700);
+  --jp-accent-color1: var(--md-green-500);
+  --jp-accent-color2: var(--md-green-300);
+  --jp-accent-color3: var(--md-green-100);
+
+  /* State colors (warn, error, success, info) */
+
+  --jp-warn-color0: var(--md-orange-700);
+  --jp-warn-color1: var(--md-orange-500);
+  --jp-warn-color2: var(--md-orange-300);
+  --jp-warn-color3: var(--md-orange-100);
+
+  --jp-error-color0: var(--md-red-700);
+  --jp-error-color1: var(--md-red-500);
+  --jp-error-color2: var(--md-red-300);
+  --jp-error-color3: var(--md-red-100);
+
+  --jp-success-color0: var(--md-green-700);
+  --jp-success-color1: var(--md-green-500);
+  --jp-success-color2: var(--md-green-300);
+  --jp-success-color3: var(--md-green-100);
+
+  --jp-info-color0: var(--md-cyan-700);
+  --jp-info-color1: var(--md-cyan-500);
+  --jp-info-color2: var(--md-cyan-300);
+  --jp-info-color3: var(--md-cyan-100);
+
+  /* Cell specific styles */
+
+  --jp-cell-padding: 5px;
+  --jp-cell-editor-background: #f7f7f7;
+  --jp-cell-editor-border-color: #cfcfcf;
+  --jp-cell-editor-background-edit: var(--jp-ui-layout-color1);
+  --jp-cell-editor-border-color-edit: var(--jp-brand-color1);
+  --jp-cell-prompt-width: 100px;
+  --jp-cell-prompt-font-family: 'Roboto Mono', monospace;
+  --jp-cell-prompt-letter-spacing: 0px;
+  --jp-cell-prompt-opacity: 1.0;
+  --jp-cell-prompt-opacity-not-active: 0.4;
+  --jp-cell-prompt-font-color-not-active: var(--md-grey-700);
+  /* A custom blend of MD grey and blue 600
+   * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
+  --jp-cell-inprompt-font-color: #307FC1;
+  /* A custom blend of MD grey and orange 600
+   * https://meyerweb.com/eric/tools/color-blend/#546E7A:F4511E:5:hex */
+  --jp-cell-outprompt-font-color: #BF5B3D;
+
+  /* Notebook specific styles */
+
+  --jp-notebook-padding: 10px;
+  --jp-notebook-scroll-padding: 100px;
+
+  /* Console specific styles */
+
+  --jp-console-background: var(--md-grey-100);
+
+  /* Toolbar specific styles */
+
+  --jp-toolbar-border-color: var(--md-grey-400);
+  --jp-toolbar-micro-height: 8px;
+  --jp-toolbar-background: var(--jp-layout-color0);
+  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.24);
+  --jp-toolbar-header-margin: 4px 4px 0px 4px;
+  --jp-toolbar-active-background: var(--md-grey-300);
+}
+</style><style>/* This file has code derived from PhosphorJS CSS files, as noted below. The license for this PhosphorJS code is:
+
+Copyright (c) 2014-2017, PhosphorJS Contributors
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+
+/*
+ * The following section is derived from https://github.com/phosphorjs/phosphor/blob/23b9d075ebc5b73ab148b6ebfc20af97f85714c4/packages/widgets/style/tabbar.css 
+ * We've scoped the rules so that they are consistent with exactly our code.
+ */
+
+.jupyter-widgets.widget-tab > .p-TabBar {
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar[data-orientation='horizontal'] {
+  flex-direction: row;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar[data-orientation='vertical'] {
+  flex-direction: column;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar > .p-TabBar-content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1 1 auto;
+  list-style-type: none;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar[data-orientation='horizontal'] > .p-TabBar-content {
+  flex-direction: row;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar[data-orientation='vertical'] > .p-TabBar-content {
+  flex-direction: column;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tabIcon,
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tabCloseIcon {
+  flex: 0 0 auto;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tabLabel {
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab.p-mod-hidden {
+  display: none !important;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar.p-mod-dragging .p-TabBar-tab {
+  position: relative;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar.p-mod-dragging[data-orientation='horizontal'] .p-TabBar-tab {
+  left: 0;
+  transition: left 150ms ease;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar.p-mod-dragging[data-orientation='vertical'] .p-TabBar-tab {
+  top: 0;
+  transition: top 150ms ease;
+}
+
+
+.jupyter-widgets.widget-tab > .p-TabBar.p-mod-dragging .p-TabBar-tab.p-mod-dragging {
+  transition: none;
+}
+
+/* End tabbar.css */
+</style><style>/* Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+
+/*
+ * We assume that the CSS variables in
+ * https://github.com/jupyterlab/jupyterlab/blob/master/src/default-theme/variables.css
+ * have been defined.
+ */
+
+:root {
+    --jp-widgets-color: var(--jp-content-font-color1);
+    --jp-widgets-label-color: var(--jp-widgets-color);
+    --jp-widgets-readout-color: var(--jp-widgets-color);
+    --jp-widgets-font-size: var(--jp-ui-font-size1);
+    --jp-widgets-margin: 2px;
+    --jp-widgets-inline-height: 28px;
+    --jp-widgets-inline-width: 300px;
+    --jp-widgets-inline-width-short: calc(var(--jp-widgets-inline-width) / 2 - var(--jp-widgets-margin));
+    --jp-widgets-inline-width-tiny: calc(var(--jp-widgets-inline-width-short) / 2 - var(--jp-widgets-margin));
+    --jp-widgets-inline-margin: 4px; /* margin between inline elements */
+    --jp-widgets-inline-label-width: 80px;
+    --jp-widgets-border-width: var(--jp-border-width);
+    --jp-widgets-vertical-height: 200px;
+    --jp-widgets-horizontal-tab-height: 24px;
+    --jp-widgets-horizontal-tab-width: 144px;
+    --jp-widgets-horizontal-tab-top-border: 2px;
+    --jp-widgets-progress-thickness: 20px;
+    --jp-widgets-container-padding: 15px;
+    --jp-widgets-input-padding: 4px;
+    --jp-widgets-radio-item-height-adjustment: 8px;
+    --jp-widgets-radio-item-height: calc(var(--jp-widgets-inline-height) - var(--jp-widgets-radio-item-height-adjustment));
+    --jp-widgets-slider-track-thickness: 4px;
+    --jp-widgets-slider-border-width: var(--jp-widgets-border-width);
+    --jp-widgets-slider-handle-size: 16px;
+    --jp-widgets-slider-handle-border-color: var(--jp-border-color1);
+    --jp-widgets-slider-handle-background-color: var(--jp-layout-color1);
+    --jp-widgets-slider-active-handle-color: var(--jp-brand-color1);
+    --jp-widgets-menu-item-height: 24px;
+    --jp-widgets-dropdown-arrow: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxOCAxOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTggMTg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO30KPC9zdHlsZT4KPHBhdGggZD0iTTUuMiw1LjlMOSw5LjdsMy44LTMuOGwxLjIsMS4ybC00LjksNWwtNC45LTVMNS4yLDUuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTAtMC42aDE4djE4SDBWLTAuNnoiLz4KPC9zdmc+Cg");
+    --jp-widgets-input-color: var(--jp-ui-font-color1);
+    --jp-widgets-input-background-color: var(--jp-layout-color1);
+    --jp-widgets-input-border-color: var(--jp-border-color1);
+    --jp-widgets-input-focus-border-color: var(--jp-brand-color2);
+    --jp-widgets-input-border-width: var(--jp-widgets-border-width);
+    --jp-widgets-disabled-opacity: 0.6;
+
+    /* From Material Design Lite */
+    --md-shadow-key-umbra-opacity: 0.2;
+    --md-shadow-key-penumbra-opacity: 0.14;
+    --md-shadow-ambient-shadow-opacity: 0.12;
+}
+
+.jupyter-widgets {
+    margin: var(--jp-widgets-margin);
+    box-sizing: border-box;
+    color: var(--jp-widgets-color);
+    overflow: visible;
+}
+
+.jupyter-widgets.jupyter-widgets-disconnected::before {
+    line-height: var(--jp-widgets-inline-height);
+    height: var(--jp-widgets-inline-height);
+}
+
+.jp-Output-result > .jupyter-widgets {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* vbox and hbox */
+
+.widget-inline-hbox {
+    /* Horizontal widgets */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.widget-inline-vbox {
+    /* Vertical Widgets */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.widget-box {
+    box-sizing: border-box;
+    display: flex;
+    margin: 0;
+    overflow: auto;
+}
+
+.widget-gridbox {
+    box-sizing: border-box;
+    display: grid;
+    margin: 0;
+    overflow: auto;
+}
+
+.widget-hbox {
+    flex-direction: row;
+}
+
+.widget-vbox {
+    flex-direction: column;
+}
+
+/* General Button Styling */
+
+.jupyter-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: var(--jp-widgets-font-size);
+    cursor: pointer;
+
+    height: var(--jp-widgets-inline-height);
+    border: 0px solid;
+    line-height: var(--jp-widgets-inline-height);
+    box-shadow: none;
+
+    color: var(--jp-ui-font-color1);
+    background-color: var(--jp-layout-color2);
+    border-color: var(--jp-border-color2);
+    border: none;
+    user-select: none;
+}
+
+.jupyter-button i.fa {
+    margin-right: var(--jp-widgets-inline-margin);
+    pointer-events: none;
+}
+
+.jupyter-button:empty:before {
+    content: "\200b"; /* zero-width space */
+}
+
+.jupyter-widgets.jupyter-button:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+.jupyter-button i.fa.center {
+    margin-right: 0;
+}
+
+.jupyter-button:hover:enabled, .jupyter-button:focus:enabled {
+    /* MD Lite 2dp shadow */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, var(--md-shadow-key-penumbra-opacity)),
+                0 3px 1px -2px rgba(0, 0, 0, var(--md-shadow-key-umbra-opacity)),
+                0 1px 5px 0 rgba(0, 0, 0, var(--md-shadow-ambient-shadow-opacity));
+}
+
+.jupyter-button:active, .jupyter-button.mod-active {
+    /* MD Lite 4dp shadow */
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, var(--md-shadow-key-penumbra-opacity)),
+                0 1px 10px 0 rgba(0, 0, 0, var(--md-shadow-ambient-shadow-opacity)),
+                0 2px 4px -1px rgba(0, 0, 0, var(--md-shadow-key-umbra-opacity));
+    color: var(--jp-ui-font-color1);
+    background-color: var(--jp-layout-color3);
+}
+
+.jupyter-button:focus:enabled {
+    outline: 1px solid var(--jp-widgets-input-focus-border-color);
+}
+
+/* Button "Primary" Styling */
+
+.jupyter-button.mod-primary {
+    color: var(--jp-inverse-ui-font-color1);
+    background-color: var(--jp-brand-color1);
+}
+
+.jupyter-button.mod-primary.mod-active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-brand-color0);
+}
+
+.jupyter-button.mod-primary:active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-brand-color0);
+}
+
+/* Button "Success" Styling */
+
+.jupyter-button.mod-success {
+    color: var(--jp-inverse-ui-font-color1);
+    background-color: var(--jp-success-color1);
+}
+
+.jupyter-button.mod-success.mod-active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-success-color0);
+ }
+
+.jupyter-button.mod-success:active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-success-color0);
+ }
+
+ /* Button "Info" Styling */
+
+.jupyter-button.mod-info {
+    color: var(--jp-inverse-ui-font-color1);
+    background-color: var(--jp-info-color1);
+}
+
+.jupyter-button.mod-info.mod-active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-info-color0);
+}
+
+.jupyter-button.mod-info:active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-info-color0);
+}
+
+/* Button "Warning" Styling */
+
+.jupyter-button.mod-warning {
+    color: var(--jp-inverse-ui-font-color1);
+    background-color: var(--jp-warn-color1);
+}
+
+.jupyter-button.mod-warning.mod-active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-warn-color0);
+}
+
+.jupyter-button.mod-warning:active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-warn-color0);
+}
+
+/* Button "Danger" Styling */
+
+.jupyter-button.mod-danger {
+    color: var(--jp-inverse-ui-font-color1);
+    background-color: var(--jp-error-color1);
+}
+
+.jupyter-button.mod-danger.mod-active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-error-color0);
+}
+
+.jupyter-button.mod-danger:active {
+    color: var(--jp-inverse-ui-font-color0);
+    background-color: var(--jp-error-color0);
+}
+
+/* Widget Button, Widget Toggle Button, Widget Upload */
+
+.widget-button, .widget-toggle-button, .widget-upload {
+    width: var(--jp-widgets-inline-width-short);
+}
+
+/* Widget Label Styling */
+
+/* Override Bootstrap label css */
+.jupyter-widgets label {
+    margin-bottom: initial;
+}
+
+.widget-label-basic {
+    /* Basic Label */
+    color: var(--jp-widgets-label-color);
+    font-size: var(--jp-widgets-font-size);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-label {
+    /* Label */
+    color: var(--jp-widgets-label-color);
+    font-size: var(--jp-widgets-font-size);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-inline-hbox .widget-label {
+    /* Horizontal Widget Label */
+    color: var(--jp-widgets-label-color);
+    text-align: right;
+    margin-right: calc( var(--jp-widgets-inline-margin) * 2 );
+    width: var(--jp-widgets-inline-label-width);
+    flex-shrink: 0;
+}
+
+.widget-inline-vbox .widget-label {
+    /* Vertical Widget Label */
+    color: var(--jp-widgets-label-color);
+    text-align: center;
+    line-height: var(--jp-widgets-inline-height);
+}
+
+/* Widget Readout Styling */
+
+.widget-readout {
+    color: var(--jp-widgets-readout-color);
+    font-size: var(--jp-widgets-font-size);
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.widget-readout.overflow {
+    /* Overflowing Readout */
+
+    /* From Material Design Lite
+        shadow-key-umbra-opacity: 0.2;
+        shadow-key-penumbra-opacity: 0.14;
+        shadow-ambient-shadow-opacity: 0.12;
+     */
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),
+                        0 3px 1px -2px rgba(0, 0, 0, 0.14),
+                        0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),
+                     0 3px 1px -2px rgba(0, 0, 0, 0.14),
+                     0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),
+                0 3px 1px -2px rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.widget-inline-hbox .widget-readout {
+    /* Horizontal Readout */
+    text-align: center;
+    max-width: var(--jp-widgets-inline-width-short);
+    min-width: var(--jp-widgets-inline-width-tiny);
+    margin-left: var(--jp-widgets-inline-margin);
+}
+
+.widget-inline-vbox .widget-readout {
+    /* Vertical Readout */
+    margin-top: var(--jp-widgets-inline-margin);
+    /* as wide as the widget */
+    width: inherit;
+}
+
+/* Widget Checkbox Styling */
+
+.widget-checkbox {
+    width: var(--jp-widgets-inline-width);
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-checkbox input[type="checkbox"] {
+    margin: 0px calc( var(--jp-widgets-inline-margin) * 2 ) 0px 0px;
+    line-height: var(--jp-widgets-inline-height);
+    font-size: large;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* Widget Valid Styling */
+
+.widget-valid {
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+    width: var(--jp-widgets-inline-width-short);
+    font-size: var(--jp-widgets-font-size);
+}
+
+.widget-valid i:before {
+    line-height: var(--jp-widgets-inline-height);
+    margin-right: var(--jp-widgets-inline-margin);
+    margin-left: var(--jp-widgets-inline-margin);
+
+    /* from the fa class in FontAwesome: https://github.com/FortAwesome/Font-Awesome/blob/49100c7c3a7b58d50baa71efef11af41a66b03d3/css/font-awesome.css#L14 */
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.widget-valid.mod-valid i:before {
+    content: "\f00c";
+    color: green;
+}
+
+.widget-valid.mod-invalid i:before {
+    content: "\f00d";
+    color: red;
+}
+
+.widget-valid.mod-valid .widget-valid-readout {
+    display: none;
+}
+
+/* Widget Text and TextArea Stying */
+
+.widget-textarea, .widget-text {
+    width: var(--jp-widgets-inline-width);
+}
+
+.widget-text input[type="text"], .widget-text input[type="number"]{
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-text input[type="text"]:disabled, .widget-text input[type="number"]:disabled, .widget-textarea textarea:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+.widget-text input[type="text"], .widget-text input[type="number"], .widget-textarea textarea {
+    box-sizing: border-box;
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    background-color: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    font-size: var(--jp-widgets-font-size);
+    flex-grow: 1;
+    min-width: 0; /* This makes it possible for the flexbox to shrink this input */
+    flex-shrink: 1;
+    outline: none !important;
+}
+    
+.widget-text input[type="text"], .widget-textarea textarea {
+    padding: var(--jp-widgets-input-padding) calc( var(--jp-widgets-input-padding) *  2);
+}
+
+.widget-text input[type="number"] {
+    padding: var(--jp-widgets-input-padding) 0 var(--jp-widgets-input-padding) calc(var(--jp-widgets-input-padding) *  2);
+}
+
+.widget-textarea textarea {
+    height: inherit;
+    width: inherit;
+}
+
+.widget-text input:focus, .widget-textarea textarea:focus {
+    border-color: var(--jp-widgets-input-focus-border-color);
+}
+
+/* Widget Slider */
+
+.widget-slider .ui-slider {
+    /* Slider Track */
+    border: var(--jp-widgets-slider-border-width) solid var(--jp-layout-color3);
+    background: var(--jp-layout-color3);
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 0px;
+}
+
+.widget-slider .ui-slider .ui-slider-handle {
+    /* Slider Handle */
+    outline: none !important; /* focused slider handles are colored - see below */
+    position: absolute;
+    background-color: var(--jp-widgets-slider-handle-background-color);
+    border: var(--jp-widgets-slider-border-width) solid var(--jp-widgets-slider-handle-border-color);
+    box-sizing: border-box;
+    z-index: 1;
+    background-image: none; /* Override jquery-ui */
+}
+
+/* Override jquery-ui */
+.widget-slider .ui-slider .ui-slider-handle:hover, .widget-slider .ui-slider .ui-slider-handle:focus {
+    background-color: var(--jp-widgets-slider-active-handle-color);
+    border: var(--jp-widgets-slider-border-width) solid var(--jp-widgets-slider-active-handle-color);
+}
+
+.widget-slider .ui-slider .ui-slider-handle:active {
+    background-color: var(--jp-widgets-slider-active-handle-color);
+    border-color: var(--jp-widgets-slider-active-handle-color);
+    z-index: 2;
+    transform: scale(1.2);
+}
+
+.widget-slider  .ui-slider .ui-slider-range {
+    /* Interval between the two specified value of a double slider */
+    position: absolute;
+    background: var(--jp-widgets-slider-active-handle-color);
+    z-index: 0;
+}
+
+/* Shapes of Slider Handles */
+
+.widget-hslider .ui-slider .ui-slider-handle {
+    width: var(--jp-widgets-slider-handle-size);
+    height: var(--jp-widgets-slider-handle-size);
+    margin-top: calc((var(--jp-widgets-slider-track-thickness) - var(--jp-widgets-slider-handle-size)) / 2 - var(--jp-widgets-slider-border-width));
+    margin-left: calc(var(--jp-widgets-slider-handle-size) / -2 + var(--jp-widgets-slider-border-width));
+    border-radius: 50%;
+    top: 0;
+}
+
+.widget-vslider .ui-slider .ui-slider-handle {
+    width: var(--jp-widgets-slider-handle-size);
+    height: var(--jp-widgets-slider-handle-size);
+    margin-bottom: calc(var(--jp-widgets-slider-handle-size) / -2 + var(--jp-widgets-slider-border-width));
+    margin-left: calc((var(--jp-widgets-slider-track-thickness) - var(--jp-widgets-slider-handle-size)) / 2 - var(--jp-widgets-slider-border-width));
+    border-radius: 50%;
+    left: 0;
+}
+
+.widget-hslider .ui-slider .ui-slider-range {
+    height: calc( var(--jp-widgets-slider-track-thickness) * 2 );
+    margin-top: calc((var(--jp-widgets-slider-track-thickness) - var(--jp-widgets-slider-track-thickness) * 2 ) / 2 - var(--jp-widgets-slider-border-width));
+}
+
+.widget-vslider .ui-slider .ui-slider-range {
+    width: calc( var(--jp-widgets-slider-track-thickness) * 2 );
+    margin-left: calc((var(--jp-widgets-slider-track-thickness) - var(--jp-widgets-slider-track-thickness) * 2 ) / 2 - var(--jp-widgets-slider-border-width));
+}
+
+/* Horizontal Slider */
+
+.widget-hslider {
+    width: var(--jp-widgets-inline-width);
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+
+    /* Override the align-items baseline. This way, the description and readout
+    still seem to align their baseline properly, and we don't have to have
+    align-self: stretch in the .slider-container. */
+    align-items: center;
+}
+
+.widgets-slider .slider-container {
+    overflow: visible;
+}
+
+.widget-hslider .slider-container {
+    height: var(--jp-widgets-inline-height);
+    margin-left: calc(var(--jp-widgets-slider-handle-size) / 2 - 2 * var(--jp-widgets-slider-border-width));
+    margin-right: calc(var(--jp-widgets-slider-handle-size) / 2 - 2 * var(--jp-widgets-slider-border-width));
+    flex: 1 1 var(--jp-widgets-inline-width-short);
+}
+
+.widget-hslider .ui-slider {
+    /* Inner, invisible slide div */
+    height: var(--jp-widgets-slider-track-thickness);
+    margin-top: calc((var(--jp-widgets-inline-height) - var(--jp-widgets-slider-track-thickness)) / 2);
+    width: 100%;
+}
+
+/* Vertical Slider */
+
+.widget-vbox .widget-label {
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-vslider {
+    /* Vertical Slider */
+    height: var(--jp-widgets-vertical-height);
+    width: var(--jp-widgets-inline-width-tiny);
+}
+
+.widget-vslider .slider-container {
+    flex: 1 1 var(--jp-widgets-inline-width-short);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(var(--jp-widgets-slider-handle-size) / 2 - 2 * var(--jp-widgets-slider-border-width));
+    margin-top: calc(var(--jp-widgets-slider-handle-size) / 2 - 2 * var(--jp-widgets-slider-border-width));
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-vslider .ui-slider-vertical {
+    /* Inner, invisible slide div */
+    width: var(--jp-widgets-slider-track-thickness);
+    flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Widget Progress Styling */
+
+.progress-bar {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.progress-bar {
+    height: var(--jp-widgets-inline-height);
+}
+
+.progress-bar {
+    background-color: var(--jp-brand-color1);
+}
+
+.progress-bar-success {
+    background-color: var(--jp-success-color1);
+}
+
+.progress-bar-info {
+    background-color: var(--jp-info-color1);
+}
+
+.progress-bar-warning {
+    background-color: var(--jp-warn-color1);
+}
+
+.progress-bar-danger {
+    background-color: var(--jp-error-color1);
+}
+
+.progress {
+    background-color: var(--jp-layout-color2);
+    border: none;
+    box-shadow: none;
+}
+
+/* Horisontal Progress */
+
+.widget-hprogress {
+    /* Progress Bar */
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+    width: var(--jp-widgets-inline-width);
+    align-items: center;
+
+}
+
+.widget-hprogress .progress {
+    flex-grow: 1;
+    margin-top: var(--jp-widgets-input-padding);
+    margin-bottom: var(--jp-widgets-input-padding);
+    align-self: stretch;
+    /* Override bootstrap style */
+    height: initial;
+}
+
+/* Vertical Progress */
+
+.widget-vprogress {
+    height: var(--jp-widgets-vertical-height);
+    width: var(--jp-widgets-inline-width-tiny);
+}
+
+.widget-vprogress .progress {
+    flex-grow: 1;
+    width: var(--jp-widgets-progress-thickness);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+/* Select Widget Styling */
+
+.widget-dropdown {
+    height: var(--jp-widgets-inline-height);
+    width: var(--jp-widgets-inline-width);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-dropdown > select {
+    padding-right: 20px;
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    border-radius: 0;
+    height: inherit;
+    flex: 1 1 var(--jp-widgets-inline-width-short);
+    min-width: 0; /* This makes it possible for the flexbox to shrink this input */
+    box-sizing: border-box;
+    outline: none !important;
+    box-shadow: none;
+    background-color: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    font-size: var(--jp-widgets-font-size);
+    vertical-align: top;
+    padding-left: calc( var(--jp-widgets-input-padding) * 2);
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: right center;
+    background-image: var(--jp-widgets-dropdown-arrow);
+}
+.widget-dropdown > select:focus {
+    border-color: var(--jp-widgets-input-focus-border-color);
+}
+
+.widget-dropdown > select:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+/* To disable the dotted border in Firefox around select controls.
+   See http://stackoverflow.com/a/18853002 */
+.widget-dropdown > select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+/* Select and SelectMultiple */
+
+.widget-select {
+    width: var(--jp-widgets-inline-width);
+    line-height: var(--jp-widgets-inline-height);
+
+    /* Because Firefox defines the baseline of a select as the bottom of the
+    control, we align the entire control to the top and add padding to the
+    select to get an approximate first line baseline alignment. */
+    align-items: flex-start;
+}
+
+.widget-select > select {
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    background-color: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    font-size: var(--jp-widgets-font-size);
+    flex: 1 1 var(--jp-widgets-inline-width-short);
+    outline: none !important;
+    overflow: auto;
+    height: inherit;
+
+    /* Because Firefox defines the baseline of a select as the bottom of the
+    control, we align the entire control to the top and add padding to the
+    select to get an approximate first line baseline alignment. */
+    padding-top: 5px;
+}
+
+.widget-select > select:focus {
+    border-color: var(--jp-widgets-input-focus-border-color);
+}
+
+.wiget-select > select > option {
+    padding-left: var(--jp-widgets-input-padding);
+    line-height: var(--jp-widgets-inline-height);
+    /* line-height doesn't work on some browsers for select options */
+    padding-top: calc(var(--jp-widgets-inline-height)-var(--jp-widgets-font-size)/2);
+    padding-bottom: calc(var(--jp-widgets-inline-height)-var(--jp-widgets-font-size)/2);
+}
+
+
+
+/* Toggle Buttons Styling */
+
+.widget-toggle-buttons {
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-toggle-buttons .widget-toggle-button {
+    margin-left: var(--jp-widgets-margin);
+    margin-right: var(--jp-widgets-margin);
+}
+
+.widget-toggle-buttons .jupyter-button:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+/* Radio Buttons Styling */
+
+.widget-radio {
+    width: var(--jp-widgets-inline-width);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-radio-box {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
+    flex-grow: 1;
+    margin-bottom: var(--jp-widgets-radio-item-height-adjustment);
+}
+
+.widget-radio-box label {
+    height: var(--jp-widgets-radio-item-height);
+    line-height: var(--jp-widgets-radio-item-height);
+    font-size: var(--jp-widgets-font-size);
+}
+
+.widget-radio-box input {
+    height: var(--jp-widgets-radio-item-height);
+    line-height: var(--jp-widgets-radio-item-height);
+    margin: 0 calc( var(--jp-widgets-input-padding) * 2 ) 0 1px;
+    float: left;
+}
+
+/* Color Picker Styling */
+
+.widget-colorpicker {
+    width: var(--jp-widgets-inline-width);
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-colorpicker > .widget-colorpicker-input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: var(--jp-widgets-inline-width-tiny);
+}
+
+.widget-colorpicker input[type="color"] {
+    width: var(--jp-widgets-inline-height);
+    height: var(--jp-widgets-inline-height);
+    padding: 0 2px; /* make the color square actually square on Chrome on OS X */
+    background: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    border-left: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    align-self: stretch;
+    outline: none !important;
+}
+
+.widget-colorpicker.concise input[type="color"] {
+    border-left: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+}
+
+.widget-colorpicker input[type="color"]:focus, .widget-colorpicker input[type="text"]:focus {
+    border-color: var(--jp-widgets-input-focus-border-color);
+}
+
+.widget-colorpicker input[type="text"] {
+    flex-grow: 1;
+    outline: none !important;
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+    background: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    font-size: var(--jp-widgets-font-size);
+    padding: var(--jp-widgets-input-padding) calc( var(--jp-widgets-input-padding) *  2 );
+    min-width: 0; /* This makes it possible for the flexbox to shrink this input */
+    flex-shrink: 1;
+    box-sizing: border-box;
+}
+
+.widget-colorpicker input[type="text"]:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+/* Date Picker Styling */
+
+.widget-datepicker {
+    width: var(--jp-widgets-inline-width);
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.widget-datepicker input[type="date"] {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0; /* This makes it possible for the flexbox to shrink this input */
+    outline: none !important;
+    height: var(--jp-widgets-inline-height);
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    background-color: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    font-size: var(--jp-widgets-font-size);
+    padding: var(--jp-widgets-input-padding) calc( var(--jp-widgets-input-padding) *  2 );
+    box-sizing: border-box;
+}
+
+.widget-datepicker input[type="date"]:focus {
+    border-color: var(--jp-widgets-input-focus-border-color);
+}
+
+.widget-datepicker input[type="date"]:invalid {
+    border-color: var(--jp-warn-color1);
+}
+
+.widget-datepicker input[type="date"]:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+/* Play Widget */
+
+.widget-play {
+    width: var(--jp-widgets-inline-width-short);
+    display: flex;
+    align-items: stretch;
+}
+
+.widget-play .jupyter-button {
+    flex-grow: 1;
+    height: auto;
+}
+
+.widget-play .jupyter-button:disabled {
+    opacity: var(--jp-widgets-disabled-opacity);
+}
+
+/* Tab Widget */
+
+.jupyter-widgets.widget-tab {
+    display: flex;
+    flex-direction: column;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar {
+    /* Necessary so that a tab can be shifted down to overlay the border of the box below. */
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar > .p-TabBar-content {
+    /* Make sure that the tab grows from bottom up */
+    align-items: flex-end;
+    min-width: 0;
+    min-height: 0;
+}
+
+.jupyter-widgets.widget-tab > .widget-tab-contents {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background: var(--jp-layout-color1);
+    color: var(--jp-ui-font-color1);
+    border: var(--jp-border-width) solid var(--jp-border-color1);
+    padding: var(--jp-widgets-container-padding);
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar {
+    font: var(--jp-widgets-font-size) Helvetica, Arial, sans-serif;
+    min-height: calc(var(--jp-widgets-horizontal-tab-height) + var(--jp-border-width));
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab {
+    flex: 0 1 var(--jp-widgets-horizontal-tab-width);
+    min-width: 35px;
+    min-height: calc(var(--jp-widgets-horizontal-tab-height) + var(--jp-border-width));
+    line-height: var(--jp-widgets-horizontal-tab-height);
+    margin-left: calc(-1 * var(--jp-border-width));
+    padding: 0px 10px;
+    background: var(--jp-layout-color2);
+    color: var(--jp-ui-font-color2);
+    border: var(--jp-border-width) solid var(--jp-border-color1);
+    border-bottom: none;
+    position: relative;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab.p-mod-current {
+    color: var(--jp-ui-font-color0);
+    /* We want the background to match the tab content background */
+    background: var(--jp-layout-color1);
+    min-height: calc(var(--jp-widgets-horizontal-tab-height) + 2 * var(--jp-border-width));
+    transform: translateY(var(--jp-border-width));
+    overflow: visible;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab.p-mod-current:before {
+    position: absolute;
+    top: calc(-1 * var(--jp-border-width));
+    left: calc(-1 * var(--jp-border-width));
+    content: '';
+    height: var(--jp-widgets-horizontal-tab-top-border);
+    width: calc(100% + 2 * var(--jp-border-width));
+    background: var(--jp-brand-color1);
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab:first-child {
+    margin-left: 0;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tab:hover:not(.p-mod-current) {
+    background: var(--jp-layout-color1);
+    color: var(--jp-ui-font-color1);
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-mod-closable > .p-TabBar-tabCloseIcon {
+    margin-left: 4px;
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-mod-closable > .p-TabBar-tabCloseIcon:before {
+    font-family: FontAwesome;
+    content: '\f00d'; /* close */
+}
+
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tabIcon,
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tabLabel,
+.jupyter-widgets.widget-tab > .p-TabBar .p-TabBar-tabCloseIcon {
+    line-height: var(--jp-widgets-horizontal-tab-height);
+}
+
+/* Accordion Widget */
+
+.p-Collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.p-Collapse-header {
+    padding: var(--jp-widgets-input-padding);
+    cursor: pointer;
+    color: var(--jp-ui-font-color2);
+    background-color: var(--jp-layout-color2);
+    border: var(--jp-widgets-border-width) solid var(--jp-border-color1);
+    padding: calc(var(--jp-widgets-container-padding) * 2 / 3) var(--jp-widgets-container-padding);
+    font-weight: bold;
+}
+
+.p-Collapse-header:hover {
+    background-color: var(--jp-layout-color1);
+    color: var(--jp-ui-font-color1);
+}
+
+.p-Collapse-open > .p-Collapse-header {
+    background-color: var(--jp-layout-color1);
+    color: var(--jp-ui-font-color0);
+    cursor: default;
+    border-bottom: none;
+}
+
+.p-Collapse .p-Collapse-header::before {
+    content: '\f0da\00A0';  /* caret-right, non-breaking space */
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.p-Collapse-open > .p-Collapse-header::before {
+    content: '\f0d7\00A0'; /* caret-down, non-breaking space */
+}
+
+.p-Collapse-contents {
+    padding: var(--jp-widgets-container-padding);
+    background-color: var(--jp-layout-color1);
+    color: var(--jp-ui-font-color1);
+    border-left: var(--jp-widgets-border-width) solid var(--jp-border-color1);
+    border-right: var(--jp-widgets-border-width) solid var(--jp-border-color1);
+    border-bottom: var(--jp-widgets-border-width) solid var(--jp-border-color1);
+    overflow: auto;
+}
+
+.p-Accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.p-Accordion .p-Collapse {
+    margin-bottom: 0;
+}
+
+.p-Accordion .p-Collapse + .p-Collapse {
+    margin-top: 4px;
+}
+
+
+
+/* HTML widget */
+
+.widget-html, .widget-htmlmath {
+    font-size: var(--jp-widgets-font-size);
+}
+
+.widget-html > .widget-html-content, .widget-htmlmath > .widget-html-content {
+    /* Fill out the area in the HTML widget */
+    align-self: stretch;
+    flex-grow: 1;
+    flex-shrink: 1;
+    /* Makes sure the baseline is still aligned with other elements */
+    line-height: var(--jp-widgets-inline-height);
+    /* Make it possible to have absolutely-positioned elements in the html */
+    position: relative;
+}
+
+
+/* Image widget  */
+
+.widget-image {
+    max-width: 100%;
+    height: auto;
+}
+</style><style>/* Copyright (c) Jupyter Development Team.
+ * Distributed under the terms of the Modified BSD License.
+ */
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/*
+The following CSS variables define the main, public API for styling JupyterLab.
+These variables should be used by all plugins wherever possible. In other
+words, plugins should not define custom colors, sizes, etc unless absolutely
+necessary. This enables users to change the visual theme of JupyterLab
+by changing these variables.
+
+Many variables appear in an ordered sequence (0,1,2,3). These sequences
+are designed to work well together, so for example, `--jp-border-color1` should
+be used with `--jp-layout-color1`. The numbers have the following meanings:
+
+* 0: super-primary, reserved for special emphasis
+* 1: primary, most important under normal situations
+* 2: secondary, next most important under normal situations
+* 3: tertiary, next most important under normal situations
+
+Throughout JupyterLab, we are mostly following principles from Google's
+Material Design when selecting colors. We are not, however, following
+all of MD as it is not optimized for dense, information rich UIs.
+*/
+
+:root {
+  /* Elevation
+   *
+   * We style box-shadows using Material Design's idea of elevation. These particular numbers are taken from here:
+   *
+   * https://github.com/material-components/material-components-web
+   * https://material-components-web.appspot.com/elevation.html
+   */
+
+  --jp-shadow-base-lightness: 0;
+  --jp-shadow-umbra-color: rgba(
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    0.2
+  );
+  --jp-shadow-penumbra-color: rgba(
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    0.14
+  );
+  --jp-shadow-ambient-color: rgba(
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    var(--jp-shadow-base-lightness),
+    0.12
+  );
+  --jp-elevation-z0: none;
+  --jp-elevation-z1: 0px 2px 1px -1px var(--jp-shadow-umbra-color),
+    0px 1px 1px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 3px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z2: 0px 3px 1px -2px var(--jp-shadow-umbra-color),
+    0px 2px 2px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 5px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z4: 0px 2px 4px -1px var(--jp-shadow-umbra-color),
+    0px 4px 5px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 10px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z6: 0px 3px 5px -1px var(--jp-shadow-umbra-color),
+    0px 6px 10px 0px var(--jp-shadow-penumbra-color),
+    0px 1px 18px 0px var(--jp-shadow-ambient-color);
+  --jp-elevation-z8: 0px 5px 5px -3px var(--jp-shadow-umbra-color),
+    0px 8px 10px 1px var(--jp-shadow-penumbra-color),
+    0px 3px 14px 2px var(--jp-shadow-ambient-color);
+  --jp-elevation-z12: 0px 7px 8px -4px var(--jp-shadow-umbra-color),
+    0px 12px 17px 2px var(--jp-shadow-penumbra-color),
+    0px 5px 22px 4px var(--jp-shadow-ambient-color);
+  --jp-elevation-z16: 0px 8px 10px -5px var(--jp-shadow-umbra-color),
+    0px 16px 24px 2px var(--jp-shadow-penumbra-color),
+    0px 6px 30px 5px var(--jp-shadow-ambient-color);
+  --jp-elevation-z20: 0px 10px 13px -6px var(--jp-shadow-umbra-color),
+    0px 20px 31px 3px var(--jp-shadow-penumbra-color),
+    0px 8px 38px 7px var(--jp-shadow-ambient-color);
+  --jp-elevation-z24: 0px 11px 15px -7px var(--jp-shadow-umbra-color),
+    0px 24px 38px 3px var(--jp-shadow-penumbra-color),
+    0px 9px 46px 8px var(--jp-shadow-ambient-color);
+
+  /* Borders
+   *
+   * The following variables, specify the visual styling of borders in JupyterLab.
+   */
+
+  --jp-border-width: 1px;
+  --jp-border-color0: var(--md-grey-400);
+  --jp-border-color1: var(--md-grey-400);
+  --jp-border-color2: var(--md-grey-300);
+  --jp-border-color3: var(--md-grey-200);
+  --jp-border-radius: 2px;
+
+  /* UI Fonts
+   *
+   * The UI font CSS variables are used for the typography all of the JupyterLab
+   * user interface elements that are not directly user generated content.
+   *
+   * The font sizing here is done assuming that the body font size of --jp-ui-font-size1
+   * is applied to a parent element. When children elements, such as headings, are sized
+   * in em all things will be computed relative to that body size.
+   */
+
+  --jp-ui-font-scale-factor: 1.2;
+  --jp-ui-font-size0: 0.83333em;
+  --jp-ui-font-size1: 13px; /* Base font size */
+  --jp-ui-font-size2: 1.2em;
+  --jp-ui-font-size3: 1.44em;
+
+  --jp-ui-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /*
+   * Use these font colors against the corresponding main layout colors.
+   * In a light theme, these go from dark to light.
+   */
+
+  /* Defaults use Material Design specification */
+  --jp-ui-font-color0: rgba(0, 0, 0, 1);
+  --jp-ui-font-color1: rgba(0, 0, 0, 0.87);
+  --jp-ui-font-color2: rgba(0, 0, 0, 0.54);
+  --jp-ui-font-color3: rgba(0, 0, 0, 0.38);
+
+  /*
+   * Use these against the brand/accent/warn/error colors.
+   * These will typically go from light to darker, in both a dark and light theme.
+   */
+
+  --jp-ui-inverse-font-color0: rgba(255, 255, 255, 1);
+  --jp-ui-inverse-font-color1: rgba(255, 255, 255, 1);
+  --jp-ui-inverse-font-color2: rgba(255, 255, 255, 0.7);
+  --jp-ui-inverse-font-color3: rgba(255, 255, 255, 0.5);
+
+  /* Content Fonts
+   *
+   * Content font variables are used for typography of user generated content.
+   *
+   * The font sizing here is done assuming that the body font size of --jp-content-font-size1
+   * is applied to a parent element. When children elements, such as headings, are sized
+   * in em all things will be computed relative to that body size.
+   */
+
+  --jp-content-line-height: 1.6;
+  --jp-content-font-scale-factor: 1.2;
+  --jp-content-font-size0: 0.83333em;
+  --jp-content-font-size1: 14px; /* Base font size */
+  --jp-content-font-size2: 1.2em;
+  --jp-content-font-size3: 1.44em;
+  --jp-content-font-size4: 1.728em;
+  --jp-content-font-size5: 2.0736em;
+
+  /* This gives a magnification of about 125% in presentation mode over normal. */
+  --jp-content-presentation-font-size1: 17px;
+
+  --jp-content-heading-line-height: 1;
+  --jp-content-heading-margin-top: 1.2em;
+  --jp-content-heading-margin-bottom: 0.8em;
+  --jp-content-heading-font-weight: 500;
+
+  /* Defaults use Material Design specification */
+  --jp-content-font-color0: rgba(0, 0, 0, 1);
+  --jp-content-font-color1: rgba(0, 0, 0, 0.87);
+  --jp-content-font-color2: rgba(0, 0, 0, 0.54);
+  --jp-content-font-color3: rgba(0, 0, 0, 0.38);
+
+  --jp-content-link-color: var(--md-blue-700);
+
+  --jp-content-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+
+  /*
+   * Code Fonts
+   *
+   * Code font variables are used for typography of code and other monospaces content.
+   */
+
+  --jp-code-font-size: 13px;
+  --jp-code-line-height: 1.3077; /* 17px for 13px base */
+  --jp-code-padding: 5px; /* 5px for 13px base, codemirror highlighting needs integer px value */
+  --jp-code-font-family-default: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --jp-code-font-family: var(--jp-code-font-family-default);
+
+  /* This gives a magnification of about 125% in presentation mode over normal. */
+  --jp-code-presentation-font-size: 16px;
+
+  /* may need to tweak cursor width if you change font size */
+  --jp-code-cursor-width0: 1.4px;
+  --jp-code-cursor-width1: 2px;
+  --jp-code-cursor-width2: 4px;
+
+  /* Layout
+   *
+   * The following are the main layout colors use in JupyterLab. In a light
+   * theme these would go from light to dark.
+   */
+
+  --jp-layout-color0: white;
+  --jp-layout-color1: white;
+  --jp-layout-color2: var(--md-grey-200);
+  --jp-layout-color3: var(--md-grey-400);
+  --jp-layout-color4: var(--md-grey-600);
+
+  /* Inverse Layout
+   *
+   * The following are the inverse layout colors use in JupyterLab. In a light
+   * theme these would go from dark to light.
+   */
+
+  --jp-inverse-layout-color0: #111111;
+  --jp-inverse-layout-color1: var(--md-grey-900);
+  --jp-inverse-layout-color2: var(--md-grey-800);
+  --jp-inverse-layout-color3: var(--md-grey-700);
+  --jp-inverse-layout-color4: var(--md-grey-600);
+
+  /* Brand/accent */
+
+  --jp-brand-color0: var(--md-blue-700);
+  --jp-brand-color1: var(--md-blue-500);
+  --jp-brand-color2: var(--md-blue-300);
+  --jp-brand-color3: var(--md-blue-100);
+
+  --jp-accent-color0: var(--md-green-700);
+  --jp-accent-color1: var(--md-green-500);
+  --jp-accent-color2: var(--md-green-300);
+  --jp-accent-color3: var(--md-green-100);
+
+  /* State colors (warn, error, success, info) */
+
+  --jp-warn-color0: var(--md-orange-700);
+  --jp-warn-color1: var(--md-orange-500);
+  --jp-warn-color2: var(--md-orange-300);
+  --jp-warn-color3: var(--md-orange-100);
+
+  --jp-error-color0: var(--md-red-700);
+  --jp-error-color1: var(--md-red-500);
+  --jp-error-color2: var(--md-red-300);
+  --jp-error-color3: var(--md-red-100);
+
+  --jp-success-color0: var(--md-green-700);
+  --jp-success-color1: var(--md-green-500);
+  --jp-success-color2: var(--md-green-300);
+  --jp-success-color3: var(--md-green-100);
+
+  --jp-info-color0: var(--md-cyan-700);
+  --jp-info-color1: var(--md-cyan-500);
+  --jp-info-color2: var(--md-cyan-300);
+  --jp-info-color3: var(--md-cyan-100);
+
+  /* Cell specific styles */
+
+  --jp-cell-padding: 5px;
+
+  --jp-cell-collapser-width: 8px;
+  --jp-cell-collapser-min-height: 20px;
+  --jp-cell-collapser-not-active-hover-opacity: 0.6;
+
+  --jp-cell-editor-background: var(--md-grey-100);
+  --jp-cell-editor-border-color: var(--md-grey-300);
+  --jp-cell-editor-box-shadow: inset 0 0 2px var(--md-blue-300);
+  --jp-cell-editor-active-background: var(--jp-layout-color0);
+  --jp-cell-editor-active-border-color: var(--jp-brand-color1);
+
+  --jp-cell-prompt-width: 64px;
+  --jp-cell-prompt-font-family: 'Source Code Pro', monospace;
+  --jp-cell-prompt-letter-spacing: 0px;
+  --jp-cell-prompt-opacity: 1;
+  --jp-cell-prompt-not-active-opacity: 0.5;
+  --jp-cell-prompt-not-active-font-color: var(--md-grey-700);
+  /* A custom blend of MD grey and blue 600
+   * See https://meyerweb.com/eric/tools/color-blend/#546E7A:1E88E5:5:hex */
+  --jp-cell-inprompt-font-color: #307fc1;
+  /* A custom blend of MD grey and orange 600
+   * https://meyerweb.com/eric/tools/color-blend/#546E7A:F4511E:5:hex */
+  --jp-cell-outprompt-font-color: #bf5b3d;
+
+  /* Notebook specific styles */
+
+  --jp-notebook-padding: 10px;
+  --jp-notebook-select-background: var(--jp-layout-color1);
+  --jp-notebook-multiselected-color: var(--md-blue-50);
+
+  /* The scroll padding is calculated to fill enough space at the bottom of the
+  notebook to show one single-line cell (with appropriate padding) at the top
+  when the notebook is scrolled all the way to the bottom. We also subtract one
+  pixel so that no scrollbar appears if we have just one single-line cell in the
+  notebook. This padding is to enable a 'scroll past end' feature in a notebook.
+  */
+  --jp-notebook-scroll-padding: calc(
+    100% - var(--jp-code-font-size) * var(--jp-code-line-height) -
+      var(--jp-code-padding) - var(--jp-cell-padding) - 1px
+  );
+
+  /* Rendermime styles */
+
+  --jp-rendermime-error-background: #fdd;
+  --jp-rendermime-table-row-background: var(--md-grey-100);
+  --jp-rendermime-table-row-hover-background: var(--md-light-blue-50);
+
+  /* Dialog specific styles */
+
+  --jp-dialog-background: rgba(0, 0, 0, 0.25);
+
+  /* Console specific styles */
+
+  --jp-console-padding: 10px;
+
+  /* Toolbar specific styles */
+
+  --jp-toolbar-border-color: var(--jp-border-color1);
+  --jp-toolbar-micro-height: 8px;
+  --jp-toolbar-background: var(--jp-layout-color1);
+  --jp-toolbar-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.24);
+  --jp-toolbar-header-margin: 4px 4px 0px 4px;
+  --jp-toolbar-active-background: var(--md-grey-300);
+
+  /* Input field styles */
+
+  --jp-input-box-shadow: inset 0 0 2px var(--md-blue-300);
+  --jp-input-active-background: var(--jp-layout-color1);
+  --jp-input-hover-background: var(--jp-layout-color1);
+  --jp-input-background: var(--md-grey-100);
+  --jp-input-border-color: var(--jp-border-color1);
+  --jp-input-active-border-color: var(--jp-brand-color1);
+  --jp-input-active-box-shadow-color: rgba(19, 124, 189, 0.3);
+
+  /* General editor styles */
+
+  --jp-editor-selected-background: #d9d9d9;
+  --jp-editor-selected-focused-background: #d7d4f0;
+  --jp-editor-cursor-color: var(--jp-ui-font-color0);
+
+  /* Code mirror specific styles */
+
+  --jp-mirror-editor-keyword-color: #008000;
+  --jp-mirror-editor-atom-color: #88f;
+  --jp-mirror-editor-number-color: #080;
+  --jp-mirror-editor-def-color: #00f;
+  --jp-mirror-editor-variable-color: var(--md-grey-900);
+  --jp-mirror-editor-variable-2-color: #05a;
+  --jp-mirror-editor-variable-3-color: #085;
+  --jp-mirror-editor-punctuation-color: #05a;
+  --jp-mirror-editor-property-color: #05a;
+  --jp-mirror-editor-operator-color: #aa22ff;
+  --jp-mirror-editor-comment-color: #408080;
+  --jp-mirror-editor-string-color: #ba2121;
+  --jp-mirror-editor-string-2-color: #708;
+  --jp-mirror-editor-meta-color: #aa22ff;
+  --jp-mirror-editor-qualifier-color: #555;
+  --jp-mirror-editor-builtin-color: #008000;
+  --jp-mirror-editor-bracket-color: #997;
+  --jp-mirror-editor-tag-color: #170;
+  --jp-mirror-editor-attribute-color: #00c;
+  --jp-mirror-editor-header-color: blue;
+  --jp-mirror-editor-quote-color: #090;
+  --jp-mirror-editor-link-color: #00c;
+  --jp-mirror-editor-error-color: #f00;
+  --jp-mirror-editor-hr-color: #999;
+
+  /* Vega extension styles */
+
+  --jp-vega-background: white;
+
+  /* Sidebar-related styles */
+
+  --jp-sidebar-min-width: 180px;
+
+  /* Search-related styles */
+
+  --jp-search-toggle-off-opacity: 0.5;
+  --jp-search-toggle-hover-opacity: 0.8;
+  --jp-search-toggle-on-opacity: 1;
+  --jp-search-selected-match-background-color: rgb(245, 200, 0);
+  --jp-search-selected-match-color: black;
+  --jp-search-unselected-match-background-color: var(
+    --jp-inverse-layout-color0
+  );
+  --jp-search-unselected-match-color: var(--jp-ui-inverse-font-color0);
+}
+</style><style>exports = {};
+</style><style>/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* Set the default typography for monospace elements */
+tt,
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: var(--jp-code-line-height);
+}
+</style><style>
+.thebelab-cell {
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.thebelab-cell:focus-within {
+  border-color: green;
+}
+
+.jp-OutputArea > :first-child {
+  padding-top: 0.5em;
+  border-top: 1px solid #aaa;
+}
+
+.CodeMirror {
+  height: auto;
+}
+
+.CodeMirror-scroll {
+  height: auto;
+}
+
+.CodeMirror {
+  background-color: transparent;
+}
+
+
+.CodeMirror.CodeMirror-focused {
+  /* background-color: white; */
+}
+
+/* no prompts */
+.jp-OutputPrompt {
+  display: none;
+}
+</style></head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80" class="scrolled">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+      <img src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/logo_small.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Topology in condensed matter: tying quantum knots</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Online course on topology in condensed matter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Before you begin
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w0_background/intro.html">
+   About this course
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w0_background/band_structures.html">
+   Brief review of band structures
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Topology in toy models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w1_topointro/0d.html">
+   Hamiltonians, topology, and symmetry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w1_topointro/1D.html">
+   Bulk-edge correspondence in the Kitaev chain
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w1_topointro/w1_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Majoranas I
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w2_majorana/nanowire.html">
+   From Kitaev chain to a nanowire
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w2_majorana/signatures.html">
+   Majorana signatures: 4π-periodic Josephson effect, Andreev conductance quantization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w2_majorana/braiding.html">
+   Why Majoranas are cool: braiding and quantum computation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w2_majorana/w2_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  More parameters: charge pumping
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w3_pump_QHE/pumps.html">
+   Thouless pumps and winding invariant
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w3_pump_QHE/Laughlinargument.html">
+   Quantum Hall effect: pumping electrons in Landau levels
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w3_pump_QHE/QHEedgestates.html">
+   Quantum Hall effect: edge states
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w3_pump_QHE/w3_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Chern insulators
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w4_haldane/QHE_lattice.html">
+   Quantum Hall Effect on the lattice and Dirac Hamiltonian
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w4_haldane/haldane_model.html">
+   Haldane model, Berry curvature, and Chern number
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w4_haldane/w4_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quantum spin Hall effect
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w5_qshe/fermion_parity_pump.html">
+   Time-reversal symmetry and fermion parity pumps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w5_qshe/qshe_experiments.html">
+   Experimental progress and candidate materials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w5_qshe/w5_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Three-dimensional topological insulators
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w6_3dti/bhz.html">
+   Dirac equation of the surface states, 3D Bernevig-Hughes-Zhang model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w6_3dti/3dti_signatures.html">
+   Experimental progress and candidate materials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w6_3dti/w6_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Topological defects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w7_defects/ti_majoranas.html">
+   Majoranas in topological insulators and superconductors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w7_defects/crystalline_defects.html">
+   Crystalline defects in weak topological insulators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w7_defects/w7_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  General approach to topological classification
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w8_general/classification.html">
+   10 symmetry classes and the periodic table of topological insulators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w8_general/invariants.html">
+   Different approaches to topological invariants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w8_general/w8_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anderson localization and topology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w9_disorder/scaling.html">
+   Disorder and the scaling theory of localization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w9_disorder/topoflow.html">
+   Flow diagram of topological insulators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w9_disorder/w9_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Extensions of classification&nbsp;I
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w10_extensions/gapless.html">
+   Topology in gapless systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w10_extensions/mechanics.html">
+   Topological mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w10_extensions/w10_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Extensions of classification&nbsp;II
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w11_extensions2/floquet.html">
+   Floquet topological insulators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w11_extensions2/cti.html">
+   Crystalline topological insulators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w11_extensions2/w11_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Beyond single-particle physics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w12_manybody/fqhe.html">
+   Fractional quantum Hall effect and topological particles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w12_manybody/topoorder.html">
+   Topological order and the toric code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w12_manybody/w12_assignments.html">
+   Topics for self-study
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w2_majorana/Peierls.html">
+   Tight-binding models in a magnetic field: Peierls substitution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="https://topocondmat.org/w4_haldane/ComputingChern.html">
+   Additional notes on computing Chern number
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org/">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" title="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons" href="https://topocondmat.org/_sources/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="" data-toggle="tooltip" data-placement="left" data-original-title="Download notebook file">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="https://topocondmat.org/_sources/index.md"><button type="button" class="btn btn-secondary topbarbtn" title="" data-toggle="tooltip" data-placement="left" data-original-title="Download source file">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="" onclick="window.print()" data-toggle="tooltip" data-placement="left" data-original-title="Print to PDF">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button" href="https://github.com/topocm/topocm_content"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="" data-original-title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button" href="https://github.com/topocm/topocm_content/issues/new?title=Issue%20on%20page%20%2Findex.html&amp;body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="" data-original-title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/topocm/topocm_content/edit/master/index.md"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="" data-original-title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode" title="" data-original-title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/topocm/topocm_content/master?urlpath=tree/index.md"><button type="button" class="btn btn-secondary topbarbtn" title="" data-toggle="tooltip" data-placement="left" data-original-title="Launch Binder"><img class="binder-button-logo" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authors">
+   Authors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="online-course-on-topology-in-condensed-matter">
+<h1>Online course on topology in condensed matter<a class="headerlink" href="#online-course-on-topology-in-condensed-matter" title="Permalink to this headline">¶</a></h1>
+<p>This is a open online course on topology in condensed matter.
+Initially developed for the <a class="reference external" href="https://www.edx.org/course/topology-in-condensed-matter-tying-quantum-knots">edX platform</a> in 2015, its development continues here.</p>
+<p>After following this course you will:</p>
+<ul class="simple">
+<li><p>Discover how topological concepts manifest in condensed matter systems</p></li>
+<li><p>Get an overview of different research directions and important developments</p></li>
+<li><p>Learn to combine the relevant math with simulations and physical arguments to improve your understanding</p></li>
+</ul>
+<p>Go right to the <a class="reference internal" href="https://topocondmat.org/w0_background/intro.html"><span class="doc std std-doc">introduction</span></a> for in-depth information about the course.</p>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<p>The course was developed by</p>
+<ul class="simple">
+<li><p>Anton Akhmerov (TU Delft)</p></li>
+<li><p>Jay Sau (University of Maryland)</p></li>
+<li><p>Bernard van Heck (Leiden University)</p></li>
+<li><p>Sebastian Rubbert (TU Delft)</p></li>
+<li><p>Rafał Skolasiński (TU Delft)</p></li>
+<li><p>Bas Nijholt (TU Delft)</p></li>
+<li><p>Irfan Muhammad (TU Delft)</p></li>
+<li><p>Tómas Örn Rosdahl (TU Delft)</p></li>
+</ul>
+<p>The introductory videos to each topic were contributed by multiple experts from the community.</p>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>When working on the course, we greatly benefitted from support of</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://tudelft.nl/">Delft University of Technology</a> and its Extension School</p></li>
+<li><p><a class="reference external" href="http://qutech.nl/">QuTech</a></p></li>
+<li><p><a class="reference external" href="http://casimir.researchschool.nl/">Casimir Research School</a> and the <a class="reference external" href="http://casimir.researchschool.nl/nanofront">NanoFront</a> program</p></li>
+<li><p><a class="reference external" href="http://umd.edu/">University of Maryland</a> and its Physics Department</p></li>
+<li><p><a class="reference external" href="http://jqi.umd.edu/">Joint Quantum Institute</a></p></li>
+</ul>
+<p>We thank <a class="reference external" href="http://michaelwimmer.org/">M. Wimmer</a> and <a class="reference external" href="http://inac.cea.fr/Pisp/christoph.groth/">C. Groth</a> for letting us use their code in some of the course materials.</p>
+<p>For the support with implementing the technical aspects of the course we thank</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://jupyter.org/">Jupyter project</a> and its developer team, especially Min Ragan-Kelley.</p></li>
+<li><p><a class="reference external" href="https://cloud.sagemath.org/">SageMathCloud</a> and its creator W. Stein.</p></li>
+<li><p>The <a class="reference external" href="https://holoviews.org/">Holoviews</a> team: Jean-Luc Stevens and Philipp Rudiger.</p></li>
+<li><p>The <a class="reference external" href="https://executablebooks.org/">Executable books</a> project, powering the current website.</p></li>
+</ul>
+<p>Finally, we thank all the external speakers for contributing the videos for the course.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Unless otherwise specified the <strong>Course Materials</strong> of TU
+Delft TOPOCMx are Copyright <a class="reference external" href="http://www.tudelft.nl/en/">Delft University of Technology</a> and are licensed under
+a <a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+International License</a>
+<a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="" src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/88x31.png"></a></p>
+<p>The <strong>source code</strong> can also be used under conditions of the 3-clause BSD licence:</p>
+<p>Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are 
+met:</p>
+<ol class="simple">
+<li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p></li>
+<li><p>Redistributions in binary form must reproduce the above copyright
+ notice, this list of conditions and the following disclaimer in the 
+documentation and/or other materials provided with the distribution.</p></li>
+<li><p>Neither the name of the copyright holder nor the names of its 
+contributors may be used to endorse or promote products derived from 
+this software without specific prior written permission.</p></li>
+</ol>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+“AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A 
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p><strong>Videos contributed by external experts</strong> are copyright of their creators, and are also available under Creative Commons Attribution 3.0 Unported License.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config" data-thebe-loaded="true">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class="prev-next-bottom">
+            
+    <a class="right-next" id="next-link" href="https://topocondmat.org/w0_background/intro.html" title="next page">About this course</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Topology course team<br>
+        
+            © Copyright 2021, TU Delft, CC-BY-SA 4.0 (materials) &amp; BSD (code).<br>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="Online%20course%20on%20topology%20in%20condensed%20matter%20%E2%80%94%20Topology%20in%20condensed%20matter_%20tying%20quantum%20knots_files/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  
+</body></html>
+</main>
+
+  <footer>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+
+
+<script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+  
+  <hr/>
+  <a href="http://localhost:1313/">Home</a>
+  | 
+  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
+  
+  </footer>
+  </body>
+</html>
+

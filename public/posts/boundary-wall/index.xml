@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Boundary Wall Method on Beto</title>
+    <title>BoundaryWall.jl on Beto</title>
     <link>http://localhost:1313/posts/boundary-wall/</link>
-    <description>Recent content in Boundary Wall Method on Beto</description>
+    <description>Recent content in BoundaryWall.jl on Beto</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/boundary-wall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/tutorials/mirror/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/tutorials/mirror/</guid>
+      <description>&lt;h1 id=&#34;beam-splitter&#34;&gt;Beam Splitter&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../src/assets/beam_splitter.svg&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;bragg-mirror&#34;&gt;Bragg Mirror&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../src/assets/bragg.svg&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/tutorials/photonic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/tutorials/photonic/</guid>
+      <description>&lt;h1 id=&#34;photonic-crystal&#34;&gt;Photonic crystal&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../src/assets/photonic_diagram.svg&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;../../src/assets/crystal.svg&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;../../src/assets/crystal_arrows.svg&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;../../src/assets/logic_gate.svg&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BoundaryWall.jl, a quick overview</title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/overview/</guid>
+      <description>&lt;p&gt;Simple toolbox that implements an integral method for solving for an incident (TM) wave with well behaved scatterers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;BoundaryWall.jl&lt;/strong&gt; provides a collection of algorithms and tools for&#xA;calculating the scattering of arbitrary boundaries, based upon the work of&#xA;&lt;a href=&#34;https://doi.org/10.1103/PhysRevE.56.2496&#34;&gt;M. G. E. da Luz, A. S. Lupu-Sax, and E. J. Heller on Quantum Scattering&lt;/a&gt;,&#xA;written in pure Julia.&lt;/p&gt;&#xA;&lt;p&gt;The design of this project was motivated for calculating eigenstates&#xA;and scattering wavefunctions in billiards (&lt;a href=&#34;https://doi.org/10.1016/j.aop.2008.01.008&#34;&gt;F.M. Zanetti et al.&lt;/a&gt;,&#xA;&lt;a href=&#34;https://doi.org/10.1103/PhysRevE.109.034203&#34;&gt;A. Ruiz-Biestro et al.&lt;/a&gt;).&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
