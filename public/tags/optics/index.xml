@@ -6,15 +6,8 @@
     <description>Recent content in Optics on Beto</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/optics/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Software</title>
-      <link>http://localhost:1313/software/</link>
-      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/software/</guid>
-      <description>&lt;h1 id=&#34;boundarywalljl&#34;&gt;BoundaryWall.jl&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/biestro/BoundaryWall.jl&#34;&gt;BoundaryWall.jl&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Boundary Wall Method</title>
       <link>http://localhost:1313/posts/boundary-wall/</link>

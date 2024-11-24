@@ -89,6 +89,6 @@ work goes, I think I might take a rest from this algorithm for a while.
 
 ## Julia Package
 
-See the [BoundaryWall.jl]({{< ref "/software.md" >}}) description of the available code.
+<!-- See the [BoundaryWall.jl]({{< ref "../software" >}}) description of the available code. -->
 
 ### More posts:
