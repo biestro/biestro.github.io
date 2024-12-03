@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Software | Beto</title>
+    <title> | Beto</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
@@ -32,14 +32,39 @@
     </nav>
 
 <div class="article-meta">
-<h1><span class="title">Software</span></h1>
+<h1><span class="title"></span></h1>
 
-<h2 class="date">2024/06/01</h2>
+
 </div>
 
 <main>
-<h1 id="boundarywalljl">BoundaryWall.jl</h1>
-<p><a href="https://github.com/biestro/BoundaryWall.jl">BoundaryWall.jl</a></p>
+<h1 id="lattices--grids">Lattices &amp; Grids</h1>
+<p>These methods implement grids similar to a Bravais lattice, as well as
+their repetition scheme.</p>
+<h2 id="constructors">Constructors</h2>
+<h2 id="methods">Methods</h2>
+<p>All <code>buildGrid</code> functions construct a grid with $n\_1\times n\_2$
+elements (depending on their basis vectors).</p>
+<pre><code class="language-@docs">buildGrid
+</code></pre>
+<pre><code class="language-@example">buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter
+</code></pre>
+<p>One can use these as centers for other boundaries.</p>
+<pre><code class="language-@example">
+```julia
+using StaticArrays # hide
+using BoundaryWall # hide
+using WGLMakie # hide
+
+N       = 20
+R       = 0.2
+centers = buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6)
+circ    = [createEllipse(R,2R/3, LinRange(-pi,pi,N), rand()*2pi, c) for c in centers]
+x  = vcat(getindex.(circ, 1)...)
+y  = vcat(getindex.(circ, 2)...)
+scatter(x,y)
+</code></pre>
+<p><img src="../../src/assets/photonic_diagram.svg" alt="alt text"></p>
 
 </main>
 
