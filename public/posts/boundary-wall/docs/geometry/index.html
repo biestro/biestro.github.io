@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> | Beto</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/resume/">Resume</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
+      
+      <li><a href="/gallery/">Gallery</a></li>
+      
+      <li><a href="/posts/boundary-wall/">Software</a></li>
+      
+      <li><a href="https://github.com/biestro">GitHub</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title"></span></h1>
+
+
+</div>
+
+<main>
+<h1 id="geometry">Geometry</h1>
+<h2 id="defining-curves">Defining curves</h2>
+<p>The effective use of the <em>Boundary Wall Method</em> (BWM) requires equal-length segments.
+and the need to interpolate uneven curves. While one might have an equispaced \(x-y\) domain, the arc length \(\mathrm{d}s\) need not be homogeneous.</p>
+<p>The general steps for using this toolbox with a custom array of points are the following:</p>
+<ol>
+<li>Define \((x_i,y_i)\)
+<ul>
+<li>(Re)discretize using</li>
+</ul>
+</li>
+</ol>
+<p>For closed curves, we implement the <code>discretizeCurve</code> function in order to interpolate the whole arc length into \(N\) equal segments. For open curves, one must use <code>discretizeResonatorCurve</code> (it can be used for closed curves as well, but be mindful of using \(N\) vs. \(N+1\) points). Interpolating with <code>Interpolations.jl</code> will work as well.</p>
+<p>Once one has a relatively accurate arc length discretization, one must calculate midpoints using the <code>calcMidpoints</code> function. Note that the total number of midpoints must strictly match the dimensions of the \(\mathbf{T}\) matrix.</p>
+<p>Finally, one might want to obtain the distance matrix representing \([\mathbf{r}]_{ij}=\mathbf{r}_{i}-\mathbf{r}_{j}\). The following example</p>
+<pre><code class="language-julia">using BoundaryWall, WGLMakie # hide
+θ     = LinRange(-pi, pi/2, 300)
+x,y   = cos.(θ),sin.(θ)
+
+x,y   = divideResonatorCurve(x,y, 300)
+xm,ym = calcMidpoints(x, y)
+ds    = calcArcLength(x,y)
+rij   = calcDistances(xm, ym)
+lines(ds)
+</code></pre>
+<p>A good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \(\mathbf{T}\) matrix, or to graph <code>diff(ds)</code> and check for homogeneous behaviour.</p>
+<h2 id="builtin-methods">Builtin methods</h2>
+<p>The package provides some useful functions such as <code>createEllipse</code> and <code>createCircle</code> in order to create analogues to rods.</p>
+
+</main>
+
+  <footer>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+
+
+<script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+  
+  <hr/>
+  <a href="http://localhost:1313/">Home</a>
+  | 
+  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
+  
+  </footer>
+  </body>
+</html>
+

@@ -24,7 +24,7 @@ connected curves](https://mathworld.wolfram.com/SimplyConnected.html), open curv
 Boundaries with intersections and inner loops **will generally not work**.
 While the method does not require a parametrization of the boundary, it
 does require certain homogeneity in arc length. For more details about
-the implementation and theoretical foundations, see the [Geometry](geometry.md)
+the implementation and theoretical foundations, see the [Geometry](../geometry)
 section.
 
 <!-- ![Permissible shapes](../src/assets/drawing) -->

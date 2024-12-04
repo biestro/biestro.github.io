@@ -10,6 +10,20 @@
     <atom:link href="http://localhost:1313/posts/boundary-wall/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/geometry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/geometry/</guid>
+      <description>&lt;h1 id=&#34;geometry&#34;&gt;Geometry&lt;/h1&gt;&#xA;&lt;h2 id=&#34;defining-curves&#34;&gt;Defining curves&lt;/h2&gt;&#xA;&lt;p&gt;The effective use of the &lt;em&gt;Boundary Wall Method&lt;/em&gt; (BWM) requires equal-length segments.&#xA;and the need to interpolate uneven curves. While one might have an equispaced \(x-y\) domain, the arc length \(\mathrm{d}s\) need not be homogeneous.&lt;/p&gt;&#xA;&lt;p&gt;The general steps for using this toolbox with a custom array of points are the following:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Define \((x_i,y_i)\)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;(Re)discretize using&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;For closed curves, we implement the &lt;code&gt;discretizeCurve&lt;/code&gt; function in order to interpolate the whole arc length into \(N\) equal segments. For open curves, one must use &lt;code&gt;discretizeResonatorCurve&lt;/code&gt; (it can be used for closed curves as well, but be mindful of using \(N\) vs. \(N+1\) points). Interpolating with &lt;code&gt;Interpolations.jl&lt;/code&gt; will work as well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/lattice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/lattice/</guid>
+      <description>&lt;h1 id=&#34;lattices--grids&#34;&gt;Lattices &amp;amp; Grids&lt;/h1&gt;&#xA;&lt;p&gt;These methods implement grids similar to a Bravais lattice, as well as&#xA;their repetition scheme.&lt;/p&gt;&#xA;&lt;h2 id=&#34;constructors&#34;&gt;Constructors&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;p&gt;All &lt;code&gt;buildGrid&lt;/code&gt; functions construct a grid with $n\_1\times n\_2$&#xA;elements (depending on their basis vectors).&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-@docs&#34;&gt;buildGrid&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-@example&#34;&gt;buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&amp;gt; scatter&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;One can use these as centers for other boundaries.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;using LinearAlgebra&#xA;using StaticArrays: SVector&#xA;&#xA;import BoundaryWall as BWM&#xA;&#xA;N    = 9                         # number of points per element&#xA;R    = 1.0&#xA;θ    = LinRange(0, 2pi, N+1)&#xA;TH   = 180                  # incident angle&#xA;&#xA;STEP = 2.0R + R/2 # diameter  + constant&#xA;N_CIRCLES = (10,7)&#xA;RANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]&#xA;N_STEPS =length(RANGES)&#xA;CENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])&#xA;&#xA;# delete some indices&#xA;INDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])&#xA;&#xA;deleteat!(CENTERS, INDICES)&#xA;&#xA;CIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]&#xA;# ...&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;One then can proceed to plot such circles. The details can be found in&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/posts/boundary-wall/docs/tutorials/mirror/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/boundary-wall/docs/tutorials/mirror/</guid>

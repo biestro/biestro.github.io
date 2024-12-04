@@ -13,6 +13,8 @@ tags:
 <img src="docs/src/assets/logo.svg" alt="logo" width="150"/>
 
 + [Overview](./docs/overview)
+  + [Geometry](./docs/geometry)
+  + [Lattices](./docs/lattice)
 + Tutorials
   + [Photonic Crystal](./docs/tutorials/photonic)
   + [Beam Splitter & Bragg Mirror](./docs/tutorials/mirror)
