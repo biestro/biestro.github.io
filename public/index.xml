@@ -34,7 +34,7 @@
       <link>http://localhost:1313/posts/boundary-wall/docs/tutorials/photonic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/boundary-wall/docs/tutorials/photonic/</guid>
-      <description>&lt;h1 id=&#34;photonic-crystal&#34;&gt;Photonic crystal&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../src/assets/photonic_diagram.svg&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;../../src/assets/crystal.svg&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;../../src/assets/crystal_arrows.svg&#34; alt=&#34;alt text&#34;&gt;&#xA;&lt;img src=&#34;../../src/assets/logic_gate.svg&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;photonic-crystal&#34;&gt;Photonic crystal&lt;/h1&gt;&#xA;&lt;p&gt;As usual, import relevant libraries.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;using LinearAlgebra&#xA;using StaticArrays: SVector&#xA;using SpecialFunctions&#xA;# using GLMakie; GLMakie.activate!(inline=false, float=true)&#xA;using CairoMakie&#xA;import BoundaryWall as BWM&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Now we can define our constants for the problem.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;# CONSTANTS&#xA;N    = 9                         # number of points per element&#xA;HBAR = 1.0&#xA;MASS = 0.5&#xA;HBAR = 1.0&#xA;SIGMA= (2*MASS/HBAR^2)*(1/4*im)&#xA;NDOM = 100&#xA;zero = 13.3237&#xA;R    = 1.0&#xA;θ    = LinRange(0, 2pi, N+1)&#xA;TH   = 180&#xA;KVEC = SVector(cosd(TH), sind(TH))&#xA;POTENTIAL_STRENGTH = -100.0&#xA;BANDED = 3&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&amp;hellip;and the geometry of such problem.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
