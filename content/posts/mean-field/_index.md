@@ -20,7 +20,7 @@ to the Ising Hamiltonian is given by a *Landau-Ginzburg* Hamiltonian
 
 This has profound consequences in the statistical theory of fields (using 
 saddle-point approximations to recover Landau's theory), 
-but I won't discuss this here (see Kardar's book). 
+but I won't discuss this here (see [Kardar's book](https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945)). 
 Here, \(m(\mathbf{x})\) can be interpreted to be order-parameters, but in essence
 are random fields, i.e. a field with a Boltzmann weight. 
 
