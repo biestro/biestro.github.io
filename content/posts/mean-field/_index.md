@@ -118,7 +118,9 @@ One can check that this absence of low-energy excitations can also happen for a 
 I have already explained that the above functions work for ay dimension. However, the only change is that in 3D,
 multiplication becomes a bit more expensive, and we're dealing with even more data-points. It is convenient to use 
 a simple *workhorse* for solving the dynamics, the Euler method with small time step. We also include a random (Gaussian)
-velocity in each time-step as to account for random fluctuations.
+velocity in each time-step as to account for random fluctuations. 
+
+Here, rather than starting with a random distribution, we start with a Gaussian field at the origin. As expected, low-energy excitations emerge.
 
 {{< video src=landau_3D.mp4 loop="true" autoplay="true" controls="false">}}
 
