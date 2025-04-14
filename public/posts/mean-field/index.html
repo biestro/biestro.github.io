@@ -44,7 +44,7 @@ to the Ising Hamiltonian is given by a <em>Landau-Ginzburg</em> Hamiltonian</p>
   H[m] = \int d\mathbf{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]
 \]<p>This has profound consequences in the statistical theory of fields (using
 saddle-point approximations to recover Landau&rsquo;s theory),
-but I won&rsquo;t discuss this here (see Kardar&rsquo;s book).
+but I won&rsquo;t discuss this here (see <a href="https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945">Kardar&rsquo;s book</a>).
 Here, \(m(\mathbf{x})\) can be interpreted to be order-parameters, but in essence
 are random fields, i.e. a field with a Boltzmann weight.</p>
 <p>The above expression is not a kinetic expression. If we want to analyze the relaxation
@@ -114,7 +114,8 @@ end
   <span></span>
 </video>
 </center>
-<p>However, when we initialize the system in a purely real field \(\phi\) (i.e. \(b\in\mathbb{R}\)), there are no low-energy excitations present, and instead the system relaxes towards a single minima.</p>
+<p><img src="sombrero.svg" alt="Sombrero"></p>
+<p>As seen above, the order parameter is &ldquo;free&rdquo; to explore all the configurations around the black line. However, when we initialize the system in a purely real field \(\phi\) (i.e. \(b\in\mathbb{R}\)), there are no low-energy excitations present, and instead the system relaxes towards a single minima.</p>
 <center>
 <video preload="auto" width="100%"  autoplay loop playsinline class="html-video">
     <source src="/posts/mean-field/landau_2D_real.mp4" type="video/mp4">
@@ -134,6 +135,15 @@ velocity in each time-step as to account for random fluctuations.</p>
   <span></span>
 </video>
 </center>
+<h3 id="cahn-hilliard-equation">Cahn-Hilliard equation</h3>
+<p>A friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of uneven phase separation (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).</p>
+<center>
+<video preload="auto" width="100%"  autoplay loop playsinline class="html-video">
+    <source src="/posts/mean-field/cahn_hilliard_unbalanced.mp4" type="video/mp4">
+  <span></span>
+</video>
+</center>
+<p>There is a great discussion on so called <em>dissipative</em> stochastic models (i.e. kinetic Ising models) in the wonderful book by <a href="https://www.cambridge.org/core/books/principles-of-condensed-matter-physics/70C3D677A9B5BEC4A77CBBD0A8A23E64">Chaikin and Lubensky</a>. It should be fun to implement the remaining models in the <em>A-J</em> list shown in page 467.</p>
 <h3 id="more-posts">More posts:</h3>
 
 
