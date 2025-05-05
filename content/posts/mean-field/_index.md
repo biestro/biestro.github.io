@@ -128,9 +128,10 @@ Here, rather than starting with a random distribution, we start with a Gaussian 
 
 ### Cahn-Hilliard equation
 
-A friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of uneven phase separation (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).
+A friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of such separation using a balanced mixture (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).
 
-{{< video src=cahn_hilliard_unbalanced.mp4 loop="true" autoplay="true" controls="false">}}
+<!-- {{< video src=cahn_hilliard_unbalanced.mp4 loop="true" autoplay="true" controls="false">}} -->
+{{< video src=cahn_hilliard.mp4 loop="true" autoplay="true" controls="false">}}
 
 There is a great discussion on so called *dissipative* stochastic models (i.e. kinetic Ising models) in the wonderful book by [Chaikin and Lubensky](https://www.cambridge.org/core/books/principles-of-condensed-matter-physics/70C3D677A9B5BEC4A77CBBD0A8A23E64). It should be fun to implement the remaining models in the *A-J* list shown in page 467.
 
