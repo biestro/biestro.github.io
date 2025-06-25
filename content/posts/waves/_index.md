@@ -1,6 +1,6 @@
 ---
 title: "Wave simulations"
-date: '2022-01-11'
+date: '2023-06-11'
 categories: 
     - Posts
 tags:

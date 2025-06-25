@@ -15,31 +15,31 @@ gradients while satisfying the proposed symmetries. The coarse-grained extension
 to the Ising Hamiltonian is given by a *Landau-Ginzburg* Hamiltonian
 
 \[
-  H[m] = \int d\mathbf{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]
+  H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]
 \]
 
 This has profound consequences in the statistical theory of fields (using 
 saddle-point approximations to recover Landau's theory), 
 but I won't discuss this here (see [Kardar's book](https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945)). 
-Here, \(m(\mathbf{x})\) can be interpreted to be order-parameters, but in essence
+Here, \(m(\vec{x})\) can be interpreted to be order-parameters, but in essence
 are random fields, i.e. a field with a Boltzmann weight. 
 
 The above expression is not a kinetic expression. If we want to analyze the relaxation
 of a system to the equilibrium configuration, we should introduce dynamics of the 
-field \(m(\mathbf{x})\), which are given by a Langevin equation
+field \(m(\vec{x})\), which are given by a Langevin equation
 
 \[
-  \dot{\mathbf{x}}=\mathbf{v}(\mathbf{x})+\boldsymbol{\eta}(t),
+  \dot{\vec{x}}=\vec{v}(\vec{x})+\vec{\eta}(t),
 \]
 
 where the second term, the stochastic velocity, has zero mean. It is direct to see
 that for our Landau-Ginzburg Hamiltonian we have
 
 \begin{align}
- \partial_t m_i(\mathbf{x},t) &=\mu F_i(\mathbf{x})+\eta_i(\mathbf{x},t)\\\\
-                              &=-\mu\frac{\delta F_i}{\delta m_i(\mathbf{x})}+\eta_i(\mathbf{x},t)\\\\
-                              &=-\mu(am_i+4b m_i|\mathbf{m}|^2-K\nabla^2m_i)+\eta_i(\mathbf{x},t)\\\\
-  \partial_t \vec{m}(\mathbf{x},t)&=-\mu(a\vec{m}+4b \vec{m}|\vec{m}|^2-K\nabla^2\vec{m})+\eta_i(\vec{x},t)
+ \partial_t m_i(\vec{x},t) &=\mu F_i(\vec{x})+\eta_i(\vec{x},t)\\\\
+                              &=-\mu\frac{\delta F_i}{\delta m_i(\vec{x})}+\eta_i(\vec{x},t)\\\\
+                              &=-\mu(am_i+4b m_i|\vec{m}|^2-K\nabla^2m_i)+\eta_i(\vec{x},t)\\\\
+  \partial_t \vec{m}(\vec{x},t)&=-\mu(a\vec{m}+4b \vec{m}|\vec{m}|^2-K\nabla^2\vec{m})+\eta_i(\vec{x},t)
 \end{align}
 
 This last equation is the *time-dependent* Landau-Ginzburg Hamiltonian. Since this

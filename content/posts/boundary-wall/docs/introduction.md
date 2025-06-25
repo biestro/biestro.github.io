@@ -1,16 +1,3 @@
----
-title: Boundary Wall Method
-date: '2024-05-01'
-categories:
-  - Posts
-tags:
-  - Numerical Analysis
-  - Optics
-  - Simulation
----
-
-<!-- {{< video src=circle.mp4 width="600px" loop="true" autoplay="true" controls="false">}} -->
-
 Essentially, a Boundary Integral Method (BIM) reduces the degrees of freedom of a problem to those of the boundary. It also means that the problem becomes meshless, which means that there is no need for simple domains.
 
 However, the method relies on a more abstract notion of integral operators (rather than differential equations). Furthermore, most of the matrices are dense, which While numerical integration can be more stable than numerical differentiation, one may need to project the continuous integral onto a finite-dimensional space of functions, which can be tricky to account for corners (infinite information in Fourier spectrum).
@@ -24,7 +11,18 @@ for the integral operator. The chosen kernel will dictate how well-behaved (or
 well-conditioned) the matrix will be, and thus which algorithms can be used to 
 solve a system \(A\bm{x}=\bm{b}\).
 
-A *BIM* is an example of a [Galerkin method](https://en.wikipedia.org/wiki/Galerkin_method). 
+This raises an important detail about possible applications. This is a **Boundary Integral Method**,
+which limits the applicable domains to 2D curves consisting of: [simply 
+connected curves](https://mathworld.wolfram.com/SimplyConnected.html), open curves, or a collection of the previous two. 
+Boundaries with intersections and inner loops **will generally not work**.
+While the method does not require a parametrization of the boundary, it
+does require certain homogeneity in arc length. For more details about
+the implementation and theoretical foundations, see the [Geometry](../geometry)
+section.
+
+![alt text](../src/assets/drawing.svg)
+
+
 
 # Application to optical problems
 
@@ -41,17 +39,16 @@ effectively molds plane waves into another beam, determined by its spectrum \(A(
 
 <!-- ![Gaussian](gaussian.png) -->
 
-
-
-
-## Applications to condensed matter
-
-One can also simulate metamaterials composed of individual rods. For example, by 
+One can also simulate photonic crystals composed of individual rods. For example, by 
 creating a lattice with ellipse-like boundaries, it can imitate a meta-optical 
 surface, where by adjusting angles and certain parameters, one can have a non-linear 
 response for different frequencies (i.e. multiplexing).
 
-<!-- ![defects](lattice_defects.png) -->
+<!-- ![defects](../src/assets/lattice.png) -->
+<div style="text-align: center;">
+  <img src="../src/assets/lattice.png" alt="logo" width="450"/>
+</div>
+
 
 ## Banded matrices
 
@@ -80,13 +77,16 @@ scattering problem,
 
 where \\(\\hat{x}\_\\ell\\hat{x}\_m\\) represents a dyad.
 
+<div style="text-align: center;">
+  <img src="../src/assets/mie.svg" alt="logo" height="370"/>
+    <figcaption>Attempt to reproduce Mie scattering.</figcaption>
+</div>
 
 ## Further steps
 
 The growth of the operator compared to the boundary resolution implies the need 
-for either heriarchical matrices or preconditioning using wavelets. As far as my
-work goes, I think I might take a rest from this algorithm for a while.
+for either heriarchical matrices or preconditioning using wavelets.
 
-## Julia Package
+
 
 ### More posts:

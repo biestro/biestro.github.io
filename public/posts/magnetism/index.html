@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A problem on magnetism | Beto</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/resume/">Resume</a></li>
+      
+      <li><a href="/posts/">Posts</a></li>
+      
+      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
+      
+      <li><a href="/gallery/">Gallery</a></li>
+      
+      <li><a href="/posts/boundary-wall/">Software</a></li>
+      
+      <li><a href="https://github.com/biestro">GitHub</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+
+
+<h1>A problem on magnetism</h1>
+
+
+<p>This was a problem in my final exam for the Classical Mechanics course imparted by the wonderful Kaden Hazzard. I will
+attempt to describe its solution (thank you Kaden for the exam and solution manual on part <em>b</em>!)</p>
+<h2 id="statement">Statement</h2>
+<p>Symmetries are useful for constructing Lagrangians (for an example see, my post on <a href="../mean-field/">mean field</a>). The
+Lagrangian for this system is</p>
+\[
+\mathcal{L}=i\sum_a w^*_a\partial_t w_a - c^2\sum_j\partial_j \vec{n}\cdot\partial_j\vec{n},
+\]<p>where \(\partial_j\equiv\partial/\partial x_j\), and \(w(\vec{x}, t)\) is a two-component field, which is nothing new if you&rsquo;ve done any field theory in classical mechanics (Stone&rsquo;s book on mathematical methods <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is a good reference for this). The first term represents the kinetic energy and the last term is clearly potential energy.</p>
+<p>Using the regular Euler-Lagrange equations is not always the most straightforward route, as highlighted by this problem. Instead, we perform the variation by hand. Let us take for a fact now (part <em>b</em> deals with this) that the variation for the kinetic term is</p>
+\[
+  \int dt\delta \left(
+    \sum_a w^*_a\partial_t w_a
+  \right) = \frac{i}{2}\int dt\;\delta \vec{n}\cdot (\vec{n\times\partial_t\vec{n}})
+\]<p>Performing a variation in the potential energy will give the expected Euler-Lagrange equation,</p>
+\[
+\begin{aligned}
+\delta S_n&=\frac{\partial \mathcal{L}}{\partial n} - \frac{\partial}{\partial t} \left( \frac{\partial \mathcal{L}}{\partial \dot{n}} \right) - \frac{\partial}{\partial x_j} \left( \frac{\partial \mathcal{L}}{\partial (\partial_{j} n)} \right),\\
+&=\frac{\partial \mathcal{L}}{\partial n} - \frac{\partial}{\partial t} \left( \frac{\partial \mathcal{L}}{\partial \dot{n}} \right) - \nabla\cdot \left( \frac{\partial \mathcal{L}}{\partial (\nabla n)} \right)
+\end{aligned}
+\]<p>and so</p>
+\[
+\begin{aligned}
+\partial\mathcal{L}/\partial{\vec{n}}&=0,\\
+\partial\mathcal{L}/\partial{\dot{\vec{n}}}&=0,\\
+\frac{\partial\mathcal{L}}{\partial{\nabla{\vec{n}}}}&=2c^2\nabla \vec{n}.\\
+\end{aligned}
+\]<p>To see why the last term is twice \(\nabla \vec{n}\), try to do the derivative \(\partial_{\vec{v}} (\vec{v}\cdot\vec{v})\).</p>
+<p>The total variation is then</p>
+\[
+\begin{aligned}
+  \delta S &= \delta \left(\int\;dt \; dx\; T\right) - \delta \left(\int\;dt \; dx\; U\right) \\
+  x &= y + z
+\end{aligned} 
+\]<div style="display: flex; align-items: flex-start;">
+  <div style="width: 75%;">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <div style="width: 25%; padding-left: 1em;">
+    <img src="sphere_classical_final.svg" alt="Description" style="width: 100%;" />
+  </div>
+</div>
+<h3 id="more-posts">More posts:</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Stone, Michael, and Paul Goldbart. <em>Mathematics for Physics: A Guided Tour for Graduate Students</em>. Cambridge University Press, 2009.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+<ul>
+  
+  
+   
+   
+  <li>
+    <span class="date">2025/06/09</span>
+    <a href="/posts/magnetism/">A problem on magnetism</a>
+  </li>
+   
+  <li>
+    <span class="date">2025/04/09</span>
+    <a href="/posts/mean-field/">Mean field theory</a>
+  </li>
+   
+  <li>
+    <span class="date">2024/11/06</span>
+    <a href="/posts/chain/">Small oscillations &amp; Condensed Matter</a>
+  </li>
+   
+  <li>
+    <span class="date">2024/05/01</span>
+    <a href="/posts/boundary-wall/">BoundaryWall.jl</a>
+  </li>
+   
+  <li>
+    <span class="date">2023/06/11</span>
+    <a href="/posts/waves/">Wave simulations</a>
+  </li>
+   
+  <li>
+    <span class="date">2023/04/17</span>
+    <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
+  </li>
+   
+  <li>
+    <span class="date">2022/09/08</span>
+    <a href="/posts/annealing/">Simulated Annealing</a>
+  </li>
+   
+  <li>
+    <span class="date">2022/08/08</span>
+    <a href="/posts/ising/">Ising model</a>
+  </li>
+  
+</ul>
+
+  <footer>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+
+
+<script>
+    hljs.configure({languages: []});
+    hljs.initHighlightingOnLoad();
+</script>
+  
+  <hr/>
+  <a href="http://localhost:1313/">Home</a>
+  | 
+  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
+  
+  </footer>
+  </body>
+</html>

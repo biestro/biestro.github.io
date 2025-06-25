@@ -46,6 +46,6 @@ CIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]
 # ...
 ```
 
-One then can proceed to plot such circles. The details can be found in 
+One then can proceed to plot such circles. The details can be found in the documentation
 
 ![alt text](../src/assets/photonic_diagram.svg)

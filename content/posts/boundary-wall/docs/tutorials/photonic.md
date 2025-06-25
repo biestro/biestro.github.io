@@ -58,7 +58,7 @@ Plotting this results in the following diagram,
 
 ![alt text](../../src/assets/photonic_diagram.svg)
 
-The core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur `FREQS` vector, the system repsonds differently, allowing (or not) the 
+The core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur `FREQS` vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.
 
 ```julia
 # domain

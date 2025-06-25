@@ -41,24 +41,24 @@
 gradients while satisfying the proposed symmetries. The coarse-grained extension
 to the Ising Hamiltonian is given by a <em>Landau-Ginzburg</em> Hamiltonian</p>
 \[
-  H[m] = \int d\mathbf{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]
+  H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]
 \]<p>This has profound consequences in the statistical theory of fields (using
 saddle-point approximations to recover Landau&rsquo;s theory),
 but I won&rsquo;t discuss this here (see <a href="https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945">Kardar&rsquo;s book</a>).
-Here, \(m(\mathbf{x})\) can be interpreted to be order-parameters, but in essence
+Here, \(m(\vec{x})\) can be interpreted to be order-parameters, but in essence
 are random fields, i.e. a field with a Boltzmann weight.</p>
 <p>The above expression is not a kinetic expression. If we want to analyze the relaxation
 of a system to the equilibrium configuration, we should introduce dynamics of the
-field \(m(\mathbf{x})\), which are given by a Langevin equation</p>
+field \(m(\vec{x})\), which are given by a Langevin equation</p>
 \[
-  \dot{\mathbf{x}}=\mathbf{v}(\mathbf{x})+\boldsymbol{\eta}(t),
+  \dot{\vec{x}}=\vec{v}(\vec{x})+\vec{\eta}(t),
 \]<p>where the second term, the stochastic velocity, has zero mean. It is direct to see
 that for our Landau-Ginzburg Hamiltonian we have</p>
 <p>\begin{align}
-\partial_t m_i(\mathbf{x},t) &amp;=\mu F_i(\mathbf{x})+\eta_i(\mathbf{x},t)\\
-&amp;=-\mu\frac{\delta F_i}{\delta m_i(\mathbf{x})}+\eta_i(\mathbf{x},t)\\
-&amp;=-\mu(am_i+4b m_i|\mathbf{m}|^2-K\nabla^2m_i)+\eta_i(\mathbf{x},t)\\
-\partial_t \vec{m}(\mathbf{x},t)&amp;=-\mu(a\vec{m}+4b \vec{m}|\vec{m}|^2-K\nabla^2\vec{m})+\eta_i(\vec{x},t)
+\partial_t m_i(\vec{x},t) &amp;=\mu F_i(\vec{x})+\eta_i(\vec{x},t)\\
+&amp;=-\mu\frac{\delta F_i}{\delta m_i(\vec{x})}+\eta_i(\vec{x},t)\\
+&amp;=-\mu(am_i+4b m_i|\vec{m}|^2-K\nabla^2m_i)+\eta_i(\vec{x},t)\\
+\partial_t \vec{m}(\vec{x},t)&amp;=-\mu(a\vec{m}+4b \vec{m}|\vec{m}|^2-K\nabla^2\vec{m})+\eta_i(\vec{x},t)
 \end{align}</p>
 <p>This last equation is the <em>time-dependent</em> Landau-Ginzburg Hamiltonian. Since this
 is a nonlinear equation, we resort to numerical methods to solve for the dynamics.</p>
@@ -162,6 +162,11 @@ velocity in each time-step as to account for random fluctuations.</p>
    
    
   <li>
+    <span class="date">2025/06/09</span>
+    <a href="/posts/magnetism/">A problem on magnetism</a>
+  </li>
+   
+  <li>
     <span class="date">2025/04/09</span>
     <a href="/posts/mean-field/">Mean field theory</a>
   </li>
@@ -177,6 +182,11 @@ velocity in each time-step as to account for random fluctuations.</p>
   </li>
    
   <li>
+    <span class="date">2023/06/11</span>
+    <a href="/posts/waves/">Wave simulations</a>
+  </li>
+   
+  <li>
     <span class="date">2023/04/17</span>
     <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
   </li>
@@ -189,11 +199,6 @@ velocity in each time-step as to account for random fluctuations.</p>
   <li>
     <span class="date">2022/08/08</span>
     <a href="/posts/ising/">Ising model</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/01/11</span>
-    <a href="/posts/waves/">Wave simulations</a>
   </li>
   
 </ul>

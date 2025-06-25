@@ -51,6 +51,7 @@ menu:
 params:
   description: "website built through Hugo and blogdown."
   footer: "&copy; Alberto R. | [GitHub](https://github.com/biestro) | A fork of [XMin](https://github.com/yihui/hugo-xmin)"
+  
 
 markup:
   highlight:
