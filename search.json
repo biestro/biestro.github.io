@@ -1,0 +1,39 @@
+[
+  {
+    "objectID": "ginzburg.html",
+    "href": "ginzburg.html",
+    "title": "Quarto demo",
+    "section": "",
+    "text": "Test of Potts model\n\nusing WGLMakie\nusing LinearAlgebra\nusing CircularArrays\nusing StatsBase: Weights, sample\nusing Random: MersenneTwister\nusing Distributions\nusing MakiePublication\nusing QuartoTools\n\n\nham(J, q::Int, n1::Int, n2::Int) = J*cos(2pi / q * (n1 - n2))\n\nham (generic function with 1 method)\n\n\n\nfunction choose_weights(_s, _q)\n  # choses weights for spin flip\n  weights = Weights(ones(_q)/(_q-1))\n  weights[_s+1] = 0.0 # set probability to choose spin-i again to be zero\n  return weights\nend\n\nfunction spin_flip(_si, _q)\n  # randomly chooses ANOTHER spin\n  # spin = round(Int,_si / 2pi * _q) # convert to integer selection\n\n  w = choose_weights(_si, _q)\n  return sample(0:q-1, w)\nend\n\nspin_flip (generic function with 1 method)\n\n\n\nq = 4  # theta discreteness\nN = 64\n\nn_dims = (N, N)\nkB = 5.0\nJ = -1.0\nspins = CircularArray(sample(0:q-1, Weights(ones(q)/q), n_dims)) \n\n\n# neighbors\nlocs      = eachindex(spins)\nbasis_vec = eachcol(diagm(ones(Int8,length(n_dims)))) # general dimensions\nneighbors = map(_n-&gt;CartesianIndex(_n...), [basis_vec; -basis_vec])\n\nMAXITER  = 100_000\nSTEP     = MAXITER ÷ 1000\ntime     = LinRange(0, 1, MAXITER)\nβmax     = 50.0\nβ        = @. βmax * ((1 + exp(-2*(time-1/2)*10))^-1 - 1/2)  #@. βmin  - 2βmin*time\ntemp     = @. 1.0 / β\n\nspin_vec = zeros(size(spins)..., MAXITER)\n\nfor k in 1:MAXITER\n\n  spin_vec[:,:,k] = spins.data # save state\n\n\n  i = rand(locs) # choose random spin location\n  si = spins[i]\n\n  nearest = i .+ neighbors\n  \n  energy = mapreduce(sj -&gt; ham(J, q, si, sj), +, spins[nearest]) # sum \n\n  si_new = spin_flip(si, q)\n\n  energy_new = mapreduce(sj -&gt; ham(J, q, si_new, sj), +, spins[nearest]) # sum \n  dE = energy_new - energy\n\n  if dE &lt; 0.0\n    spins[i] = si_new\n  elseif rand() &lt; exp(-dE * β[k])\n    spins[i] = si_new\n  end\nend"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Below are some\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto demo\n\n\nPost about quarto\n\n\n\n\n\n\n\n\n10/3/25\n\n\nAlberto Ruiz Biestro\n\n\n\n\n\n\n\n\n\n\n\n\nFlux demo\n\n\nPost about fluxes\n\n\n\n\n\n\n\n\n10/3/24\n\n\nAlberto Ruiz Biestro\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Alberto Ruiz Biestro",
+    "section": "",
+    "text": "Email\n  \n  \n    \n     Github\n  \n\n  \n  \nCurrently a graduate Physics & Astronomy student @ Rice University. I completed my BSc. in Engineering Physics at Monterrey Institute of Technology, where I did my research in computational optics and quantum billiards. My fields of interest vary from quantum computing to photonics, computational physics, and more. Proficient in Julia, MATLAB, and Python. Know my way around Mathematica.\n\n\n\nRice University, TX\nPhD in Physics & Astronomy\n2024 – Present\nMonterrey Institute of Technology NL, Mexico\nBSC in Engineering Physics\n2020 – 2024",
+    "crumbs": [
+      "Bio"
+    ]
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Alberto Ruiz Biestro",
+    "section": "",
+    "text": "Rice University, TX\nPhD in Physics & Astronomy\n2024 – Present\nMonterrey Institute of Technology NL, Mexico\nBSC in Engineering Physics\n2020 – 2024",
+    "crumbs": [
+      "Bio"
+    ]
+  }
+]
