@@ -2,7 +2,14 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/ginzburg.html"
+      "/posts/boundary-wall/docs/geometry.html",
+      "/posts/boundary-wall/docs/lattice.html",
+      "/posts/boundary-wall/docs/overview.html",
+      "/posts/boundary-wall/docs/introduction.html",
+      "/posts/boundary-wall/docs/tutorials/photonic.html",
+      "/posts/boundary-wall/docs/tutorials/mirror.html",
+      "/posts/ginzburg.html",
+      "/posts/waves.html"
     ]
   }
 ]

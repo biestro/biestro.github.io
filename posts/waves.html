@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-06-11">
 
-<title>Alberto Ruiz Biestro</title>
+<title>Waves</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +21,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f82b966bc4832b7ff0991035d3c6169a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f82b966bc4832b7ff0991035d3c6169a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -65,11 +104,43 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked fullcontent quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -78,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">Alberto Ruiz (Bio)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/waves.html">Waves</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -92,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
+      <a href="../index.html" class="sidebar-logo-link">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -104,30 +175,30 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house-fill" role="img">
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house-fill" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-text-paragraph" role="img">
+            <a href="../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-text-paragraph" role="img">
 </i> 
  <span class="menu-text">Posts</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/ginzburg.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/ginzburg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Landau-Ginzburg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/waves.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/waves.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Waves</span></a>
   </div>
 </li>
@@ -151,25 +222,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/boundary-wall/docs/geometry.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/boundary-wall/docs/geometry.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Geometry</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/boundary-wall/docs/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/boundary-wall/docs/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Application to optical problems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/boundary-wall/docs/lattice.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/boundary-wall/docs/lattice.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lattices &amp; Grids</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/boundary-wall/docs/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/boundary-wall/docs/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">BoundaryWall.jl, a quick overview</span></a>
   </div>
 </li>
@@ -184,13 +255,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth4 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/boundary-wall/docs/tutorials/mirror.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/boundary-wall/docs/tutorials/mirror.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beam Splitter</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/boundary-wall/docs/tutorials/photonic.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/boundary-wall/docs/tutorials/photonic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Photonic crystal</span></a>
   </div>
 </li>
@@ -204,14 +275,14 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link active"><i class="bi bi-person-fill" role="img">
+  <a href="../about.html" class="sidebar-item-text sidebar-link"><i class="bi bi-person-fill" role="img">
 </i> 
  <span class="menu-text">Alberto Ruiz (Bio)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gallery.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-image" role="img">
+  <a href="../gallery.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-image" role="img">
 </i> 
  <span class="menu-text">Gallery</span></a>
   </div>
@@ -221,58 +292,165 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#discrete-wave-equation" id="toc-discrete-wave-equation" class="nav-link active" data-scroll-target="#discrete-wave-equation">Discrete wave equation</a></li>
+  <li><a href="#absorbing-boundary-conditions" id="toc-absorbing-boundary-conditions" class="nav-link" data-scroll-target="#absorbing-boundary-conditions">Absorbing Boundary Conditions</a></li>
+  <li><a href="#d-example" id="toc-d-example" class="nav-link" data-scroll-target="#d-example">3D example</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/me2.jpg" class="about-image
-  rectangle " style="width: 10em;">
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/waves.html">Waves</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Alberto Ruiz Biestro</h1>
-</div>
+<h1 class="title">Waves</h1>
+<p class="subtitle lead">Finite difference methods</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">optics</div>
+    <div class="quarto-category">finite difference</div>
+    <div class="quarto-category">simulation</div>
+  </div>
+  </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 11, 2023</p>
+    </div>
   </div>
+  
+    
+  </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="mailto:alberto.ruiz.biestro@rice.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://github.com/biestro" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
+
+
+<p>Wave simulations are essential in optics and electrodynamics. Here are some of the simulations I’ve done for wave propagation using finite-difference schemes.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="waves/tesseract.mp4"></video></div>
+<section id="discrete-wave-equation" class="level1">
+<h1>Discrete wave equation</h1>
+<p>In general, using a FDTD scheme is just a fancy way of discretizing a differential operator. In this case, we want to discretize the following equation,</p>
+<p><span class="math display">\[\begin{equation}\partial^2_{t}\psi(\mathbf{r},t)-\alpha^2{\Delta}\psi(\mathbf{r},t)=0\quad (+\phi),\end{equation}\]</span></p>
+<p>with <span class="math inline">\(\Delta\)</span> being Laplace’s operator. One can also add a source term, <span class="math inline">\(\phi\)</span>, but this does not cause any major differences when discretizing the homogeneous equation. <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator">Wikipedia’s page on the Discrete Laplace Operator</a> gives a great insight into how the method works for <span class="math inline">\(\mathcal{O}(h^2)\)</span> error. Long story short, we deal with a generalization of the central finite difference method for higher dimensions. In 1D, one has the coefficients <span class="math inline">\((1,-2,1)\)</span>, which discretize <span class="math inline">\(\partial_x^2\)</span>. In 2D, the same coefficients apply, but now in the perpendicular direction. In a cartesian grid, this translates to having a column vector of coefficients <span class="math inline">\((1,2,1)^T\)</span>. For 3D, the same methodology applies. Having the connection between the differential operator and its discrete version <span class="math inline">\(\Delta_{x,y,z}\rightarrow \mathbf{D}_{i,j,k}^2\)</span>, one can infer the structure of the <em>kernel</em> to be used,</p>
+<p><span class="math display">\[\begin{equation}\Delta\equiv\partial^2_x+\partial^2_y+\partial_z^2\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}\mathbf{D}_{i,j,k}^2\equiv\mathbf{D}^2_i+\mathbf{D}^2_j+\mathbf{D}^2_k\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\mathbf{D}^2_{(i,j,k=-1)}=
+\begin{pmatrix}
+0&amp;0&amp;0\\
+0&amp;1&amp;0\\
+0&amp;0&amp;0\\
+\end{pmatrix},
+\end{equation}\]</span> <span class="math display">\[\begin{equation}
+\mathbf{D}^2_{(i,j,k=0)}=\begin{pmatrix}0&amp;1&amp;0\\1&amp;-6&amp;1\\0&amp;1&amp;0\end{pmatrix},
+\end{equation}\]</span> <span class="math display">\[\begin{equation}
+\quad\mathbf{D}^2_{(i,j,k=1)}=\begin{pmatrix}0&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;0\end{pmatrix}\end{equation}\]</span></p>
+<p>In fact, image processing software and tools use this types of convolution kernels for filters and other algorithms. For hicher precision, one replaces the centered difference with its respective weights (these are listed in <a href="https://en.wikipedia.org/wiki/Finite_difference_coefficient">this page</a>). Although more precise, it has the disadvantage of requiring a bigger stencil and having wider boundaries.</p>
+<p>The above formulation is an alternative to what is done in realistic codes, where one instead creates a <em>super</em>-matrix that corresponds to the kronecker product of the derivative operators, i.e.</p>
+<p><span class="math display">\[\begin{equation}
+D_{x,y}=D_x\otimes I_{N_y} + I_{N_x} \otimes D_y
+\end{equation}\]</span></p>
+<div id="8" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="bonito-fragment" id="ea833a24-7ba2-4567-b542-29def5b613cd" data-jscall-id="root">
+  <div>
+    <script src="http://localhost:9384/assets/dbe92ea4d1756b63f67b8dac1183af00b15f34c8-Bonito.bundled.js?48ef2248e493856810fbfc4159c00cceacdb52aa" type="module"></script>
+    <style></style>
   </div>
-  <div class="about-contents"><div id="hero-heading">
-<p>Currently a graduate Physics &amp; Astronomy student @ Rice University. I completed my BSc. in Engineering Physics at Monterrey Institute of Technology, where I did my research in computational optics and quantum billiards. My fields of interest vary from quantum computing to photonics, computational physics, and more. Proficient in Julia, MATLAB, and Python. Know my way around Mathematica.</p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">Education</h2>
-<ul>
-<li><p>Rice University, TX<br>
-PhD in Physics &amp; Astronomy<br>
-2024 – Present</p></li>
-<li><p>Monterrey Institute of Technology NL, Mexico<br>
-BSC in Engineering Physics<br>
-2020 – 2024</p></li>
-</ul>
-</section>
-</div></div>
+  <div>
+    <script type="module">Bonito.init_session("ea833a24-7ba2-4567-b542-29def5b613cd", Bonito.fetch_binary('http://localhost:9384/assets/dbbb14ea2daf23673483c527247e70c8a0635545-3449535902811593146.bin'), "root", false);
+</script>
+    <div style="width: 100%; height: 100%" data-jscall-id="1">
+      <canvas data-jp-suppress-context-menu="" style="display: block" data-jscall-id="2" data-lm-suppress-shortcuts="true" tabindex="0"></canvas>
+    </div>
+  </div>
 </div>
+</div>
+</div>
+<p>For example, for the eigenmodes of an L-shaped cavity,</p>
+<div id="10" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nx <span class="op">=</span> <span class="fl">130</span>; ny <span class="op">=</span> <span class="fl">120</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> <span class="fu">LinRange</span>(<span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span>, nx)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fu">LinRange</span>(<span class="op">-</span><span class="fl">1</span>, <span class="fl">1</span>, ny)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> [!((x <span class="op">&lt;</span> <span class="fl">0</span>) <span class="op">&amp;&amp;</span> (y <span class="op">&lt;</span> <span class="fl">0</span>)) for x <span class="kw">in</span> x1, y <span class="kw">in</span> x2]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>dx1 <span class="op">=</span> x1[<span class="fl">2</span>]<span class="op">-</span>x1[<span class="fl">1</span>]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dx2 <span class="op">=</span> x2[<span class="fl">2</span>]<span class="op">-</span>x2[<span class="fl">1</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Dx <span class="op">=</span> <span class="fu">diff2mat</span>(nx, dx1, <span class="cn">false</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Dy <span class="op">=</span> <span class="fu">diff2mat</span>(ny, dx2, <span class="cn">false</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fu">kron</span>(<span class="fu">speye</span>(ny), Dx) <span class="op">+</span> <span class="fu">kron</span>(Dy, <span class="fu">speye</span>(nx))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Di <span class="op">=</span> D <span class="op">.*</span> <span class="fu">vec</span>(cond)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>vals, vecs <span class="op">=</span> <span class="fu">eigs</span>(Di, which <span class="op">=</span> <span class="op">:</span>SR, <span class="fl">1e-10</span>,maxiter<span class="op">=</span><span class="fl">1500</span>, nev <span class="op">=</span> <span class="fl">10</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> <span class="fu">Figure</span>(theme<span class="op">=</span><span class="fu">theme_web</span>()) </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>gl <span class="op">=</span> <span class="fu">GridLayout</span>(fig[<span class="fl">1</span>,<span class="fl">1</span>]) </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> [<span class="fu">Axis</span>(gl[i,j]) for j <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>] </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="fu">eachindex</span>(ax) </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  psi <span class="op">=</span> <span class="fu">reshape</span>(vecs[<span class="op">:</span>,j], nx, ny) </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  psi[.!(cond)] <span class="op">.=</span> <span class="cn">NaN</span> </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">heatmap!</span>(ax[j], x1, x2, <span class="fu">abs</span>.(psi), colormap <span class="op">=</span> <span class="op">:</span>plasma) </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  ax[j].aspect <span class="op">=</span> <span class="fu">DataAspect</span>() </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hidedecorations!</span>(ax[j]) </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hidespines!</span>(ax[j]) </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="12" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="bonito-fragment" id="6991b53d-5a08-4a98-bdc1-ab6d8e4b7dc2" data-jscall-id="root">
+  <div>
+    <script src="http://localhost:9384/assets/dbe92ea4d1756b63f67b8dac1183af00b15f34c8-Bonito.bundled.js?48ef2248e493856810fbfc4159c00cceacdb52aa" type="module"></script>
+    <style></style>
+  </div>
+  <div>
+    <script type="module">Bonito.init_session("6991b53d-5a08-4a98-bdc1-ab6d8e4b7dc2", Bonito.fetch_binary('http://localhost:9384/assets/4bf63030ad035329d4f1332445f51daab15226c3-16554205686956137598.bin'), "root", false);
+</script>
+    <div style="width: 100%; height: 100%" data-jscall-id="1">
+      <canvas data-jp-suppress-context-menu="" style="display: block" data-jscall-id="2" data-lm-suppress-shortcuts="true" tabindex="0"></canvas>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<section id="absorbing-boundary-conditions" class="level1">
+<h1>Absorbing Boundary Conditions</h1>
+<p>When using Finite Difference Schemes alongside ABCs, one must remember to apply it to the entire boundary. For example, when using a FDM of order <span class="math inline">\(O(h^6)\)</span>, the region on the boundary has element-size 3. The absorbing boundary conditions (ABCs) implemented what Gerrit Mur derived in a <a href="https://ieeexplore.ieee.org/abstract/document/4091495">1981 IEEE Transactions article</a>. Although Perfectly-Matched-Layer (PML) method is far more robust than traditional ABCs, it has been coded by various software developers (such as in COMSOL) far better than I could. As a rule of thumb, use a PML thickness similar to half the largest wavelength.</p>
+</section>
+<section id="d-example" class="level1">
+<h1>3D example</h1>
+<p>At the top of the page I present a 3D solution of the discrete wave equation, using an approximation with error <span class="math inline">\(\mathcal{O}(h^6)\)</span>, with absorbing boundary conditions.</p>
 
 
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -685,6 +863,7 @@ BSC in Engineering Physics<br>
     </div>
   </div>
 </footer>
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
