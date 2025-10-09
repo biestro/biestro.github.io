@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/BoundaryWall.jl/boundary-wall.html",
       "/posts/ginzburg.html",
       "/posts/waves.html"
     ]
