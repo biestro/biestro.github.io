@@ -1,43 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://biestro.github.io/ginzburg.html</loc>
-    <lastmod>2025-10-04T17:07:47.381Z</lastmod>
+    <loc>https://biestro.github.io/about.html</loc>
+    <lastmod>2025-10-09T20:49:45.761Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/gallery.html</loc>
-    <lastmod>2025-10-04T18:41:53.250Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/ginzburg.html</loc>
-    <lastmod>2025-10-08T01:48:28.261Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/photonic.html</loc>
-    <lastmod>2025-10-09T21:47:12.615Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/lattice.html</loc>
-    <lastmod>2025-10-09T21:39:51.263Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/boundary-wall.html</loc>
-    <lastmod>2025-10-09T21:42:37.177Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/geometry.html</loc>
-    <lastmod>2025-10-09T21:46:37.575Z</lastmod>
+    <loc>https://biestro.github.io/index.html</loc>
+    <lastmod>2025-10-16T00:03:40.417Z</lastmod>
   </url>
   <url>
     <loc>https://biestro.github.io/posts/waves.html</loc>
     <lastmod>2025-10-09T20:04:34.599Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/index.html</loc>
-    <lastmod>2025-10-09T20:41:07.528Z</lastmod>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/geometry.html</loc>
+    <lastmod>2025-10-09T21:46:37.575Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/about.html</loc>
-    <lastmod>2025-10-09T20:49:45.761Z</lastmod>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/boundary-wall.html</loc>
+    <lastmod>2025-10-09T21:42:37.177Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/lattice.html</loc>
+    <lastmod>2025-10-09T21:39:51.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/photonic.html</loc>
+    <lastmod>2025-10-09T21:47:12.615Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/ginzburg.html</loc>
+    <lastmod>2025-10-08T01:48:28.261Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/gallery.html</loc>
+    <lastmod>2025-10-04T18:41:53.250Z</lastmod>
   </url>
 </urlset>
