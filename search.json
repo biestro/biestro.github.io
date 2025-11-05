@@ -1,114 +1,90 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Alberto Ruiz Biestro",
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Posts",
     "section": "",
-    "text": "Email\n  \n  \n    \n     Github\n  \n\n  \n  \nCurrently a graduate Physics & Astronomy student @ Rice University. I completed my BSc. in Engineering Physics at Monterrey Institute of Technology, where I did my research in computational optics and quantum billiards. My fields of interest vary from quantum computing to photonics, computational physics, and more. Proficient in Julia, MATLAB, and Python. Know my way around Mathematica.\n\n\n\nRice University, TX\nPhD in Physics & Astronomy\n2024 – Present\nMonterrey Institute of Technology NL, Mexico\nBSC in Engineering Physics\n2020 – 2024\n\n\n\n\n\nSolutions of the Lippmann-Schwinger equation for confocal parabolic billiards. https://doi.org/10.1103/PhysRevE.109.034203\n\n\n\n\nI also like reading outside of physics.\n\nDisability Through History (review) (alt link)",
+    "text": "Below are some of my recent projects and animations. Click on any of them to learn more and see the code.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBoundary Wall Method\n\n\nBoundary integral method for scattering\n\n\n\n\n\n\n\n\n5/1/24\n\n\n\n\n\n\n\n\n\n\n\n\nLandau-Ginzburg\n\n\nSymmetries and mean-field theories\n\n\n\n\n\n\n\n\n4/9/25\n\n\n\n\n\n\n\n\n\n\n\n\nWave equation with FDFD\n\n\nFinite difference methods\n\n\n\n\n\n\n\n\n6/11/23\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Alberto Ruiz (Bio)"
+      "Alberto Ruiz Biestro",
+      "Posts"
     ]
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Alberto Ruiz Biestro",
+    "objectID": "obs/Physics notes/Welcome.html",
+    "href": "obs/Physics notes/Welcome.html",
+    "title": "",
     "section": "",
-    "text": "Rice University, TX\nPhD in Physics & Astronomy\n2024 – Present\nMonterrey Institute of Technology NL, Mexico\nBSC in Engineering Physics\n2020 – 2024",
-    "crumbs": [
-      "Alberto Ruiz (Bio)"
-    ]
-  },
-  {
-    "objectID": "about.html#publications",
-    "href": "about.html#publications",
-    "title": "Alberto Ruiz Biestro",
-    "section": "",
-    "text": "Solutions of the Lippmann-Schwinger equation for confocal parabolic billiards. https://doi.org/10.1103/PhysRevE.109.034203",
-    "crumbs": [
-      "Alberto Ruiz (Bio)"
-    ]
-  },
-  {
-    "objectID": "about.html#miscellaneous",
-    "href": "about.html#miscellaneous",
-    "title": "Alberto Ruiz Biestro",
-    "section": "",
-    "text": "I also like reading outside of physics.\n\nDisability Through History (review) (alt link)",
-    "crumbs": [
-      "Alberto Ruiz (Bio)"
-    ]
+    "text": "This is your new vault.\nMake a note of something, [[create a link]], or try the Importer!\nWhen you’re ready, delete this note and make the vault your own."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Home",
+    "title": "Alberto Ruiz Biestro",
     "section": "",
-    "text": "Below are some of my recent projects and animations. Click on any of them to learn more and see the code.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBoundary Wall Method\n\n\nBoundary integral method for scattering\n\n\n\n\n\n\n\n\n5/1/24\n\n\n\n\n\n\n\n\n\n\n\n\nLandau-Ginzburg\n\n\nSymmetries and mean-field theories\n\n\n\n\n\n\n\n\n4/9/25\n\n\n\n\n\n\n\n\n\n\n\n\nWaves\n\n\nFinite difference methods\n\n\n\n\n\n\n\n\n6/11/23\n\n\n\n\n\nNo matching items",
+    "text": "Email\n  \n  \n    \n     Github\n  \n\n      \nCurrently a graduate Physics & Astronomy student @ Rice University. I completed my BSc. in Engineering Physics at Monterrey Institute of Technology, where I did my research in computational optics and quantum billiards. My fields of interest vary from quantum computing to photonics, computational physics, and more. Proficient in Julia, MATLAB, and Python. Know my way around Mathematica.\n\n\n\n\n\n2024 - present\nPhD in Physics and Astronomy, Rice University, TX\n\n\n2020 – 2024\nBSC in Engineering Physics, Monterrey Institute of Technology NL, Mexico\n\n\n\nFull CV\n\n\n\n\nSolutions of the Lippmann-Schwinger equation for confocal parabolic billiards. https://doi.org/10.1103/PhysRevE.109.034203\n\n\n\n\nI also like reading outside of physics.\n\nDisability Through History (review) (alt link)",
     "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#short-cv",
+    "href": "index.html#short-cv",
+    "title": "Alberto Ruiz Biestro",
+    "section": "",
+    "text": "2024 - present\nPhD in Physics and Astronomy, Rice University, TX\n\n\n2020 – 2024\nBSC in Engineering Physics, Monterrey Institute of Technology NL, Mexico\n\n\n\nFull CV",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#publications",
+    "href": "index.html#publications",
+    "title": "Alberto Ruiz Biestro",
+    "section": "",
+    "text": "Solutions of the Lippmann-Schwinger equation for confocal parabolic billiards. https://doi.org/10.1103/PhysRevE.109.034203",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#miscellaneous",
+    "href": "index.html#miscellaneous",
+    "title": "Alberto Ruiz Biestro",
+    "section": "",
+    "text": "I also like reading outside of physics.\n\nDisability Through History (review) (alt link)",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
       "Home"
     ]
   },
   {
     "objectID": "posts/waves.html",
     "href": "posts/waves.html",
-    "title": "Waves",
+    "title": "Wave equation with FDFD",
     "section": "",
-    "text": "Wave simulations are essential in optics and electrodynamics. Here are some of the simulations I’ve done for wave propagation using finite-difference schemes.\n\n\nDiscrete wave equation\nIn general, using a FDTD scheme is just a fancy way of discretizing a differential operator. In this case, we want to discretize the following equation,\n\\[\\begin{equation}\\partial^2_{t}\\psi(\\mathbf{r},t)-\\alpha^2{\\Delta}\\psi(\\mathbf{r},t)=0\\quad (+\\phi),\\end{equation}\\]\nwith \\(\\Delta\\) being Laplace’s operator. One can also add a source term, \\(\\phi\\), but this does not cause any major differences when discretizing the homogeneous equation. Wikipedia’s page on the Discrete Laplace Operator gives a great insight into how the method works for \\(\\mathcal{O}(h^2)\\) error. Long story short, we deal with a generalization of the central finite difference method for higher dimensions. In 1D, one has the coefficients \\((1,-2,1)\\), which discretize \\(\\partial_x^2\\). In 2D, the same coefficients apply, but now in the perpendicular direction. In a cartesian grid, this translates to having a column vector of coefficients \\((1,2,1)^T\\). For 3D, the same methodology applies. Having the connection between the differential operator and its discrete version \\(\\Delta_{x,y,z}\\rightarrow \\mathbf{D}_{i,j,k}^2\\), one can infer the structure of the kernel to be used,\n\\[\\begin{equation}\\Delta\\equiv\\partial^2_x+\\partial^2_y+\\partial_z^2\\end{equation}\\]\n\\[\\begin{equation}\\mathbf{D}_{i,j,k}^2\\equiv\\mathbf{D}^2_i+\\mathbf{D}^2_j+\\mathbf{D}^2_k\\end{equation}\\]\n\\[\\begin{equation}\n\\mathbf{D}^2_{(i,j,k=-1)}=\n\\begin{pmatrix}\n0&0&0\\\\\n0&1&0\\\\\n0&0&0\\\\\n\\end{pmatrix},\n\\end{equation}\\] \\[\\begin{equation}\n\\mathbf{D}^2_{(i,j,k=0)}=\\begin{pmatrix}0&1&0\\\\1&-6&1\\\\0&1&0\\end{pmatrix},\n\\end{equation}\\] \\[\\begin{equation}\n\\quad\\mathbf{D}^2_{(i,j,k=1)}=\\begin{pmatrix}0&0&0\\\\0&1&0\\\\0&0&0\\end{pmatrix}\\end{equation}\\]\nIn fact, image processing software and tools use this types of convolution kernels for filters and other algorithms. For hicher precision, one replaces the centered difference with its respective weights (these are listed in this page). Although more precise, it has the disadvantage of requiring a bigger stencil and having wider boundaries.\nThe above formulation is an alternative to what is done in realistic codes, where one instead creates a super-matrix that corresponds to the kronecker product of the derivative operators, i.e.\n\\[\\begin{equation}\nD_{x,y}=D_x\\otimes I_{N_y} + I_{N_x} \\otimes D_y\n\\end{equation}\\]\n\n\n\n  \n    \n    \n  \n  \n    \n    \n      \n    \n  \n\n\n\nFor example, for the eigenmodes of an L-shaped cavity,\n\nlet\nnx = 12; ny = 20\n\nx1 = LinRange(-1, 1, nx)\nx2 = LinRange(-1, 1, ny)\n\ncond = [!((x &lt; 0) && (y &lt; 0)) for x in x1, y in x2]\n\ndx1 = x1[2]-x1[1]\ndx2 = x2[2]-x2[1]\n\nDx = diff2mat(nx, dx1, false)\nDy = diff2mat(ny, dx2, false)\n\nD = kron(speye(ny), Dx) + kron(Dy, speye(nx))\n\nDi = D .* vec(cond)\n\nvals, vecs = eigs(Di, which = :SR, 1e-10,maxiter=1500, nev = 10)\n\n\nfig = Figure(theme=theme_web()) \ngl = GridLayout(fig[1,1]) \nax = [Axis(gl[i,j]) for j in 1:3, i in 1:2] \nfor j in eachindex(ax) \n  psi = reshape(vecs[:,j], nx, ny) \n  psi[.!(cond)] .= NaN \n  heatmap!(ax[j], x1, x2, abs.(psi), colormap = :plasma) \n  ax[j].aspect = DataAspect() \n  # hidedecorations!(ax[j]) \n  # hidespines!(ax[j]) \nend \nfig\nend\n\n\n  \n    \n    \n  \n  \n    \n    \n      \n    \n  \n\n\n\n\n\nAbsorbing Boundary Conditions\nWhen using Finite Difference Schemes alongside ABCs, one must remember to apply it to the entire boundary. For example, when using a FDM of order \\(O(h^6)\\), the region on the boundary has element-size 3. The absorbing boundary conditions (ABCs) implemented what Gerrit Mur derived in a 1981 IEEE Transactions article. Although Perfectly-Matched-Layer (PML) method is far more robust than traditional ABCs, it has been coded by various software developers (such as in COMSOL) far better than I could. As a rule of thumb, use a PML thickness similar to half the largest wavelength.\n\n\n3D example\nAt the top of the page I present a 3D solution of the discrete wave equation, using an approximation with error \\(\\mathcal{O}(h^6)\\), with absorbing boundary conditions.",
+    "text": "#| echo: false\n#| output: false\nusing Pkg; Pkg.activate(\"../quarto\");\nWave simulations are essential in optics and electrodynamics. Here are some of the simulations I’ve done for wave propagation using finite-difference schemes.\n\n\nDiscrete wave equation\nIn general, using a FDTD scheme is just a fancy way of discretizing a differential operator. In this case, we want to discretize the following equation,\n\\[\\begin{equation}\\partial^2_{t}\\psi(\\mathbf{r},t)-\\alpha^2{\\Delta}\\psi(\\mathbf{r},t)=0\\quad (+\\phi),\\end{equation}\\]\nwith \\(\\Delta\\) being Laplace’s operator. One can also add a source term, \\(\\phi\\), but this does not cause any major differences when discretizing the homogeneous equation. Wikipedia’s page on the Discrete Laplace Operator gives a great insight into how the method works for \\(\\mathcal{O}(h^2)\\) error. Long story short, we deal with a generalization of the central finite difference method for higher dimensions. In 1D, one has the coefficients \\((1,-2,1)\\), which discretize \\(\\partial_x^2\\). In 2D, the same coefficients apply, but now in the perpendicular direction. In a cartesian grid, this translates to having a column vector of coefficients \\((1,2,1)^T\\). For 3D, the same methodology applies. Having the connection between the differential operator and its discrete version \\(\\Delta_{x,y,z}\\rightarrow \\mathbf{D}_{i,j,k}^2\\), one can infer the structure of the kernel to be used,\n\\[\\begin{equation}\\Delta\\equiv\\partial^2_x+\\partial^2_y+\\partial_z^2\\end{equation}\\]\n\\[\\begin{equation}\\mathbf{D}_{i,j,k}^2\\equiv\\mathbf{D}^2_i+\\mathbf{D}^2_j+\\mathbf{D}^2_k\\end{equation}\\]\n\\[\\begin{equation}\n\\mathbf{D}^2_{(i,j,k=-1)}=\n\\begin{pmatrix}\n0&0&0\\\\\n0&1&0\\\\\n0&0&0\\\\\n\\end{pmatrix},\n\\end{equation}\\] \\[\\begin{equation}\n\\mathbf{D}^2_{(i,j,k=0)}=\\begin{pmatrix}0&1&0\\\\1&-6&1\\\\0&1&0\\end{pmatrix},\n\\end{equation}\\] \\[\\begin{equation}\n\\quad\\mathbf{D}^2_{(i,j,k=1)}=\\begin{pmatrix}0&0&0\\\\0&1&0\\\\0&0&0\\end{pmatrix}\\end{equation}\\]\nIn fact, image processing software and tools use this types of convolution kernels for filters and other algorithms. For hicher precision, one replaces the centered difference with its respective weights (these are listed in this page). Although more precise, it has the disadvantage of requiring a bigger stencil and having wider boundaries.\nThe above formulation is an alternative to what is done in realistic codes, where one instead creates a super-matrix that corresponds to the kronecker product of the derivative operators, i.e.\n\\[\\begin{equation}\nD_{x,y}=D_x\\otimes I_{N_y} + I_{N_x} \\otimes D_y\n\\end{equation}\\]\n#| echo: false\n#| output: false\nusing SparseArrays, LinearAlgebra\nusing Kronecker\nusing WGLMakie\nusing MakiePublication\nusing Arpack: eigs\nusing JLD2\n\nspeye = SparseArrays.I\nkkron = Kronecker.kron\n#| echo: false\n#| output: false\nfunction diff2mat(n::Int, h::Float64, periodic::Bool)\n    # 2nd derivative matrices with simple forward/backward differences at boundaries\n    \n    \n    # 2nd order one-sided stencil\n    if periodic\n        l = ones(n)\n        c = 2*ones(n)\n        D = spdiagm(0 =&gt; -c)\n        # D = circshift\n        Dl = circshift(spdiagm(l), 1)\n        Du = circshift(spdiagm(l), -1)\n        D = D + Du + Dl\n        \n    else\n        # second order centered differences\n        l = ones(n-1)\n        c = 2*ones(n)\n        D = spdiagm(-1 =&gt; l, 0 =&gt; -c, 1 =&gt; l)\n        \n        D[1,1:4] .= [2, -5, 4, -1]\n        D[n,n-3:n] .= [-1, 4, -5, 2]\n    end\n    return D / h^2\nend\n#| echo: false\nlet\nnx, ny = 5, 6\n\nx, y = LinRange(-1, 1, nx), LinRange(-1, 1, ny)\n  \ndx, dy = x[2]-x[1], y[2]-y[1]\n\nDEx = kkron(diff2mat(nx, dx, true),speye(ny))\nDEy = kkron(speye(nx),diff2mat(ny, dy, true))\n\nDHx = -DEx'\nDHy = -DEy'\n\nD_dict = Dict(:DHx =&gt; DHx,:DHy =&gt; DHy,:DEx =&gt; DEx, :DEy =&gt; DEy)\n# save(\"posts/waves/derivatives.jld2\", D_dict)\nend\n#| echo: false\nbegin\n    import PlotlyJS as P\n\n    data = load(\"posts/waves/derivatives.jld2\")\n\n    cmap = [[-8, \"white\"], [4, \"red\"]]\n    trace_x = P.heatmap(\n            z = data[\"DEx\"],\n            colorscale = cmap,\n            reversescale = true, # y reversed\n            colorbar_title = \"ΔEₓ\",\n    )\n\n    trace_y = P.heatmap(\n            z = data[\"DEy\"],\n            colorscale = cmap,\n            reversescale = true,\n            colorbar_title = \"ΔE_y\",\n    )\n\n\n    layout = P.Layout(\n        grid = P.attr(rows=1, columns=2),\n        subplot_titles = [\"ΔE (x-component)\", \"ΔE (y-component)\"],\n        height = 400,\n        width = 900,\n    )\n\n    plt = P.Plot(trace_x)\n    plt.layout.template = PlotlyJS.templates.simple_white\n    plt\n    # fig = WGLMakie.Figure(theme = theme_web())\n    # gl  = GridLayout(fig[1,1])\n    # ax  = [Axis(gl[1,1]), Axis(gl[1,2])]\n    # spy!(ax[1], data[\"DEx\"], colormap = :seaborn_crest_gradient)\n    # spy!(ax[2], data[\"DEy\"], colormap = :seaborn_crest_gradient)\n    # Label(gl[0,1], \"ΔE (x-component)\", tellwidth=false)\n    # Label(gl[0,2], \"ΔE (y-component)\", tellwidth=false)\n    # [ax.aspect = DataAspect() for ax in ax]\n    # ax[1].yreversed=true\n    # ax[2].yreversed=true\n    # rowgap!(gl, 1, -50)\n    # resize_to_layout!(fig)\n    # fig\nend\nFor example, for the eigenmodes of an L-shaped cavity,\nlet\nnx = 12; ny = 20\n\nx1 = LinRange(-1, 1, nx)\nx2 = LinRange(-1, 1, ny)\n\ncond = [!((x &lt; 0) && (y &lt; 0)) for x in x1, y in x2]\n\ndx1 = x1[2]-x1[1]\ndx2 = x2[2]-x2[1]\n\nDx = diff2mat(nx, dx1, false)\nDy = diff2mat(ny, dx2, false)\n\nD = kron(speye(ny), Dx) + kron(Dy, speye(nx))\n\nDi = D .* vec(cond)\n\nvals, vecs = eigs(Di, which = :SR, 1e-10,maxiter=1500, nev = 10)\n# save(\"posts/waves/lshape.jld2\", Dict(:vals =&gt; vals, :vecs =&gt; vecs, :x =&gt; x1, :y =&gt; x2))\nend\n#| echo: false\nlet\n    data = load(\"posts/waves/lshape.jld2\")\n\n    fig = Figure(theme=theme_web()) \n    gl = GridLayout(fig[1,1]) \n    ax = [Axis(gl[i,j]) for j in 1:3, i in 1:2] \n    for j in eachindex(ax) \n        psi = reshape(vecs[:,j], nx, ny) \n        psi[.!(cond)] .= NaN \n        heatmap!(ax[j], x1, x2, abs.(psi), colormap = :plasma) \n        ax[j].aspect = DataAspect() \n        # hidedecorations!(ax[j]) \n        # hidespines!(ax[j]) \n    end \n    fig\nend\n\n\nAbsorbing Boundary Conditions\nWhen using Finite Difference Schemes alongside ABCs, one must remember to apply it to the entire boundary. For example, when using a FDM of order \\(O(h^6)\\), the region on the boundary has element-size 3. The absorbing boundary conditions (ABCs) implemented what Gerrit Mur derived in a 1981 IEEE Transactions article. Although Perfectly-Matched-Layer (PML) method is far more robust than traditional ABCs, it has been coded by various software developers (such as in COMSOL) far better than I could. As a rule of thumb, use a PML thickness similar to half the largest wavelength.\n\n\n3D example\nAt the top of the page I present a 3D solution of the discrete wave equation, using an approximation with error \\(\\mathcal{O}(h^6)\\), with absorbing boundary conditions.",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
-      "Waves"
+      "Wave equation with FDFD"
     ]
   },
   {
-    "objectID": "posts/BoundaryWall.jl/docs/geometry.html",
-    "href": "posts/BoundaryWall.jl/docs/geometry.html",
-    "title": "Geometry",
+    "objectID": "posts/BoundaryWall.jl/docs/photonic.html",
+    "href": "posts/BoundaryWall.jl/docs/photonic.html",
+    "title": "Photonic crystal",
     "section": "",
-    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.\n\n\n\nThe package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods.",
+    "text": "Photonic crystal\nAs usual, import relevant libraries.\nusing LinearAlgebra\nusing StaticArrays: SVector\nusing SpecialFunctions\n# using GLMakie; GLMakie.activate!(inline=false, float=true)\nusing CairoMakie\nimport BoundaryWall as BWM\nNow we can define our constants for the problem.\n# CONSTANTS\nN    = 9                         # number of points per element\nHBAR = 1.0\nMASS = 0.5\nHBAR = 1.0\nSIGMA= (2*MASS/HBAR^2)*(1/4*im)\nNDOM = 100\nzero = 13.3237\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180\nKVEC = SVector(cosd(TH), sind(TH))\nPOTENTIAL_STRENGTH = -100.0\nBANDED = 3\n…and the geometry of such problem.\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\n# POTENTIAL_STRENGTH = repeat(STRENGTH, inner=N)\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\nx = vcat(getindex.(CIRCLES, 1)...)\ny = vcat(getindex.(CIRCLES, 2)...)\nxm= vcat(getindex.(CIRCLES, 3)...)\nym= vcat(getindex.(CIRCLES, 4)...)\nds= vcat(getindex.(CIRCLES, 5)...)\nrij = BWM.calcDistances(xm,ym)\nPlotting this results in the following diagram,\n\n\n\nalt text\n\n\nThe core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur FREQS vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.\n# domain\nx0, xf = (-15.,15.)\ny0, yf = (-10.,10.)\nxdom = LinRange(x0, xf, NDOM)\nydom = LinRange(y0, yf, NDOM)\nCOORDS = [(_x,_y) for _x in xdom, _y in ydom]\nXDOM, YDOM = first.(COORDS)[:], last.(COORDS)[:]\n\n@inline function wave_function(_freq::Float64, _kvec::SVector{2, Float64}, _width::Float64)\n  return abs2.(reshape(\n    BWM.boundaryWallWave(_freq * _kvec, (k,r)-&gt;BWM.gaussianWave(k,r - SVector(-10.25, 0.0), _width; abstol=1e-3), x, y, xm, ym, XDOM, YDOM, SIGMA, ds, rij, length(ds), N, BANDED, POTENTIAL_STRENGTH),\n    NDOM, NDOM\n    )\n  )\nend\nFREQS = [1.35, 1.55, 1.65]\n\nwaves = [wave_function(f, KVEC, 4.0) for f in FREQS]\n\n\n\nalt text\n\n\nWe can analyze the flow of the field using the BWM.gradient(xdom, ydom, psi) function, which returns\n\\[\\mathrm{Im} \\left(\\psi^\\dagger\\nabla\\psi\\right)\\]",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "BoundaryWall.jl",
       "Docs",
-      "Geometry"
-    ]
-  },
-  {
-    "objectID": "posts/BoundaryWall.jl/docs/geometry.html#defining-curves",
-    "href": "posts/BoundaryWall.jl/docs/geometry.html#defining-curves",
-    "title": "Geometry",
-    "section": "",
-    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.",
-    "crumbs": [
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Geometry"
-    ]
-  },
-  {
-    "objectID": "posts/BoundaryWall.jl/docs/geometry.html#builtin-methods",
-    "href": "posts/BoundaryWall.jl/docs/geometry.html#builtin-methods",
-    "title": "Geometry",
-    "section": "",
-    "text": "The package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods.",
-    "crumbs": [
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Geometry"
-    ]
-  },
-  {
-    "objectID": "posts/BoundaryWall.jl/boundary-wall.html",
-    "href": "posts/BoundaryWall.jl/boundary-wall.html",
-    "title": "Boundary Wall Method",
-    "section": "",
-    "text": "Simple toolbox that implements a boundary integral method to solve for the scattering of an incident wave. For example, a well known spherical scattering (Mie scattering) field can be recovered, but it can also be extended to more general shapes without any spherical symmetry.\n \nThe design of this project was motivated for calculating eigenstates and scattering wavefunctions in billiards (F.M. Zanetti et al., A. Ruiz-Biestro et al.).\n\nGeometry\nLattices\nTutorials\n\nPhotonic Crystal\nBeam Splitter & Bragg Mirror",
-    "crumbs": [
-      "Posts",
-      "BoundaryWall.jl",
-      "Boundary Wall Method"
+      "Photonic crystal"
     ]
   },
   {
@@ -118,6 +94,7 @@
     "section": "",
     "text": "These methods implement grids similar to a Bravais lattice, as well as their repetition scheme.\n\n\n\n\n\nAll buildGrid functions construct a grid with \\(n\\\\_1\\times n\\\\_2\\) elements (depending on their basis vectors).\nbuildGrid\n@example grids buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter\nOne can use these as centers for other boundaries.\nusing LinearAlgebra\nusing StaticArrays: SVector\n\nimport BoundaryWall as BWM\n\nN    = 9                         # number of points per element\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180                  # incident angle\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\n# delete some indices\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\n# ...\nOne then can proceed to plot such circles. The details can be found in the documentation\n\n\n\nalt text",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "BoundaryWall.jl",
       "Docs",
@@ -131,6 +108,7 @@
     "section": "",
     "text": "All buildGrid functions construct a grid with \\(n\\\\_1\\times n\\\\_2\\) elements (depending on their basis vectors).\nbuildGrid\n@example grids buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter\nOne can use these as centers for other boundaries.\nusing LinearAlgebra\nusing StaticArrays: SVector\n\nimport BoundaryWall as BWM\n\nN    = 9                         # number of points per element\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180                  # incident angle\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\n# delete some indices\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\n# ...\nOne then can proceed to plot such circles. The details can be found in the documentation\n\n\n\nalt text",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "BoundaryWall.jl",
       "Docs",
@@ -138,16 +116,84 @@
     ]
   },
   {
-    "objectID": "posts/BoundaryWall.jl/docs/photonic.html",
-    "href": "posts/BoundaryWall.jl/docs/photonic.html",
-    "title": "Photonic crystal",
+    "objectID": "posts/BoundaryWall.jl/boundary-wall.html",
+    "href": "posts/BoundaryWall.jl/boundary-wall.html",
+    "title": "Boundary Wall Method",
     "section": "",
-    "text": "Photonic crystal\nAs usual, import relevant libraries.\nusing LinearAlgebra\nusing StaticArrays: SVector\nusing SpecialFunctions\n# using GLMakie; GLMakie.activate!(inline=false, float=true)\nusing CairoMakie\nimport BoundaryWall as BWM\nNow we can define our constants for the problem.\n# CONSTANTS\nN    = 9                         # number of points per element\nHBAR = 1.0\nMASS = 0.5\nHBAR = 1.0\nSIGMA= (2*MASS/HBAR^2)*(1/4*im)\nNDOM = 100\nzero = 13.3237\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180\nKVEC = SVector(cosd(TH), sind(TH))\nPOTENTIAL_STRENGTH = -100.0\nBANDED = 3\n…and the geometry of such problem.\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\n# POTENTIAL_STRENGTH = repeat(STRENGTH, inner=N)\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\nx = vcat(getindex.(CIRCLES, 1)...)\ny = vcat(getindex.(CIRCLES, 2)...)\nxm= vcat(getindex.(CIRCLES, 3)...)\nym= vcat(getindex.(CIRCLES, 4)...)\nds= vcat(getindex.(CIRCLES, 5)...)\nrij = BWM.calcDistances(xm,ym)\nPlotting this results in the following diagram,\n\n\n\nalt text\n\n\nThe core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur FREQS vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.\n# domain\nx0, xf = (-15.,15.)\ny0, yf = (-10.,10.)\nxdom = LinRange(x0, xf, NDOM)\nydom = LinRange(y0, yf, NDOM)\nCOORDS = [(_x,_y) for _x in xdom, _y in ydom]\nXDOM, YDOM = first.(COORDS)[:], last.(COORDS)[:]\n\n@inline function wave_function(_freq::Float64, _kvec::SVector{2, Float64}, _width::Float64)\n  return abs2.(reshape(\n    BWM.boundaryWallWave(_freq * _kvec, (k,r)-&gt;BWM.gaussianWave(k,r - SVector(-10.25, 0.0), _width; abstol=1e-3), x, y, xm, ym, XDOM, YDOM, SIGMA, ds, rij, length(ds), N, BANDED, POTENTIAL_STRENGTH),\n    NDOM, NDOM\n    )\n  )\nend\nFREQS = [1.35, 1.55, 1.65]\n\nwaves = [wave_function(f, KVEC, 4.0) for f in FREQS]\n\n\n\nalt text\n\n\nWe can analyze the flow of the field using the BWM.gradient(xdom, ydom, psi) function, which returns\n\\[\\mathrm{Im} \\left(\\psi^\\dagger\\nabla\\psi\\right)\\]",
+    "text": "Simple toolbox that implements a boundary integral method to solve for the scattering of an incident wave. For example, a well known spherical scattering (Mie scattering) field can be recovered, but it can also be extended to more general shapes without any spherical symmetry.\n \nThe design of this project was motivated for calculating eigenstates and scattering wavefunctions in billiards (F.M. Zanetti et al., A. Ruiz-Biestro et al.).\n\nGeometry\nLattices\nTutorials\n\nPhotonic Crystal\nBeam Splitter & Bragg Mirror",
     "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Posts",
+      "BoundaryWall.jl",
+      "Boundary Wall Method"
+    ]
+  },
+  {
+    "objectID": "posts/BoundaryWall.jl/docs/geometry.html",
+    "href": "posts/BoundaryWall.jl/docs/geometry.html",
+    "title": "Geometry",
+    "section": "",
+    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.\n\n\n\nThe package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods.",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "BoundaryWall.jl",
       "Docs",
-      "Photonic crystal"
+      "Geometry"
+    ]
+  },
+  {
+    "objectID": "posts/BoundaryWall.jl/docs/geometry.html#defining-curves",
+    "href": "posts/BoundaryWall.jl/docs/geometry.html#defining-curves",
+    "title": "Geometry",
+    "section": "",
+    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Posts",
+      "BoundaryWall.jl",
+      "Docs",
+      "Geometry"
+    ]
+  },
+  {
+    "objectID": "posts/BoundaryWall.jl/docs/geometry.html#builtin-methods",
+    "href": "posts/BoundaryWall.jl/docs/geometry.html#builtin-methods",
+    "title": "Geometry",
+    "section": "",
+    "text": "The package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods.",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Posts",
+      "BoundaryWall.jl",
+      "Docs",
+      "Geometry"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/Berry phase.html",
+    "href": "posts/notes/solid/Berry phase.html",
+    "title": "Berry phase",
+    "section": "",
+    "text": "Definition",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Posts",
+      "Physics",
+      "Solid",
+      "Berry phase"
+    ]
+  },
+  {
+    "objectID": "posts/notes/index.html",
+    "href": "posts/notes/index.html",
+    "title": "Physics",
+    "section": "",
+    "text": "Index\n\n“Berry phase”\n“DFT”",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Posts",
+      "Physics"
     ]
   },
   {
@@ -157,6 +203,7 @@
     "section": "",
     "text": "Essentiaylly, one expands the free energy functional \\(F[m]\\) in \\(m\\) and its gradients while satisfying the proposed symmetries. The coarse-grained extension to the Ising Hamiltonian is given by a Landau-Ginzburg Hamiltonian\n\\[\\begin{equation}\n  H[m] = \\int d\\vec{r}\\left[ \\frac{a}{2}m^2 + bm^4 + \\frac{K}{2} (\\nabla m)^2 +\\dots\\right]\n\\end{equation}\\]\nThis has profound consequences in the statistical theory of fields (using saddle-point approximations to recover Landau’s theory), but I won’t discuss this here (see Kardar’s book). Here, \\(m(\\vec{x})\\) can be interpreted to be order-parameters, but in essence are random fields, i.e. a field with a Boltzmann weight.\nThe above expression is not a kinetic expression. If we want to analyze the relaxation of a system to the equilibrium configuration, we should introduce dynamics of the field \\(m(\\vec{x})\\), which are given by a Langevin equation\n\\[\\begin{equation}\n  \\dot{\\vec{x}}=\\vec{v}(\\vec{x})+\\vec{\\eta}(t),\n\\end{equation}\\]\nwhere the second term, the stochastic velocity, has zero mean. It is direct to see that for our Landau-Ginzburg Hamiltonian we have\n\\[\\begin{align}\n\\partial_t m_i(\\vec{x},t) &=\\mu F_i(\\vec{x})+\\eta_i(\\vec{x},t)\\\\\\\\\n                              &=-\\mu\\frac{\\delta F_i}{\\delta m_i(\\vec{x})}+\\eta_i(\\vec{x},t)\\\\\\\\\n                              &=-\\mu(am_i+4b m_i|\\vec{m}|^2-K\\nabla^2m_i)+\\eta_i(\\vec{x},t)\\\\\\\\\n  \\partial_t \\vec{m}(\\vec{x},t)&=-\\mu(a\\vec{m}+4b \\vec{m}|\\vec{m}|^2-K\\nabla^2\\vec{m})+\\eta_i(\\vec{x},t)\n\\end{align}\\]\nThis last equation is the time-dependent Landau-Ginzburg Hamiltonian. Since this is a nonlinear equation, we resort to numerical methods to solve for the dynamics.\n\n\nThe order parameter or field has no restrictions on its dimensions. Simulating a bidimensional magnetization can be achieved by using complex numbers (say real for (m_x) and imaginary for (m_y)). Lets focus on a scalar field first and see how it evolves in time, first in 2D and then in 3D.\n\n\n\nConsider a complex field (). We set the parameter (a) to be negative for us to have Goldstone modes. We further set (b=1.0 + 1.5i) after some examples I saw after lurking online for the time-dependent LG equation.\nTo simulate the 2D case, we can use Julia’s DifferentialEquations.jl package to solve for a complex field (). The spatial gradients were implemented as convolution operators using custom finite difference kernels, which were generated by the finite_diff_coefficient and get_laplace_kernel functions.\nfunction finite_diff_coefficient(_ord::Int64)\n  if _ord == 2\n    return [1,-2,1]\n  elseif _ord == 4\n    return [-1/12, 4/3, -5/2, 4/3, -1/12]\n  elseif _ord == 6\n    return [1/90, -3/20, 3/2, -49/18,3/2,-3/20,1/90]\n  elseif _ord == 8\n    return [-1/560,8/315,-1/5,8/5,-205/72,8/5,-1/5,8/315,-1/560]\n  end\nend\nThe idea for this is to be able to implement the kernel in any number of dimensions, therefore these functions work for both 2D and 3D (and even 1D if you want to try it out).\nfunction get_laplace_kernel(_dim::Int64,_ord::Int64)\n  base_ker = finite_diff_coefficient(_ord)\n  kernel = zeros(fill(length(base_ker),_dim)...)\n  mid_index = _ord÷2+1\n  kernel[fill(mid_index,ndims(kernel)-1)...,:] .= base_ker # middle of middles\n  \n  perm_ind = collect(permutations(1:_dim))#[1:_dim-1:end]\n  if _dim == 3\n  filter!(_i -&gt; levicivita(_i) &lt; 0, perm_ind)\n  end\n  kernel = mapreduce(_i -&gt; permutedims(kernel,_i),+,perm_ind)\n  \n\n  #two_dim_ker += permutedims(two_dim_ker)\n  return centered(kernel) # return centered version of kernel (0 = middle)\nend\nFinally, the dynamics were defined in the diff_eq function, which computes the time derivative of the field (u) based on the parameters (), (a), (b), (K), and the Laplacian kernel. The periodic boundary conditions were handled using circular convolution from the ImageFiltering package in Julia (thankful I did not have to program the convolutions myself!). This approach may be most efficient for 2D arrays, and makes it simpler to implement and worry about the physics rather than the programming details (like the periodic boundary conditions).\nfunction diff_eq(u , p, t)\n  # dp/dt = mu*F+eta\n  μ,a,b,K,del_sq,dx = p\n  return -μ*(a * u + 4*b*abs2.(u) .* u - K * imfilter(u, del_sq, \"circular\") / dx^2) # periodic boudnary conditions\nend\nThe following heatmap shows the results of an initial random spin configuration (like with the ising model). I believe the sustained oscillations are due to the system exploring the possible configurations. For example, in a 1D Heisenberg model (XY model), one can think of the order parameter () to be degenerate since (for the certain parameters) rotations around the () axis will not affect the free energy. Such states are called low-energy excitations of the system.\n\nOne can check that this absence of low-energy excitations can also happen for a complex-valued field ((b)), as long as (a&gt;0). As seen above, the order parameter is “free” to explore all the configurations around the black line. However, when we initialize the system in a purely real field (or with $a&gt;0$), there are no low-energy excitations present, and instead the system relaxes towards a single minima.\n\n\n\n    \n    \n    \n    \n    \n\n\n\n\n\n\nI have already explained that the above functions work for ay dimension. However, the only change is that in 3D, multiplication becomes a bit more expensive, and we’re dealing with even more data-points. It is convenient to use a simple workhorse for solving the dynamics, the Euler method with small time step. We also include a random (Gaussian) velocity in each time-step as to account for random fluctuations.\nHere, rather than starting with a random distribution, we start with a Gaussian field at the origin. As expected, low-energy excitations emerge.\n\n\n\nA friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of such separation using a balanced mixture (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).\n\nThere is a great discussion on so called dissipative stochastic models (i.e. kinetic Ising models) in the wonderful book by Chaikin and Lubensky. It should be fun to implement the remaining models in the A-J list shown in page 467.",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "Landau-Ginzburg"
     ]
@@ -168,6 +215,7 @@
     "section": "",
     "text": "The order parameter or field has no restrictions on its dimensions. Simulating a bidimensional magnetization can be achieved by using complex numbers (say real for (m_x) and imaginary for (m_y)). Lets focus on a scalar field first and see how it evolves in time, first in 2D and then in 3D.",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "Landau-Ginzburg"
     ]
@@ -179,6 +227,7 @@
     "section": "",
     "text": "Consider a complex field (). We set the parameter (a) to be negative for us to have Goldstone modes. We further set (b=1.0 + 1.5i) after some examples I saw after lurking online for the time-dependent LG equation.\nTo simulate the 2D case, we can use Julia’s DifferentialEquations.jl package to solve for a complex field (). The spatial gradients were implemented as convolution operators using custom finite difference kernels, which were generated by the finite_diff_coefficient and get_laplace_kernel functions.\nfunction finite_diff_coefficient(_ord::Int64)\n  if _ord == 2\n    return [1,-2,1]\n  elseif _ord == 4\n    return [-1/12, 4/3, -5/2, 4/3, -1/12]\n  elseif _ord == 6\n    return [1/90, -3/20, 3/2, -49/18,3/2,-3/20,1/90]\n  elseif _ord == 8\n    return [-1/560,8/315,-1/5,8/5,-205/72,8/5,-1/5,8/315,-1/560]\n  end\nend\nThe idea for this is to be able to implement the kernel in any number of dimensions, therefore these functions work for both 2D and 3D (and even 1D if you want to try it out).\nfunction get_laplace_kernel(_dim::Int64,_ord::Int64)\n  base_ker = finite_diff_coefficient(_ord)\n  kernel = zeros(fill(length(base_ker),_dim)...)\n  mid_index = _ord÷2+1\n  kernel[fill(mid_index,ndims(kernel)-1)...,:] .= base_ker # middle of middles\n  \n  perm_ind = collect(permutations(1:_dim))#[1:_dim-1:end]\n  if _dim == 3\n  filter!(_i -&gt; levicivita(_i) &lt; 0, perm_ind)\n  end\n  kernel = mapreduce(_i -&gt; permutedims(kernel,_i),+,perm_ind)\n  \n\n  #two_dim_ker += permutedims(two_dim_ker)\n  return centered(kernel) # return centered version of kernel (0 = middle)\nend\nFinally, the dynamics were defined in the diff_eq function, which computes the time derivative of the field (u) based on the parameters (), (a), (b), (K), and the Laplacian kernel. The periodic boundary conditions were handled using circular convolution from the ImageFiltering package in Julia (thankful I did not have to program the convolutions myself!). This approach may be most efficient for 2D arrays, and makes it simpler to implement and worry about the physics rather than the programming details (like the periodic boundary conditions).\nfunction diff_eq(u , p, t)\n  # dp/dt = mu*F+eta\n  μ,a,b,K,del_sq,dx = p\n  return -μ*(a * u + 4*b*abs2.(u) .* u - K * imfilter(u, del_sq, \"circular\") / dx^2) # periodic boudnary conditions\nend\nThe following heatmap shows the results of an initial random spin configuration (like with the ising model). I believe the sustained oscillations are due to the system exploring the possible configurations. For example, in a 1D Heisenberg model (XY model), one can think of the order parameter () to be degenerate since (for the certain parameters) rotations around the () axis will not affect the free energy. Such states are called low-energy excitations of the system.\n\nOne can check that this absence of low-energy excitations can also happen for a complex-valued field ((b)), as long as (a&gt;0). As seen above, the order parameter is “free” to explore all the configurations around the black line. However, when we initialize the system in a purely real field (or with $a&gt;0$), there are no low-energy excitations present, and instead the system relaxes towards a single minima.",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "Landau-Ginzburg"
     ]
@@ -190,6 +239,7 @@
     "section": "",
     "text": "I have already explained that the above functions work for ay dimension. However, the only change is that in 3D, multiplication becomes a bit more expensive, and we’re dealing with even more data-points. It is convenient to use a simple workhorse for solving the dynamics, the Euler method with small time step. We also include a random (Gaussian) velocity in each time-step as to account for random fluctuations.\nHere, rather than starting with a random distribution, we start with a Gaussian field at the origin. As expected, low-energy excitations emerge.\n\n\n\nA friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of such separation using a balanced mixture (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).\n\nThere is a great discussion on so called dissipative stochastic models (i.e. kinetic Ising models) in the wonderful book by Chaikin and Lubensky. It should be fun to implement the remaining models in the A-J list shown in page 467.",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "Landau-Ginzburg"
     ]
@@ -201,6 +251,7 @@
     "section": "Simulating the classical Potts model",
     "text": "Simulating the classical Potts model\n\nFor larger and larger \\(q\\), we see that it starts to resemble what we had before with the LG model. Because this is a classical model, fluctuations are due to temperature only.",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Posts",
       "Landau-Ginzburg"
     ]
@@ -212,7 +263,22 @@
     "section": "",
     "text": "Pre-graduation in Monterrey\n\n\n\n\n\nReflections in Memorial park\n\n\n\n\n\nJames Turrel’s “Twilight Epiphany”\n\n\n\n\n\nMonterrey as seen from El Cerro de la Silla",
     "crumbs": [
+      "Alberto Ruiz Biestro",
       "Gallery"
     ]
+  },
+  {
+    "objectID": "obs/Physics notes/DFT.html",
+    "href": "obs/Physics notes/DFT.html",
+    "title": "",
+    "section": "",
+    "text": "DFT description\nApply Wannierization"
+  },
+  {
+    "objectID": "obs/Physics notes/- Physics.html",
+    "href": "obs/Physics notes/- Physics.html",
+    "title": "Topics",
+    "section": "",
+    "text": "Topics\n\n\nIndex\nLIST \nFROM \"\"\nSORT file.name ASC\nWHERE file.path != this.file.path"
   }
 ]
