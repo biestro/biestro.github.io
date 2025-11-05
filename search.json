@@ -74,127 +74,67 @@
     ]
   },
   {
-    "objectID": "posts/BoundaryWall.jl/docs/photonic.html",
-    "href": "posts/BoundaryWall.jl/docs/photonic.html",
-    "title": "Photonic crystal",
-    "section": "",
-    "text": "Photonic crystal\nAs usual, import relevant libraries.\nusing LinearAlgebra\nusing StaticArrays: SVector\nusing SpecialFunctions\n# using GLMakie; GLMakie.activate!(inline=false, float=true)\nusing CairoMakie\nimport BoundaryWall as BWM\nNow we can define our constants for the problem.\n# CONSTANTS\nN    = 9                         # number of points per element\nHBAR = 1.0\nMASS = 0.5\nHBAR = 1.0\nSIGMA= (2*MASS/HBAR^2)*(1/4*im)\nNDOM = 100\nzero = 13.3237\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180\nKVEC = SVector(cosd(TH), sind(TH))\nPOTENTIAL_STRENGTH = -100.0\nBANDED = 3\n…and the geometry of such problem.\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\n# POTENTIAL_STRENGTH = repeat(STRENGTH, inner=N)\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\nx = vcat(getindex.(CIRCLES, 1)...)\ny = vcat(getindex.(CIRCLES, 2)...)\nxm= vcat(getindex.(CIRCLES, 3)...)\nym= vcat(getindex.(CIRCLES, 4)...)\nds= vcat(getindex.(CIRCLES, 5)...)\nrij = BWM.calcDistances(xm,ym)\nPlotting this results in the following diagram,\n\n\n\nalt text\n\n\nThe core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur FREQS vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.\n# domain\nx0, xf = (-15.,15.)\ny0, yf = (-10.,10.)\nxdom = LinRange(x0, xf, NDOM)\nydom = LinRange(y0, yf, NDOM)\nCOORDS = [(_x,_y) for _x in xdom, _y in ydom]\nXDOM, YDOM = first.(COORDS)[:], last.(COORDS)[:]\n\n@inline function wave_function(_freq::Float64, _kvec::SVector{2, Float64}, _width::Float64)\n  return abs2.(reshape(\n    BWM.boundaryWallWave(_freq * _kvec, (k,r)-&gt;BWM.gaussianWave(k,r - SVector(-10.25, 0.0), _width; abstol=1e-3), x, y, xm, ym, XDOM, YDOM, SIGMA, ds, rij, length(ds), N, BANDED, POTENTIAL_STRENGTH),\n    NDOM, NDOM\n    )\n  )\nend\nFREQS = [1.35, 1.55, 1.65]\n\nwaves = [wave_function(f, KVEC, 4.0) for f in FREQS]\n\n\n\nalt text\n\n\nWe can analyze the flow of the field using the BWM.gradient(xdom, ydom, psi) function, which returns\n\\[\\mathrm{Im} \\left(\\psi^\\dagger\\nabla\\psi\\right)\\]",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Photonic crystal"
-    ]
-  },
-  {
-    "objectID": "posts/BoundaryWall.jl/docs/lattice.html",
-    "href": "posts/BoundaryWall.jl/docs/lattice.html",
-    "title": "Lattices & Grids",
-    "section": "",
-    "text": "These methods implement grids similar to a Bravais lattice, as well as their repetition scheme.\n\n\n\n\n\nAll buildGrid functions construct a grid with \\(n\\\\_1\\times n\\\\_2\\) elements (depending on their basis vectors).\nbuildGrid\n@example grids buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter\nOne can use these as centers for other boundaries.\nusing LinearAlgebra\nusing StaticArrays: SVector\n\nimport BoundaryWall as BWM\n\nN    = 9                         # number of points per element\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180                  # incident angle\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\n# delete some indices\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\n# ...\nOne then can proceed to plot such circles. The details can be found in the documentation\n\n\n\nalt text",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Lattices & Grids"
-    ]
-  },
-  {
-    "objectID": "posts/BoundaryWall.jl/docs/lattice.html#methods",
-    "href": "posts/BoundaryWall.jl/docs/lattice.html#methods",
-    "title": "Lattices & Grids",
-    "section": "",
-    "text": "All buildGrid functions construct a grid with \\(n\\\\_1\\times n\\\\_2\\) elements (depending on their basis vectors).\nbuildGrid\n@example grids buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter\nOne can use these as centers for other boundaries.\nusing LinearAlgebra\nusing StaticArrays: SVector\n\nimport BoundaryWall as BWM\n\nN    = 9                         # number of points per element\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180                  # incident angle\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\n# delete some indices\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\n# ...\nOne then can proceed to plot such circles. The details can be found in the documentation\n\n\n\nalt text",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Lattices & Grids"
-    ]
-  },
-  {
-    "objectID": "posts/BoundaryWall.jl/boundary-wall.html",
-    "href": "posts/BoundaryWall.jl/boundary-wall.html",
+    "objectID": "posts/BoundaryWall.jl/index.html",
+    "href": "posts/BoundaryWall.jl/index.html",
     "title": "Boundary Wall Method",
     "section": "",
-    "text": "Simple toolbox that implements a boundary integral method to solve for the scattering of an incident wave. For example, a well known spherical scattering (Mie scattering) field can be recovered, but it can also be extended to more general shapes without any spherical symmetry.\n \nThe design of this project was motivated for calculating eigenstates and scattering wavefunctions in billiards (F.M. Zanetti et al., A. Ruiz-Biestro et al.).\n\nGeometry\nLattices\nTutorials\n\nPhotonic Crystal\nBeam Splitter & Bragg Mirror",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Boundary Wall Method"
-    ]
+    "text": "Simple toolbox that implements a boundary integral method to solve for the scattering of an incident wave. For example, a well known spherical scattering (Mie scattering) field can be recovered, but it can also be extended to more general shapes without any spherical symmetry.\n \nThe design of this project was motivated for calculating eigenstates and scattering wavefunctions in billiards (F.M. Zanetti et al., A. Ruiz-Biestro et al.).\n\nGeometry\nLattices\nTutorials\n\nPhotonic Crystal\nBeam Splitter & Bragg Mirror"
   },
   {
     "objectID": "posts/BoundaryWall.jl/docs/geometry.html",
     "href": "posts/BoundaryWall.jl/docs/geometry.html",
     "title": "Geometry",
     "section": "",
-    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.\n\n\n\nThe package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods.",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Geometry"
-    ]
+    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.\n\n\n\nThe package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods."
   },
   {
     "objectID": "posts/BoundaryWall.jl/docs/geometry.html#defining-curves",
     "href": "posts/BoundaryWall.jl/docs/geometry.html#defining-curves",
     "title": "Geometry",
     "section": "",
-    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour.",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Geometry"
-    ]
+    "text": "The effective use of the Boundary Wall Method (BWM) requires equal-length segments. and the need to interpolate uneven curves. While one might have an equispaced \\(x-y\\) domain, the arc length \\(\\mathrm{d}s\\) need not be homogeneous.\nThe general steps for using this toolbox with a custom array of points are the following: 1. Define \\((x_i,y_i)\\) - (Re)discretize using\nFor closed curves, we implement the discretizeCurve function in order to interpolate the whole arc length into \\(N\\) equal segments. For open curves, one must use discretizeResonatorCurve (it can be used for closed curves as well, but be mindful of using \\(N\\) vs. \\(N+1\\) points). Interpolating with Interpolations.jl will work as well.\nOnce one has a relatively accurate arc length discretization, one must calculate midpoints using the calcMidpoints function. Note that the total number of midpoints must strictly match the dimensions of the \\(\\mathbf{T}\\) matrix.\nFinally, one might want to obtain the distance matrix representing \\([\\mathbf{r}]_{ij}=\\mathbf{r}_{i}-\\mathbf{r}_{j}\\). The following example\nusing BoundaryWall, WGLMakie # hide\nθ     = LinRange(-pi, pi/2, 300)\nx,y   = cos.(θ),sin.(θ)\n\nx,y   = divideResonatorCurve(x,y, 300)\nxm,ym = calcMidpoints(x, y)\nds    = calcArcLength(x,y)\nrij   = calcDistances(xm, ym)\nlines(ds)\nA good way to check if one has done the discretization correctly is to check for the symmetry of the scattering \\(\\mathbf{T}\\) matrix, or to graph diff(ds) and check for homogeneous behaviour."
   },
   {
     "objectID": "posts/BoundaryWall.jl/docs/geometry.html#builtin-methods",
     "href": "posts/BoundaryWall.jl/docs/geometry.html#builtin-methods",
     "title": "Geometry",
     "section": "",
-    "text": "The package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods.",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "BoundaryWall.jl",
-      "Docs",
-      "Geometry"
-    ]
+    "text": "The package provides some useful functions such as createEllipse and createCircle in order to create analogues to rods."
+  },
+  {
+    "objectID": "posts/BoundaryWall.jl/docs/lattice.html",
+    "href": "posts/BoundaryWall.jl/docs/lattice.html",
+    "title": "Lattices & Grids",
+    "section": "",
+    "text": "These methods implement grids similar to a Bravais lattice, as well as their repetition scheme.\n\n\n\n\n\nAll buildGrid functions construct a grid with \\(n\\\\_1\\times n\\\\_2\\) elements (depending on their basis vectors).\nbuildGrid\n@example grids buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter\nOne can use these as centers for other boundaries.\nusing LinearAlgebra\nusing StaticArrays: SVector\n\nimport BoundaryWall as BWM\n\nN    = 9                         # number of points per element\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180                  # incident angle\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\n# delete some indices\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\n# ...\nOne then can proceed to plot such circles. The details can be found in the documentation\n\n\n\nalt text"
+  },
+  {
+    "objectID": "posts/BoundaryWall.jl/docs/lattice.html#methods",
+    "href": "posts/BoundaryWall.jl/docs/lattice.html#methods",
+    "title": "Lattices & Grids",
+    "section": "",
+    "text": "All buildGrid functions construct a grid with \\(n\\\\_1\\times n\\\\_2\\) elements (depending on their basis vectors).\nbuildGrid\n@example grids buildGrid(HexagonalGrid(SVector(0.0, 0.0), 0.5), 8, 6) |&gt; scatter\nOne can use these as centers for other boundaries.\nusing LinearAlgebra\nusing StaticArrays: SVector\n\nimport BoundaryWall as BWM\n\nN    = 9                         # number of points per element\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180                  # incident angle\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\n# delete some indices\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\n# ...\nOne then can proceed to plot such circles. The details can be found in the documentation\n\n\n\nalt text"
+  },
+  {
+    "objectID": "posts/BoundaryWall.jl/docs/photonic.html",
+    "href": "posts/BoundaryWall.jl/docs/photonic.html",
+    "title": "Photonic crystal",
+    "section": "",
+    "text": "Photonic crystal\nAs usual, import relevant libraries.\nusing LinearAlgebra\nusing StaticArrays: SVector\nusing SpecialFunctions\n# using GLMakie; GLMakie.activate!(inline=false, float=true)\nusing CairoMakie\nimport BoundaryWall as BWM\nNow we can define our constants for the problem.\n# CONSTANTS\nN    = 9                         # number of points per element\nHBAR = 1.0\nMASS = 0.5\nHBAR = 1.0\nSIGMA= (2*MASS/HBAR^2)*(1/4*im)\nNDOM = 100\nzero = 13.3237\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180\nKVEC = SVector(cosd(TH), sind(TH))\nPOTENTIAL_STRENGTH = -100.0\nBANDED = 3\n…and the geometry of such problem.\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\n# POTENTIAL_STRENGTH = repeat(STRENGTH, inner=N)\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\nx = vcat(getindex.(CIRCLES, 1)...)\ny = vcat(getindex.(CIRCLES, 2)...)\nxm= vcat(getindex.(CIRCLES, 3)...)\nym= vcat(getindex.(CIRCLES, 4)...)\nds= vcat(getindex.(CIRCLES, 5)...)\nrij = BWM.calcDistances(xm,ym)\nPlotting this results in the following diagram,\n\n\n\nalt text\n\n\nThe core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur FREQS vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.\n# domain\nx0, xf = (-15.,15.)\ny0, yf = (-10.,10.)\nxdom = LinRange(x0, xf, NDOM)\nydom = LinRange(y0, yf, NDOM)\nCOORDS = [(_x,_y) for _x in xdom, _y in ydom]\nXDOM, YDOM = first.(COORDS)[:], last.(COORDS)[:]\n\n@inline function wave_function(_freq::Float64, _kvec::SVector{2, Float64}, _width::Float64)\n  return abs2.(reshape(\n    BWM.boundaryWallWave(_freq * _kvec, (k,r)-&gt;BWM.gaussianWave(k,r - SVector(-10.25, 0.0), _width; abstol=1e-3), x, y, xm, ym, XDOM, YDOM, SIGMA, ds, rij, length(ds), N, BANDED, POTENTIAL_STRENGTH),\n    NDOM, NDOM\n    )\n  )\nend\nFREQS = [1.35, 1.55, 1.65]\n\nwaves = [wave_function(f, KVEC, 4.0) for f in FREQS]\n\n\n\nalt text\n\n\nWe can analyze the flow of the field using the BWM.gradient(xdom, ydom, psi) function, which returns\n\\[\\mathrm{Im} \\left(\\psi^\\dagger\\nabla\\psi\\right)\\]"
   },
   {
     "objectID": "posts/notes/solid/Berry phase.html",
     "href": "posts/notes/solid/Berry phase.html",
     "title": "Berry phase",
     "section": "",
-    "text": "Definition",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "Physics",
-      "Solid",
-      "Berry phase"
-    ]
+    "text": "The Berry phase (actually first discovered by Pancharatnam) is the equivalent in Quantum mechanics of Hannay angles, so it is natural to introduce the concept of adaiabaticity. Consider a time-dependent Hamiltonian such that,\n\\[\nH[\\mathbf{x}(t)]\\ket{n,\\mathbf{x}(t)} = E_n[\\mathbf{x}(t)]\\ket{n,\\mathbf{x}(t)}\n\\]"
   },
   {
     "objectID": "posts/notes/index.html",
     "href": "posts/notes/index.html",
     "title": "Physics",
     "section": "",
-    "text": "Index\n\n“Berry phase”\n“DFT”",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Posts",
-      "Physics"
-    ]
+    "text": "Index\n\n“Berry phase”\n“DFT”"
   },
   {
     "objectID": "posts/ginzburg.html",
@@ -261,11 +201,7 @@
     "href": "gallery.html",
     "title": "Gallery",
     "section": "",
-    "text": "Pre-graduation in Monterrey\n\n\n\n\n\nReflections in Memorial park\n\n\n\n\n\nJames Turrel’s “Twilight Epiphany”\n\n\n\n\n\nMonterrey as seen from El Cerro de la Silla",
-    "crumbs": [
-      "Alberto Ruiz Biestro",
-      "Gallery"
-    ]
+    "text": "Pre-graduation in Monterrey\n\n\n\n\n\nReflections in Memorial park\n\n\n\n\n\nJames Turrel’s “Twilight Epiphany”\n\n\n\n\n\nMonterrey as seen from El Cerro de la Silla"
   },
   {
     "objectID": "obs/Physics notes/DFT.html",

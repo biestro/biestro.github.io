@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://biestro.github.io/posts.html</loc>
-    <lastmod>2025-11-05T02:24:46.524Z</lastmod>
+    <lastmod>2025-11-05T05:03:52.325Z</lastmod>
   </url>
   <url>
     <loc>https://biestro.github.io/obs/Physics notes/Wannierization.html</loc>
@@ -25,15 +25,7 @@
     <lastmod>2025-11-05T00:18:10.711Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/photonic.html</loc>
-    <lastmod>2025-10-09T21:47:12.615Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/lattice.html</loc>
-    <lastmod>2025-10-09T21:39:51.263Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/BoundaryWall.jl/boundary-wall.html</loc>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/index.html</loc>
     <lastmod>2025-10-09T21:42:37.177Z</lastmod>
   </url>
   <url>
@@ -41,8 +33,16 @@
     <lastmod>2025-10-09T21:46:37.575Z</lastmod>
   </url>
   <url>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/lattice.html</loc>
+    <lastmod>2025-10-09T21:39:51.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/BoundaryWall.jl/docs/photonic.html</loc>
+    <lastmod>2025-10-09T21:47:12.615Z</lastmod>
+  </url>
+  <url>
     <loc>https://biestro.github.io/posts/notes/solid/Berry phase.html</loc>
-    <lastmod>2025-11-05T02:24:06.889Z</lastmod>
+    <lastmod>2025-11-05T05:02:32.155Z</lastmod>
   </url>
   <url>
     <loc>https://biestro.github.io/posts/notes/index.html</loc>
