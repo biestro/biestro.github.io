@@ -6,5 +6,19 @@
       "/posts/ginzburg.html",
       "/posts/waves.html"
     ]
+  },
+  {
+    "listing": "/posts/notes/index.html",
+    "items": [
+      "/posts/notes/solid/Berry phase.html",
+      "/posts/notes/solid/DFA.html",
+      "/posts/notes/solid/DFT.html",
+      "/posts/notes/solid/KEDF.html",
+      "/posts/notes/solid/RDM.html",
+      "/posts/notes/solid/correlation.html",
+      "/posts/notes/solid/representability-condition.html",
+      "/posts/notes/solid/static-correlation-err copy.html",
+      "/posts/notes/solid/wannierization.html"
+    ]
   }
 ]

@@ -67,6 +67,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+window.MathJax = {
+  loader: {
+    load: ['[tex]/physics']
+  },
+  tex: {
+    packages: {'[+]': ['physics']}
+  }
+};
+</script>
 
 
 </head>
@@ -126,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DFT</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFT.html">DFT</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -181,6 +191,72 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../posts/notes/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-fill" role="img">
+</i> 
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Berry phase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Berry phase</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/DFT.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">DFT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/KEDF.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kinetic Energy Density Functional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/RDM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RDM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/representability-condition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Representability condition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/static-correlation-err copy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Static Correlation Error</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/wannierization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wannierization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -192,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFT.html">DFT</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">DFT</h1>
 </div>
@@ -211,6 +287,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Not to be confused with <a href="../../../posts/notes/solid/DFA.html">DFA</a>.</p>
+<p>DFT (technically <a href="../../../posts/notes/solid/DFA.html">DFA</a>) is affected by <a href="self-interaction-err.qmd">self-interaction error</a>, <a href="static-correlation-err.qmd">static correlation error</a> (from near-degenerate states), and the <a href="charge-transfer-err.qmd">charge-transfer error</a></p>
 
 
 

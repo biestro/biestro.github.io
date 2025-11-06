@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>photonic</title>
+<title>Static Correlation Error</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -200,7 +165,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/static-correlation-err copy.html">Static Correlation Error</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -260,11 +225,11 @@ window.Quarto = {
             <a href="../../../posts/notes/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-fill" role="img">
 </i> 
  <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../posts/notes/solid/Berry phase.html" class="sidebar-item-text sidebar-link">
@@ -309,7 +274,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/static-correlation-err copy.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/notes/solid/static-correlation-err copy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Static Correlation Error</span></a>
   </div>
 </li>
@@ -326,103 +291,36 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#photonic-crystal" id="toc-photonic-crystal" class="nav-link active" data-scroll-target="#photonic-crystal">Photonic crystal</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<section id="photonic-crystal" class="level1">
-<h1>Photonic crystal</h1>
-<p>As usual, import relevant libraries.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">LinearAlgebra</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">StaticArrays</span>: SVector</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">SpecialFunctions</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># using GLMakie; GLMakie.activate!(inline=false, float=true)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CairoMakie</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="bu">BoundaryWall</span> as BWM</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Now we can define our constants for the problem.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CONSTANTS</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N    <span class="op">=</span> <span class="fl">9</span>                         <span class="co"># number of points per element</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>HBAR <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>MASS <span class="op">=</span> <span class="fl">0.5</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>HBAR <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>SIGMA<span class="op">=</span> (<span class="fl">2</span><span class="op">*</span>MASS<span class="op">/</span>HBAR<span class="op">^</span><span class="fl">2</span>)<span class="fu">*</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">4</span><span class="op">*</span><span class="cn">im</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>NDOM <span class="op">=</span> <span class="fl">100</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>zero <span class="op">=</span> <span class="fl">13.3237</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>R    <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>θ    <span class="op">=</span> <span class="fu">LinRange</span>(<span class="fl">0</span>, <span class="fl">2</span>pi, N<span class="op">+</span><span class="fl">1</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>TH   <span class="op">=</span> <span class="fl">180</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>KVEC <span class="op">=</span> <span class="fu">SVector</span>(<span class="fu">cosd</span>(TH), <span class="fu">sind</span>(TH))</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>POTENTIAL_STRENGTH <span class="op">=</span> <span class="op">-</span><span class="fl">100.0</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>BANDED <span class="op">=</span> <span class="fl">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>…and the geometry of such problem.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>STEP <span class="op">=</span> <span class="fl">2.0</span>R <span class="op">+</span> R<span class="op">/</span><span class="fl">2</span> <span class="co"># diameter  + constant</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>N_CIRCLES <span class="op">=</span> (<span class="fl">10</span>,<span class="fl">7</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>RANGES <span class="op">=</span> [<span class="fu">-</span>(N_CIRCLES[<span class="fl">1</span>]<span class="op">-</span><span class="fl">1</span>)<span class="op">*</span>STEP<span class="op">/</span><span class="fl">2</span><span class="op">:</span>STEP<span class="op">:</span>(N_CIRCLES[<span class="fl">1</span>]<span class="op">-</span><span class="fl">1</span>)<span class="op">*</span>STEP<span class="op">/</span><span class="fl">2</span>,<span class="fu">-</span>(N_CIRCLES[<span class="fl">2</span>]<span class="op">-</span><span class="fl">1</span>)<span class="op">*</span>STEP<span class="op">/</span><span class="fl">2</span><span class="op">:</span>STEP<span class="op">:</span>(N_CIRCLES[<span class="fl">2</span>]<span class="op">-</span><span class="fl">1</span>)<span class="op">*</span>STEP<span class="op">/</span><span class="fl">2</span>]</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>N_STEPS <span class="op">=</span><span class="fu">length</span>(RANGES)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>CENTERS <span class="op">=</span> <span class="fu">vec</span>([(i, j) for i <span class="kw">in</span> RANGES[<span class="fl">1</span>], j <span class="kw">in</span> RANGES[<span class="fl">2</span>]])</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>INDICES <span class="op">=</span> <span class="fu">sort</span>([<span class="fl">31</span>,<span class="fl">32</span>,<span class="fl">33</span>,<span class="fl">43</span>,<span class="fl">44</span>,<span class="fl">45</span>,<span class="fl">46</span>,<span class="fl">47</span>,<span class="fl">48</span>,<span class="fl">38</span>,<span class="fl">39</span>, <span class="fl">40</span>, <span class="fl">23</span>, <span class="fl">24</span>, <span class="fl">25</span>, <span class="fl">26</span>, <span class="fl">27</span>, <span class="fl">28</span>])</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">deleteat!</span>(CENTERS, INDICES)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># POTENTIAL_STRENGTH = repeat(STRENGTH, inner=N)</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>CIRCLES <span class="op">=</span> [BWM.<span class="fu">createCircle</span>(R, θ, <span class="fu">SVector</span>(cen)) for cen <span class="kw">in</span> CENTERS]</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">vcat</span>(<span class="fu">getindex</span>.(CIRCLES, <span class="fl">1</span>)<span class="op">...</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fu">vcat</span>(<span class="fu">getindex</span>.(CIRCLES, <span class="fl">2</span>)<span class="op">...</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>xm<span class="op">=</span> <span class="fu">vcat</span>(<span class="fu">getindex</span>.(CIRCLES, <span class="fl">3</span>)<span class="op">...</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ym<span class="op">=</span> <span class="fu">vcat</span>(<span class="fu">getindex</span>.(CIRCLES, <span class="fl">4</span>)<span class="op">...</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>ds<span class="op">=</span> <span class="fu">vcat</span>(<span class="fu">getindex</span>.(CIRCLES, <span class="fl">5</span>)<span class="op">...</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>rij <span class="op">=</span> BWM.<span class="fu">calcDistances</span>(xm,ym)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Plotting this results in the following diagram,</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./assets/photonic_diagram.svg" class="img-fluid figure-img"></p>
-<figcaption>alt text</figcaption>
-</figure>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/static-correlation-err copy.html">Static Correlation Error</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Static Correlation Error</h1>
 </div>
-<p>The core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur <code>FREQS</code> vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># domain</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x0, xf <span class="op">=</span> (<span class="op">-</span><span class="fl">15</span>.,<span class="fl">15</span>.)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y0, yf <span class="op">=</span> (<span class="op">-</span><span class="fl">10</span>.,<span class="fl">10</span>.)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>xdom <span class="op">=</span> <span class="fu">LinRange</span>(x0, xf, NDOM)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ydom <span class="op">=</span> <span class="fu">LinRange</span>(y0, yf, NDOM)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>COORDS <span class="op">=</span> [(_x,_y) for _x <span class="kw">in</span> xdom, _y <span class="kw">in</span> ydom]</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>XDOM, YDOM <span class="op">=</span> <span class="fu">first</span>.(COORDS)[<span class="op">:</span>], <span class="fu">last</span>.(COORDS)[<span class="op">:</span>]</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="pp">@inline</span> <span class="kw">function</span> <span class="fu">wave_function</span>(_freq<span class="op">::</span><span class="dt">Float64</span>, _kvec<span class="op">::</span><span class="dt">SVector{2, Float64}</span>, _width<span class="op">::</span><span class="dt">Float64</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="fu">abs2</span>.(<span class="fu">reshape</span>(</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    BWM.<span class="fu">boundaryWallWave</span>(_freq <span class="op">*</span> _kvec, (k,r)<span class="op">-&gt;</span>BWM.<span class="fu">gaussianWave</span>(k,r <span class="op">-</span> <span class="fu">SVector</span>(<span class="op">-</span><span class="fl">10.25</span>, <span class="fl">0.0</span>), _width; abstol<span class="op">=</span><span class="fl">1e-3</span>), x, y, xm, ym, XDOM, YDOM, SIGMA, ds, rij, <span class="fu">length</span>(ds), N, BANDED, POTENTIAL_STRENGTH),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    NDOM, NDOM</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>FREQS <span class="op">=</span> [<span class="fl">1.35</span>, <span class="fl">1.55</span>, <span class="fl">1.65</span>]</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>waves <span class="op">=</span> [<span class="fu">wave_function</span>(f, KVEC, <span class="fl">4.0</span>) for f <span class="kw">in</span> FREQS]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./assets/crystal.svg" class="img-fluid figure-img"></p>
-<figcaption>alt text</figcaption>
-</figure>
-</div>
-<p>We can analyze the flow of the field using the <code>BWM.gradient(xdom, ydom, psi)</code> function, which returns</p>
-<p><span class="math display">\[\mathrm{Im} \left(\psi^\dagger\nabla\psi\right)\]</span></p>
-<p><img src="./assets/crystal_arrows.svg" class="img-fluid" alt="alt text"> <img src="./assets/logic_gate.svg" class="img-fluid" alt="alt text"></p>
 
 
-</section>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>An error that arises in KS-DFT because it (KS-DFT) is based on a single Slater determinant. It is the inability of approximate KS-DFT (even with advanced XC functionals) to describe systems with entangled electronic configurations (mixtures of determinants) <span class="math display">\[\ket{\Psi}=c_1\ket{\Phi_1}+c_2\ket{\Phi_2}+\cdots,\]</span></p>
+<p>i.e.&nbsp;the wavefunction has multi-determinantal character.</p>
+<p>As long as the basis is sufficiently large, a single Slater determinant from KS-DFT can reproduce the density <span class="math inline">\(n\)</span> of a multideterminant method (like Configuration Interaction). However, the</p>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

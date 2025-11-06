@@ -67,6 +67,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+window.MathJax = {
+  loader: {
+    load: ['[tex]/physics']
+  },
+  tex: {
+    packages: {'[+]': ['physics']}
+  }
+};
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -155,7 +165,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Berry phase</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/Berry phase.html">Berry phase</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -210,18 +220,90 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../posts/notes/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-fill" role="img">
+</i> 
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Berry phase.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Berry phase</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/DFT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DFT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/KEDF.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kinetic Energy Density Functional</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/RDM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RDM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/representability-condition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Representability condition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/static-correlation-err copy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Static Correlation Error</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/wannierization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wannierization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#wannier" id="toc-wannier" class="nav-link active" data-scroll-target="#wannier">Wannier</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/Berry phase.html">Berry phase</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Berry phase</h1>
 </div>
@@ -244,8 +326,20 @@ window.Quarto = {
 <p><span class="math display">\[
 H[\mathbf{x}(t)]\ket{n,\mathbf{x}(t)} = E_n[\mathbf{x}(t)]\ket{n,\mathbf{x}(t)}
 \]</span></p>
+<section id="wannier" class="level2">
+<h2 class="anchored" data-anchor-id="wannier">Wannier</h2>
+<p><a href="https://iopscience.iop.org/article/10.1088/0022-3719/17/12/003">Thouless in 1984</a> showed that the localization of Wannier functions is related to the bands having a zero Chern number. Long story short, if the bands feature a non-zero Chern number, it is</p>
+<p>A Wannier function is <span class="math display">\[
+w_n(\vb{r}-\vb{R}) = \frac{1}{(2\pi)^d}\int_{BZ}d\vb{k}e^{-i\vb{k}\cdot\vb{R}}u_{n\vb{k}}(\vb{r})
+\]</span></p>
+<!-- ```{latex}
+w_n(\mathbf{r}-\mathbf{R}) = \frac{1}{(2\pi)^d}
+``` -->
+<p>This means <span class="math inline">\(u_{n\vb{k}}\)</span></p>
+<p>, which in turn prevents the Fourier-transformed Wannier function from decaying exponentially.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

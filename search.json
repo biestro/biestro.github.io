@@ -74,6 +74,65 @@
     ]
   },
   {
+    "objectID": "posts/notes/index.html",
+    "href": "posts/notes/index.html",
+    "title": "Physics notes",
+    "section": "",
+    "text": "Index\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\nBerry phase\n\n\n \n\n\n\n\n\n\nDFA\n\n\n \n\n\n\n\n\n\nDFT\n\n\n \n\n\n\n\n\n\nKinetic Energy Density Functional\n\n\n \n\n\n\n\n\n\nRDM\n\n\n \n\n\n\n\n\n\nCorrelation\n\n\n \n\n\n\n\n\n\nRepresentability condition\n\n\n \n\n\n\n\n\n\nStatic Correlation Error\n\n\n \n\n\n\n\n\n\nWannierization\n\n\n \n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/DFT.html",
+    "href": "posts/notes/solid/DFT.html",
+    "title": "DFT",
+    "section": "",
+    "text": "Not to be confused with DFA.\nDFT (technically DFA) is affected by self-interaction error, static correlation error (from near-degenerate states), and the charge-transfer error",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "DFT"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/correlation.html",
+    "href": "posts/notes/solid/correlation.html",
+    "title": "Correlation",
+    "section": "",
+    "text": "Correlation is the term ascribed to the defficiencies of single-determinantal approach of Hartree-Fock method.\nConfiguration interaction (CI) is mathematically a linear combination of Slater determinants, and so by definition, it can describe correlations by this mixing.",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Correlation"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/wannierization.html",
+    "href": "posts/notes/solid/wannierization.html",
+    "title": "Wannierization",
+    "section": "",
+    "text": "KS-DFT gives you KS-orbitals, but the process of obtaining Tight-Binding orbitals involves a change of basis into a Wannier basis, which is localized (and a real-space representation).",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Wannierization"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/representability-condition.html",
+    "href": "posts/notes/solid/representability-condition.html",
+    "title": "Representability condition",
+    "section": "",
+    "text": "Condition that states that the density functional in DFT must come from a proper antisymmetric wavefunction.",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Representability condition"
+    ]
+  },
+  {
     "objectID": "posts/BoundaryWall.jl/index.html",
     "href": "posts/BoundaryWall.jl/index.html",
     "title": "Boundary Wall Method",
@@ -123,18 +182,76 @@
     "text": "Photonic crystal\nAs usual, import relevant libraries.\nusing LinearAlgebra\nusing StaticArrays: SVector\nusing SpecialFunctions\n# using GLMakie; GLMakie.activate!(inline=false, float=true)\nusing CairoMakie\nimport BoundaryWall as BWM\nNow we can define our constants for the problem.\n# CONSTANTS\nN    = 9                         # number of points per element\nHBAR = 1.0\nMASS = 0.5\nHBAR = 1.0\nSIGMA= (2*MASS/HBAR^2)*(1/4*im)\nNDOM = 100\nzero = 13.3237\nR    = 1.0\nθ    = LinRange(0, 2pi, N+1)\nTH   = 180\nKVEC = SVector(cosd(TH), sind(TH))\nPOTENTIAL_STRENGTH = -100.0\nBANDED = 3\n…and the geometry of such problem.\n\nSTEP = 2.0R + R/2 # diameter  + constant\nN_CIRCLES = (10,7)\nRANGES = [-(N_CIRCLES[1]-1)*STEP/2:STEP:(N_CIRCLES[1]-1)*STEP/2,-(N_CIRCLES[2]-1)*STEP/2:STEP:(N_CIRCLES[2]-1)*STEP/2]\nN_STEPS =length(RANGES)\nCENTERS = vec([(i, j) for i in RANGES[1], j in RANGES[2]])\n\nINDICES = sort([31,32,33,43,44,45,46,47,48,38,39, 40, 23, 24, 25, 26, 27, 28])\n\ndeleteat!(CENTERS, INDICES)\n\n# POTENTIAL_STRENGTH = repeat(STRENGTH, inner=N)\nCIRCLES = [BWM.createCircle(R, θ, SVector(cen)) for cen in CENTERS]\nx = vcat(getindex.(CIRCLES, 1)...)\ny = vcat(getindex.(CIRCLES, 2)...)\nxm= vcat(getindex.(CIRCLES, 3)...)\nym= vcat(getindex.(CIRCLES, 4)...)\nds= vcat(getindex.(CIRCLES, 5)...)\nrij = BWM.calcDistances(xm,ym)\nPlotting this results in the following diagram,\n\n\n\nalt text\n\n\nThe core of the library is the ability to have any superposition of plane waves impinge on the geometry. In this example, we focus a gaussian beam with certain waist parameters into the photonic cavity. One can observe that for different frequencies defined in ur FREQS vector, the system repsonds differently, allowing (or not) the wave to pass through, like a filter.\n# domain\nx0, xf = (-15.,15.)\ny0, yf = (-10.,10.)\nxdom = LinRange(x0, xf, NDOM)\nydom = LinRange(y0, yf, NDOM)\nCOORDS = [(_x,_y) for _x in xdom, _y in ydom]\nXDOM, YDOM = first.(COORDS)[:], last.(COORDS)[:]\n\n@inline function wave_function(_freq::Float64, _kvec::SVector{2, Float64}, _width::Float64)\n  return abs2.(reshape(\n    BWM.boundaryWallWave(_freq * _kvec, (k,r)-&gt;BWM.gaussianWave(k,r - SVector(-10.25, 0.0), _width; abstol=1e-3), x, y, xm, ym, XDOM, YDOM, SIGMA, ds, rij, length(ds), N, BANDED, POTENTIAL_STRENGTH),\n    NDOM, NDOM\n    )\n  )\nend\nFREQS = [1.35, 1.55, 1.65]\n\nwaves = [wave_function(f, KVEC, 4.0) for f in FREQS]\n\n\n\nalt text\n\n\nWe can analyze the flow of the field using the BWM.gradient(xdom, ydom, psi) function, which returns\n\\[\\mathrm{Im} \\left(\\psi^\\dagger\\nabla\\psi\\right)\\]"
   },
   {
+    "objectID": "posts/notes/solid/static-correlation-err copy.html",
+    "href": "posts/notes/solid/static-correlation-err copy.html",
+    "title": "Static Correlation Error",
+    "section": "",
+    "text": "An error that arises in KS-DFT because it (KS-DFT) is based on a single Slater determinant. It is the inability of approximate KS-DFT (even with advanced XC functionals) to describe systems with entangled electronic configurations (mixtures of determinants) \\[\\ket{\\Psi}=c_1\\ket{\\Phi_1}+c_2\\ket{\\Phi_2}+\\cdots,\\]\ni.e. the wavefunction has multi-determinantal character.\nAs long as the basis is sufficiently large, a single Slater determinant from KS-DFT can reproduce the density \\(n\\) of a multideterminant method (like Configuration Interaction). However, the",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Static Correlation Error"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/RDM.html",
+    "href": "posts/notes/solid/RDM.html",
+    "title": "RDM",
+    "section": "",
+    "text": "Named “Reduced Density Matrix”, it",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "RDM"
+    ]
+  },
+  {
     "objectID": "posts/notes/solid/Berry phase.html",
     "href": "posts/notes/solid/Berry phase.html",
     "title": "Berry phase",
     "section": "",
-    "text": "The Berry phase (actually first discovered by Pancharatnam) is the equivalent in Quantum mechanics of Hannay angles, so it is natural to introduce the concept of adaiabaticity. Consider a time-dependent Hamiltonian such that,\n\\[\nH[\\mathbf{x}(t)]\\ket{n,\\mathbf{x}(t)} = E_n[\\mathbf{x}(t)]\\ket{n,\\mathbf{x}(t)}\n\\]"
+    "text": "The Berry phase (actually first discovered by Pancharatnam) is the equivalent in Quantum mechanics of Hannay angles, so it is natural to introduce the concept of adaiabaticity. Consider a time-dependent Hamiltonian such that,\n\\[\nH[\\mathbf{x}(t)]\\ket{n,\\mathbf{x}(t)} = E_n[\\mathbf{x}(t)]\\ket{n,\\mathbf{x}(t)}\n\\]",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Berry phase"
+    ]
   },
   {
-    "objectID": "posts/notes/index.html",
-    "href": "posts/notes/index.html",
-    "title": "Physics",
+    "objectID": "posts/notes/solid/Berry phase.html#wannier",
+    "href": "posts/notes/solid/Berry phase.html#wannier",
+    "title": "Berry phase",
+    "section": "Wannier",
+    "text": "Wannier\nThouless in 1984 showed that the localization of Wannier functions is related to the bands having a zero Chern number. Long story short, if the bands feature a non-zero Chern number, it is\nA Wannier function is \\[\nw_n(\\vb{r}-\\vb{R}) = \\frac{1}{(2\\pi)^d}\\int_{BZ}d\\vb{k}e^{-i\\vb{k}\\cdot\\vb{R}}u_{n\\vb{k}}(\\vb{r})\n\\]\n\nThis means \\(u_{n\\vb{k}}\\)\n, which in turn prevents the Fourier-transformed Wannier function from decaying exponentially.",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Berry phase"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/DFA.html",
+    "href": "posts/notes/solid/DFA.html",
+    "title": "DFA",
     "section": "",
-    "text": "Index\n\n“Berry phase”\n“DFT”"
+    "text": "DFT is an exact theory, and if we know the exact formulation of the XC functional, then one can get the exact solution of the system. However, in practice one does not the know the form of the XC functional, and approximating it makes the method a Density Functional Approximation (DFA). The failures of DFT are in reality errors of DFA (i.e. of the XC functionals).",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "DFA"
+    ]
+  },
+  {
+    "objectID": "posts/notes/solid/KEDF.html",
+    "href": "posts/notes/solid/KEDF.html",
+    "title": "Kinetic Energy Density Functional",
+    "section": "",
+    "text": "The term in the KS energy functional \\(T[\\rho]\\) is the non-interacting Kinetic Enrgy Functional.\nThere is generally no known form for the interacting KE in terms of \\(\\rho\\), but\nIn Orbital Free DFT",
+    "crumbs": [
+      "Alberto Ruiz Biestro",
+      "Notes",
+      "Kinetic Energy Density Functional"
+    ]
   },
   {
     "objectID": "posts/ginzburg.html",
