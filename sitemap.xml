@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://biestro.github.io/index.html</loc>
-    <lastmod>2025-11-05T02:26:42.858Z</lastmod>
+    <lastmod>2025-11-18T19:43:27.335Z</lastmod>
   </url>
   <url>
     <loc>https://biestro.github.io/posts/waves.html</loc>
@@ -22,23 +22,43 @@
   </url>
   <url>
     <loc>https://biestro.github.io/posts/notes/index.html</loc>
-    <lastmod>2025-11-06T21:44:18.164Z</lastmod>
+    <lastmod>2025-11-15T00:40:15.668Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/DFT.html</loc>
-    <lastmod>2025-11-06T22:05:43.109Z</lastmod>
+    <loc>https://biestro.github.io/posts/notes/solid/Wannier functions.html</loc>
+    <lastmod>2025-11-17T23:08:47.801Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/correlation.html</loc>
-    <lastmod>2025-11-06T21:41:44.520Z</lastmod>
+    <loc>https://biestro.github.io/posts/notes/solid/Wannierization.html</loc>
+    <lastmod>2025-11-17T23:08:47.800Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/wannierization.html</loc>
-    <lastmod>2025-11-06T22:16:47.700Z</lastmod>
+    <loc>https://biestro.github.io/posts/notes/solid/OAM.html</loc>
+    <lastmod>2025-11-17T23:08:47.799Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/representability-condition.html</loc>
-    <lastmod>2025-11-06T21:23:14.331Z</lastmod>
+    <loc>https://biestro.github.io/posts/notes/solid/quenching.html</loc>
+    <lastmod>2025-11-17T23:08:47.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/Transition metals.html</loc>
+    <lastmod>2025-11-17T23:08:47.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/OHE.html</loc>
+    <lastmod>2025-11-17T23:08:47.795Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/Kohn-Sham.html</loc>
+    <lastmod>2025-11-17T23:08:47.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/time-reversal.html</loc>
+    <lastmod>2025-11-17T23:08:47.793Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/DFA.html</loc>
+    <lastmod>2025-11-17T23:08:47.792Z</lastmod>
   </url>
   <url>
     <loc>https://biestro.github.io/posts/BoundaryWall.jl/index.html</loc>
@@ -57,24 +77,44 @@
     <lastmod>2025-10-09T21:47:12.615Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/static-correlation-err copy.html</loc>
-    <lastmod>2025-11-06T21:30:02.577Z</lastmod>
-  </url>
-  <url>
-    <loc>https://biestro.github.io/posts/notes/solid/RDM.html</loc>
-    <lastmod>2025-11-06T21:11:31.338Z</lastmod>
-  </url>
-  <url>
     <loc>https://biestro.github.io/posts/notes/solid/Berry phase.html</loc>
-    <lastmod>2025-11-06T22:21:46.100Z</lastmod>
+    <lastmod>2025-11-17T23:08:47.791Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/DFA.html</loc>
-    <lastmod>2025-11-06T22:05:57.122Z</lastmod>
+    <loc>https://biestro.github.io/posts/notes/solid/Tight-Binding.html</loc>
+    <lastmod>2025-11-17T23:08:47.793Z</lastmod>
   </url>
   <url>
-    <loc>https://biestro.github.io/posts/notes/solid/KEDF.html</loc>
-    <lastmod>2025-11-06T22:15:16.502Z</lastmod>
+    <loc>https://biestro.github.io/posts/notes/solid/Kohn-Sham band gap.html</loc>
+    <lastmod>2025-11-17T23:08:47.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/Dyakonov–Perel.html</loc>
+    <lastmod>2025-11-17T23:08:47.795Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/DFT.html</loc>
+    <lastmod>2025-11-17T23:08:47.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/Kramers degeneracy.html</loc>
+    <lastmod>2025-11-17T23:08:47.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/Anomalous Hall Effect.html</loc>
+    <lastmod>2025-11-17T23:08:47.798Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/SOC.html</loc>
+    <lastmod>2025-11-17T23:08:47.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/topological insulators.html</loc>
+    <lastmod>2025-11-17T23:08:47.800Z</lastmod>
+  </url>
+  <url>
+    <loc>https://biestro.github.io/posts/notes/solid/transition-orbitals.html</loc>
+    <lastmod>2025-11-17T23:08:47.801Z</lastmod>
   </url>
   <url>
     <loc>https://biestro.github.io/posts/ginzburg.html</loc>

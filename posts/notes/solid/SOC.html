@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-07">
+<meta name="dcterms.date" content="2025-11-14">
 
-<title>Density Functional Approximation</title>
+<title>SOC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,6 +79,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -137,7 +166,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFA.html">Density Functional Approximation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/SOC.html">SOC</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +245,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Density Functional Approximation</span></a>
   </div>
 </li>
@@ -270,7 +299,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/SOC.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/notes/solid/SOC.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SOC</span></a>
   </div>
 </li>
@@ -323,15 +352,22 @@ window.MathJax = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#hamiltonian" id="toc-hamiltonian" class="nav-link active" data-scroll-target="#hamiltonian">Hamiltonian</a></li>
+  <li><a href="#bloch-wavefunctions" id="toc-bloch-wavefunctions" class="nav-link" data-scroll-target="#bloch-wavefunctions">Bloch wavefunctions</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFA.html">Density Functional Approximation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/SOC.html">SOC</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Density Functional Approximation</h1>
+<h1 class="title">SOC</h1>
 </div>
 
 
@@ -342,7 +378,7 @@ window.MathJax = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 7, 2025</p>
+      <p class="date">November 14, 2025</p>
     </div>
   </div>
   
@@ -354,10 +390,26 @@ window.MathJax = {
 </header>
 
 
-<p><a href="../../../posts/notes/solid/DFT.html">DFT</a> is an exact theory, and if we know the exact formulation of the <a href="XC.md">XC</a> functional, then one can get the exact solution of the system. However, in practice one does not the know the form of the <a href="XC.md">XC</a> functional, and approximating it makes the method a Density Functional Approximation (DFA). The failures of <a href="../../../posts/notes/solid/DFT.html">DFT</a> are in reality errors of DFA (i.e.&nbsp;of the <a href="XC.md">XC</a> functionals).</p>
+<p>One can just take the usual bands from a spin-independent Hamiltonian and say that the orbital <span class="math inline">\(\psi_{nk}\)</span> describe two different bands (one with spin-up, one with spin-down).</p>
+<section id="hamiltonian" class="level2">
+<h2 class="anchored" data-anchor-id="hamiltonian">Hamiltonian</h2>
+<p>SOC is always present. By taking the low-velocity limit of the <a href="Dirac equation.md">Dirac equation</a> one gets <span class="math display">\[
+\frac{[\nabla V\times \mathbf{p}]\cdot\mathbf{S}}{2m_e^2c^2},
+\]</span> where <span class="math inline">\(\mathbf{S}\)</span> is the spin operator of the electron. This is still a relativistic effect.</p>
+<p>In other words, <span class="math inline">\(H_{SO}\)</span> represents a Zeeman coupling between the magnetic moment of the electron spin (in its reference frame) and <span class="math inline">\(\mathbf{B}_{\rm eff}\)</span> (generated by other electrons moving relative to electron’s reference frame).</p>
+</section>
+<section id="bloch-wavefunctions" class="level2">
+<h2 class="anchored" data-anchor-id="bloch-wavefunctions">Bloch wavefunctions</h2>
+<p>Generally, these should be written using two different, real-space periodic wavefunctions <span class="math inline">\(u_{nk}\)</span> and <span class="math inline">\(v_{nk}\)</span> <span class="math display">\[
+\psi_{nk}(\mathbf{r}, \sigma) = e^{i\mathbf{k}\cdot \mathbf{r}}\left(
+  u_{nk}\ket{\uparrow} +
+  v_{nk}\ket{\downarrow}
+  \right).
+\]</span> Then, <span class="math inline">\([S_z, H_{SO}]\neq 0\)</span> and <span class="math inline">\(S_z\)</span> is no longer a good quantum number (not conserved). Spin-orbit-coupling breaks this degeneracy, unless <strong>both</strong> <span class="math inline">\(\Theta\)</span> (<a href="../../../posts/notes/solid/time-reversal.html">time-reversal</a>) and <span class="math inline">\(P\)</span> (parity) symmetries are present.</p>
 <p># “Autogenerated link references”</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

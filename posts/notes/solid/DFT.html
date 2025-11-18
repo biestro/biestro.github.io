@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-11-07">
 
-<title>DFT</title>
+<title>Density Functional Theory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,6 +79,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -136,7 +166,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFT.html">DFT</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFT.html">Density Functional Theory</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -203,55 +233,115 @@ window.MathJax = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Anomalous Hall Effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anomalous Hall Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../posts/notes/solid/Berry phase.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Berry phase</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/correlation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DFA</span></a>
+ <span class="menu-text">Density Functional Approximation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../posts/notes/solid/DFT.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">DFT</span></a>
+ <span class="menu-text">Density Functional Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/KEDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kinetic Energy Density Functional</span></a>
+  <a href="../../../posts/notes/solid/Dyakonov–Perel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dyakonov–Perel</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/RDM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">RDM</span></a>
+  <a href="../../../posts/notes/solid/Kohn-Sham.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kohn-Sham</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/representability-condition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Representability condition</span></a>
+  <a href="../../../posts/notes/solid/Kohn-Sham band gap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kohn-Sham band gap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/static-correlation-err copy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Static Correlation Error</span></a>
+  <a href="../../../posts/notes/solid/Kramers degeneracy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kramers degeneracy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/wannierization.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/notes/solid/OAM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OAM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/OHE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Orbital Hall Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/quenching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quenching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/SOC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SOC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Tight-Binding.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tight-Binding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/time-reversal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">time-reversal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/topological insulators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Topological Insulators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Transition metals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transition metals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/transition-orbitals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">transition-orbitals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Wannier functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wannier functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../posts/notes/solid/Wannierization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wannierization</span></a>
   </div>
 </li>
@@ -268,9 +358,9 @@ window.MathJax = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFT.html">DFT</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFT.html">Density Functional Theory</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">DFT</h1>
+<h1 class="title">Density Functional Theory</h1>
 </div>
 
 
@@ -278,6 +368,12 @@ window.MathJax = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 7, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -287,8 +383,9 @@ window.MathJax = {
 </header>
 
 
-<p>Not to be confused with <a href="../../../posts/notes/solid/DFA.html">DFA</a>.</p>
-<p>DFT (technically <a href="../../../posts/notes/solid/DFA.html">DFA</a>) is affected by <a href="self-interaction-err.qmd">self-interaction error</a>, <a href="static-correlation-err.qmd">static correlation error</a> (from near-degenerate states), and the <a href="charge-transfer-err.qmd">charge-transfer error</a></p>
+<p>DFT (technically <a href="../../../posts/notes/solid/DFA.html">DFA</a>) is affected by <a href="self-interaction error.md">self-interaction error</a>, <a href="static correlation error.md">static correlation error</a>, and the <a href="charge-transfer-err.md">charge-transfer error</a></p>
+<p>As put in <a href="tealeDFTExchangeSharing2022.md">tealeDFTExchangeSharing2022</a>, the <a href="../../../posts/notes/solid/Kohn-Sham.html">Kohn-Sham</a> eigenvalues are not supposed to provide band gaps. Believing so leads to <span class="math inline">\(E_g\neq E_g^{KS}\)</span> (the band-gap problem). In other words, it is a problem of <em>wrong expectatons</em>.</p>
+<p># “Autogenerated link references”</p>
 
 
 

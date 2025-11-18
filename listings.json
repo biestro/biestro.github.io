@@ -10,15 +10,25 @@
   {
     "listing": "/posts/notes/index.html",
     "items": [
+      "/posts/notes/solid/Anomalous Hall Effect.html",
       "/posts/notes/solid/Berry phase.html",
       "/posts/notes/solid/DFA.html",
       "/posts/notes/solid/DFT.html",
-      "/posts/notes/solid/KEDF.html",
-      "/posts/notes/solid/RDM.html",
-      "/posts/notes/solid/correlation.html",
-      "/posts/notes/solid/representability-condition.html",
-      "/posts/notes/solid/static-correlation-err copy.html",
-      "/posts/notes/solid/wannierization.html"
+      "/posts/notes/solid/Dyakonov–Perel.html",
+      "/posts/notes/solid/Kohn-Sham.html",
+      "/posts/notes/solid/Kohn-Sham band gap.html",
+      "/posts/notes/solid/Kramers degeneracy.html",
+      "/posts/notes/solid/OAM.html",
+      "/posts/notes/solid/OHE.html",
+      "/posts/notes/solid/quenching.html",
+      "/posts/notes/solid/SOC.html",
+      "/posts/notes/solid/Tight-Binding.html",
+      "/posts/notes/solid/topological insulators.html",
+      "/posts/notes/solid/Transition metals.html",
+      "/posts/notes/solid/Wannier functions.html",
+      "/posts/notes/solid/Wannierization.html",
+      "/posts/notes/solid/time-reversal.html",
+      "/posts/notes/solid/transition-orbitals.html"
     ]
   }
 ]

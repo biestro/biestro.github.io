@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-11-07">
 
-<title>Density Functional Approximation</title>
+<title>Tight-Binding</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,6 +79,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -137,7 +166,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFA.html">Density Functional Approximation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/Tight-Binding.html">Tight-Binding</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +245,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Density Functional Approximation</span></a>
   </div>
 </li>
@@ -276,7 +305,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Tight-Binding.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/notes/solid/Tight-Binding.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tight-Binding</span></a>
   </div>
 </li>
@@ -329,9 +358,9 @@ window.MathJax = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFA.html">Density Functional Approximation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/Tight-Binding.html">Tight-Binding</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Density Functional Approximation</h1>
+<h1 class="title">Tight-Binding</h1>
 </div>
 
 
@@ -354,8 +383,12 @@ window.MathJax = {
 </header>
 
 
-<p><a href="../../../posts/notes/solid/DFT.html">DFT</a> is an exact theory, and if we know the exact formulation of the <a href="XC.md">XC</a> functional, then one can get the exact solution of the system. However, in practice one does not the know the form of the <a href="XC.md">XC</a> functional, and approximating it makes the method a Density Functional Approximation (DFA). The failures of <a href="../../../posts/notes/solid/DFT.html">DFT</a> are in reality errors of DFA (i.e.&nbsp;of the <a href="XC.md">XC</a> functionals).</p>
-<p># “Autogenerated link references”</p>
+<p>The Tight Binding (TB) approach consists of 1. an assumption, and 2. a procedure.</p>
+<p>The assumption is that the</p>
+<p>TB Hamiltonians are usually interpreted as having an electron <em>tunneling</em> or <em>hopping</em> between atoms, since going from an occupied to an unoccupied site should lower its energy (there is more space available). The energy change in tunneling from <span class="math inline">\(n\rightarrow m\)</span> is <span class="math inline">\(-t_{nm}\)</span>,</p>
+<p><span class="math display">\[
+   \hat{H}=\sum_n\epsilon_n\ket{n}\bra{n}
+\]</span></p>
 
 
 

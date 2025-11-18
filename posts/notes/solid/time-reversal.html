@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-07">
+<meta name="dcterms.date" content="2025-11-14">
 
-<title>Density Functional Approximation</title>
+<title>time-reversal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,6 +79,35 @@ window.MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -137,7 +166,7 @@ window.MathJax = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFA.html">Density Functional Approximation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/time-reversal.html">time-reversal</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +245,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Density Functional Approximation</span></a>
   </div>
 </li>
@@ -282,7 +311,7 @@ window.MathJax = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/time-reversal.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/notes/solid/time-reversal.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">time-reversal</span></a>
   </div>
 </li>
@@ -323,15 +352,21 @@ window.MathJax = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#spin-12-systems" id="toc-spin-12-systems" class="nav-link active" data-scroll-target="#spin-12-systems">Spin-1/2 systems</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/DFA.html">Density Functional Approximation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/time-reversal.html">time-reversal</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Density Functional Approximation</h1>
+<h1 class="title">time-reversal</h1>
 </div>
 
 
@@ -342,7 +377,7 @@ window.MathJax = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 7, 2025</p>
+      <p class="date">November 14, 2025</p>
     </div>
   </div>
   
@@ -354,10 +389,13 @@ window.MathJax = {
 </header>
 
 
-<p><a href="../../../posts/notes/solid/DFT.html">DFT</a> is an exact theory, and if we know the exact formulation of the <a href="XC.md">XC</a> functional, then one can get the exact solution of the system. However, in practice one does not the know the form of the <a href="XC.md">XC</a> functional, and approximating it makes the method a Density Functional Approximation (DFA). The failures of <a href="../../../posts/notes/solid/DFT.html">DFT</a> are in reality errors of DFA (i.e.&nbsp;of the <a href="XC.md">XC</a> functionals).</p>
-<p># “Autogenerated link references”</p>
+<p>Denoted by <span class="math inline">\(\Theta\)</span>, it</p>
+<section id="spin-12-systems" class="level2">
+<h2 class="anchored" data-anchor-id="spin-12-systems">Spin-1/2 systems</h2>
+<p>Here, now <span class="math inline">\(\Theta=K(-i\sigma_y)\)</span>, and thus <span class="math inline">\(\Theta^2=-1\)</span> (<a href="../../../posts/notes/solid/Kramers degeneracy.html">Kramers degeneracy</a>).</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
