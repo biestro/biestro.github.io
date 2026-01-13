@@ -2,8 +2,9 @@
   {
     "listing": "/posts.html",
     "items": [
-      "/posts/BoundaryWall.jl/index.html",
+      "/posts/ising.html",
       "/posts/ginzburg.html",
+      "/posts/BoundaryWall.jl/index.html",
       "/posts/waves.html"
     ]
   },

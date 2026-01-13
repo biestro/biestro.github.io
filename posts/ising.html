@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-07">
+<meta name="dcterms.date" content="2026-01-12">
 
-<title>Orbital Hall Effect</title>
+<title>Transverse Ising model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +21,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-a44f102ec8d0d83853540a38fe32083e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a44f102ec8d0d83853540a38fe32083e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -118,7 +153,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -127,31 +162,31 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Alberto Ruiz Biestro</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house-fill" role="img">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts.html"> <i class="bi bi-text-paragraph" role="img">
+    <a class="nav-link" href="../posts.html"> <i class="bi bi-text-paragraph" role="img">
 </i> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts/notes/index.html"> <i class="bi bi-file-earmark-fill" role="img">
+    <a class="nav-link" href="../posts/notes/index.html"> <i class="bi bi-file-earmark-fill" role="img">
 </i> 
 <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../posts/BoundaryWall.jl/index.html"> <i class="bi bi-pc-display-horizontal" role="img">
+    <a class="nav-link" href="../posts/BoundaryWall.jl/index.html"> <i class="bi bi-pc-display-horizontal" role="img">
 </i> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../gallery.html"> <i class="bi bi-file-earmark-image" role="img">
+    <a class="nav-link" href="../gallery.html"> <i class="bi bi-file-earmark-image" role="img">
 </i> 
 <span class="menu-text">Gallery</span></a>
   </li>  
@@ -166,7 +201,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/OHE.html">Orbital Hall Effect</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/ising.html">Transverse Ising model</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -180,7 +215,7 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../../../index.html" class="sidebar-logo-link">
+      <a href="../index.html" class="sidebar-logo-link">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -192,36 +227,36 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house-fill" role="img">
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-house-fill" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../posts.html" class="sidebar-item-text sidebar-link"><i class="bi bi-text-paragraph" role="img">
+            <a href="../posts.html" class="sidebar-item-text sidebar-link"><i class="bi bi-text-paragraph" role="img">
 </i> 
  <span class="menu-text">Posts</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/ginzburg.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/ginzburg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Landau-Ginzburg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/ising.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/ising.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Transverse Ising model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/waves.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/waves.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wave equation with FDFD</span></a>
   </div>
 </li>
@@ -229,125 +264,125 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../posts/notes/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-fill" role="img">
+            <a href="../posts/notes/index.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-earmark-fill" role="img">
 </i> 
  <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Anomalous Hall Effect.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Anomalous Hall Effect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anomalous Hall Effect</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Berry phase.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Berry phase.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Berry phase</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/DFA.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Density Functional Approximation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/DFT.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/DFT.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Density Functional Theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Dyakonov–Perel.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Dyakonov–Perel.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Dyakonov–Perel</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Kohn-Sham.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Kohn-Sham.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kohn-Sham</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Kohn-Sham band gap.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Kohn-Sham band gap.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kohn-Sham band gap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Kramers degeneracy.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Kramers degeneracy.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kramers degeneracy</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/OAM.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/OAM.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OAM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/OHE.html" class="sidebar-item-text sidebar-link active">
+  <a href="../posts/notes/solid/OHE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Orbital Hall Effect</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/quenching.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/quenching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quenching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/SOC.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/SOC.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SOC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Tight-Binding.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Tight-Binding.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tight-Binding</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/time-reversal.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/time-reversal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">time-reversal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/topological insulators.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/topological insulators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Topological Insulators</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Transition metals.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Transition metals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transition metals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/transition-orbitals.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/transition-orbitals.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">transition-orbitals</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Wannier functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Wannier functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wannier functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/notes/solid/Wannierization.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/notes/solid/Wannierization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Wannierization</span></a>
   </div>
 </li>
@@ -363,17 +398,26 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#orbital-hall-conductivity" id="toc-orbital-hall-conductivity" class="nav-link active" data-scroll-target="#orbital-hall-conductivity">Orbital Hall conductivity</a></li>
+  <li><a href="#transfer-matrix-method" id="toc-transfer-matrix-method" class="nav-link active" data-scroll-target="#transfer-matrix-method">Transfer Matrix Method</a></li>
+  <li><a href="#quantum-monte-carlo" id="toc-quantum-monte-carlo" class="nav-link" data-scroll-target="#quantum-monte-carlo">Quantum Monte Carlo</a>
+  <ul class="collapse">
+  <li><a href="#trotterization" id="toc-trotterization" class="nav-link" data-scroll-target="#trotterization">Trotterization</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../posts/notes/index.html">Notes</a></li><li class="breadcrumb-item"><a href="../../../posts/notes/solid/OHE.html">Orbital Hall Effect</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/ising.html">Transverse Ising model</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Orbital Hall Effect</h1>
-</div>
+<h1 class="title">Transverse Ising model</h1>
+<p class="subtitle lead">Transfer matrix methods</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">condensed matter</div>
+    <div class="quarto-category">simulation</div>
+  </div>
+  </div>
 
 
 
@@ -383,7 +427,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 7, 2025</p>
+      <p class="date">January 12, 2026</p>
     </div>
   </div>
   
@@ -395,16 +439,40 @@ window.Quarto = {
 </header>
 
 
-<p>Phenomenon in which an electric field induces a flow of <span class="math inline">\(p\)</span> and <span class="math inline">\(d\)</span> <a href="../../../posts/notes/solid/OAM.html">OAM</a> in a transverse direction.</p>
-<p>OHE is caused by an electric field inducing a net flow of non-equilibrium <a href="../../../posts/notes/solid/OAM.html">OAM</a> in <strong>conductors</strong> whose electronic bands have varying orbital characteristics <a href="pengUnconventionalScalingOrbital2025.md">pengUnconventionalScalingOrbital2025</a>.</p>
-<p>The <strong>intrinsic</strong> mechanism lies in the band structure <a href="bernevigOrbitronicsIntrinsicOrbital2005.md">bernevigOrbitronicsIntrinsicOrbital2005</a>, but it is still not very well understood.</p>
-<section id="orbital-hall-conductivity" class="level2">
-<h2 class="anchored" data-anchor-id="orbital-hall-conductivity">Orbital Hall conductivity</h2>
-<p>Can be calculated from the <a href="Kubo formula.md">Kubo formula</a> <a href="goFirstprinciplesCalculationOrbital2024.md">goFirstprinciplesCalculationOrbital2024</a>, given by</p>
-<p>Compare this to the Hall conductance for the <a href="../../../posts/notes/solid/Anomalous Hall Effect.html">Anomalous Hall Effect</a>.</p>
-<p># “Autogenerated link references”</p>
+<section id="transfer-matrix-method" class="level1">
+<h1>Transfer Matrix Method</h1>
+</section>
+<section id="quantum-monte-carlo" class="level1">
+<h1>Quantum Monte Carlo</h1>
+<p>We can emply the Wolff algorithm to accelerate the flipping of spins by instead flipping a cluster of spins. In this algorithm (there are other cluster algorithms), a randomly selected spin (uniform sampling) is connected to its neighbours iff they share the same sign. The probability that both neighbors have the same sign is <span class="math inline">\(1-e^{-2\beta J}\)</span>, and is used for calculating adding links to the cluster (since they are assumed frozen).</p>
+<section id="trotterization" class="level2">
+<h2 class="anchored" data-anchor-id="trotterization">Trotterization</h2>
+<p>Furthermore, since spins can flip as a function of (imaginary) time, they also need to be added</p>
+<p>This is easily seen from the trotterization of the Hamiltonian,</p>
+<p><span class="math display">\[
+\begin{aligned}
+H&amp;=-J\sum_{i}\sigma^z_{i}\sigma^z_{i+1}-h\sum_{i}\sigma_i^x\\
+&amp;=H_z+H_x,
+\end{aligned}
+\]</span></p>
+<p>and then the partition function</p>
+<p><span class="math display">\[
+\begin{aligned}
+Z&amp;=\mathrm{Tr}\;e^{-\beta H},\\
+&amp;= \mathrm{Tr}\;e^{-\beta(H_z+H_x)},\\
+&amp;=\lim_{M\rightarrow \infty}\qty(e^{\beta H_z/M}e^{\beta H_x/M})^M,\\
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\beta=\Delta \tau M\)</span> evolves in imaginary time.</p>
+<p>This is the result of Path-Integral QMC: the 1D quantum Ising model is mapped to a 2D classical Ising model.</p>
+<p><span class="math display">\[
+  S=-K_s\sum_{i,n}\sigma_{i,n}\sigma_{i+1, n}-K_t
+\]</span></p>
+<p>This allows for more statistically independent configurations (because of detailed balance?) to be generated in fewer step, compared to single spin-flip methods.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
