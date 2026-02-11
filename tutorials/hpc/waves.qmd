@@ -1,0 +1,14 @@
+---
+title: "Running VASP with AiiDA"
+subtitle: "In HPC NERSC"
+# author: "Alberto Ruiz Biestro"
+# image: waves/feature.png
+date: "2026-02-10"
+# categories: [optics, finite difference, simulation]
+# engine: julia
+# julia:
+  # exeflags: ["+1.11.6", "--project=quarto"]
+# execute:
+  # freeze: auto
+---
+
