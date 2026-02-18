@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World | My XMin Wiki</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/xmin.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-xmin">
+        <nav class="nav-xmin">
+            <div class="nav-links">
+                
+                    <a href="/">Home</a>
+                
+                    <a href="/posts/hello">Hello Post</a>
+                
+                    <a href="/posts/linear-algebra">Math Post</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title">Hello World</h1>
+        <div class="post-meta">February 17, 2026 &middot; 36 words</div>
+    </header>
+
+    <div class="post-content">
+        <p>This is my first note. I want to link to a math concept.</p>
+<p>I will use a WikiLink here: [[Linear Algebra]].</p>
+<p>(The script will automatically turn that bracketed text into a link to the <code>linear-algebra</code> post).</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz-Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light Mode";
+        } else {
+            toggleBtn.innerText = "Dark Mode";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light Mode";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark Mode";
+            }
+        });
+    </script>
+</body>
+</html>

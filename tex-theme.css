@@ -1,0 +1,73 @@
+/* xmin-theme.css */
+
+/* 1. Typography - The core XMin "Palatino" look */
+body {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+    margin-top: 2rem;
+}
+
+/* 2. Layout - Narrow and Centered */
+.container-xmin {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* 3. Navigation - Minimal, text-only */
+.nav-xmin {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.nav-xmin a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-xmin a:hover {
+    text-decoration: underline;
+}
+
+/* 4. Content Styling */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+h1.post-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Links inside the article should differ from nav links */
+article a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* 5. Footer */
+footer {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-size: 0.9rem;
+    text-align: center;
+}

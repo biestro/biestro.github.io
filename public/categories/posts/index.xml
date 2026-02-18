@@ -1,61 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Beto</title>
+    <title>Posts on My XMin Wiki</title>
     <link>http://localhost:1313/categories/posts/</link>
-    <description>Recent content in Posts on Beto</description>
+    <description>Recent content in Posts on My XMin Wiki</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Mean field theory</title>
-      <link>http://localhost:1313/posts/mean-field/</link>
-      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mean-field/</guid>
-      <description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional \(F[m]\) in \(m\) and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;\[&#xA;  H[m] = \int d\mathbf{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;\]&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see Kardar&amp;rsquo;s book).&#xA;Here, \(m(\mathbf{x})\) can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Small oscillations &amp; Condensed Matter</title>
-      <link>http://localhost:1313/posts/chain/</link>
-      <pubDate>Wed, 06 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/chain/</guid>
-      <description>&lt;h2 id=&#34;derivation-and-examples&#34;&gt;Derivation and examples&lt;/h2&gt;&#xA;&lt;p&gt;WORK IN PROGRESS&lt;/p&gt;&#xA;\[&#xA;  T = \begin{bmatrix}&#xA;    2k &amp; -k &amp; 0 &amp; \cdots &amp; -k \\&#xA;    -k &amp; 2k&amp; -k &amp; \cdots &amp; 0 \\&#xA;    0 &amp; -k &amp; 2k &amp; \cdots &amp; 0 \\&#xA;    \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; -k \\&#xA;   -k &amp; 0 &amp; 0 &amp; -k &amp; 2k&#xA;\end{bmatrix}&#xA;\]&lt;p&gt;The solution for the displacements follows the picture below.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;multipleosc.png&#34; alt=&#34;Plot&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The periodic chain behaves as the following video shows.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>BoundaryWall.jl</title>
-      <link>http://localhost:1313/posts/boundary-wall/</link>
-      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/boundary-wall/</guid>
-      <description>&lt;!-- class=&#34;center&#34;/&gt; --&gt;&#xA;&lt;img src=&#34;docs/src/assets/logo.svg&#34; alt=&#34;logo&#34; width=&#34;150&#34;/&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/overview&#34;&gt;Overview&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/geometry&#34;&gt;Geometry&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/lattice&#34;&gt;Lattices&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Tutorials&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/tutorials/photonic&#34;&gt;Photonic Crystal&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./docs/tutorials/mirror&#34;&gt;Beam Splitter &amp;amp; Bragg Mirror&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;!-- + [Photonic Crystal](./docs/tutorials/photonic) --&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://github.com/biestro/BoundaryWall.jl&#34;&gt;source code&lt;/a&gt; is available on github.&lt;/p&gt;&#xA;&lt;h3 id=&#34;more-posts&#34;&gt;More posts:&lt;/h3&gt;</description>
-    </item>
     <item>
       <title>ICTP - Quantinuum Hackathon</title>
       <link>http://localhost:1313/posts/ictp/</link>
       <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/ictp/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Simulated Annealing</title>
-      <link>http://localhost:1313/posts/annealing/</link>
-      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/annealing/</guid>
-      <description>&lt;p&gt;Similar to the Ising Model, Simulated Annealing takes a step implements a similar cost function to that of the Ising Hamiltonian. Once again, the probability of accepting a less-efficient state follows the Maxwell-Boltzmann distribution.&lt;/p&gt;&#xA;&lt;center&gt;&#xA;&lt;video preload=&#34;auto&#34; width=&#34;600px&#34;  autoplay loop playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/posts/annealing/tsp.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;&lt;/span&gt;&#xA;&lt;/video&gt;&#xA;&lt;/center&gt;&#xA;&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;&#xA;&lt;p&gt;The probability of choosing or accepting a state with higher energy is given by&lt;/p&gt;&#xA;$$ P_a(\delta E) = \exp\left(-\frac{\delta E}{k_BT}\right)$$&lt;p&gt;Where \(T\) is the temperature function \(T = T(t)\). Several cooling schedules are available on the web.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ising model</title>
-      <link>http://localhost:1313/posts/ising/</link>
-      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ising/</guid>
-      <description>&lt;p&gt;The Metropolis-Hastings algorithm for simulating the Lenz-Ising model is an excellent example of a Markov chain, since the former is actually a version of a Markov chain Monte Carlo (MCMC) simulation. I present examples based on cartesian and isometric grids.&lt;/p&gt;&#xA;\[&#xA;H(\sigma)=-\sum_{\{i,j\}}J_{ij}\sigma_i\sigma_j-\mu\sum_jh_j\sigma_j\ ,&#xA;\]&lt;p&gt;Since the Hamiltonian depends strictly on nearest-neighbours interactions, &lt;a href=&#34;https://ci.ovgu.de/Team/Palina+Bartashevich/Publications/_/Bartashevich2019-Ising.pdf&#34;&gt;it can be used as a model for opinion/voter dynamics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;For this example, we consider a warping grid of size \(N\), where the \(N+1\)th index is congruent to the first index modulo \(N\). All these fancy words state that the grid behaves as when Pac-Man portals to the opposite side of the screen. This is done in the vertical direction as well, as stated by the expressions &lt;code&gt;mod(k,n) + 1, ...)&lt;/code&gt; (the &lt;code&gt;+ 1&lt;/code&gt;s are there just due to &lt;code&gt;Julia&lt;/code&gt;&amp;rsquo;s indexing convention.)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Wave simulations</title>
-      <link>http://localhost:1313/posts/waves/</link>
-      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/waves/</guid>
-      <description>&lt;p&gt;Wave simulations are essential in optics and electrodynamics. Here are some of the simulations I&amp;rsquo;ve done for wave propagation using finite-difference schemes.&lt;/p&gt;&#xA;&lt;center&gt;&#xA;&lt;video preload=&#34;auto&#34; width=&#34;500px&#34;  autoplay loop playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/posts/waves/tesseract.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;&lt;/span&gt;&#xA;&lt;/video&gt;&#xA;&lt;/center&gt;&#xA;&lt;h2 id=&#34;discrete-wave-equation&#34;&gt;Discrete wave equation&lt;/h2&gt;&#xA;&lt;p&gt;In general, using a FDTD scheme is just a fancy way of discretizing a differential operator. In this case, we want to discretize the following equation,&lt;/p&gt;&#xA;\[\partial^2_{t}\psi(\mathbf{r},t)-\alpha^2{\Delta}\psi(\mathbf{r},t)=0\quad (+\phi),\]&lt;p&gt;with \(\Delta\) being Laplace&amp;rsquo;s operator. One can also add a source term, \(\phi\), but this does not cause any major differences when discretizing the homogeneous equation. &lt;a href=&#34;https://en.wikipedia.org/wiki/Discrete_Laplace_operator&#34;&gt;Wikipedia&amp;rsquo;s page on the Discrete Laplace Operator&lt;/a&gt; gives a great insight into how the method works for \(\mathcal{O}(h^2)\) error. Long story short, we deal with a generalization of the central finite difference method for higher dimensions. In 1D, one has the coefficients \((1,-2,1)\), which discretize \(\partial_x^2\). In 2D, the same coefficients apply, but now in the perpendicular direction. In a cartesian grid, this translates to having a column vector of coefficients \((1,2,1)^T\). For 3D, the same methodology applies. Having the connection between the differential operator and its discrete version \(\Delta_{x,y,z}\rightarrow \mathbf{D}_{i,j,k}^2\), one can infer the structure of the &lt;em&gt;kernel&lt;/em&gt; to be used,&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

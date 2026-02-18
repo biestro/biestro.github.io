@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article>
+    <header>
+        <h1 class="post-title">Welcome to the Wiki</h1>
+    </header>
+    <div class="content">
+        {{ .Content }}
+        
+        <hr>
+        <h3>Recent Posts</h3>
+        <ul>
+            {{ range where .Site.RegularPages "Section" "posts" }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</article>
+{{ end }}

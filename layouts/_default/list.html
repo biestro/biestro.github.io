@@ -1,24 +1,17 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
+<article>
+    <header>
+        <h1 class="post-title">{{ .Title }}</h1>
+    </header>
 
-{{if not .IsHome }}
-<h1>{{ .Title | markdownify }}</h1>
+    <ul>
+        {{ range .Pages }}
+        <li>
+            <span style="font-family: monospace;">{{ .Date.Format "2006-01-02" }}</span>
+            &mdash;
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</article>
 {{ end }}
-
-{{ .Content }}
-<!-- where (site.GetPage "index/companies").Pages -->
-<!-- range (where $pages.ByTitle "Section" "=" "posts")  -->
-
-
-<ul>
-  <!--  $pages := .Pages  -->
-  {{ $pages := (site.GetPage "posts").Pages}}
-  {{ if .IsHome }}{{ $pages := (site.GetPage "posts").Pages }}{{ end }} 
-  {{ range $pages }} 
-  <li>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-  </li>
-  {{ end }}
-</ul>
-
-{{ partial "footer.html" . }}

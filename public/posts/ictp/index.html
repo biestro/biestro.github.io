@@ -1,120 +1,110 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ICTP - Quantinuum Hackathon | Beto</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
-  </head>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/resume/">Resume</a></li>
-      
-      <li><a href="/posts/">Posts</a></li>
-      
-      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
-      
-      <li><a href="/gallery/">Gallery</a></li>
-      
-      <li><a href="/posts/boundary-wall/">Software</a></li>
-      
-      <li><a href="https://github.com/biestro">GitHub</a></li>
-      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICTP - Quantinuum Hackathon | My XMin Wiki</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/xmin.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-xmin">
+        <nav class="nav-xmin">
+            <div class="nav-links">
+                
+                    <a href="/">Home</a>
+                
+                    <a href="/posts/hello">Hello Post</a>
+                
+                    <a href="/posts/linear-algebra">Math Post</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title">ICTP - Quantinuum Hackathon</h1>
+    </header>
+
+    <ul>
+        
     </ul>
-    <hr/>
-    </nav>
+</article>
 
+        </main>
 
+        <footer>
+            &copy; 2026 Alberto Ruiz-Biestro
+        </footer>
+    </div>
 
-<h1>ICTP - Quantinuum Hackathon</h1>
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
 
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
 
-<p><a href="https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced">We won! (second place)</a>. After a week of lectures and 48 hours of intense coding and learning, I&rsquo;m proud to announce that our team was awarded the <strong>Best Team Project</strong> prize by <a href="https://www.quantinuum.com/">Quantinuum</a> and the <a href="https://www.ictp.it/">International Centre for Theoretical Physics</a>.</p>
-<p>From the <a href="https://indico.ictp.it/event/10163">event&rsquo;s website</a>, &ldquo;<em>The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.</em>&rdquo;</p>
-<h2 id="the-challenge">The challenge</h2>
-<p>My team and I worked on Quantum Krylov Methods with our mentor, <a href="https://scholar.google.com/citations?user=M9JDf6sAAAAJ">Nathan Fitzpatrick</a> (from Quantinuum), in order to simulate an H\(_2\) molecule (it can be applied to other chains). This provided a significant advantage over a <em>variational</em> approach (as it is usually seen in tutorials for quantum computing in chemistry), as the algorithm is purely quantum.</p>
-<p>Another advantage comes from the fact that with <em>variational</em> algorithms, your aim is to only calculate the ground state. With this method, however, we are able to reproduce excited state curves &ldquo;for free&rdquo;. These excited states come from the fact that this is a generalized eigenvalue problem in Krylov subspace, which is (supposed to be) much smaller than the total Hilbert space from the original diagonalization problem</p>
-\[H|\psi\rangle=E|\psi\rangle\]<p>A small issue with the &ldquo;pure&rdquo; Krylov Method (we used a Unitary Krylov Approach) is that, as your Krylov basis is purely in powers of functions of \(H\), e.g.</p>
-\[\{|\psi_0\rangle, f(H)^1|\psi_0\rangle,f(H)^2|\psi_0\rangle, ..., f(H)^K|\psi_0\rangle \} \]<p>the basis becomes almost linearly dependent due to the <em>properties of power iteration</em>. This can be solved through an orthogonalization routine, as seen in <a href="https://arxiv.org/abs/2208.00567">this paper</a> that was published just after the hackathon. They use the Krylov space as a basis for the Lanczos method.</p>
-<p>We used <a href="https://www.quantinuum.com/computationalchemistry/inquanto">InQuanto</a>, from <em>Quantinuum</em> in order to get the second quantization as a weighted linear combination of unitary Paulis (through the JW-transformation).</p>
-<!-- ## Photo
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light Mode";
+        } else {
+            toggleBtn.innerText = "Dark Mode";
+        }
 
-![Current](../ictp.jpg?width=300) -->
-<h3 id="more-posts">More posts:</h3>
-
-
-
-
-
-<ul>
-  
-  
-   
-   
-  <li>
-    <span class="date">2025/04/09</span>
-    <a href="/posts/mean-field/">Mean field theory</a>
-  </li>
-   
-  <li>
-    <span class="date">2024/11/06</span>
-    <a href="/posts/chain/">Small oscillations &amp; Condensed Matter</a>
-  </li>
-   
-  <li>
-    <span class="date">2024/05/01</span>
-    <a href="/posts/boundary-wall/">BoundaryWall.jl</a>
-  </li>
-   
-  <li>
-    <span class="date">2023/04/17</span>
-    <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/09/08</span>
-    <a href="/posts/annealing/">Simulated Annealing</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/08/08</span>
-    <a href="/posts/ising/">Ising model</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/01/11</span>
-    <a href="/posts/waves/">Wave simulations</a>
-  </li>
-  
-</ul>
-
-  <footer>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
-
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
-
-
-<script>
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-  
-  <hr/>
-  <a href="http://localhost:1313/">Home</a>
-  | 
-  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
-  
-  </footer>
-  </body>
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light Mode";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark Mode";
+            }
+        });
+    </script>
+</body>
 </html>

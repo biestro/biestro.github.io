@@ -1,0 +1,40 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My XMin Wiki'
+
+
+[markup]
+  [markup.goldmark]
+    [markup.renderer]
+      unsafe = false  # Needed for inline HTML/MathJax
+  [markup.highlight]
+    style = "friendly"  # Choose a light theme
+    guessSyntax = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Hello Post"
+    url = "/posts/hello"
+    weight = 20
+
+  [[menu.main]]
+    name = "Math Post"
+    url = "/posts/linear-algebra"
+    weight = 30
+
+[params]
+  # Path relative to the 'static' folder
+  profileImage = "/images/sponge.jpg" 
+  favicon = "/images/icosahedron.gif"
+  
+  
+  # New fields
+  authorName = "Alberto Ruiz-Biestro"
+  authorDesc = """PhD Student in Physics 
+\n at Rice University."""
+

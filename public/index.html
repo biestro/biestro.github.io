@@ -1,120 +1,182 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en">
+<head>
 	<meta name="generator" content="Hugo 0.139.3"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home | Beto</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" rel="stylesheet">
-  </head>
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
 
-  <body>
-    <nav>
-    <ul class="menu">
-      
-      <li><a href="/">Home</a></li>
-      
-      <li><a href="/resume/">Resume</a></li>
-      
-      <li><a href="/posts/">Posts</a></li>
-      
-      <li><a href="mailto:alberto.ruiz.biestro@rice.edu">Contact</a></li>
-      
-      <li><a href="/gallery/">Gallery</a></li>
-      
-      <li><a href="/posts/boundary-wall/">Software</a></li>
-      
-      <li><a href="https://github.com/biestro">GitHub</a></li>
-      
-    </ul>
-    <hr/>
-    </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | My XMin Wiki</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/xmin.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
 
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
+    <div class="container-xmin">
+        <nav class="nav-xmin">
+            <div class="nav-links">
+                
+                    <a href="/">Home</a>
+                
+                    <a href="/posts/hello">Hello Post</a>
+                
+                    <a href="/posts/linear-algebra">Math Post</a>
+                
+            </div>
 
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
 
-<h1 id="alberto-ruiz-biestro">Alberto Ruiz-Biestro</h1>
-<center>
-<video preload="auto" width="300px"  autoplay loop playsinline class="html-video">
-    <source src="/field.mp4" type="video/mp4">
-  <span></span>
-</video>
-</center>
-<!-- <img src="./cat.jpg" style="max-width:25%;min-width:40px;float:right;" alt="cat" /> -->
-<!-- <img src="./cat.jpg" style="max-width:25%;min-width:40px;" alt="cat" /> -->
-<!-- <img src="./cat.jpg" style="max-width:25%;min-width:40px;float:right;" alt="cat" /> -->
-<!-- ## Graduate Physics student -->
-<p>Currently a <strong>graduate Physics student @ Rice University</strong>. I completed my BSc. in <em>Engineering Physics</em> at Monterrey Institute of Technology, where I did my research in computational optics and quantum billiards. My fields of interest and expertise vary from quantum computing to stochastic models, computational physics, and more. Proficient in Julia, MATLAB, and Python. Know my way around Mathematica and C++.</p>
-<p>Below are listed some of my past projects.</p>
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title"></h1>
+    </header>
 
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="text-center mb-3">
+                
+                <img src="/images/sponge.jpg" alt="Profile Picture" class="img-fluid shadow-sm mb-3" style="max-width: 150px;">
+                
 
+                
+                <h4 class="mt-2">Alberto Ruiz-Biestro</h4>
+                
+                
+                
+                <p class="profile-desc" style="font-size: 0.95rem;">
+                    PhD Student in Physics 
 
+ at Rice University.
+                </p>
+                
+            </div>
 
+            <div class="d-flex justify-content-center">
+                <ul class="list-unstyled text-start"> 
+                    
+                    <li class="mb-2">
+                        <a href="mailto:biestro@rice.edu" target="_blank" class="profile-link">
+                            <img src="/images/mail2.gif" alt="Email" class="icon-sm me-2">
+                            Email
+                        </a>
+                    </li>
 
-<ul>
-  
-  
-   
-   
-  <li>
-    <span class="date">2025/04/09</span>
-    <a href="/posts/mean-field/">Mean field theory</a>
-  </li>
-   
-  <li>
-    <span class="date">2024/11/06</span>
-    <a href="/posts/chain/">Small oscillations &amp; Condensed Matter</a>
-  </li>
-   
-  <li>
-    <span class="date">2024/05/01</span>
-    <a href="/posts/boundary-wall/">BoundaryWall.jl</a>
-  </li>
-   
-  <li>
-    <span class="date">2023/04/17</span>
-    <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/09/08</span>
-    <a href="/posts/annealing/">Simulated Annealing</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/08/08</span>
-    <a href="/posts/ising/">Ising model</a>
-  </li>
-   
-  <li>
-    <span class="date">2022/01/11</span>
-    <a href="/posts/waves/">Wave simulations</a>
-  </li>
-  
-</ul>
+                    <li class="mb-2">
+                        <a href="https://scholar.google.com/citations?hl=en&user=2nW3hNoAAAAJ" target="_blank" class="profile-link">
+                            <img src="/images/icosahedron.gif" alt="Google Scholar" class="icon-sm me-2">
+                            Google Scholar
+                        </a>
+                    </li>
 
-  <footer>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<script src="//cdn.jsdelivr.net/combine/npm/katex/dist/katex.min.js,npm/katex/dist/contrib/auto-render.min.js,npm/@xiee/utils/js/render-katex.js" defer></script>
+                    <li class="mb-2">
+                        <a href="https://orcid.org/0009-0005-4548-0081" target="_blank" class="profile-link">
+                            <img src="/images/linux3.gif" alt="ORCID" class="icon-sm me-2">
+                            ORCID
+                        </a>
+                    </li>
 
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/center-img.min.js" defer></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+                    <li class="mb-2">
+                        <a href="https://github.com/biestro" target="_blank" class="profile-link">
+                            <img src="/images/computer2.gif" alt="GitHub" class="icon-sm me-2">
+                            GitHub
+                        </a>
+                    </li>
+                    
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/julia.min.js" defer></script>
+                </ul>
+            </div>
 
+        </div>
+        <div class="col-md-8">
+            <div class="content">
+                <p>I am a second-year PhD student in the Physics and Astronomy program at Rice University.</p>
 
-<script>
-    hljs.configure({languages: []});
-    hljs.initHighlightingOnLoad();
-</script>
-  
-  <hr/>
-  <a href="http://localhost:1313/">Home</a>
-  | 
-  © Alberto R. | <a href="https://github.com/biestro">GitHub</a> | A fork of <a href="https://github.com/yihui/hugo-xmin">XMin</a>
-  
-  </footer>
-  </body>
+                
+                <hr>
+                <h3>Recent Posts</h3>
+                <ul>
+                    
+                    <li>
+                        <a href="/posts/hello/">Hello World</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz-Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light Mode";
+        } else {
+            toggleBtn.innerText = "Dark Mode";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light Mode";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark Mode";
+            }
+        });
+    </script>
+</body>
 </html>
