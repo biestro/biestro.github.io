@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Alberto R. B.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mean field theory</title>
+      <link>http://localhost:1313/posts/mean-field/</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mean-field/</guid>
+      <description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see &lt;a href=&#34;https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945&#34;&gt;Kardar&amp;rsquo;s book&lt;/a&gt;).&#xA;Here, $m(\vec{x})$ can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>ICTP - Quantinuum Hackathon</title>
       <link>http://localhost:1313/posts/ictp/</link>

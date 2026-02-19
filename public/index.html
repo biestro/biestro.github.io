@@ -39,13 +39,11 @@
         <nav class="nav-x">
             <div class="nav-links">
                 
-                    <a href="/">Home</a>
+                    <a href="/">/home</a>
                 
-                    <a href="/posts/hello">Hello Post</a>
+                    <a href="/posts/">/posts</a>
                 
-                    <a href="/posts/linear-algebra">Math Post</a>
-                
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">Software</a>
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
                 
             </div>
 
@@ -121,18 +119,112 @@
 
                 
                 <hr>
-                <h3>Recent Posts</h3>
+                <h3>Posts</h3>
                 <ul>
                     
                     <li>
-                        <a href="/posts/hello/">Hello World</a>
+                        <a href="/posts/linear-algebra/">Transverse Ising model</a>
                     </li>
                     
                     <li>
-                        <a href="/posts/linear-algebra/">Linear Algebra</a>
+                        <a href="/posts/mean-field/">Mean field theory</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
                     </li>
                     
                 </ul>
+            </div>
+        </div>
+        <div class="col-md-18">
+            <div class="resume-content">                
+                <hr>
+                <h3>Résumé</h3>
+                <ul>
+                    
+                        <p>Click <a href="https://raw.githubusercontent.com/ModifiedBear/Resume/master/cv.pdf">here</a> for a <code>.pdf</code> version.</p>
+<h2 id="education">Education</h2>
+<ul>
+<li><strong>2024 &ndash; Present: Ph.D. Physics &amp; Astronomy, Rice University.</strong></li>
+<li>2020 &ndash; 2024: B.Sc. Engineering Physics, Monterrey Institute of Technology.
+<ul>
+<li>GPA: 96.98/100</li>
+<li>TOEFL iBT score: 108/120</li>
+</ul>
+</li>
+</ul>
+<h2 id="publications">Publications</h2>
+<ol>
+<li><strong>Alberto Ruiz-Biestro</strong> and Julio C. Gutierrez-Vega.
+&ldquo;Solutions of the Lippmann-Schwinger equation for confocal parabolic billiards&rdquo;.
+<strong>Phys. Rev. E.</strong>, Mar 2024. <a href="https://doi.org/10.1103/PhysRevE.109.034203">doi:10.1103/PhysRevE.109.034203.</a></li>
+</ol>
+<h2 id="conference-presentations">Conference Presentations</h2>
+<ol>
+<li>Mexican Optics and Photonics Meeting. Poster presentation. &ldquo;Lippmann-Schwinger equation in parabolic geometries&rdquo;. Nov 2023</li>
+<li>National Space Activity Congress (CONACES). “Raman spectrometer design for biosignature detection” (virtual). Nov 2021.</li>
+</ol>
+<h2 id="awards">Awards</h2>
+<ul>
+<li>
+<p>Apr 2023: <strong>Best Team Project</strong>. <em>International Centre for Theoretical Physics &amp; Quantinuum</em>.</p>
+<ul>
+<li>Trieste, Italy. <a href="https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced">2nd place in quantum hackathon</a>.</li>
+</ul>
+</li>
+<li>
+<p>Aug 2020: <strong>Academic Merit Scholarship</strong>, <em>Monterrey Institute of Technology</em>.</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="teaching-experience">Teaching Experience</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Start</th>
+          <th>End</th>
+          <th>Course</th>
+          <th>Institute</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Jan 2026</td>
+          <td>Jun 2026</td>
+          <td>PHYS 526: Statistical Physics</td>
+          <td>Rice University</td>
+      </tr>
+      <tr>
+          <td>Aug 2025</td>
+          <td>Dec 2025</td>
+          <td>PHYS 201: Waves, Light, and Heat</td>
+          <td>Rice University</td>
+      </tr>
+      <tr>
+          <td>Jan 2025</td>
+          <td>Jun 2025</td>
+          <td>PHYS 202: Modern Physics</td>
+          <td>Rice University</td>
+      </tr>
+      <tr>
+          <td>Aug 2023</td>
+          <td>Dec 2023</td>
+          <td>F1009: Mathematical Methods</td>
+          <td>Tec de Monterrey</td>
+      </tr>
+      <tr>
+          <td>Aug 2022</td>
+          <td>Jun 2023</td>
+          <td>F2017: Modern E&amp;M</td>
+          <td>Tec de Monterrey</td>
+      </tr>
+  </tbody>
+</table>
+
+                    
+                </ul> 
             </div>
         </div>
     </div>
@@ -167,9 +259,9 @@
 
         
         if (htmlTag.classList.contains('dark-mode')) {
-            toggleBtn.innerText = "Light Mode";
+            toggleBtn.innerText = "Light?";
         } else {
-            toggleBtn.innerText = "Dark Mode";
+            toggleBtn.innerText = "Dark?";
         }
 
         toggleBtn.addEventListener('click', () => {
@@ -177,10 +269,10 @@
             
             if (htmlTag.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
-                toggleBtn.innerText = "Light Mode";
+                toggleBtn.innerText = "Light?";
             } else {
                 localStorage.setItem('theme', 'light');
-                toggleBtn.innerText = "Dark Mode";
+                toggleBtn.innerText = "Dark?";
             }
         });
     </script>

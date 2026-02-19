@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linear Algebra | Alberto R. B.</title>
+    <title>Transverse Ising model | Alberto R. B.</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -38,13 +38,11 @@
         <nav class="nav-x">
             <div class="nav-links">
                 
-                    <a href="/">Home</a>
+                    <a href="/">/home</a>
                 
-                    <a href="/posts/hello">Hello Post</a>
+                    <a href="/posts/">/posts</a>
                 
-                    <a href="/posts/linear-algebra">Math Post</a>
-                
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">Software</a>
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
                 
             </div>
 
@@ -55,18 +53,46 @@
             
 <article>
     <header>
-        <h1 class="post-title">Linear Algebra</h1>
-        <div class="post-meta">February 17, 2026 &middot; 27 words</div>
+        <h1 class="post-title">Transverse Ising model</h1>
+        <div class="post-meta">February 17, 2026 &middot; 176 words</div>
     </header>
 
     <div class="post-content">
-        <h1 id="the-math-page">The Math Page</h1>
-<p>This page was linked to from the &ldquo;Hello World&rdquo; page.</p>
-<p>Here is a matrix equation:</p>
+        <h2 id="trotterization">Trotterization</h2>
+<p>Furthermore, since spins can flip as a function of (imaginary) time, they also need to be added.</p>
+<p>This is easily seen from the trotterization of the Hamiltonian,</p>
 <p>$$
-\mathbf{A}\vec{x} = \lambda \vec{x}
+\begin{aligned}
+H &amp;= -J \sum_i \sigma^z_i \sigma^z_{i+1} - h \sum_i \sigma_i^x \
+&amp;= H_z + H_x,
+\end{aligned}
 $$</p>
-<p>Return to [[Hello]].</p>
+<p>and then the partition function</p>
+<p>$$
+\begin{aligned}
+Z &amp;= \mathrm{Tr}; e^{-\beta H}, \
+&amp;= \mathrm{Tr}; e^{-\beta (H_z + H_x)}, \
+&amp;= \lim_{M \rightarrow \infty}
+\left(e^{\beta H_z/M} e^{\beta H_x/M}\right)^M,
+\end{aligned}
+$$</p>
+<p>where $\beta = \Delta \tau M$ evolves in imaginary time.</p>
+<p>This is the result of Path-Integral QMC: the 1D quantum Ising model is mapped to a 2D classical Ising model.</p>
+<p>$$
+S = -K_s \sum_{i,n} \sigma_{i,n} \sigma_{i+1,n} - K_t
+$$</p>
+<p>This allows for more statistically independent configurations (because of detailed balance?) to be generated in fewer steps, compared to single spin-flip methods.</p>
+<p>The magnetization $|m|$ can distinguish between a ferromagnetic (FM) and a paramagnetic phase.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><em>Chi</em></p>
+<p>The Binder cumulant is defined as</p>
+<p>$$
+U_L = 1 - \frac{\langle m^4 \rangle}{3 \langle m^2 \rangle^2}
+$$</p>
+<!-- raw HTML omitted -->
+<p><em>Binder parameter</em></p>
+<h1 id="transfer-matrix-method">Transfer Matrix Method</h1>
 
     </div>
 </article>
@@ -99,9 +125,9 @@ $$</p>
 
         
         if (htmlTag.classList.contains('dark-mode')) {
-            toggleBtn.innerText = "Light Mode";
+            toggleBtn.innerText = "Light?";
         } else {
-            toggleBtn.innerText = "Dark Mode";
+            toggleBtn.innerText = "Dark?";
         }
 
         toggleBtn.addEventListener('click', () => {
@@ -109,10 +135,10 @@ $$</p>
             
             if (htmlTag.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
-                toggleBtn.innerText = "Light Mode";
+                toggleBtn.innerText = "Light?";
             } else {
                 localStorage.setItem('theme', 'light');
-                toggleBtn.innerText = "Dark Mode";
+                toggleBtn.innerText = "Dark?";
             }
         });
     </script>

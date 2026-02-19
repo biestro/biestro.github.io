@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICTP - Quantinuum Hackathon | Alberto R. B.</title>
+    <title>Resume | Alberto R. B.</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -53,24 +53,90 @@
             
 <article>
     <header>
-        <h1 class="post-title">ICTP - Quantinuum Hackathon</h1>
-        <div class="post-meta">April 17, 2023 &middot; 312 words</div>
+        <h1 class="post-title">Resume</h1>
+        <div class="post-meta">January 1, 0001 &middot; 171 words</div>
     </header>
 
     <div class="post-content">
-        <p><a href="https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced">We won! (second place)</a>. After a week of lectures and 48 hours of intense coding and learning, I&rsquo;m proud to announce that our team was awarded the <strong>Best Team Project</strong> prize by <a href="https://www.quantinuum.com/">Quantinuum</a> and the <a href="https://www.ictp.it/">International Centre for Theoretical Physics</a>.</p>
-<p>From the <a href="https://indico.ictp.it/event/10163">event&rsquo;s website</a>, &ldquo;<em>The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.</em>&rdquo;</p>
-<h2 id="the-challenge">The challenge</h2>
-<p>My team and I worked on Quantum Krylov Methods with our mentor, <a href="https://scholar.google.com/citations?user=M9JDf6sAAAAJ">Nathan Fitzpatrick</a> (from Quantinuum), in order to simulate an H$_2$ molecule (it can be applied to other chains). This provided a significant advantage over a <em>variational</em> approach (as it is usually seen in tutorials for quantum computing in chemistry), as the algorithm is purely quantum.</p>
-<p>Another advantage comes from the fact that with <em>variational</em> algorithms, your aim is to only calculate the ground state. With this method, however, we are able to reproduce excited state curves &ldquo;for free&rdquo;. These excited states come from the fact that this is a generalized eigenvalue problem in Krylov subspace, which is (supposed to be) much smaller than the total Hilbert space from the original diagonalization problem</p>
-<p>$$H|\psi\rangle=E|\psi\rangle$$</p>
-<p>A small issue with the &ldquo;pure&rdquo; Krylov Method (we used a Unitary Krylov Approach) is that, as your Krylov basis is purely in powers of functions of $H$, e.g.</p>
-<p>$${|\psi_0\rangle, f(H)^1|\psi_0\rangle,f(H)^2|\psi_0\rangle, &hellip;, f(H)^K|\psi_0\rangle } $$</p>
-<p>the basis becomes almost linearly dependent due to the <em>properties of power iteration</em>. This can be solved through an orthogonalization routine, as seen in <a href="https://arxiv.org/abs/2208.00567">this paper</a> that was published just after the hackathon. They use the Krylov space as a basis for the Lanczos method.</p>
-<p>We used <a href="https://www.quantinuum.com/computationalchemistry/inquanto">InQuanto</a>, from <em>Quantinuum</em> in order to get the second quantization as a weighted linear combination of unitary Paulis (through the JW-transformation).</p>
+        <p>Click <a href="https://raw.githubusercontent.com/ModifiedBear/Resume/master/cv.pdf">here</a> for a <code>.pdf</code> version.</p>
+<h2 id="education">Education</h2>
+<ul>
+<li><strong>2024 &ndash; Present: Ph.D. Physics &amp; Astronomy, Rice University.</strong></li>
+<li>2020 &ndash; 2024: B.Sc. Engineering Physics, Monterrey Institute of Technology.
+<ul>
+<li>GPA: 96.98/100</li>
+<li>TOEFL iBT score: 108/120</li>
+</ul>
+</li>
+</ul>
+<h2 id="publications">Publications</h2>
+<ol>
+<li><strong>Alberto Ruiz-Biestro</strong> and Julio C. Gutierrez-Vega.
+&ldquo;Solutions of the Lippmann-Schwinger equation for confocal parabolic billiards&rdquo;.
+<strong>Phys. Rev. E.</strong>, Mar 2024. <a href="https://doi.org/10.1103/PhysRevE.109.034203">doi:10.1103/PhysRevE.109.034203.</a></li>
+</ol>
+<h2 id="conference-presentations">Conference Presentations</h2>
+<ol>
+<li>Mexican Optics and Photonics Meeting. Poster presentation. &ldquo;Lippmann-Schwinger equation in parabolic geometries&rdquo;. Nov 2023</li>
+<li>National Space Activity Congress (CONACES). “Raman spectrometer design for biosignature detection” (virtual). Nov 2021.</li>
+</ol>
+<h2 id="awards">Awards</h2>
+<ul>
+<li>
+<p>Apr 2023: <strong>Best Team Project</strong>. <em>International Centre for Theoretical Physics &amp; Quantinuum</em>.</p>
+<ul>
+<li>Trieste, Italy. <a href="https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced">2nd place in quantum hackathon</a>.</li>
+</ul>
+</li>
+<li>
+<p>Aug 2020: <strong>Academic Merit Scholarship</strong>, <em>Monterrey Institute of Technology</em>.</p>
+</li>
+</ul>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<h3 id="more-posts">More posts:</h3>
+<h2 id="teaching-experience">Teaching Experience</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Start</th>
+          <th>End</th>
+          <th>Course</th>
+          <th>Institute</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Jan 2026</td>
+          <td>Jun 2026</td>
+          <td>PHYS 526: Statistical Physics</td>
+          <td>Rice University</td>
+      </tr>
+      <tr>
+          <td>Aug 2025</td>
+          <td>Dec 2025</td>
+          <td>PHYS 201: Waves, Light, and Heat</td>
+          <td>Rice University</td>
+      </tr>
+      <tr>
+          <td>Jan 2025</td>
+          <td>Jun 2025</td>
+          <td>PHYS 202: Modern Physics</td>
+          <td>Rice University</td>
+      </tr>
+      <tr>
+          <td>Aug 2023</td>
+          <td>Dec 2023</td>
+          <td>F1009: Mathematical Methods</td>
+          <td>Tec de Monterrey</td>
+      </tr>
+      <tr>
+          <td>Aug 2022</td>
+          <td>Jun 2023</td>
+          <td>F2017: Modern E&amp;M</td>
+          <td>Tec de Monterrey</td>
+      </tr>
+  </tbody>
+</table>
 
     </div>
 </article>

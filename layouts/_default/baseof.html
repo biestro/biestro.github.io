@@ -75,9 +75,9 @@
 
         // Set initial button text based on current state
         if (htmlTag.classList.contains('dark-mode')) {
-            toggleBtn.innerText = "Light Mode";
+            toggleBtn.innerText = "Light?";
         } else {
-            toggleBtn.innerText = "Dark Mode";
+            toggleBtn.innerText = "Dark?";
         }
 
         toggleBtn.addEventListener('click', () => {
@@ -85,10 +85,10 @@
             
             if (htmlTag.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
-                toggleBtn.innerText = "Light Mode";
+                toggleBtn.innerText = "Light?";
             } else {
                 localStorage.setItem('theme', 'light');
-                toggleBtn.innerText = "Dark Mode";
+                toggleBtn.innerText = "Dark?";
             }
         });
     </script>

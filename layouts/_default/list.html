@@ -6,11 +6,13 @@
 
     <ul>
         {{ range .Pages }}
-        <li>
-            <span style="font-family: monospace;">{{ .Date.Format "2006-01-02" }}</span>
-            &mdash;
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
+            <li>
+                {{ .Date.Format "2006-01-02" }} — 
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                {{ with .Params.icon }}
+                    <img src="{{ . }}" class="post-icon">
+                {{ end }}
+            </li>
         {{ end }}
     </ul>
 </article>

@@ -13,24 +13,19 @@ title = 'Alberto R. B.'
 
 [menu]
   [[menu.main]]
-    name = "Home"
+    name = "/home"
     url = "/"
     weight = 10
 
   [[menu.main]]
-    name = "Hello Post"
-    url = "/posts/hello"
+    name = "/posts"
+    url = "/posts/"
     weight = 20
-
-  [[menu.main]]
-    name = "Math Post"
-    url = "/posts/linear-algebra"
-    weight = 30
     
   [[menu.main]]
-    name = "Software"
+    name = "/code"
     url = "https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl"
-    weight = 40
+    weight = 30
 
 [params]
   # Path relative to the 'static' folder

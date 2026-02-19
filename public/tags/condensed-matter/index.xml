@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Simulation on Alberto R. B.</title>
-    <link>http://localhost:1313/tags/simulation/</link>
-    <description>Recent content in Simulation on Alberto R. B.</description>
+    <title>Condensed Matter on Alberto R. B.</title>
+    <link>http://localhost:1313/tags/condensed-matter/</link>
+    <description>Recent content in Condensed Matter on Alberto R. B.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/condensed-matter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mean field theory</title>
       <link>http://localhost:1313/posts/mean-field/</link>
       <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/mean-field/</guid>
       <description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see &lt;a href=&#34;https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945&#34;&gt;Kardar&amp;rsquo;s book&lt;/a&gt;).&#xA;Here, $m(\vec{x})$ can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ICTP - Quantinuum Hackathon</title>
-      <link>http://localhost:1313/posts/ictp/</link>
-      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ictp/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

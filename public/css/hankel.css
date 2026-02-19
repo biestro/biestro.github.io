@@ -27,9 +27,9 @@ html, body {
 
 body {
     /* font-family: Palatino, "Palatino Linotype", serif; */
-    /* font-family: 'Helvetica', serif; */
+    font-family: 'Helvetica', serif;
     /* font-family: 'Optima', serif; */
-    font-family: 'Monaco', serif;
+    /* font-family: 'Consolas', serif; */
     font-size: 16px;
     line-height: 1.6;
     margin-top: 2rem;
@@ -52,14 +52,25 @@ h1, h2, h3 { color: var(--heading-color) !important; }
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "consolas";
 }
 
 .nav-x a {
     color: var(--text-color);
     text-decoration: none;
     margin-right: 1.5rem;
-    font-weight: bold;
+    /* font-weight: bold; */
+    
 }
+
+.nav-x a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+    margin-right: 1.5rem;
+    /* font-weight: bold; */
+    
+}
+
 
 /* Toggle Button */
 #theme-toggle {
@@ -153,4 +164,61 @@ ul li a:hover {
     color: var(--link-color);
     text-decoration: underline;
 
+}
+
+.post-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+
+
+.resume-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.resume-content h2 {
+  font-size: 1.2rem;   /* adjust as you like */
+  margin-top: 1.2rem;
+  text-decoration: underline;
+}
+
+.resume-content h1 {
+  font-size: 1.4rem;   /* adjust as you like */
+  margin-top: 1.4rem;
+}
+
+/* .resume-content h3 {
+  font-size: 1rem;
+} */
+
+.resume-content a {
+  color: var(--link-color);
+}
+
+.resume-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.resume-content th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.resume-content td {
+  padding: 0.3rem 0;
+  vertical-align: top;
+}
+
+.resume-content tr + tr td {
+  padding-top: 0.4rem;
 }

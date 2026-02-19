@@ -9,18 +9,32 @@
     <lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/posts/hello/</link>
-      <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hello/</guid>
-      <description>&lt;p&gt;This is my first note. I want to link to a math concept.&lt;/p&gt;&#xA;&lt;p&gt;I will use a WikiLink here: [[Linear Algebra]].&lt;/p&gt;&#xA;&lt;p&gt;(The script will automatically turn that bracketed text into a link to the &lt;code&gt;linear-algebra&lt;/code&gt; post).&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linear Algebra</title>
+      <title>Transverse Ising model</title>
       <link>http://localhost:1313/posts/linear-algebra/</link>
       <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/linear-algebra/</guid>
-      <description>&lt;h1 id=&#34;the-math-page&#34;&gt;The Math Page&lt;/h1&gt;&#xA;&lt;p&gt;This page was linked to from the &amp;ldquo;Hello World&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Here is a matrix equation:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\mathbf{A}\vec{x} = \lambda \vec{x}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;Return to [[Hello]].&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;trotterization&#34;&gt;Trotterization&lt;/h2&gt;&#xA;&lt;p&gt;Furthermore, since spins can flip as a function of (imaginary) time, they also need to be added.&lt;/p&gt;&#xA;&lt;p&gt;This is easily seen from the trotterization of the Hamiltonian,&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\begin{aligned}&#xA;H &amp;amp;= -J \sum_i \sigma^z_i \sigma^z_{i+1} - h \sum_i \sigma_i^x \&#xA;&amp;amp;= H_z + H_x,&#xA;\end{aligned}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;and then the partition function&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\begin{aligned}&#xA;Z &amp;amp;= \mathrm{Tr}; e^{-\beta H}, \&#xA;&amp;amp;= \mathrm{Tr}; e^{-\beta (H_z + H_x)}, \&#xA;&amp;amp;= \lim_{M \rightarrow \infty}&#xA;\left(e^{\beta H_z/M} e^{\beta H_x/M}\right)^M,&#xA;\end{aligned}&#xA;$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mean field theory</title>
+      <link>http://localhost:1313/posts/mean-field/</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/mean-field/</guid>
+      <description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see &lt;a href=&#34;https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945&#34;&gt;Kardar&amp;rsquo;s book&lt;/a&gt;).&#xA;Here, $m(\vec{x})$ can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ICTP - Quantinuum Hackathon</title>
+      <link>http://localhost:1313/posts/ictp/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ictp/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description>&lt;p&gt;Click &lt;a href=&#34;https://raw.githubusercontent.com/ModifiedBear/Resume/master/cv.pdf&#34;&gt;here&lt;/a&gt; for a &lt;code&gt;.pdf&lt;/code&gt; version.&lt;/p&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;2024 &amp;ndash; Present: Ph.D. Physics &amp;amp; Astronomy, Rice University.&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;2020 &amp;ndash; 2024: B.Sc. Engineering Physics, Monterrey Institute of Technology.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GPA: 96.98/100&lt;/li&gt;&#xA;&lt;li&gt;TOEFL iBT score: 108/120&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;publications&#34;&gt;Publications&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Alberto Ruiz-Biestro&lt;/strong&gt; and Julio C. Gutierrez-Vega.&#xA;&amp;ldquo;Solutions of the Lippmann-Schwinger equation for confocal parabolic billiards&amp;rdquo;.&#xA;&lt;strong&gt;Phys. Rev. E.&lt;/strong&gt;, Mar 2024. &lt;a href=&#34;https://doi.org/10.1103/PhysRevE.109.034203&#34;&gt;doi:10.1103/PhysRevE.109.034203.&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;conference-presentations&#34;&gt;Conference Presentations&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Mexican Optics and Photonics Meeting. Poster presentation. &amp;ldquo;Lippmann-Schwinger equation in parabolic geometries&amp;rdquo;. Nov 2023&lt;/li&gt;&#xA;&lt;li&gt;National Space Activity Congress (CONACES). “Raman spectrometer design for biosignature detection” (virtual). Nov 2021.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;awards&#34;&gt;Awards&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Apr 2023: &lt;strong&gt;Best Team Project&lt;/strong&gt;. &lt;em&gt;International Centre for Theoretical Physics &amp;amp; Quantinuum&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

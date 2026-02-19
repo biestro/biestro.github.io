@@ -38,13 +38,11 @@
         <nav class="nav-x">
             <div class="nav-links">
                 
-                    <a href="/">Home</a>
+                    <a href="/">/home</a>
                 
-                    <a href="/posts/hello">Hello Post</a>
+                    <a href="/posts/">/posts</a>
                 
-                    <a href="/posts/linear-algebra">Math Post</a>
-                
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">Software</a>
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
                 
             </div>
 
@@ -60,23 +58,29 @@
 
     <ul>
         
-        <li>
-            <span style="font-family: monospace;">2026-02-17</span>
-            &mdash;
-            <a href="/posts/hello/">Hello World</a>
-        </li>
+            <li>
+                2026-02-17 — 
+                <a href="/posts/linear-algebra/">Transverse Ising model</a>
+                
+                    <img src="/images/dodecahedron.gif" class="post-icon">
+                
+            </li>
         
-        <li>
-            <span style="font-family: monospace;">2026-02-17</span>
-            &mdash;
-            <a href="/posts/linear-algebra/">Linear Algebra</a>
-        </li>
+            <li>
+                2025-04-09 — 
+                <a href="/posts/mean-field/">Mean field theory</a>
+                
+                    <img src="/images/waves.gif" class="post-icon">
+                
+            </li>
         
-        <li>
-            <span style="font-family: monospace;">2023-04-17</span>
-            &mdash;
-            <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
-        </li>
+            <li>
+                2023-04-17 — 
+                <a href="/posts/ictp/">ICTP - Quantinuum Hackathon</a>
+                
+                    <img src="/images/mol1.gif" class="post-icon">
+                
+            </li>
         
     </ul>
 </article>
@@ -109,9 +113,9 @@
 
         
         if (htmlTag.classList.contains('dark-mode')) {
-            toggleBtn.innerText = "Light Mode";
+            toggleBtn.innerText = "Light?";
         } else {
-            toggleBtn.innerText = "Dark Mode";
+            toggleBtn.innerText = "Dark?";
         }
 
         toggleBtn.addEventListener('click', () => {
@@ -119,10 +123,10 @@
             
             if (htmlTag.classList.contains('dark-mode')) {
                 localStorage.setItem('theme', 'dark');
-                toggleBtn.innerText = "Light Mode";
+                toggleBtn.innerText = "Light?";
             } else {
                 localStorage.setItem('theme', 'light');
-                toggleBtn.innerText = "Dark Mode";
+                toggleBtn.innerText = "Dark?";
             }
         });
     </script>
