@@ -1,7 +1,6 @@
 /* static/css/xmin.css */
-
+/* similar copy to xmin theme from hugo */
 :root {
-    /* -- DEFAULT (LIGHT) -- */
     --bg-color: #ffffff;
     --text-color: #333333;
     --heading-color: #111111;
@@ -11,25 +10,26 @@
     --code-bg: #dedede;
 }
 
-/* -- DARK OVERRIDES (Applied to HTML tag) -- */
 html.dark-mode {
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
     --heading-color: #ffffff;
-    --link-color: #ffffff;
+    --link-color: #00d0ff;
     --nav-border: #444444;
     --wikilink-color: #ff80bf;
     --code-bg: #000000;
 }
 
-/* -- APPLY TO BODY AND HTML -- */
 html, body {
     background-color: var(--bg-color); /* Apply to both to prevent white edges */
     color: var(--text-color);
 }
 
 body {
-    font-family: Palatino, "Palatino Linotype", serif;
+    /* font-family: Palatino, "Palatino Linotype", serif; */
+    /* font-family: 'Helvetica', serif; */
+    font-family: 'Optima', serif;
+    font-size: 18px;
     line-height: 1.6;
     margin-top: 2rem;
     transition: background-color 0.3s, color 0.3s;
@@ -38,13 +38,13 @@ body {
 /* Rest of the CSS remains the same */
 h1, h2, h3 { color: var(--heading-color) !important; }
 
-.container-xmin {
-    max-width: 800px;
+.container-x {
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
-.nav-xmin {
+.nav-x {
     border-bottom: 1px solid var(--nav-border);
     padding-bottom: 1rem;
     margin-bottom: 2rem;
@@ -53,7 +53,7 @@ h1, h2, h3 { color: var(--heading-color) !important; }
     align-items: center;
 }
 
-.nav-xmin a {
+.nav-x a {
     color: var(--text-color);
     text-decoration: none;
     margin-right: 1.5rem;
@@ -74,6 +74,8 @@ h1, h2, h3 { color: var(--heading-color) !important; }
 a.wikilink {
     color: var(--wikilink-color) !important;
     text-decoration: none;
+    font-family: "Menlo";
+    font-size: 16px;
     border-bottom: 1px dotted var(--wikilink-color);
 }
 
@@ -86,17 +88,13 @@ a.wikilink {
     object-fit: contain; /* Ensures the icon doesn't stretch */
 }
 
-/* Optional: Invert icons in dark mode if they are black SVGs */
 /* html.dark-mode .icon-sm {
     filter: invert(1); 
 } */
 
-/* Add this to the bottom of xmin.css */
-
-/* Profile Links: Inherit the theme color instead of being blue or black */
 .profile-link {
     color: var(--link-color);
-    text-decoration: none; /* No underline by default */
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
 }
@@ -106,44 +104,33 @@ a.wikilink {
     opacity: 0.8;
 }
 
-/* Profile Description: slightly transparent version of the theme color */
 .profile-desc {
     color: var(--text-color);
-    opacity: 0.8; /* Makes it look "muted" but stays visible in dark mode */
+    opacity: 0.8;
 }
 
-/* Ensure Icons invert color in dark mode (if they are black SVGs) */
-/* html.dark-mode .icon-sm {
-    filter: invert(1);
-} */
- /* --- CODE BLOCKS & INLINE CODE --- */
-
-/* 1. Inline Code (e.g. `variable`) */
-
 code {
-    /* background-color: var(--code-bg); defined in your :root */
-    color: var(--wikilink-color);     /* Use the pink accent for inline code */
+    color: var(--wikilink-color);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
     font-size: 0.9em;
 }
 
-/* 2. Block Code (The large boxes) */
+/* code blocks */
 pre {
     background-color: var(--code-bg);
     padding: 1rem;
     /* border-radius: 8px; */
-    overflow-x: auto; /* Adds scrollbar for long lines */
+    overflow-x: auto;
     margin-bottom: 1.5rem;
     /* border: 1px solid var(--nav-border); */
 }
 
-/* 3. Code inside Blocks (Reset) */
 /* This prevents the inline style from doubling up inside the block */
 pre code {
     background-color: transparent;
-    color: inherit; /* Use standard text color for blocks */
+    color: inherit;
     padding: 0;
     font-size: 0.95rem;
 }

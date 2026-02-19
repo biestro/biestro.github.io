@@ -1,0 +1,156 @@
+/* static/css/xmin.css */
+/* similar copy to xmin theme from hugo */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --heading-color: #111111;
+    --link-color: #0000ff;
+    --nav-border: #eeeeee;
+    --wikilink-color: #d63384; 
+    --code-bg: #dedede;
+}
+
+html.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --link-color: #00d0ff;
+    --nav-border: #444444;
+    --wikilink-color: #ff80bf;
+    --code-bg: #000000;
+}
+
+html, body {
+    background-color: var(--bg-color); /* Apply to both to prevent white edges */
+    color: var(--text-color);
+}
+
+body {
+    /* font-family: Palatino, "Palatino Linotype", serif; */
+    /* font-family: 'Helvetica', serif; */
+    /* font-family: 'Optima', serif; */
+    font-family: 'Monaco', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 2rem;
+    transition: background-color 0.0s, color 0.0s;
+}
+
+/* Rest of the CSS remains the same */
+h1, h2, h3 { color: var(--heading-color) !important; }
+
+.container-x {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.nav-x {
+    border-bottom: 1px solid var(--nav-border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-x a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: bold;
+}
+
+/* Toggle Button */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 2px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+a.wikilink {
+    color: var(--wikilink-color) !important;
+    text-decoration: none;
+    font-family: "Menlo";
+    font-size: 16px;
+    border-bottom: 1px dotted var(--wikilink-color);
+}
+
+/* icon size */
+.icon-sm {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle; /* Aligns icon with the text baseline */
+    margin-top: -2px;   /* Slight tweak for perfect alignment */
+    object-fit: contain; /* Ensures the icon doesn't stretch */
+}
+
+/* html.dark-mode .icon-sm {
+    filter: invert(1); 
+} */
+
+.profile-link {
+    color: var(--link-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.profile-desc {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+code {
+    color: var(--wikilink-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+/* code blocks */
+pre {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    /* border-radius: 8px; */
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    /* border: 1px solid var(--nav-border); */
+}
+
+/* This prevents the inline style from doubling up inside the block */
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+pre {
+    border-left: 3px solid var(--wikilink-color);
+}
+
+/* #about .row {
+  flex-direction: row-reverse;
+} */
+
+ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+
+}

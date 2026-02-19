@@ -1,6 +1,6 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://biestro.github.io/'
 languageCode = 'en-us'
-title = 'My XMin Wiki'
+title = 'Alberto R. B.'
 
 
 [markup]
@@ -26,15 +26,19 @@ title = 'My XMin Wiki'
     name = "Math Post"
     url = "/posts/linear-algebra"
     weight = 30
+    
+  [[menu.main]]
+    name = "Software"
+    url = "https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl"
+    weight = 40
 
 [params]
   # Path relative to the 'static' folder
-  profileImage = "/images/sponge.jpg" 
+  profileImage = "/images/profile.jpg" 
   favicon = "/images/icosahedron.gif"
   
   
   # New fields
   authorName = "Alberto Ruiz-Biestro"
-  authorDesc = """PhD Student in Physics 
-\n at Rice University."""
+  authorDesc = """PhD Student in Physics at Rice University."""
 

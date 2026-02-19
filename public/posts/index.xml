@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My XMin Wiki</title>
+    <title>Posts on Alberto R. B.</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on My XMin Wiki</description>
+    <description>Recent content in Posts on Alberto R. B.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Feb 2026 00:00:00 +0000</lastBuildDate>
@@ -14,6 +14,13 @@
       <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/hello/</guid>
       <description>&lt;p&gt;This is my first note. I want to link to a math concept.&lt;/p&gt;&#xA;&lt;p&gt;I will use a WikiLink here: [[Linear Algebra]].&lt;/p&gt;&#xA;&lt;p&gt;(The script will automatically turn that bracketed text into a link to the &lt;code&gt;linear-algebra&lt;/code&gt; post).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linear Algebra</title>
+      <link>http://localhost:1313/posts/linear-algebra/</link>
+      <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/linear-algebra/</guid>
+      <description>&lt;h1 id=&#34;the-math-page&#34;&gt;The Math Page&lt;/h1&gt;&#xA;&lt;p&gt;This page was linked to from the &amp;ldquo;Hello World&amp;rdquo; page.&lt;/p&gt;&#xA;&lt;p&gt;Here is a matrix equation:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\mathbf{A}\vec{x} = \lambda \vec{x}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;Return to [[Hello]].&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

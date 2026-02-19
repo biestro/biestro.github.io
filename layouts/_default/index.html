@@ -7,7 +7,7 @@
         {{ .Content }}
         
         <hr>
-        <h3>Recent Posts</h3>
+        <h3>Posts</h3>
         <ul>
             {{ range where .Site.RegularPages "Section" "posts" }}
             <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
