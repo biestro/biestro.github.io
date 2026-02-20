@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial for getting AiiDA-VASP running in NERSC | Alberto Ruiz-Biestro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/hankel.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-x">
+        <nav class="nav-x">
+            <div class="nav-links">
+                
+                    <a href="/">/home</a>
+                
+                    <a href="/posts/">/posts</a>
+                
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title">Tutorial for getting AiiDA-VASP running in NERSC</h1>
+        <div class="post-meta">February 20, 2026 &middot; 224 words</div>
+    </header>
+
+    <div class="post-content">
+        <h1 id="installing-aiida-and-aiida-vasp">Installing AiiDA and AiiDA-VASP</h1>
+<p>After all is done and set, run</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>verdi plugin list aiida.calculations
+</span></span></code></pre></div><h1 id="configuring-aiida">Configuring AiiDA</h1>
+<p>verdi computer setup</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-&gt; % verdi computer setup
+</span></span><span style="display:flex;"><span>Report: enter ? <span style="color:#007020;font-weight:bold">for</span> help.
+</span></span><span style="display:flex;"><span>Report: enter ! to ignore the default and <span style="color:#007020">set</span> no value.
+</span></span><span style="display:flex;"><span>Computer label: perlmutter
+</span></span><span style="display:flex;"><span>Hostname: perlmutter.nersc.gov
+</span></span><span style="display:flex;"><span>Description <span style="color:#666">[]</span>: Perlmutter at NERSC
+</span></span><span style="display:flex;"><span>Transport plugin: core.ssh
+</span></span><span style="display:flex;"><span>Scheduler plugin: core.slurm
+</span></span><span style="display:flex;"><span>Shebang line <span style="color:#666">(</span>first line of each script, starting with <span style="color:#60a0b0;font-style:italic">#!) [#!/bin/bash]:</span>
+</span></span><span style="display:flex;"><span>Work directory on the computer <span style="color:#666">[</span>/scratch/<span style="color:#666">{</span>username<span style="color:#666">}</span>/aiida/<span style="color:#666">]</span>:
+</span></span><span style="display:flex;"><span>Mpirun <span style="color:#007020">command</span> <span style="color:#666">[</span>mpirun -np <span style="color:#666">{</span>tot_num_mpiprocs<span style="color:#666">}]</span>: srun -n <span style="color:#666">{</span>tot_num_mpiprocs<span style="color:#666">}</span> -c <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>Default number of CPUs per machine: <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>Default amount of memory per machine <span style="color:#666">(</span>kB<span style="color:#666">)</span>.: <span style="color:#40a070">12800000</span>
+</span></span><span style="display:flex;"><span>Escape CLI arguments in double quotes <span style="color:#666">[</span>y/N<span style="color:#666">]</span>:
+</span></span><span style="display:flex;"><span>Success: Computer&lt;1&gt; perlmutter created
+</span></span><span style="display:flex;"><span>Report: Note: before the computer can be used, it has to be configured with the command:
+</span></span><span style="display:flex;"><span>Report:   verdi -p ar computer configure core.ssh perlmutter
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0e84b5;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">label</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;perlmutter&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">hostname</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;perlmutter.nersc.gov&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">transport</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;core.ssh&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">description</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;NERSC Perlmutter cluster&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">scheduler</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;core.slurm&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">work_dir</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;/pscratch/sd/a/{username}/aiida/&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">default_memory_per_machine</span>:<span style="color:#bbb"> </span><span style="color:#40a070">128000000</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">mpirun_command</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;srun -n {tot_num_mpiprocs} -c 2&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">mpiprocs_per_machine</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;32&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#062873;font-weight:bold">prepend_text</span>:<span style="color:#bbb"> </span>|<span style="color:#4070a0;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  ### computer prepend_text start ###
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  #SBATCH -C cpu
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  #SBATCH -q regular
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  #SBATCH -A m4068
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  # OMP Settings
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  export OMP_PLACES=threads
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  export OMP_PROC_BIND=true
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  export OMP_NUM_THREADS=1
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-style:italic">  ### computer prepend_text end ###</span><span style="color:#bbb">  
+</span></span></span></code></pre></div><div class="admonition warning">
+  <strong>⚠ Warning</strong>
+  <div>
+    After configuring a computer, you cannot edit its contents. If you want to edit something,
+you must create a new computer.
+  </div>
+</div>
+
+<p>Test that the computer is working</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>verdi computer <span style="color:#007020">test</span> perlmutter
+</span></span></code></pre></div><h1 id="configuring-aiida-vasp">Configuring AiiDA-VASP</h1>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz-Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light?";
+        } else {
+            toggleBtn.innerText = "Dark?";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light?";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark?";
+            }
+        });
+    </script>
+</body>
+</html>

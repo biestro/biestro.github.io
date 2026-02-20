@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mean field theory | Alberto R. B.</title>
+    <title>Mean field theory | Alberto Ruiz-Biestro</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -129,21 +129,16 @@ it evolves in time, first in 2D and then in 3D.</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">-</span>μ<span style="color:#666">*</span>(a <span style="color:#666">*</span> u <span style="color:#666">+</span> <span style="color:#40a070">4</span><span style="color:#666">*</span>b<span style="color:#666">*</span>abs2<span style="color:#666">.</span>(u) <span style="color:#666">.*</span> u <span style="color:#666">-</span> K <span style="color:#666">*</span> imfilter(u, del_sq, <span style="color:#4070a0">&#34;circular&#34;</span>) <span style="color:#666">/</span> dx<span style="color:#666">^</span><span style="color:#40a070">2</span>) <span style="color:#60a0b0;font-style:italic"># periodic boudnary conditions</span>
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span>
 </span></span></code></pre></div><p>The following heatmap shows the results of an initial random spin configuration (like with the <a href="../../posts/ising">ising model</a>). I believe the sustained oscillations are due to the system exploring the possible configurations. For example, in a 1D Heisenberg model (XY model), one can think of the order parameter $\langle\vec{s}\rangle$ to be degenerate since (for the certain parameters) rotations around the $\hat{z}$ axis will not affect the free energy. Such states are called low-energy excitations of the system.</p>
-<!-- raw HTML omitted -->
 <p>One can check that this absence of low-energy excitations can also happen for a complex-valued field ($b\in\mathbb{C}$), as long as $a&gt;0$.
 As seen above, the order parameter is &ldquo;free&rdquo; to explore all the configurations around the black line. However, when we initialize the system in a purely real field (or with $a&gt;0$), there are no low-energy excitations present, and instead the system relaxes towards a single minima.</p>
-<!-- raw HTML omitted -->
 <h3 id="3d-treatment">3D treatment</h3>
 <p>I have already explained that the above functions work for ay dimension. However, the only change is that in 3D,
 multiplication becomes a bit more expensive, and we&rsquo;re dealing with even more data-points. It is convenient to use
 a simple <em>workhorse</em> for solving the dynamics, the Euler method with small time step. We also include a random (Gaussian)
 velocity in each time-step as to account for random fluctuations.</p>
 <p>Here, rather than starting with a random distribution, we start with a Gaussian field at the origin. As expected, low-energy excitations emerge.</p>
-<!-- raw HTML omitted -->
 <h3 id="cahn-hilliard-equation">Cahn-Hilliard equation</h3>
 <p>A friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of such separation using a balanced mixture (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <p>There is a great discussion on so called <em>dissipative</em> stochastic models (i.e. kinetic Ising models) in the wonderful book by <a href="https://www.cambridge.org/core/books/principles-of-condensed-matter-physics/70C3D677A9B5BEC4A77CBBD0A8A23E64">Chaikin and Lubensky</a>. It should be fun to implement the remaining models in the <em>A-J</em> list shown in page 467.</p>
 
     </div>

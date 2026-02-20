@@ -106,12 +106,10 @@ end
 
 The following heatmap shows the results of an initial random spin configuration (like with the [ising model](../../posts/ising)). I believe the sustained oscillations are due to the system exploring the possible configurations. For example, in a 1D Heisenberg model (XY model), one can think of the order parameter $\langle\vec{s}\rangle$ to be degenerate since (for the certain parameters) rotations around the $\hat{z}$ axis will not affect the free energy. Such states are called low-energy excitations of the system.
 
-<!-- {{< video src=landau_2D_full.mp4 loop="true" autoplay="true" controls="false">}} -->
 
 One can check that this absence of low-energy excitations can also happen for a complex-valued field ($b\in\mathbb{C}$), as long as $a>0$.
 As seen above, the order parameter is "free" to explore all the configurations around the black line. However, when we initialize the system in a purely real field (or with \$a>0\$), there are no low-energy excitations present, and instead the system relaxes towards a single minima. 
 
-<!-- ![Sombrero](sombrero.svg) -->
 
 
 ### 3D treatment
@@ -123,13 +121,10 @@ velocity in each time-step as to account for random fluctuations.
 
 Here, rather than starting with a random distribution, we start with a Gaussian field at the origin. As expected, low-energy excitations emerge.
 
-<!-- {{< video src=landau_3D.mp4 loop="true" autoplay="true" controls="false">}} -->
 
 ### Cahn-Hilliard equation
 
 A friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of such separation using a balanced mixture (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).
 
-<!-- {{< video src=cahn_hilliard_unbalanced.mp4 loop="true" autoplay="true" controls="false">}} -->
-<!-- {{< video src=cahn_hilliard.mp4 loop="true" autoplay="true" controls="false">}} -->
 
 There is a great discussion on so called *dissipative* stochastic models (i.e. kinetic Ising models) in the wonderful book by [Chaikin and Lubensky](https://www.cambridge.org/core/books/principles-of-condensed-matter-physics/70C3D677A9B5BEC4A77CBBD0A8A23E64). It should be fun to implement the remaining models in the *A-J* list shown in page 467.

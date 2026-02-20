@@ -52,7 +52,7 @@ h1, h2, h3 { color: var(--heading-color) !important; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "consolas";
+    font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
 }
 
 .nav-x a {
@@ -121,36 +121,39 @@ a.wikilink {
     opacity: 0.8;
 }
 
-code {
+
+code.language-bash > span.line::before {
+  content: "$";
+  margin-right: 0.2em;
+}
+
+/* code {
     color: var(--wikilink-color);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
     font-size: 0.9em;
-}
+} */
 
-/* code blocks */
 pre {
     background-color: var(--code-bg);
-    padding: 1rem;
-    /* border-radius: 8px; */
+    padding: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1.5rem;
-    /* border: 1px solid var(--nav-border); */
 }
 
-/* This prevents the inline style from doubling up inside the block */
 pre code {
     background-color: transparent;
     color: inherit;
     padding: 0;
     font-size: 0.95rem;
-}
+} 
 
 pre {
     border-left: 3px solid var(--wikilink-color);
 }
 
+*/
 /* #about .row {
   flex-direction: row-reverse;
 } */
@@ -167,7 +170,6 @@ ul li a:hover {
 }
 
 .post-icon {
-    width: 30px;
     height: 30px;
     vertical-align: middle;
     margin-left: 8px;
@@ -221,4 +223,12 @@ ul li a:hover {
 
 .resume-content tr + tr td {
   padding-top: 0.4rem;
+}
+
+
+.admonition.warning {
+  border-left: 4px solid #f39c12;
+  background: #fff3cd;
+  padding: 0.5rem;
+  margin: 1rem 0;
 }

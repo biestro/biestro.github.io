@@ -1,12 +1,18 @@
 baseURL = 'https://biestro.github.io/'
 languageCode = 'en-us'
-title = 'Alberto R. B.'
+title = 'Alberto Ruiz-Biestro'
 
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
     [markup.renderer]
-      unsafe = false  # Needed for inline HTML/MathJax
+      unsafe = true # Needed for inline HTML/MathJax
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
   [markup.highlight]
     style = "friendly"  # Choose a light theme
     guessSyntax = true
@@ -29,7 +35,7 @@ title = 'Alberto R. B.'
 
 [params]
   # Path relative to the 'static' folder
-  profileImage = "/images/profile.jpg" 
+  profileImage = "/images/mie.png" 
   favicon = "/images/icosahedron.gif"
   
   

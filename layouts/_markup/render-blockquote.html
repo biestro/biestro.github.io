@@ -1,0 +1,21 @@
+{{ $text := .Text }}
+
+{{ if hasPrefix $text "[!WARNING]" }}
+  {{ $type := "warning" }}
+  {{ $clean := $text | replace "[!WARNING]" "" }}
+  <div class="admonition {{ $type }}">
+    <strong>⚠ Warning</strong>
+    <div>{{ $clean | markdownify }}</div>
+  </div>
+{{ else if hasPrefix $text "[!NOTE]" }}
+  {{ $type := "note" }}
+  {{ $clean := $text | replace "[!NOTE]" "" }}
+  <div class="admonition {{ $type }}">
+    <strong>Note</strong>
+    <div>{{ $clean | markdownify }}</div>
+  </div>
+{{ else }}
+  <blockquote>
+    {{ $text | markdownify }}
+  </blockquote>
+{{ end }}
