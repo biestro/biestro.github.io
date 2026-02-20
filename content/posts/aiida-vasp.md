@@ -64,10 +64,19 @@ After configuring a computer, you cannot edit its contents. If you want to edit 
  you must create a new computer.
 {{< /warning >}}
 
+Enter the information as
+
+```bash
+verdi computer configure core.ssh perlmutter --config perlmutter.yaml
+```
+
 Test that the computer is working
+
 ```bash
 verdi computer test perlmutter
 ```
+
+Be sure to set the path to the `.ssh` file added with `sshproxy`
 
 # Configuring AiiDA-VASP
 

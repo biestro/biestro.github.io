@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial for getting AiiDA-VASP running in NERSC | Alberto Ruiz-Biestro</title>
+    <title>Tutorial for getting AiiDA-VASP running in NERSC | Alberto Ruiz Biestro</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -38,6 +38,8 @@
         <nav class="nav-x">
             <div class="nav-links">
                 
+                    <a href="/">Alberto Ruiz-Biestro</a>
+                
                     <a href="/">/home</a>
                 
                     <a href="/posts/">/posts</a>
@@ -54,7 +56,7 @@
 <article>
     <header>
         <h1 class="post-title">Tutorial for getting AiiDA-VASP running in NERSC</h1>
-        <div class="post-meta">February 20, 2026 &middot; 224 words</div>
+        <div class="post-meta">February 20, 2026 &middot; 248 words</div>
     </header>
 
     <div class="post-content">
@@ -108,9 +110,12 @@ you must create a new computer.
   </div>
 </div>
 
-<p>Test that the computer is working</p>
+<p>Enter the information as</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>verdi computer configure core.ssh perlmutter --config perlmutter.yaml
+</span></span></code></pre></div><p>Test that the computer is working</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>verdi computer <span style="color:#007020">test</span> perlmutter
-</span></span></code></pre></div><h1 id="configuring-aiida-vasp">Configuring AiiDA-VASP</h1>
+</span></span></code></pre></div><p>Be sure to set the path to the <code>.ssh</code> file added with <code>sshproxy</code></p>
+<h1 id="configuring-aiida-vasp">Configuring AiiDA-VASP</h1>
 
     </div>
 </article>

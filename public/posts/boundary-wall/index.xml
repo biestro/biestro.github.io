@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BoundaryWall.jl on Alberto Ruiz-Biestro</title>
+    <link>http://localhost:1313/posts/boundary-wall/</link>
+    <description>Recent content in BoundaryWall.jl on Alberto Ruiz-Biestro</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/boundary-wall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/geometry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/geometry/</guid>
+      <description>&lt;h1 id=&#34;geometry&#34;&gt;Geometry&lt;/h1&gt;&#xA;&lt;h2 id=&#34;defining-curves&#34;&gt;Defining curves&lt;/h2&gt;&#xA;&lt;p&gt;The effective use of the &lt;em&gt;Boundary Wall Method&lt;/em&gt; (BWM) requires equal-length segments.&#xA;and the need to interpolate uneven curves. While one might have an equispaced (x-y) domain, the arc length (\mathrm{d}s) need not be homogeneous.&lt;/p&gt;&#xA;&lt;p&gt;The general steps for using this toolbox with a custom array of points are the following:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Define ((x_i,y_i))&#xA;&lt;ul&gt;&#xA;&lt;li&gt;(Re)discretize using&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;For closed curves, we implement the &lt;code&gt;discretizeCurve&lt;/code&gt; function in order to interpolate the whole arc length into (N) equal segments. For open curves, one must use &lt;code&gt;discretizeResonatorCurve&lt;/code&gt; (it can be used for closed curves as well, but be mindful of using (N) vs. (N+1) points). Interpolating with &lt;code&gt;Interpolations.jl&lt;/code&gt; will work as well.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/boundary-wall/docs/tutorials/mirror/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/boundary-wall/docs/tutorials/mirror/</guid>
+      <description>&lt;h1 id=&#34;beam-splitter&#34;&gt;Beam Splitter&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../src/assets/beam_splitter.svg&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;bragg-mirror&#34;&gt;Bragg Mirror&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../src/assets/bragg.svg&#34; alt=&#34;alt text&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

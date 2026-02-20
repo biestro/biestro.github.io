@@ -14,8 +14,20 @@
     <loc>http://localhost:1313/posts/linear-algebra/</loc>
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/magnetism/</loc>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/blog/</loc>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/posts/</loc>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/condensed-matter/</loc>
     <lastmod>2025-04-09T00:00:00+00:00</lastmod>
@@ -23,13 +35,7 @@
     <loc>http://localhost:1313/posts/mean-field/</loc>
     <lastmod>2025-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/posts/</loc>
-    <lastmod>2025-04-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/simulation/</loc>
-    <lastmod>2025-04-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-04-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/ictp/</loc>

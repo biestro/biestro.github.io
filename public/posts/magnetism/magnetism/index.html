@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A problem on magnetism | Alberto Ruiz-Biestro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/hankel.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-x">
+        <nav class="nav-x">
+            <div class="nav-links">
+                
+                    <a href="/">/home</a>
+                
+                    <a href="/posts/">/posts</a>
+                
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title">A problem on magnetism</h1>
+        <div class="post-meta">June 9, 2025 &middot; 345 words</div>
+    </header>
+
+    <div class="post-content">
+        <p>This was a problem in my final exam for the Classical Mechanics course imparted by the wonderful Kaden Hazzard. I will
+attempt to describe its solution (thank you Kaden for the exam and solution manual on part <em>b</em>!)</p>
+<h2 id="statement">Statement</h2>
+<p>Symmetries are useful for constructing Lagrangians (for an example see, my post on <a href="../mean-field/">mean field</a>). The
+Lagrangian for this system is</p>
+<p>[
+\mathcal{L}=i\sum_a w^*_a\partial_t w_a - c^2\sum_j\partial_j \vec{n}\cdot\partial_j\vec{n},
+]</p>
+<p>where (\partial_j\equiv\partial/\partial x_j), and (w(\vec{x}, t)) is a two-component field, which is nothing new if you&rsquo;ve done any field theory in classical mechanics (Stone&rsquo;s book on mathematical methods <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is a good reference for this). The first term represents the kinetic energy and the last term is clearly potential energy.</p>
+<p>Using the regular Euler-Lagrange equations is not always the most straightforward route, as highlighted by this problem. Instead, we perform the variation by hand. Let us take for a fact now (part <em>b</em> deals with this) that the variation for the kinetic term is</p>
+<p>[
+\int dt\delta \left(
+\sum_a w^*_a\partial_t w_a
+\right) = \frac{i}{2}\int dt;\delta \vec{n}\cdot (\vec{n\times\partial_t\vec{n}})
+]</p>
+<p>Performing a variation in the potential energy will give the expected Euler-Lagrange equation,</p>
+<p>[
+\begin{aligned}
+\delta S_n&amp;=\frac{\partial \mathcal{L}}{\partial n} - \frac{\partial}{\partial t} \left( \frac{\partial \mathcal{L}}{\partial \dot{n}} \right) - \frac{\partial}{\partial x_j} \left( \frac{\partial \mathcal{L}}{\partial (\partial_{j} n)} \right),\
+&amp;=\frac{\partial \mathcal{L}}{\partial n} - \frac{\partial}{\partial t} \left( \frac{\partial \mathcal{L}}{\partial \dot{n}} \right) - \nabla\cdot \left( \frac{\partial \mathcal{L}}{\partial (\nabla n)} \right)
+\end{aligned}
+]</p>
+<p>and so</p>
+<p>[
+\begin{aligned}
+\partial\mathcal{L}/\partial{\vec{n}}&amp;=0,\
+\partial\mathcal{L}/\partial{\dot{\vec{n}}}&amp;=0,\
+\frac{\partial\mathcal{L}}{\partial{\nabla{\vec{n}}}}&amp;=2c^2\nabla \vec{n}.\
+\end{aligned}
+]</p>
+<p>To see why the last term is twice (\nabla \vec{n}), try to do the derivative (\partial_{\vec{v}} (\vec{v}\cdot\vec{v})).</p>
+<p>The total variation is then</p>
+<p>[
+\begin{aligned}
+\delta S &amp;= \delta \left(\int;dt ; dx; T\right) - \delta \left(\int;dt ; dx; U\right) \
+x &amp;= y + z
+\end{aligned}
+]</p>
+<div style="display: flex; align-items: flex-start;">
+  <div style="width: 75%;">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+  <div style="width: 25%; padding-left: 1em;">
+    <img src="sphere_classical_final.svg" alt="Description" style="width: 100%;" />
+  </div>
+</div>
+<h3 id="more-posts">More posts:</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Stone, Michael, and Paul Goldbart. <em>Mathematics for Physics: A Guided Tour for Graduate Students</em>. Cambridge University Press, 2009.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz-Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light?";
+        } else {
+            toggleBtn.innerText = "Dark?";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light?";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark?";
+            }
+        });
+    </script>
+</body>
+</html>

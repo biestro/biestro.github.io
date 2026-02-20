@@ -1,6 +1,6 @@
 baseURL = 'https://biestro.github.io/'
 languageCode = 'en-us'
-title = 'Alberto Ruiz-Biestro'
+title = 'Alberto Ruiz Biestro'
 
 
 [markup]
@@ -19,6 +19,10 @@ title = 'Alberto Ruiz-Biestro'
 
 [menu]
   [[menu.main]]
+    name = "Alberto Ruiz-Biestro"
+    url = "/"
+    weight = 1
+  [[menu.main]]
     name = "/home"
     url = "/"
     weight = 10
@@ -35,7 +39,7 @@ title = 'Alberto Ruiz-Biestro'
 
 [params]
   # Path relative to the 'static' folder
-  profileImage = "/images/mie.png" 
+  profileImage = "/images/wos.gif" 
   favicon = "/images/icosahedron.gif"
   
   

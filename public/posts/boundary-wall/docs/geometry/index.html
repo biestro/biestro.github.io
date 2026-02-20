@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | Alberto Ruiz-Biestro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/hankel.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-x">
+        <nav class="nav-x">
+            <div class="nav-links">
+                
+                    <a href="/">/home</a>
+                
+                    <a href="/posts/">/posts</a>
+                
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title"></h1>
+        <div class="post-meta">January 1, 0001 &middot; 238 words</div>
+    </header>
+
+    <div class="post-content">
+        <h1 id="geometry">Geometry</h1>
+<h2 id="defining-curves">Defining curves</h2>
+<p>The effective use of the <em>Boundary Wall Method</em> (BWM) requires equal-length segments.
+and the need to interpolate uneven curves. While one might have an equispaced (x-y) domain, the arc length (\mathrm{d}s) need not be homogeneous.</p>
+<p>The general steps for using this toolbox with a custom array of points are the following:</p>
+<ol>
+<li>Define ((x_i,y_i))
+<ul>
+<li>(Re)discretize using</li>
+</ul>
+</li>
+</ol>
+<p>For closed curves, we implement the <code>discretizeCurve</code> function in order to interpolate the whole arc length into (N) equal segments. For open curves, one must use <code>discretizeResonatorCurve</code> (it can be used for closed curves as well, but be mindful of using (N) vs. (N+1) points). Interpolating with <code>Interpolations.jl</code> will work as well.</p>
+<p>Once one has a relatively accurate arc length discretization, one must calculate midpoints using the <code>calcMidpoints</code> function. Note that the total number of midpoints must strictly match the dimensions of the (\mathbf{T}) matrix.</p>
+<p>Finally, one might want to obtain the distance matrix representing ([\mathbf{r}]<em>{ij}=\mathbf{r}</em>{i}-\mathbf{r}_{j}). The following example</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">using</span> BoundaryWall, WGLMakie <span style="color:#60a0b0;font-style:italic"># hide</span>
+</span></span><span style="display:flex;"><span>θ     <span style="color:#666">=</span> <span style="color:#902000">LinRange</span>(<span style="color:#666">-</span><span style="color:#007020">pi</span>, <span style="color:#007020">pi</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">300</span>)
+</span></span><span style="display:flex;"><span>x,y   <span style="color:#666">=</span> cos<span style="color:#666">.</span>(θ),sin<span style="color:#666">.</span>(θ)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x,y   <span style="color:#666">=</span> divideResonatorCurve(x,y, <span style="color:#40a070">300</span>)
+</span></span><span style="display:flex;"><span>xm,ym <span style="color:#666">=</span> calcMidpoints(x, y)
+</span></span><span style="display:flex;"><span>ds    <span style="color:#666">=</span> calcArcLength(x,y)
+</span></span><span style="display:flex;"><span>rij   <span style="color:#666">=</span> calcDistances(xm, ym)
+</span></span><span style="display:flex;"><span>lines(ds)
+</span></span></code></pre></div><p>A good way to check if one has done the discretization correctly is to check for the symmetry of the scattering (\mathbf{T}) matrix, or to graph <code>diff(ds)</code> and check for homogeneous behaviour.</p>
+<h2 id="builtin-methods">Builtin methods</h2>
+<p>The package provides some useful functions such as <code>createEllipse</code> and <code>createCircle</code> in order to create analogues to rods.</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz-Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light?";
+        } else {
+            toggleBtn.innerText = "Dark?";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light?";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark?";
+            }
+        });
+    </script>
+</body>
+</html>
