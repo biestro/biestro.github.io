@@ -4,6 +4,7 @@ title = 'Alberto Ruiz Biestro'
 
 
 [markup]
+  defaultMarkdownHandler = 'goldmark'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -12,6 +13,8 @@ title = 'Alberto Ruiz Biestro'
     [markup.goldmark.parser]
       [markup.goldmark.parser.attribute]
         block = true
+        title = true
+
 
   [markup.highlight]
     style = "friendly"  # Choose a light theme
@@ -47,3 +50,6 @@ title = 'Alberto Ruiz Biestro'
   authorName = "Alberto Ruiz-Biestro"
   authorDesc = """PhD Student in Physics at Rice University."""
 
+
+[[module.imports]]
+  path = "github.com/KKKZOZ/hugo-admonitions"

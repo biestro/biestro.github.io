@@ -1,13 +1,12 @@
 ---
-title: "Tutorial for getting AiiDA-VASP running in NERSC"
+title: "Tutorial for running Wannierization workflows in NERSC"
 date: 2026-02-20
 icon: "/images/mail3.gif"
-draft: true
 ---
 
 
 > [!WARNING]
-> This tutorial requires a version of `ase<=3.22` in order to load `ase.neb` and `scipy<=1.10` for `scipy.integrate.cumtrapz`! It also uses `python3.11`
+> This tutorial is a work-in-progress
 
 
 # Installing AiiDA and AiiDA-VASP

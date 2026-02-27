@@ -7,7 +7,7 @@
     --link-color: #0000ff;
     --nav-border: #eeeeee;
     --wikilink-color: #d63384; 
-    --code-bg: #dedede;
+    /* --code-bg: #dedede; */
 }
 
 html.dark-mode {
@@ -17,7 +17,7 @@ html.dark-mode {
     --link-color: #00d0ff;
     --nav-border: #444444;
     --wikilink-color: #ff80bf;
-    --code-bg: #000000;
+    /* --code-bg: #000000; */
 }
 
 html, body {
@@ -122,10 +122,10 @@ a.wikilink {
 }
 
 
-code.language-bash > span.line::before {
+/* code.language-bash > span.line::before {
   content: "$";
   margin-right: 0.2em;
-}
+} */
 
 /* code {
     color: var(--wikilink-color);
@@ -135,7 +135,7 @@ code.language-bash > span.line::before {
     font-size: 0.9em;
 } */
 
-pre {
+/* pre {
     background-color: var(--code-bg);
     padding: 0.5rem;
     overflow-x: auto;
@@ -151,16 +151,22 @@ pre code {
 
 pre {
     border-left: 3px solid var(--wikilink-color);
-}
+} */
 
 */
 /* #about .row {
   flex-direction: row-reverse;
 } */
-
+    
 ul li a {
-    color: var(--link-color);
-    text-decoration: none;
+    /* color:  var(--link-color); */
+    /* text-decoration: none; */
+    text-decoration: none !important;
+    color: inherit; /* uses parent text color */
+}
+
+ul li a:not(:hover) {
+  text-decoration: none;
 }
 
 ul li a:hover {

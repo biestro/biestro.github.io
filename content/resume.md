@@ -27,6 +27,9 @@ Click [here](https://raw.githubusercontent.com/ModifiedBear/Resume/master/cv.pdf
 
 - Aug 2020: **Academic Merit Scholarship**, _Monterrey Institute of Technology_.
 
+## Social
+- Co-founder of the [Quantum Computing Club](https://qccmty.com/) at Monterrey's Institute of Technology (still going strong!).
+
 <!-- 
 
 ## Skills
