@@ -104,6 +104,10 @@ a.wikilink {
     filter: invert(1); 
 } */
 
+html.dark-mode img:not(.icon-sm) {
+  filter: invert(0.9);
+}
+
 .profile-link {
     color: var(--link-color);
     text-decoration: none;
@@ -238,3 +242,24 @@ ul li a:hover {
   padding: 0.5rem;
   margin: 1rem 0;
 }
+
+
+img { display: block; margin: 0 auto; max-height: 300px; max-width: 100%}
+
+a {
+  position: relative;
+  display: inline-block;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 230, 50, 0);
+  transition: background 0.0s ease;
+}
+
+a:hover::after {
+  background: rgba(255, 230, 50, 0.15);
+}
+

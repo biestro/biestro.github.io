@@ -14,7 +14,7 @@
     <loc>http://localhost:1313/posts/pmg-vasp/</loc>
     <lastmod>2026-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/linear-algebra/</loc>
+    <loc>http://localhost:1313/posts/ising-model/</loc>
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/magnetism/</loc>
@@ -27,6 +27,9 @@
     <lastmod>2025-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/posts/</loc>
+    <lastmod>2025-06-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/walk-on-spheres/</loc>
     <lastmod>2025-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>

@@ -33,8 +33,6 @@ the basis becomes almost linearly dependent due to the *properties of power iter
 
 We used [InQuanto](https://www.quantinuum.com/computationalchemistry/inquanto), from *Quantinuum* in order to get the second quantization as a weighted linear combination of unitary Paulis (through the JW-transformation). 
 
-<!-- ## Photo
-
-![Current](../ictp.jpg?width=300) -->
+![ICTP](../ictp/ictp.jpg)
 
 ### More posts:

@@ -8,8 +8,13 @@
         <div class="col-md-4">
             <div class="text-center mb-3">
                 {{ with .Site.Params.profileImage }}
-                <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3" style="max-width: 200px;">
-                <!-- shadow-mb -->
+                    {{ if $.Site.Params.profileImageLink }}
+                        <a href="{{ $.Site.Params.profileImageLink }}">
+                        <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3" style="max-width: 200px;">
+                        </a>
+                    {{ else }}
+                        <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3" style="max-width: 200px;">
+                    {{ end }}
                 {{ end }}
 
                 {{ with .Site.Params.authorName }}

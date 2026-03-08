@@ -44,10 +44,11 @@ title = 'Alberto Ruiz Biestro'
   # Path relative to the 'static' folder
   profileImage = "/images/wos.gif" 
   favicon = "/images/icosahedron.gif"
+  profileImageLink = "/posts/walk-on-spheres"
   
   
   # New fields
-  authorName = "Alberto Ruiz-Biestro"
+  authorName = "Alberto Ruiz Biestro"
   authorDesc = """PhD Student in Physics at Rice University."""
 
 

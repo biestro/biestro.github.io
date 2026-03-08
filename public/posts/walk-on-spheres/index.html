@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
+
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solving the heat equation with Markov Chains  Alberto Ruiz Biestro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/hankel.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-x">
+        <nav class="nav-x">
+            <div class="nav-links">
+                
+                    <a href="/">Alberto Ruiz-Biestro</a>
+                
+                    <a href="/">/home</a>
+                
+                    <a href="/posts/">/posts</a>
+                
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<article>
+    <header>
+        <h1 class="post-title">Solving the heat equation with Markov Chains</h1>
+        <div class="post-meta">June 9, 2025 &middot; 199 words</div>
+    </header>
+
+    <div class="post-content">
+        <h1 id="problem">Problem</h1>
+<p>Meshing is hard</p>
+<p><img src="../walk-on-spheres/owl_mesh.png" alt="OWL"></p>
+<p>Consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem</p>
+<p>$$\Delta u(x)=0,\quad u(x)\big|_{\partial\Omega}=h(x),$$</p>
+<p>where (for mathematicians) $\Delta \equiv \partial^2_{j}$.</p>
+<h2 id="walk-on-spheres">Walk-on-spheres</h2>
+<p>Running a random-walk for each</p>
+<p>In other words, the algorithm substitutes the Wiener process with the <em>grow-and-sample</em> method, which reduces computational time, and can set fixed bounds on the iterations (which makes it easier to paralellize). Instead of hoping to sample the boundary within a time $t$, one just sets a large <code>N_iter</code> and hopes for the best! A graphical description of the algorithm is shown below</p>
+<p><img src="../walk-on-spheres/wos.svg" alt="WOS"></p>
+<p>One can see that the algorithm builds the solution from the outside towards the inside, as the points near the boundary converge faster to the solution.</p>
+<p><img src="../walk-on-spheres/wos_circle.svg" alt="WOS_SOL"></p>
+<p>It is quite suprising how fast the solver gets a <em>feeling</em> for the solution&rsquo;s characteristics. The rest of the iterations just smoothen things out a bit, but the &lsquo;orange-wedges&rsquo; pattern appears  as earlt as the 34th iteration!</p>
+<h1 id="further-reading">Further reading</h1>
+<p>This algorithm came back to use for computer graphics, and a new, improved version was named <a href="https://www.cs.cmu.edu/~kmcrane/Projects/WalkOnStars/">Walk on Stars</a>. This has all the advantages that I described above, mainly that it is mesh-free, but it can handle Neumann boundary conditions too.</p>
+
+    </div>
+</article>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light?";
+        } else {
+            toggleBtn.innerText = "Dark?";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light?";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark?";
+            }
+        });
+    </script>
+</body>
+</html>
