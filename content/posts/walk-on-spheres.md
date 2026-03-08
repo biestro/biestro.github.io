@@ -1,7 +1,7 @@
 ---
 title: "Solving the heat equation with Markov Chains"
-date: '2025-06-09'
-draft: true
+date: '2025-11-08'
+draft: false
 categories:
   - Posts
 tags:
@@ -34,6 +34,53 @@ One can see that the algorithm builds the solution from the outside towards the 
 ![WOS_SOL](../walk-on-spheres/wos_circle.svg)
 
 It is quite suprising how fast the solver gets a *feeling* for the solution's characteristics. The rest of the iterations just smoothen things out a bit, but the 'orange-wedges' pattern appears  as earlt as the 34th iteration!
+
+The code for performing the walk-on-spheres steps is contained within `wos_single_walk_circle`, which one calls for a set of points in $\Omega$. These describe the process in the [wikipedia page](https://en.wikipedia.org/wiki/Walk-on-spheres_method) for the algorithm,
+
+$$
+u(x)=E[h(W_\tau)]\sim \frac{1}{n}\sum_i^nh(W_\tau^i)
+$$
+
+
+```julia
+function wos_single_walk_circle(
+  x0::Vector{Float64}, 
+  R::Float64, 
+  phi_b::Function; 
+  eps::Real=1e-3, 
+  max_steps::Int=10_000
+  )
+  
+  x = copy(x0)
+  for _ in 1:max_steps
+    # distance to circle
+    r = max(R - norm(x), 0.0)
+    if r <= eps
+      # closest point on boundary (circle)
+      r = norm(x)
+      if r == 0.0
+        return phi_b([R, 0.0])
+      else
+        return phi_b((R / r) * collect(x))
+      end
+    end
+    # random point on ball (go to next point)
+    θ = 2π * rand()
+    x = [x[1] + r * cos(θ), x[2] + r * sin(θ)]
+  end
+  error("wos_single_walk_circle: exceeded max steps")
+end
+```
+
+```julia
+s = zeros(nx, ny)
+for _ in 1:num_iter
+  s_old = copy(s)
+  s += @. wos_single_walk_circle(points, R, phi_b)
+  convergence[k] = sum(abs.(s_old / (k-1) - s / k))
+  # optional: do a convergence break
+end
+```
 
 # Further reading
 
