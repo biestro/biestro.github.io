@@ -37,6 +37,13 @@
       <description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../walk-on-spheres/owl_mesh.png&#34; alt=&#34;OWL&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem&lt;/p&gt;&#xA;&lt;p&gt;$$\Delta u(x)=0,\quad u(x)\big|_{\partial\Omega}=h(x),$$&lt;/p&gt;&#xA;&lt;p&gt;where (for mathematicians) $\Delta \equiv \partial^2_{j}$.&lt;/p&gt;&#xA;&lt;h2 id=&#34;walk-on-spheres&#34;&gt;Walk-on-spheres&lt;/h2&gt;&#xA;&lt;p&gt;Running a random-walk for each&lt;/p&gt;&#xA;&lt;p&gt;In other words, the algorithm substitutes the Wiener process with the &lt;em&gt;grow-and-sample&lt;/em&gt; method, which reduces computational time, and can set fixed bounds on the iterations (which makes it easier to paralellize). Instead of hoping to sample the boundary within a time $t$, one just sets a large &lt;code&gt;N_iter&lt;/code&gt; and hopes for the best! A graphical description of the algorithm is shown below&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Marginalia Review</title>
+      <link>http://localhost:1313/posts/marginalia/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/marginalia/</guid>
+      <description>&lt;!-- https://marginalia.blogs.rice.edu/2025/10/20/disability-through-history-a-review-by-alberto-ruiz/ --&gt;</description>
+    </item>
+    <item>
       <title>A problem on magnetism</title>
       <link>http://localhost:1313/posts/magnetism/</link>
       <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>

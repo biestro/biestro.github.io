@@ -71,10 +71,23 @@
                 <hr>
                 <h3>Posts</h3>
                 <ul>
-                    {{ range where .Site.RegularPages "Section" "posts" }}
+                    <!-- {{ range where .Site.RegularPages "Section" "posts" }}
                     <li>
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     </li>
+                    {{ end }} -->
+                    {{ range .Site.RegularPages }}
+                        <article>
+                            <li>
+                                <a href="{{ if .Params.external_url }}{{ .Params.external_url }}{{ else }}{{ .Permalink }}{{ end }}"
+                                    {{ if .Params.external_url }}target="_blank" rel="noopener"{{ end }}>
+                                    {{ .Title }}
+                                </a>
+                                {{ if .Params.external_url }}
+                                    <span class="external-badge"> ⇗ </span>
+                                {{ end }}
+                            </li>
+                        </article>
                     {{ end }}
                 </ul>
             </div>

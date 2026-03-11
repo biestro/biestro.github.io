@@ -2,6 +2,7 @@
 title: "Transverse Ising model"
 date: 2026-02-17
 icon: "/images/dodecahedron.gif"
+draft: true
 ---
 
 

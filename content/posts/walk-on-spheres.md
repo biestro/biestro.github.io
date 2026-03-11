@@ -2,6 +2,7 @@
 title: "Solving the heat equation with Markov Chains"
 date: '2025-11-08'
 draft: false
+icon: "/images/wos.gif"
 categories:
   - Posts
 tags:
