@@ -42,11 +42,11 @@
                 
                     <a href="/">Alberto Ruiz-Biestro</a>
                 
-                    <a href="/">/home</a>
+                    <a href="/">home</a>
                 
-                    <a href="/posts/">/posts</a>
+                    <a href="/posts/">posts</a>
                 
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
                 
             </div>
 
@@ -55,14 +55,24 @@
 
         <main>
             
-<article>
-    <header>
-        <h1 class="post-title">Mean field theory</h1>
-        <div class="post-meta">April 9, 2025 &middot; 909 words</div>
-    </header>
+<div style="position: relative;">
+    <article style="position: relative;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+                <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
+                    <img src="/images/waves.gif" alt="icon" style="width: 60px; height: auto; max-width: 100%; display: block; object-fit: contain;" />
+                </div>
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Mean field theory</h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>April 9, 2025</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">909 words</span>
+            </div>
+        </header>
+        <hr>
 
-    <div class="post-content">
-        <h2 id="landau-ginzburg-theory">Landau-Ginzburg theory</h2>
+        <div class="post-content">
+            <h2 id="landau-ginzburg-theory">Landau-Ginzburg theory</h2>
 <p>Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its
 gradients while satisfying the proposed symmetries. The coarse-grained extension
 to the Ising Hamiltonian is given by a <em>Landau-Ginzburg</em> Hamiltonian</p>
@@ -145,8 +155,9 @@ velocity in each time-step as to account for random fluctuations.</p>
 <p>A friend interested in phase separation (and more experience in physics than I) suggested I read about the Cahn-Hilliard model after showing him the simluations above. Modifying the above code is trivial (just includes another convolution); below is a simulation of such separation using a balanced mixture (following the Cahn-Hilliard model), when constrained to a box (i.e. no periodic boundary conditions).</p>
 <p>There is a great discussion on so called <em>dissipative</em> stochastic models (i.e. kinetic Ising models) in the wonderful book by <a href="https://www.cambridge.org/core/books/principles-of-condensed-matter-physics/70C3D677A9B5BEC4A77CBBD0A8A23E64">Chaikin and Lubensky</a>. It should be fun to implement the remaining models in the <em>A-J</em> list shown in page 467.</p>
 
-    </div>
-</article>
+        </div>
+    </article>
+</div>
 
         </main>
 

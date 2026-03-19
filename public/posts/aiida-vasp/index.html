@@ -42,11 +42,11 @@
                 
                     <a href="/">Alberto Ruiz-Biestro</a>
                 
-                    <a href="/">/home</a>
+                    <a href="/">home</a>
                 
-                    <a href="/posts/">/posts</a>
+                    <a href="/posts/">posts</a>
                 
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
                 
             </div>
 
@@ -55,14 +55,24 @@
 
         <main>
             
-<article>
-    <header>
-        <h1 class="post-title">Tutorial for getting AiiDA-VASP running in NERSC</h1>
-        <div class="post-meta">February 20, 2026 &middot; 376 words</div>
-    </header>
+<div style="position: relative;">
+    <article style="position: relative;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+                <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
+                    <img src="/images/mail3.gif" alt="icon" style="width: 60px; height: auto; max-width: 100%; display: block; object-fit: contain;" />
+                </div>
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Tutorial for getting AiiDA-VASP running in NERSC</h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>February 20, 2026</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">376 words</span>
+            </div>
+        </header>
+        <hr>
 
-    <div class="post-content">
-        
+        <div class="post-content">
+            
           <link rel="stylesheet" href="/css/vendors/admonitions.css">
     <div class="admonition warning">
       <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
@@ -140,8 +150,9 @@ you must create a new computer.</p>
 <p>Since I work with <code>pymatgen</code>, we will upload the potentials from such source. You need to have <code>pymatgen</code> in your environment installed and the <code>POTCAR</code> files configured appropriately (see the <a href="https://pymatgen.org/installation.html#potcar-setup"><code>POTCAR</code> Setup</a> section).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aiida-vasp potcar upload-from-pymatgen --name<span style="color:#666">=</span>PBE.54 --description<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE from pymatgen&#34;</span>
 </span></span></code></pre></div>
-    </div>
-</article>
+        </div>
+    </article>
+</div>
 
         </main>
 

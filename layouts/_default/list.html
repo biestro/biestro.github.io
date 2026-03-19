@@ -1,19 +1,25 @@
 {{ define "main" }}
-<article>
-    <header>
-        <h1 class="post-title">{{ .Title }}</h1>
-    </header>
+<div class="container-x">
+  <article>
+      <header>
+          <h1 class="post-title">{{ .Title }}</h1>
+      </header>
 
-    <ul>
-        {{ range .Pages }}
-            <li>
-                {{ .Date.Format "2006-01-02" }} — 
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                {{ with .Params.icon }}
-                    <img src="{{ . }}" class="post-icon">
-                {{ end }}
-            </li>
-        {{ end }}
-    </ul>
-</article>
+            <table class="post-list-table">
+                <tbody>
+                    {{ range .Pages }}
+                    <tr>
+                        <td style="width: 8em; white-space:nowrap;">{{ .Date.Format "2006-01-02" }}</td>
+                        <td>
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            {{ with .Params.icon }}
+                                <img src="{{ . }}" class="post-icon">
+                            {{ end }}
+                        </td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+  </article>
+</div>
 {{ end }}

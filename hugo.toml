@@ -26,17 +26,17 @@ title = 'Alberto Ruiz Biestro'
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "/home"
+    name = "home"
     url = "/"
     weight = 10
 
   [[menu.main]]
-    name = "/posts"
+    name = "posts"
     url = "/posts/"
     weight = 20
     
   [[menu.main]]
-    name = "/code"
+    name = "code"
     url = "https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl"
     weight = 30
 

@@ -42,11 +42,11 @@
                 
                     <a href="/">Alberto Ruiz-Biestro</a>
                 
-                    <a href="/">/home</a>
+                    <a href="/">home</a>
                 
-                    <a href="/posts/">/posts</a>
+                    <a href="/posts/">posts</a>
                 
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">/code</a>
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
                 
             </div>
 
@@ -55,14 +55,24 @@
 
         <main>
             
-<article>
-    <header>
-        <h1 class="post-title">Solving the heat equation with Markov Chains</h1>
-        <div class="post-meta">November 8, 2025 &middot; 354 words</div>
-    </header>
+<div style="position: relative;">
+    <article style="position: relative;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+                <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
+                    <img src="/images/wos.gif" alt="icon" style="width: 60px; height: auto; max-width: 100%; display: block; object-fit: contain;" />
+                </div>
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Solving the heat equation with Markov Chains</h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>November 8, 2025</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">354 words</span>
+            </div>
+        </header>
+        <hr>
 
-    <div class="post-content">
-        <h1 id="problem">Problem</h1>
+        <div class="post-content">
+            <h1 id="problem">Problem</h1>
 <p>Meshing is hard</p>
 <p><img src="../walk-on-spheres/owl_mesh.png" alt="OWL"></p>
 <p>Consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem</p>
@@ -116,8 +126,9 @@ $$</p>
 </span></span></code></pre></div><h1 id="further-reading">Further reading</h1>
 <p>This algorithm came back to use for computer graphics, and a new, improved version was named <a href="https://www.cs.cmu.edu/~kmcrane/Projects/WalkOnStars/">Walk on Stars</a>. This has all the advantages that I described above, mainly that it is mesh-free, but it can handle Neumann boundary conditions too.</p>
 
-    </div>
-</article>
+        </div>
+    </article>
+</div>
 
         </main>
 

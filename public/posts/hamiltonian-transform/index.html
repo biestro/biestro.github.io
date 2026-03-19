@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
+
+    <script>
+        
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another way to interpolate bandstructures  Alberto Ruiz Biestro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/hankel.css">
+    
+    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+    
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div class="container-x">
+        <nav class="nav-x">
+            <div class="nav-links">
+                
+                    <a href="/">Alberto Ruiz-Biestro</a>
+                
+                    <a href="/">home</a>
+                
+                    <a href="/posts/">posts</a>
+                
+                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
+                
+            </div>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+        </nav>
+
+        <main>
+            
+<div style="position: relative;">
+    <article style="position: relative;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+                <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
+                    <img src="/images/dodeca.gif" alt="icon" style="width: 60px; height: auto; max-width: 100%; display: block; object-fit: contain;" />
+                </div>
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Another way to interpolate bandstructures</h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>March 18, 2026</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">339 words</span>
+            </div>
+        </header>
+        <hr>
+
+        <div class="post-content">
+            <h1 id="introduction">Introduction</h1>
+<p>Recently, a <a href="https://www.nature.com/articles/s41524-025-01684-5">paper in <strong>npj</strong></a> showed an alternative to Wannier interpolated bandstructures using a localized Hamiltonian. Given that Wannierization is my main research area, I thought it would be interesting to see how well their algorithm, which is shown to include only two parameters, compares to the Hamiltonians created by SCDM methods (also require only two parameters).</p>
+<h2 id="compiling-in-fortran90">Compiling in Fortran90</h2>
+<p>Linux users thave it the easiest. However, if you&rsquo;re using MacOS (as I am), you may need to edit some of the tags in the compiler. An easy rule of thumb for Apple silicon is to replace any instances of <code>cpp</code> with <code>gcc</code> (optional <code>-E</code> flag for preprocessing only), for example, in he <code>Makefile.inc</code> you will most porbably find this.</p>
+<p>Furthermore, I have replaced the <code>ht.sh</code> file with a <code>ht_mac.sh</code> alternative that does not run into parsing errors with tabs.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#007020">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#This script copies ht.f90 to PP/src and modifies PP/src/Makefile.</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">if</span> grep -q <span style="color:#4070a0">&#34;ht.x&#34;</span> PP/src/Makefile; <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> PP/src/Makefile already contains keyword <span style="color:#4070a0;font-weight:bold">\&#34;</span>ht.x<span style="color:#4070a0;font-weight:bold">\&#34;</span>, <span style="color:#007020;font-weight:bold">do</span> nothing.
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    cp ht.f90 PP/src
+</span></span><span style="display:flex;"><span>    sed -i <span style="color:#4070a0">&#39;&#39;</span> <span style="color:#4070a0">&#39;/^all\ :/ s/\\$/ht.x\ \\/&#39;</span> PP/src/Makefile
+</span></span><span style="display:flex;"><span>    python3 - PP/src/Makefile <span style="color:#4070a0">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">import sys
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">path = sys.argv[1]
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">block = (
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &#34;ht.x : ht.o libpp.a $(MODULES)\n&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &#34;\t$(LD) $(LDFLAGS) -o $@ \\\n&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &#34;\t\tht.o libpp.a $(MODULES) $(QELIBS)\n&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &#34;\t- ( cd ../../bin ; ln -fs ../PP/src/$@ . )\n&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    &#34;\n&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">txt = open(path).read()
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">txt = txt.replace(&#34;clean :&#34;, block + &#34;clean :&#34;, 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">open(path, &#34;w&#34;).write(txt)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">EOF</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;success&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">fi</span>
+</span></span></code></pre></div><p>The <code>PP/src/Makefile</code> should include an <code>ht.x</code> block now (check it!). Run then the configuration by</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./configure <span style="color:#bb60d5">MPIF90</span><span style="color:#666">=</span>mpif90 <span style="color:#bb60d5">CPP</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;gcc -E&#34;</span> <span style="color:#bb60d5">F77</span><span style="color:#666">=</span>gfortran <span style="color:#bb60d5">FC</span><span style="color:#666">=</span>gfortran <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span>  -enable-openmp <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">CFLAGS</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;-O2&#34;</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">FFLAGS</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;-O2&#34;</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span>  <span style="color:#bb60d5">LDFLAGS</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;&#34;</span>
+</span></span></code></pre></div><p>Note that this should already replace <code>cpp</code> with <code>gcc</code>.</p>
+<p>For some reason, my <code>FFTW3</code> library does not allow a <code>howmany &gt; 1</code> parameter. Therefore, we need to edit the file as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! before:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! H1d(1:nk123*rk*rk) =&gt; H
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! CALL cfft3d(H1d, nk1, nk2, nk3, nk1, nk2, nk3, rk*rk, -1)
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! now:
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">DO</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>,<span style="color:#bbb"> </span>rk<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">DO</span><span style="color:#bbb"> </span>j<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">1</span>,<span style="color:#bbb"> </span>rk<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">CALL</span><span style="color:#bbb"> </span>cfft3d(H(:,<span style="color:#bbb"> </span>i,<span style="color:#bbb"> </span>j),<span style="color:#bbb"> </span>nk1,<span style="color:#bbb"> </span>nk2,<span style="color:#bbb"> </span>nk3,<span style="color:#bbb"> </span>nk1,<span style="color:#bbb"> </span>nk2,<span style="color:#bbb"> </span>nk3,<span style="color:#bbb"> </span><span style="color:#40a070">1</span>,<span style="color:#bbb"> </span><span style="color:#666">-</span><span style="color:#40a070">1</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DO</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">END</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">DO</span><span style="color:#bbb">
+</span></span></span></code></pre></div>
+        </div>
+    </article>
+</div>
+
+        </main>
+
+        <footer>
+            &copy; 2026 Alberto Ruiz Biestro
+        </footer>
+    </div>
+
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const article = document.querySelector('article');
+            if (article) {
+                article.innerHTML = article.innerHTML.replace(
+                    /\[\[(.*?)\]\]/g, 
+                    function(match, text) {
+                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+                    }
+                );
+            }
+        });
+
+        
+        const toggleBtn = document.getElementById('theme-toggle');
+        const htmlTag = document.documentElement;
+
+        
+        if (htmlTag.classList.contains('dark-mode')) {
+            toggleBtn.innerText = "Light?";
+        } else {
+            toggleBtn.innerText = "Dark?";
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            htmlTag.classList.toggle('dark-mode');
+            
+            if (htmlTag.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "Light?";
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "Dark?";
+            }
+        });
+    </script>
+</body>
+</html>
