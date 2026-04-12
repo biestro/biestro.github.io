@@ -70,24 +70,20 @@
                 
                 <hr>
                 <h3>Posts</h3>
-                <ul>
-                    <!-- {{ range where .Site.RegularPages "Section" "posts" }}
-                    <li>
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </li>
-                    {{ end }} -->
-                    {{ range .Site.RegularPages }}
-                        <article>
-                            <li>
-                                <a href="{{ if .Params.external_url }}{{ .Params.external_url }}{{ else }}{{ .Permalink }}{{ end }}"
-                                    {{ if .Params.external_url }}target="_blank" rel="noopener"{{ end }}>
-                                    {{ .Title }}
-                                </a>
+                <ul class="post-nav-table list-unstyled">
+                    {{ range where .Site.RegularPages "Section" "posts" }}
+                        <li class="post-nav-row">
+                            <a
+                                class="post-nav-link"
+                                href="{{ if .Params.external_url }}{{ .Params.external_url }}{{ else }}{{ .Permalink }}{{ end }}"
+                                {{ if .Params.external_url }}target="_blank" rel="noopener"{{ end }}
+                            >
+                                <span>{{ .Title }}</span>
                                 {{ if .Params.external_url }}
-                                    <span class="external-badge"> ⇗ </span>
+                                    <span class="external-badge" aria-hidden="true">⇗</span>
                                 {{ end }}
-                            </li>
-                        </article>
+                            </a>
+                        </li>
                     {{ end }}
                 </ul>
             </div>

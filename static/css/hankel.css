@@ -475,3 +475,40 @@ a:hover::after {
   text-decoration: underline;
   background: var(--nav-border);
 }
+
+.post-nav-table {
+  margin: 0;
+  border-top: 1px solid var(--nav-border);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.post-nav-row {
+  margin: 0;
+}
+
+.post-nav-row + .post-nav-row {
+  border-top: 1px solid var(--nav-border);
+}
+
+.post-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.35em 0.85em;
+  color: var(--text-color);
+  text-decoration: none;
+  border-left: 1px solid var(--nav-border);
+  border-right: 1px solid var(--nav-border);
+}
+
+.post-nav-link:hover {
+  text-decoration: underline;
+  background: var(--nav-border);
+}
+
+.external-badge {
+  font-size: 0.9em;
+  line-height: 1;
+  margin-left: 0.75rem;
+}
