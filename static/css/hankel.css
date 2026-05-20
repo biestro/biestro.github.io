@@ -421,6 +421,11 @@ a:hover::after {
   align-items: center;
   flex: 1 1 auto;
 }
+
+.nav-x .nav-links a:first-child {
+    font-weight: bold;
+}
+
 .nav-x .nav-links a {
   color: var(--text-color);
   text-decoration: none;

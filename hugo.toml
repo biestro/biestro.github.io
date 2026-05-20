@@ -28,12 +28,12 @@ title = 'Alberto Ruiz Biestro'
     [menu.main.params]
       icon = "🧑‍🔬"
 
-  [[menu.main]]
-    name = "home"
-    url = "/"
-    weight = 10
-    [menu.main.params]
-      icon = "🏠"
+  # [[menu.main]]
+  #   name = "home"
+  #   url = "/"
+  #   weight = 10
+  #   [menu.main.params]
+  #     icon = "🏠"
 
   [[menu.main]]
     name = "posts"
@@ -58,9 +58,12 @@ title = 'Alberto Ruiz Biestro'
 
 [params]
   # Path relative to the 'static' folder
-  profileImage = "/images/wos.gif" 
+  # profileImage = "/images/wos.gif"
+  # profileImage = "/images/prof/me_dither_1.png"
+  profileImage = "/images/klimt_crop.jpeg"
   favicon = "/images/icosahedron.gif"
-  profileImageLink = "/posts/walk-on-spheres"
+  # profileImageLink = "/posts/walk-on-spheres"
+  profileImageLink = "/images/klimt_crop.jpeg"
   
   
   # New fields
