@@ -1,6 +1,6 @@
 ---
 title: "Rice (Water)"
-date: 2026-02-17
+date: 2025-02-15
 # icon: "/images/dodecahedron.gif"
 draft: false
 ---
