@@ -8,13 +8,18 @@
             <table class="post-list-table">
                 <tbody>
                     {{ range .Pages }}
-                    <tr>
-                        <td style="width: 8em; white-space:nowrap;">{{ .Date.Format "2006-01-02" }}</td>
-                        <td>
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                            {{ with .Params.icon }}
-                                <img src="{{ . }}" class="post-icon">
-                            {{ end }}
+                    <tr class="post-list-row">
+                        <td class="post-list-date">{{ .Date.Format "2006-01-02" }}</td>
+                        <td class="post-list-title-cell">
+                            <a class="post-list-link" href="{{ if .Params.external_url }}{{ .Params.external_url }}{{ else }}{{ .RelPermalink }}{{ end }}" {{ if .Params.external_url }}target="_blank" rel="noopener"{{ end }}>
+                                <span>{{ .Title }}</span>
+                                {{ with .Params.icon }}
+                                    <img src="{{ . }}" class="post-icon" alt="">
+                                {{ end }}
+                                {{ if .Params.external_url }}
+                                    <span class="external-badge" aria-hidden="true">⇗</span>
+                                {{ end }}
+                            </a>
                         </td>
                     </tr>
                     {{ end }}

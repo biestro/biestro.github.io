@@ -21,6 +21,7 @@
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
+    --caption-color: #666666;
     --heading-color: #111111;
     --link-color: #0000ff;
     --nav-border: #ccc;
@@ -35,6 +36,7 @@ html.dark-mode {
     --heading-color: #ffffff;
     --link-color: #00d0ff;
     --nav-border: #444444;
+    --caption-color: #999999;
     --wikilink-color: #ff80bf;
     /* --code-bg: #000000; */
 }
@@ -152,7 +154,7 @@ a.wikilink {
     filter: invert(1); 
 } */
 
-html.dark-mode img:not(.icon-sm) {
+html.dark-mode img:not(.icon-sm):not(figure img) {
   filter: invert(0.9);
 }
 
@@ -511,4 +513,65 @@ a:hover::after {
   font-size: 0.9em;
   line-height: 1;
   margin-left: 0.75rem;
+}
+
+.post-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  border-top: 1px solid var(--nav-border);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.post-list-row + .post-list-row {
+  border-top: 1px solid var(--nav-border);
+}
+
+.post-list-date,
+.post-list-title-cell {
+  padding: 0;
+  vertical-align: middle;
+}
+
+.post-list-date {
+  width: 8.5em;
+  white-space: nowrap;
+  padding: 0.35em 0.85em;
+  border-left: 1px solid var(--nav-border);
+}
+
+.post-list-title-cell {
+  border-right: 1px solid var(--nav-border);
+}
+
+.post-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.35em 0.85em;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.post-list-link:hover {
+  text-decoration: underline;
+  background: var(--nav-border);
+}
+
+figcaption {
+    width: 600px;
+    border: 1px solid var(--nav-border);
+    color: var(--caption-color);
+}
+
+figure {
+    width: 600px;
+    margin: 0 auto;
+    /* border: 1px solid var(--text-color); */
+}
+
+figure img {
+    max-height: unset;
+    width: 100%;
 }

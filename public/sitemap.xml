@@ -17,6 +17,12 @@
     <loc>http://localhost:1313/posts/pmg-vasp/</loc>
     <lastmod>2026-02-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/photos/</loc>
+    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/photos/rice/</loc>
+    <lastmod>2026-02-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/ising-model/</loc>
     <lastmod>2026-02-17T00:00:00+00:00</lastmod>
   </url><url>

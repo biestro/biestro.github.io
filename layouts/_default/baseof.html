@@ -50,9 +50,11 @@
         <main>
             {{ block "main" . }}{{ end }}
         </main>
-
-        <footer>
-            &copy; {{ now.Year }} {{ .Site.Params.authorName }}
+        
+        <footer style="margin-top: 2rem;">
+            <center>
+                &copy; {{ now.Year }} {{ .Site.Params.authorName }}. Photos licensed CC-BY-SA 3.0.
+            </center>
         </footer>
     </div>
 

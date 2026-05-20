@@ -1,0 +1,28 @@
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+{{ $thumb := .Get "thumb" | default $src }}
+{{ $crop := .Get "crop" | default "0" }}
+
+<center>
+<figure style="margin-bottom: 3rem;">
+  <a href="{{ $src }}" target="_blank">
+    {{ if ne $crop "0" }}
+    <div style="width: 600px; overflow: hidden; display: block; margin: 0 auto;">
+      <img src="{{ $thumb }}"
+           style="width: 100%;
+                  display: block;
+                  max-height: unset;
+                  margin: -{{ $crop }}%;
+                  width: calc(100% + {{ mul (float $crop) 2 }}%);
+                  position: relative;
+                  left: 50%;
+                  transform: translateX(-50%);">
+    </div>
+    {{ else }}
+    <img src="{{ $thumb }}"
+         style="width: 600px; height: auto; object-fit: contain;">
+    {{ end }}
+  </a>
+  <figcaption>{{ $caption }}</figcaption>
+</figure>
+</center>
