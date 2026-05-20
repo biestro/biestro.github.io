@@ -25,25 +25,36 @@ title = 'Alberto Ruiz Biestro'
     name = "Alberto Ruiz-Biestro"
     url = "/"
     weight = 1
+    [menu.main.params]
+      icon = "🧑‍🔬"
+
   [[menu.main]]
     name = "home"
     url = "/"
     weight = 10
+    [menu.main.params]
+      icon = "🏠"
 
   [[menu.main]]
     name = "posts"
     url = "/posts/"
     weight = 20
-    
+    [menu.main.params]
+      icon = "📝"
+
   [[menu.main]]
     name = "code"
     url = "https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl"
     weight = 30
+    [menu.main.params]
+      icon = "💻"
 
   [[menu.main]]
     name = "photos"
     url = "/photos/"
     weight = 40
+    [menu.main.params]
+      icon = "📷"
 
 [params]
   # Path relative to the 'static' folder

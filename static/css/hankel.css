@@ -428,7 +428,10 @@ a:hover::after {
   margin: 0;
   border-radius: 0;
   transition: background 0.0s;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  align-items: center;
+  align-self: stretch;
   border: none
 }
 
@@ -468,7 +471,9 @@ a:hover::after {
   font-family: inherit;
   font-size: 1em;
   transition: background 0.0s;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
   cursor: pointer;
   border-left: 1.25px solid var(--nav-border);
   border-right: 1.25px solid var(--nav-border);
