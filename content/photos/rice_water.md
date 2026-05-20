@@ -13,6 +13,6 @@ draft: false
 
 {{< img src="./coarse_graining_a.jpg" caption="When scaled, image (b) fits right in to image (a)." >}}
 
-{{< img src="./escher1.1.jpg" >}}
+{{< img src="./escher1.1.JPG" >}}
 
-{{< img src="./escher2.jpg" caption="Houston can be very rainy" >}}
+{{< img src="./escher2.JPG" caption="Houston can be very rainy" >}}
