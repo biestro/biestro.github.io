@@ -2,38 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Alberto Ruiz Biestro</title>
-    <link>http://localhost:1313/categories/posts/</link>
+    <link>https://biestro.github.io/categories/posts/</link>
     <description>Recent content in Posts on Alberto Ruiz Biestro</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://biestro.github.io/categories/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Solving the heat equation with Markov Chains</title>
-      <link>http://localhost:1313/posts/walk-on-spheres/</link>
+      <link>https://biestro.github.io/posts/walk-on-spheres/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/walk-on-spheres/</guid>
+      <guid>https://biestro.github.io/posts/walk-on-spheres/</guid>
       <description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../walk-on-spheres/owl_mesh.png&#34; alt=&#34;OWL&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem&lt;/p&gt;&#xA;&lt;p&gt;$$\Delta u(x)=0,\quad u(x)\big|_{\partial\Omega}=h(x),$$&lt;/p&gt;&#xA;&lt;p&gt;where (for mathematicians) $\Delta \equiv \partial^2_{j}$.&lt;/p&gt;&#xA;&lt;h2 id=&#34;walk-on-spheres&#34;&gt;Walk-on-spheres&lt;/h2&gt;&#xA;&lt;p&gt;Running a random-walk for each&lt;/p&gt;&#xA;&lt;p&gt;In other words, the algorithm substitutes the Wiener process with the &lt;em&gt;grow-and-sample&lt;/em&gt; method, which reduces computational time, and can set fixed bounds on the iterations (which makes it easier to paralellize). Instead of hoping to sample the boundary within a time $t$, one just sets a large &lt;code&gt;N_iter&lt;/code&gt; and hopes for the best! A graphical description of the algorithm is shown below&lt;/p&gt;</description>
     </item>
     <item>
-      <title>A problem on magnetism</title>
-      <link>http://localhost:1313/posts/magnetism/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/magnetism/</guid>
-      <description>&lt;p&gt;This was a problem in my final exam for the Classical Mechanics course imparted by the wonderful Kaden Hazzard. I will&#xA;attempt to describe its solution (thank you Kaden for the exam and solution manual on part &lt;em&gt;b&lt;/em&gt;!)&lt;/p&gt;&#xA;&lt;h2 id=&#34;statement&#34;&gt;Statement&lt;/h2&gt;&#xA;&lt;p&gt;Symmetries are useful for constructing Lagrangians (for an example see, my post on &lt;a href=&#34;../mean-field/&#34;&gt;mean field&lt;/a&gt;). The&#xA;Lagrangian for this system is&lt;/p&gt;&#xA;&lt;p&gt;[&#xA;\mathcal{L}=i\sum_a w^*_a\partial_t w_a - c^2\sum_j\partial_j \vec{n}\cdot\partial_j\vec{n},&#xA;]&lt;/p&gt;&#xA;&lt;p&gt;where (\partial_j\equiv\partial/\partial x_j), and (w(\vec{x}, t)) is a two-component field, which is nothing new if you&amp;rsquo;ve done any field theory in classical mechanics (Stone&amp;rsquo;s book on mathematical methods &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; is a good reference for this). The first term represents the kinetic energy and the last term is clearly potential energy.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Mean field theory</title>
-      <link>http://localhost:1313/posts/mean-field/</link>
+      <link>https://biestro.github.io/posts/mean-field/</link>
       <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mean-field/</guid>
+      <guid>https://biestro.github.io/posts/mean-field/</guid>
       <description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see &lt;a href=&#34;https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945&#34;&gt;Kardar&amp;rsquo;s book&lt;/a&gt;).&#xA;Here, $m(\vec{x})$ can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ICTP - Quantinuum Hackathon</title>
-      <link>http://localhost:1313/posts/ictp/</link>
+      <link>https://biestro.github.io/posts/ictp/</link>
       <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ictp/</guid>
+      <guid>https://biestro.github.io/posts/ictp/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>
