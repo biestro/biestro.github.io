@@ -23,6 +23,13 @@
       <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Recently, a &lt;a href=&#34;https://www.nature.com/articles/s41524-025-01684-5&#34;&gt;paper in &lt;strong&gt;npj&lt;/strong&gt;&lt;/a&gt; showed an alternative to Wannier interpolated bandstructures using a localized Hamiltonian. Given that Wannierization is my main research area, I thought it would be interesting to see how well their algorithm, which is shown to include only two parameters, compares to the Hamiltonians created by SCDM methods (also require only two parameters).&lt;/p&gt;&#xA;&lt;h2 id=&#34;compiling-in-fortran90&#34;&gt;Compiling in Fortran90&lt;/h2&gt;&#xA;&lt;p&gt;Linux users thave it the easiest. However, if you&amp;rsquo;re using MacOS (as I am), you may need to edit some of the tags in the compiler. An easy rule of thumb for Apple silicon is to replace any instances of &lt;code&gt;cpp&lt;/code&gt; with &lt;code&gt;gcc&lt;/code&gt; (optional &lt;code&gt;-E&lt;/code&gt; flag for preprocessing only), for example, in he &lt;code&gt;Makefile.inc&lt;/code&gt; you will most porbably find this.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Art &amp; Drawings</title>
+      <link>http://localhost:1313/photos/art/</link>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/photos/art/</guid>
+      <description>&lt;h1 id=&#34;2026&#34;&gt;2026&lt;/h1&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&#xA;&lt;figure style=&#34;margin-bottom: 3rem;&#34;&gt;&#xA;  &lt;a href=&#34;./klimt.jpeg&#34; target=&#34;_blank&#34;&gt;&#xA;    &#xA;    &lt;img src=&#34;./klimt.jpeg&#34;&#xA;         style=&#34;width: 600px; height: auto; object-fit: contain;&#34;&gt;&#xA;    &#xA;  &lt;/a&gt;&#xA;  &lt;figcaption&gt;Klimt &amp;amp; co. en la bañera (collage sobre papel, 2026)&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/center&gt;&#xA;&#xA;&lt;h1 id=&#34;2025&#34;&gt;2025&lt;/h1&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;center&gt;&#xA;&lt;figure style=&#34;margin-bottom: 3rem;&#34;&gt;&#xA;  &lt;a href=&#34;./perro.jpeg&#34; target=&#34;_blank&#34;&gt;&#xA;    &#xA;    &lt;img src=&#34;./perro.jpeg&#34;&#xA;         style=&#34;width: 600px; height: auto; object-fit: contain;&#34;&gt;&#xA;    &#xA;  &lt;/a&gt;&#xA;  &lt;figcaption&gt;Perro del Juachi (tiza pastel sobre papel, 2025)&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;/center&gt;</description>
+    </item>
+    <item>
       <title>Tutorial for getting AiiDA-VASP running in NERSC</title>
       <link>http://localhost:1313/posts/aiida-vasp/</link>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>

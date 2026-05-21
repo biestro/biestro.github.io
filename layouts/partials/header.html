@@ -15,8 +15,8 @@
   <div class="nav-links">
     {{ range .Site.Menus.main }}
     <a href="{{ .URL | relURL }}">
-      <span class="nav-text">{{ .Name }}</span>
-      <span class="nav-icon">{{ .Params.icon }}</span>
+      <span class="nav-text-full">{{ .Name }}{{ .Params.icon }}</span>
+      <span class="nav-text-short">{{ .Params.icon }}</span>
     </a>
     {{ end }}
   </div>

@@ -488,6 +488,13 @@ a:hover::after {
   background: var(--nav-border);
 }
 
+.nav-text-short { display: none; }
+
+@media (max-width: 600px) {
+  .nav-text-full { display: none; }
+  .nav-text-short { display: inline; }
+}
+
 .post-nav-table {
   margin: 0;
   border-top: 1px solid var(--nav-border);
