@@ -1,60 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
+<script>
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  document.documentElement.classList.add('dark-mode');
+}
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posts  Alberto Ruiz Biestro</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/hankel.css">
 
-    <script>
-        
-        const currentTheme = localStorage.getItem('theme');
-        
-        if (currentTheme === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
+<link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts  Alberto Ruiz Biestro</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/css/hankel.css">
-    
-    <link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
-    
-
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$']],
-                processEscapes: true
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+<div class="container-x">
+<nav class="nav-x">
+  <div class="nav-links">
+    
+    <a href="/">Alberto Ruiz-Biestro</a>
+    
+    <a href="/posts/">posts</a>
+    
+    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
+    
+    <a href="/photos/">photos</a>
+    
+  </div>
+  <div class="nav-right">
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+    <button id="burger-toggle" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
 
-    <div class="container-x">
-        <nav class="nav-x">
-            <div class="nav-links">
-                
-                    <a href="/">Alberto Ruiz-Biestro</a>
-                
-                    <a href="/posts/">posts</a>
-                
-                    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
-                
-                    <a href="/photos/">photos</a>
-                
-            </div>
 
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
-        </nav>
 
-        <main>
-            
+<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
+  
+  <li class="post-nav-row">
+    <a href="/posts/" class="post-nav-link">posts</a>
+  </li>
+  
+  <li class="post-nav-row">
+    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl" class="post-nav-link">code</a>
+  </li>
+  
+  <li class="post-nav-row">
+    <a href="/photos/" class="post-nav-link">photos</a>
+  </li>
+  
+  <li class="post-nav-row">
+    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
+  </li>
+</ul>
+
+<main>
+  
 <div class="container-x">
   <article>
       <header>
@@ -63,6 +82,58 @@
 
             <table class="post-list-table">
                 <tbody>
+                    
+                    <tr class="post-list-row">
+                        <td class="post-list-date">2026-03-18</td>
+                        <td class="post-list-title-cell">
+                            <a class="post-list-link" href="/posts/hamiltonian-transform/" >
+                                <span>Another way to interpolate bandstructures</span>
+                                
+                                    <img src="/images/dodeca.gif" class="post-icon" alt="">
+                                
+                                
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr class="post-list-row">
+                        <td class="post-list-date">2026-02-20</td>
+                        <td class="post-list-title-cell">
+                            <a class="post-list-link" href="/posts/aiida-vasp/" >
+                                <span>Tutorial for getting AiiDA-VASP running in NERSC</span>
+                                
+                                    <img src="/images/mail3.gif" class="post-icon" alt="">
+                                
+                                
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr class="post-list-row">
+                        <td class="post-list-date">2026-02-20</td>
+                        <td class="post-list-title-cell">
+                            <a class="post-list-link" href="/posts/pmg-vasp/" >
+                                <span>Tutorial for running Wannierization workflows in NERSC</span>
+                                
+                                    <img src="/images/mail3.gif" class="post-icon" alt="">
+                                
+                                
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr class="post-list-row">
+                        <td class="post-list-date">2026-02-17</td>
+                        <td class="post-list-title-cell">
+                            <a class="post-list-link" href="/posts/ising-model/" >
+                                <span>Transverse Ising model</span>
+                                
+                                    <img src="/images/dodecahedron.gif" class="post-icon" alt="">
+                                
+                                
+                            </a>
+                        </td>
+                    </tr>
                     
                     <tr class="post-list-row">
                         <td class="post-list-date">2025-11-08</td>
@@ -87,6 +158,17 @@
                                 
                                 
                                     <span class="external-badge" aria-hidden="true">⇗</span>
+                                
+                            </a>
+                        </td>
+                    </tr>
+                    
+                    <tr class="post-list-row">
+                        <td class="post-list-date">2025-06-09</td>
+                        <td class="post-list-title-cell">
+                            <a class="post-list-link" href="/posts/magnetism/" >
+                                <span>A problem on magnetism</span>
+                                
                                 
                             </a>
                         </td>
@@ -123,52 +205,69 @@
   </article>
 </div>
 
-        </main>
-        
-        <footer style="margin-top: 2rem;">
-            <center>
-                &copy; 2026 Alberto Ruiz Biestro. Photos licensed CC-BY-SA 3.0.
-            </center>
-        </footer>
-    </div>
+</main>
+<footer style="margin-top: 2rem;">
+  <center>
+    &copy; 2026 Alberto Ruiz Biestro. Photos licensed CC-BY-SA 3.0.
+  </center>
+</footer>
+</div>
 
-    <script>
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            const article = document.querySelector('article');
-            if (article) {
-                article.innerHTML = article.innerHTML.replace(
-                    /\[\[(.*?)\]\]/g, 
-                    function(match, text) {
-                        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
-                        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
-                    }
-                );
-            }
-        });
+<script>
 
-        
-        const toggleBtn = document.getElementById('theme-toggle');
-        const htmlTag = document.documentElement;
+document.addEventListener("DOMContentLoaded", function() {
+  const article = document.querySelector('article');
+  if (article) {
+    article.innerHTML = article.innerHTML.replace(
+      /\[\[(.*?)\]\]/g,
+      function(match, text) {
+        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+      }
+    );
+  }
 
-        
-        if (htmlTag.classList.contains('dark-mode')) {
-            toggleBtn.innerText = "Light?";
-        } else {
-            toggleBtn.innerText = "Dark?";
-        }
+  
+  const burger = document.getElementById('burger-toggle');
+  const menu = document.getElementById('mobile-menu');
 
-        toggleBtn.addEventListener('click', () => {
-            htmlTag.classList.toggle('dark-mode');
-            
-            if (htmlTag.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                toggleBtn.innerText = "Light?";
-            } else {
-                localStorage.setItem('theme', 'light');
-                toggleBtn.innerText = "Dark?";
-            }
-        });
-    </script>
+  burger.addEventListener('click', () => {
+    const expanded = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!expanded));
+    menu.setAttribute('aria-hidden', String(expanded));
+    menu.classList.toggle('is-open');
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('is-open');
+    });
+  });
+});
+
+
+const toggleBtn = document.getElementById('theme-toggle');
+const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+const htmlTag = document.documentElement;
+
+function setThemeLabel(isDark) {
+  const label = isDark ? "Light?" : "Dark?";
+  toggleBtn.innerText = label;
+  toggleBtnMobile.innerText = label;
+}
+
+function applyTheme(isDark) {
+  htmlTag.classList.toggle('dark-mode', isDark);
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  setThemeLabel(isDark);
+}
+
+setThemeLabel(htmlTag.classList.contains('dark-mode'));
+
+toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+</script>
 </body>
 </html>

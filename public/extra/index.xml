@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extra on Alberto Ruiz Biestro</title>
+    <link>http://localhost:1313/extra/</link>
+    <description>Recent content in Extra on Alberto Ruiz Biestro</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/extra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My research (for my parents)</title>
+      <link>http://localhost:1313/extra/research/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/extra/research/</guid>
+      <description>&lt;h1 id=&#34;the-big-picture&#34;&gt;The big picture&lt;/h1&gt;&#xA;&lt;p&gt;Lemons come in various shapes and sizes.&lt;/p&gt;&#xA;&lt;p&gt;Electrons are like the seeds from a lemon. We don&amp;rsquo;t really know where inside the lemon they are until we cut one open, but we&amp;rsquo;re pretty sure they&amp;rsquo;re there when we pick them from the tree.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-specifics&#34;&gt;The specifics&lt;/h1&gt;</description>
+    </item>
+  </channel>
+</rss>
