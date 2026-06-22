@@ -1,18 +1,17 @@
 ---
-title: "Tutorial for running Wannierization workflows in NERSC"
+title: "Tutorial for running Wannierization workflows in VASP"
 date: 2026-02-20
 icon: "/images/mail3.gif"
 draft: true
 ---
 
-
 > [!WARNING]
 > This tutorial is a work-in-progress
 
 
-# Installing AiiDA and AiiDA-VASP
+# atomate2
 
-After all is done and set, run
+
 
 ```bash
 verdi plugin list aiida.calculations

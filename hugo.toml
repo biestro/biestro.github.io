@@ -14,6 +14,9 @@ title = 'Alberto Ruiz Biestro'
       [markup.goldmark.parser.attribute]
         block = true
         title = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
 
 
   [markup.highlight]

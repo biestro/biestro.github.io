@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div style="position: relative;">
-    <article style="position: relative;">
+<div style="display: flex; gap: 2rem; position: relative;">
+    <article style="position: relative; flex: 1; min-width: 0;">
         <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
             {{ with .Params.icon }}
                 <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
@@ -19,5 +19,14 @@
             {{ .Content }}
         </div>
     </article>
+    
+    {{ if .TableOfContents }}
+    <aside class="toc-sidebar">
+        <div class="toc-content">
+            <h3>Contents</h3>
+            {{ .TableOfContents }}
+        </div>
+    </aside>
+    {{ end }}
 </div>
 {{ end }}

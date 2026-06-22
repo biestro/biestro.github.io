@@ -1,0 +1,8 @@
+{{- $summary := .Get "summary" | default "Show / hide" -}}
+{{- $open := .Get "open" -}}
+<details class="markdown-toggle"{{ if eq $open "true" }} open{{ end }}>
+  <summary>{{ $summary }}</summary>
+  <div class="markdown-toggle-content">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

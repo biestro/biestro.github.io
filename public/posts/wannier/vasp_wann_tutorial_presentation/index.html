@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
+<script>
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  document.documentElement.classList.add('dark-mode');
+}
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>  Alberto Ruiz Biestro</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/hankel.css">
+
+<link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container-x">
+<nav class="nav-x">
+  <div class="nav-links">
+    
+    <a href="/">Alberto Ruiz-Biestro</a>
+    
+    <a href="/posts/">posts</a>
+    
+    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
+    
+    <a href="/photos/">photos</a>
+    
+  </div>
+  <div class="nav-right">
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+    <button id="burger-toggle" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+
+
+<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
+  
+  <li class="post-nav-row">
+    <a href="/posts/" class="post-nav-link">posts</a>
+  </li>
+  
+  <li class="post-nav-row">
+    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl" class="post-nav-link">code</a>
+  </li>
+  
+  <li class="post-nav-row">
+    <a href="/photos/" class="post-nav-link">photos</a>
+  </li>
+  
+  <li class="post-nav-row">
+    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
+  </li>
+</ul>
+
+<main>
+  
+<div style="display: flex; gap: 2rem; position: relative;">
+    <article style="position: relative; flex: 1; min-width: 0;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;"></h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>January 1, 0001</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">2552 words</span>
+            </div>
+        </header>
+        <hr>
+
+        <div class="post-content">
+            <h1 id="wannierization-in-vasp">Wannierization in VASP</h1>
+<p>Tutorial for Wannierizing Nb-Ti (mp-1216634), motivated by its use as a superconductor.</p>
+<p>We will run VASP using <code>atomate2</code>, followed by a MLWF with <code>Wannier90</code>.</p>
+<h2 id="overview">Overview</h2>
+<p>In this tutorial you will run the following</p>
+<table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th>Task</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>SCF calculation in atomate2</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Bandstructure (line mode) calculation in atomate2</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Bandstructure (uniform) calculation in atomate2</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Wannierization with SCDM using the result form Step 3, in atomate2</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Wannierization with LOCPROJ directly in the terminal</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>MLWF post optimization of the generated wannier functions</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="requirements">Requirements</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Package</th>
+          <th>Version</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>atomate2</td>
+          <td>0.1.4</td>
+      </tr>
+      <tr>
+          <td>jobflow</td>
+          <td>0.3.1</td>
+      </tr>
+      <tr>
+          <td>pymatgen</td>
+          <td>2026.4.16</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2.vasp.jobs.core</span> <span style="color:#007020;font-weight:bold">import</span> StaticMaker, NonSCFMaker
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2.vasp.powerups</span> <span style="color:#007020;font-weight:bold">import</span> update_user_incar_settings, update_user_kpoints_settings
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">jobflow.core.flow</span> <span style="color:#007020;font-weight:bold">import</span> Flow
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">jobflow.managers.local</span> <span style="color:#007020;font-weight:bold">import</span> run_locally
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.core</span> <span style="color:#007020;font-weight:bold">import</span> Structure, Lattice
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.io.vasp</span> <span style="color:#007020;font-weight:bold">import</span> Kpoints
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#666">=</span> <span style="color:#40a070">2.84</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#666">=</span> <span style="color:#40a070">2.84</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#666">=</span> <span style="color:#40a070">4.65</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>structure <span style="color:#666">=</span> Structure<span style="color:#666">.</span>from_spacegroup(
+</span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;Cmmm&#34;</span>,
+</span></span><span style="display:flex;"><span>    Lattice<span style="color:#666">.</span>orthorhombic(a,b,c),
+</span></span><span style="display:flex;"><span>    species<span style="color:#666">=</span>[<span style="color:#4070a0">&#34;Nb&#34;</span>, <span style="color:#4070a0">&#34;Ti&#34;</span>],
+</span></span><span style="display:flex;"><span>    coords<span style="color:#666">=</span>[[<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>], [<span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>]]
+</span></span><span style="display:flex;"><span>)<span style="color:#666">.</span>get_primitive_structure()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>static_job    <span style="color:#666">=</span> StaticMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;static&#34;</span>)<span style="color:#666">.</span>make(structure)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>line_job      <span style="color:#666">=</span> \
+</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;line&#34;</span>)<span style="color:#666">.</span>make(
+</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
+</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uniform_job   <span style="color:#666">=</span> \
+</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;bands&#34;</span>)<span style="color:#666">.</span>make(
+</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
+</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_job   <span style="color:#666">=</span> \
+</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;scdm&#34;</span>)<span style="color:#666">.</span>make(
+</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
+</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>locproj_job   <span style="color:#666">=</span> \
+</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;locproj&#34;</span>)<span style="color:#666">.</span>make(
+</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
+</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><p>Naively, one would proceed and run the computation. However, Wannierization works best when symmetry is turned off (helps with the gauge smoothness).</p>
+<p><strong>NSCF INCAR updates</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ISYM</code></td>
+          <td>-1</td>
+          <td>Symmetry might introduce extra gauge discontinuities</td>
+      </tr>
+      <tr>
+          <td><code>ALGO</code></td>
+          <td>Normal</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>LWAVE</code></td>
+          <td>TRUE</td>
+          <td>Basis for Wannierizaton, will need to diagonalize $\hat{H}_{\rm KS}$ again</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>LOCPROJ INCAR updates</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>LOCPROJ</code></td>
+          <td>&ldquo;1 2 : s s p d : Hy&rdquo;</td>
+          <td>Whichever projections we want to build orbitals from, see below for an explanation</td>
+      </tr>
+      <tr>
+          <td><code>NUM_WANN</code></td>
+          <td><strong>IGNORED</strong></td>
+          <td>NUM_WANN is determined by the number of projectors in <code>LOCPROJ</code></td>
+      </tr>
+      <tr>
+          <td><code>ALGO</code></td>
+          <td>Eigenval or None</td>
+          <td>We just need to recalculate the energies or post-process using the current orbitals</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>SCDM INCAR updates</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>LSCDM</code></td>
+          <td>TRUE</td>
+          <td>Turns on SCDM</td>
+      </tr>
+      <tr>
+          <td><code>LWANNIER90</code></td>
+          <td>TRUE</td>
+          <td>Turns on Wannier90</td>
+      </tr>
+      <tr>
+          <td><code>LWRITE_MMN_AMN</code></td>
+          <td>TRUE</td>
+          <td>Writes <code>.mmn</code> and <code>.amn</code> files for <code>wannier90.x</code> inputs</td>
+      </tr>
+      <tr>
+          <td><code>ALGO</code></td>
+          <td>Eigenval or None</td>
+          <td>We just need to recalculate the energies or post-process using the current orbitals</td>
+      </tr>
+      <tr>
+          <td><code>CUTOFF_MU</code></td>
+          <td>23.0</td>
+          <td>SCDM cutoff position, value specific to this example (but can be automated). <strong>NOT w.r.t. Fermi energy</strong></td>
+      </tr>
+      <tr>
+          <td><code>CUTOFF_SIGMA</code></td>
+          <td>0.5</td>
+          <td>SCDM cuttoff width</td>
+      </tr>
+      <tr>
+          <td><code>NUM_WANN</code></td>
+          <td>20</td>
+          <td>Number of Wannier functions (or bands)</td>
+      </tr>
+  </tbody>
+</table>
+<p>The <code>wannier90.amn</code> and <code>wannier90.mmn</code> files contain the matrices $A_{mn}=\langle \psi_{n}| g_m\rangle $ and $M_{mn}=\langle \psi_{n}| \psi_{m}\rangle$ respectively. They are used as inputs for the MLWF procedure. The functions $g_m$ are initial projections in the <code>LOCPROJ</code> tag, or the SCDM orbitals.</p>
+<p>Note that for SCDM, we are not bound by <code>NUM_WANN</code>, but for <code>LOCPROJ</code> we are bound by how many projectors we choose (e.g. a set of $s$ and $p$ orbitals have $1+3$ total bands in a non-spin polarized calculation).</p>
+<p>For this examle, we choose $s$, $s$, $p$, $d$ to sum to 10 bands per element ($1+1+3+5$).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>uniform_incar <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ISYM&#34;</span>: <span style="color:#666">-</span><span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;LWAVE&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;NBANDS&#34;</span>: <span style="color:#40a070">40</span>}
+</span></span><span style="display:flex;"><span>scdm_incar    <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ALGO&#34;</span>: <span style="color:#4070a0">&#34;None&#34;</span>, <span style="color:#4070a0">&#34;ISTART&#34;</span>: <span style="color:#40a070">2</span>, <span style="color:#4070a0">&#34;LWANNIER90&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;LWRITE_MMN_AMN&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;NUM_WANN&#34;</span>: <span style="color:#40a070">20</span>, <span style="color:#4070a0">&#34;LSCDM&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;CUTOFF_MU&#34;</span>: <span style="color:#40a070">23.0</span>, <span style="color:#4070a0">&#34;CUTOFF_SIGMA&#34;</span>: <span style="color:#40a070">0.5</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>static_kpts  <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>gamma_automatic((<span style="color:#40a070">2</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">2</span>))
+</span></span><span style="display:flex;"><span>uniform_kpts <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>gamma_automatic((<span style="color:#40a070">6</span>,<span style="color:#40a070">6</span>,<span style="color:#40a070">6</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># update INCAR</span>
+</span></span><span style="display:flex;"><span>uniform_job <span style="color:#666">=</span> update_user_incar_settings(uniform_job, uniform_incar)
+</span></span><span style="display:flex;"><span>scdm_job    <span style="color:#666">=</span> update_user_incar_settings(scdm_job,    scdm_incar)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># update kpoints for runs</span>
+</span></span><span style="display:flex;"><span>static_job  <span style="color:#666">=</span> update_user_kpoints_settings(static_job , static_kpts)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>line_job    <span style="color:#666">=</span> update_user_kpoints_settings(line_job,    {<span style="color:#4070a0">&#34;line_density&#34;</span>: <span style="color:#40a070">10</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>uniform_job <span style="color:#666">=</span> update_user_kpoints_settings(uniform_job, uniform_kpts)
+</span></span><span style="display:flex;"><span>scdm_job    <span style="color:#666">=</span> update_user_kpoints_settings(scdm_job,    uniform_kpts) <span style="color:#60a0b0;font-style:italic"># not really used as ALGO = None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>flow <span style="color:#666">=</span> Flow([static_job, line_job, uniform_job, scdm_job], name<span style="color:#666">=</span><span style="color:#4070a0">&#34;full_flow&#34;</span>)
+</span></span></code></pre></div><div class="alert alert-warning">
+We are not adding a LOCPROJ job in the flow, as currently the default pymatgen cannot parse the string of projections (i.e. the LOCPROJ tag will not be written). Please copy the NSCF (bands) folder and run VASP directly
+</div>
+<h3 id="notes-on-locproj">Notes on LOCPROJ</h3>
+<p>The local orbitals are defined as <code>sites : angular character : radial character</code>, and so <code>1 2 : s s p d: Hy</code> means &ldquo;project onto two sets of $s$, one set of $p$ and $d$ Hydrogenic orbitals for both elements in sites 1 and 2 of the <code>POSCAR</code>&rdquo;.</p>
+<div class="alert alert-warning">
+The multiple specifications in LOCPROJ requires a semicolon or a multiline string, which will cause problems anytime Custodian or pymatgen wants to edit/pase the INCAR file. This may result in a failed vasprun.xml.
+</div>
+<p>The VASP section on <a href="https://vasp.at/wiki/LOCPROJ">LOCPROJ</a> has more information about the types of orbital projections one can use.</p>
+<p>Alternatively, for projections one can create a <code>wannier90.win</code> file beforehand with a projections block (similar to Q.E.)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span>begin<span style="color:#bbb"> </span>projections<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>Ti<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>s;s;p;d;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>Nb:<span style="color:#bbb"> </span>s;s;p;d<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span><span style="color:#bbb"> </span>projections<span style="color:#bbb">
+</span></span></span></code></pre></div><p>However, I would not recommend this as VASP does not support hybrid projections in this format (e.g. the $sp-2$ projection will work when specified through <code>LOCPROJ = 1 : sp-2 : Hy</code>, but not through the <code>wannier90.win</code> file!)</p>
+<p>The jobs should look like this</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.pyplot</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">plt</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># fig = flow.draw_graph()</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># fig.gcf().set_size_inches(8,3)</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># run_locally(flow, create_folders=True)</span>
+</span></span></code></pre></div><h2 id="interpolating-with-wannier90">Interpolating with Wannier90</h2>
+<p>Insert the following in the <code>wannier90.win</code> file that was created automatically by VASP. We will use the default gauge (i.e. no MLWF optimization)</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>num_iter     = 0    # Don&#39;t optimize the spread
+</span></span><span style="display:flex;"><span>dis_num_iter = 0    # Don&#39;t do any disentanglement
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>write_hr = .true.   # writes TB hamiltonian data
+</span></span><span style="display:flex;"><span>write_xyz = .true.  # writes atomic positions and Wannier centres in cartesian coordinates
+</span></span><span style="display:flex;"><span>bands_plot = .true.
+</span></span><span style="display:flex;"><span>bands_num_points = 200
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># kpath must match the one by VASP
+</span></span><span style="display:flex;"><span>begin kpoint_path 
+</span></span><span style="display:flex;"><span>G 0.0 0.0 0.0   X 0.0 0.5 0.0
+</span></span><span style="display:flex;"><span>X 0.0 0.5 0.0   M 0.5 0.5 0.0
+</span></span><span style="display:flex;"><span>M 0.5 0.5 0.0   G 0.0 0.0 0.0
+</span></span><span style="display:flex;"><span>G 0.0 0.0 0.0   Z 0.0 0.0 0.5
+</span></span><span style="display:flex;"><span>Z 0.0 0.0 0.5   R 0.0 0.5 0.5
+</span></span><span style="display:flex;"><span>R 0.0 0.5 0.5   A 0.5 0.5 0.5
+</span></span><span style="display:flex;"><span>A 0.5 0.5 0.5   Z 0.0 0.0 0.5
+</span></span><span style="display:flex;"><span>R 0.0 0.5 0.5   X 0.0 0.5 0.0
+</span></span><span style="display:flex;"><span>M 0.5 0.5 0.0   A 0.5 0.5 0.5
+</span></span><span style="display:flex;"><span>end kpoint_path
+</span></span></code></pre></div><div class="alert alert-warning">
+Sometimes Custodian will alter NUM_BANDS. Make sure that the wannier90.win file has the correct number of bands in the wannier90.eig file.
+</div>
+<p>Please rename the folders below to the corresponding output directories in your machine</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.io.vasp</span> <span style="color:#007020;font-weight:bold">import</span> Vasprun
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.electronic_structure.plotter</span> <span style="color:#007020;font-weight:bold">import</span> BSPlotter
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.electronic_structure.bandstructure</span> <span style="color:#007020;font-weight:bold">import</span> BandStructure, BandStructureSymmLine, Kpoint
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.electronic_structure.core</span> <span style="color:#007020;font-weight:bold">import</span> Spin
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">pandas</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">pd</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2_wannier.plot_utils</span> <span style="color:#007020;font-weight:bold">import</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>LINE_PATH    <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./line&#34;</span>
+</span></span><span style="display:flex;"><span>LOCPROJ_PATH <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./locproj&#34;</span>
+</span></span><span style="display:flex;"><span>SCDM_PATH    <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./scdm&#34;</span>
+</span></span><span style="display:flex;"><span>vr   <span style="color:#666">=</span> Vasprun(LINE_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/vasprun.xml.gz&#34;</span>)
+</span></span><span style="display:flex;"><span>nscf <span style="color:#666">=</span> Vasprun(SCDM_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/vasprun.xml.gz&#34;</span>)
+</span></span><span style="display:flex;"><span>bs   <span style="color:#666">=</span> vr<span style="color:#666">.</span>get_band_structure(line_mode<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_bands_raw <span style="color:#666">=</span> np<span style="color:#666">.</span>loadtxt(SCDM_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.dat&#34;</span>)
+</span></span><span style="display:flex;"><span>scdm_kpts_raw  <span style="color:#666">=</span> np<span style="color:#666">.</span>loadtxt(SCDM_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.kpt&#34;</span>, skiprows<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>scdm_ticks     <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_csv(SCDM_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.labelinfo.dat&#34;</span>, names<span style="color:#666">=</span>[<span style="color:#4070a0">&#34;label&#34;</span>, <span style="color:#4070a0">&#34;id&#34;</span>, <span style="color:#4070a0">&#34;dist&#34;</span>, <span style="color:#4070a0">&#34;x&#34;</span>, <span style="color:#4070a0">&#34;y&#34;</span>, <span style="color:#4070a0">&#34;z&#34;</span>], sep<span style="color:#666">=</span><span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\\</span><span style="color:#4070a0">s+&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_ticks<span style="color:#666">.</span>loc[scdm_ticks<span style="color:#666">.</span>label <span style="color:#666">==</span> <span style="color:#4070a0">&#34;G&#34;</span>, <span style="color:#4070a0">&#34;label&#34;</span>] <span style="color:#666">=</span> <span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$\Gamma$&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>locproj_bands_raw <span style="color:#666">=</span> np<span style="color:#666">.</span>loadtxt(LOCPROJ_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.dat&#34;</span>)
+</span></span><span style="display:flex;"><span>locproj_kpts_raw  <span style="color:#666">=</span> np<span style="color:#666">.</span>loadtxt(LOCPROJ_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.kpt&#34;</span>, skiprows<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>locproj_ticks     <span style="color:#666">=</span> pd<span style="color:#666">.</span>read_csv(LOCPROJ_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.labelinfo.dat&#34;</span>, names<span style="color:#666">=</span>[<span style="color:#4070a0">&#34;label&#34;</span>, <span style="color:#4070a0">&#34;id&#34;</span>, <span style="color:#4070a0">&#34;dist&#34;</span>, <span style="color:#4070a0">&#34;x&#34;</span>, <span style="color:#4070a0">&#34;y&#34;</span>, <span style="color:#4070a0">&#34;z&#34;</span>], sep<span style="color:#666">=</span><span style="color:#4070a0">&#39;</span><span style="color:#4070a0;font-weight:bold">\\</span><span style="color:#4070a0">s+&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num_wann_scdm <span style="color:#666">=</span> <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>num_wann_locproj <span style="color:#666">=</span> <span style="color:#40a070">20</span>
+</span></span><span style="display:flex;"><span>num_kpts <span style="color:#666">=</span> scdm_kpts_raw<span style="color:#666">.</span>shape[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_kpts     <span style="color:#666">=</span> scdm_bands_raw[:, <span style="color:#40a070">0</span>]<span style="color:#666">.</span>reshape(num_wann_scdm, num_kpts)[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>scdm_energies <span style="color:#666">=</span> scdm_bands_raw[:, <span style="color:#40a070">1</span>]<span style="color:#666">.</span>reshape(num_wann_scdm, num_kpts)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>locproj_kpts     <span style="color:#666">=</span> locproj_bands_raw[:, <span style="color:#40a070">0</span>]<span style="color:#666">.</span>reshape(num_wann_locproj, num_kpts)[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>locproj_energies <span style="color:#666">=</span> locproj_bands_raw[:, <span style="color:#40a070">1</span>]<span style="color:#666">.</span>reshape(num_wann_locproj, num_kpts)
+</span></span></code></pre></div><pre><code>/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/outputs.py:1353: UserWarning: No POTCAR file with matching TITEL fields was found in
+
+  if potcar := self.get_potcars(path):
+/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/outputs.py:1364: UserWarning: No POTCAR file with matching TITEL fields was found in
+
+  potcar = self.get_potcars(path)
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#666">.</span>close()
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2_wannier.plot_utils</span> <span style="color:#007020;font-weight:bold">import</span> plot_wigner_seitz
+</span></span><span style="display:flex;"><span>plot_wigner_seitz(vr<span style="color:#666">.</span>final_structure)
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_15_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(<span style="color:#40a070">2</span>,<span style="color:#40a070">1</span>, dpi <span style="color:#666">=</span> <span style="color:#40a070">200</span>, figsize<span style="color:#666">=</span>(<span style="color:#40a070">4.5</span>,<span style="color:#40a070">2.5</span>), sharey<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>(fig,ax)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>plot(bs<span style="color:#666">.</span>distance, bs<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>T  <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;.&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;C0&#39;</span>, alpha<span style="color:#666">=</span><span style="color:#40a070">0.7</span>, ms<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[0].plot(scdm_kpts,   scdm_energies.T      - nscf.efermi, &#39;-&#39;, color = &#39;k&#39;, lw = 0.5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[0].axhline(scdm_incar[&#39;CUTOFF_MU&#39;] - nscf.efermi,    ls=&#39;-.&#39;, color = &#39;r&#39;, lw = 1.0)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_xticks(scdm_ticks<span style="color:#666">.</span>dist)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_xticklabels(scdm_ticks<span style="color:#666">.</span>label)
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>axvline(x, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#39;k&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> scdm_ticks<span style="color:#666">.</span>dist]
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;High symm. k-path&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylim(<span style="color:#666">-</span><span style="color:#40a070">60</span>,<span style="color:#40a070">40</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_xlim(scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#40a070">0</span>], scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">4</span>])
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$E-E_F$&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>plot(nscf<span style="color:#666">.</span>get_band_structure()<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>T  <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;.&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;C0&#39;</span>, alpha<span style="color:#666">=</span><span style="color:#40a070">0.7</span>, ms<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xlabel(<span style="color:#4070a0">&#34;k-point index&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xlim(<span style="color:#40a070">0</span>, nscf<span style="color:#666">.</span>get_band_structure()<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>shape[<span style="color:#40a070">1</span>])
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;Uniform k-points&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].plot(locproj_kpts,   locproj_energies.T      - nscf.efermi, &#39;-&#39;, color = &#39;k&#39;, lw = 0.5)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_xticks(scdm_ticks.dist)</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_xticklabels(scdm_ticks.label)</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># [ax[1].axvline(x, lw=0.5, c=&#39;k&#39;) for x in scdm_ticks.dist]</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_title(&#34;LOCPROJ&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_ylim(-60,40)</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_xlim(scdm_ticks.dist.iloc[0], scdm_ticks.dist.iloc[-4])</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_16_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>nscf<span style="color:#666">.</span>get_band_structure()<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>shape[<span style="color:#40a070">1</span>]
+</span></span></code></pre></div><pre><code>216
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(<span style="color:#40a070">2</span>,<span style="color:#40a070">1</span>, dpi <span style="color:#666">=</span> <span style="color:#40a070">250</span>, figsize<span style="color:#666">=</span>(<span style="color:#40a070">2.5</span>,<span style="color:#40a070">4.5</span>), sharex<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>(fig,ax)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>plot(bs<span style="color:#666">.</span>distance, bs<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>T  <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;.&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;C0&#39;</span>, alpha<span style="color:#666">=</span><span style="color:#40a070">0.7</span>, ms<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>plot(scdm_kpts,   scdm_energies<span style="color:#666">.</span>T      <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;-&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;k&#39;</span>, lw <span style="color:#666">=</span> <span style="color:#40a070">0.5</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>axhline(scdm_incar[<span style="color:#4070a0">&#39;CUTOFF_MU&#39;</span>] <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi,    ls<span style="color:#666">=</span><span style="color:#4070a0">&#39;-&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;r&#39;</span>, lw <span style="color:#666">=</span> <span style="color:#40a070">1.0</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_xticks(scdm_ticks<span style="color:#666">.</span>dist)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_xticklabels(scdm_ticks<span style="color:#666">.</span>label)
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>axvline(x, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#39;k&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> scdm_ticks<span style="color:#666">.</span>dist]
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;SCDM&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylim(<span style="color:#666">-</span><span style="color:#40a070">60</span>,<span style="color:#40a070">40</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_xlim(scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#40a070">0</span>], scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">4</span>])
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$E-E_F$&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>plot(bs<span style="color:#666">.</span>distance, bs<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>T  <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;.&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;C0&#39;</span>, alpha<span style="color:#666">=</span><span style="color:#40a070">0.7</span>, ms<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>plot(locproj_kpts,   locproj_energies<span style="color:#666">.</span>T      <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;-&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;k&#39;</span>, lw <span style="color:#666">=</span> <span style="color:#40a070">0.5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xticks(scdm_ticks<span style="color:#666">.</span>dist)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xticklabels(scdm_ticks<span style="color:#666">.</span>label)
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>axvline(x, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#39;k&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> scdm_ticks<span style="color:#666">.</span>dist]
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;LOCPROJ&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_ylim(<span style="color:#666">-</span><span style="color:#40a070">60</span>,<span style="color:#40a070">40</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$E-E_F$&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xlim(scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#40a070">0</span>], scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">4</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_18_0.png" alt="png"></p>
+<p>Note that SCDM gets a much better band-structure without any optimization (although we provided disentanglement options, whereas with LOCPROJ we did not disentangle, so not really an apples to apples comparison).</p>
+<h2 id="mlwf">MLWF</h2>
+<p>The <code>VASP2WANNIER90</code> can insert more information into the <code>wannier90.win</code> file through the <code>WANNIER90_WIN</code> tag. However, doing so requires multiline strings, which are not handled well by pymatgen (yet).</p>
+<div class="alert alert-warning">
+If we need to modify the Wannierization process, we must remove the <code>wannier90.win</code> file before running VASP or else VASP will read this file and use the settings written in this file (e.g. when increasing k-points in the NSCF calculation, not removing the previous <code>wannier90.win</code> file will result in an error.)
+</div>
+<p>I detail here the parameters for MLWF generation through <code>wannier90.x</code>.</p>
+<p><strong>In <code>WANNIER90_WIN</code> tag or <code>wannier90.win</code> file</strong></p>
+<h3 id="locproj">LOCPROJ</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>num_iter</td>
+          <td>1000</td>
+          <td>Iterations for spread optimization</td>
+      </tr>
+      <tr>
+          <td>dis_num_iter</td>
+          <td>500</td>
+          <td>Need to optimize subspace before spread optimization (disentanglement)</td>
+      </tr>
+      <tr>
+          <td>dis_froz_min</td>
+          <td>0 (eV)</td>
+          <td>Minimum of disentanglement window</td>
+      </tr>
+      <tr>
+          <td>dis_froz_max</td>
+          <td>30 (eV)</td>
+          <td>Top of disentanglement window</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="scdm">SCDM</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>num_iter</td>
+          <td>1000</td>
+          <td>Iterations for spread optimization</td>
+      </tr>
+      <tr>
+          <td>dis_num_iter</td>
+          <td>0</td>
+          <td>Subspace is already disentangled, disentangling again can worsen the quality of the WFs</td>
+      </tr>
+  </tbody>
+</table>
+<div class="alert alert-warning">
+Disentanglement and energy windows are <b>not</b> shifted to the Fermi energy.
+</div>
+<h2 id="excluding-bands">Excluding bands</h2>
+<p>Usually, we are not interested in semi-core states, such as the ones below -50 eV. There is no tag in the <code>INCAR</code> for this, it is a parameter in the <code>*.win</code> file.</p>
+<p>Unfortunately, for VASP&lt;6.5.0 versions, the interface will not take into account the <code>exclude_bands</code> tag.</p>
+<p>In the above example we have 2 semi-core states ($s$ orbitals) and six valence states ($p$ orbitals), so we exclude states 1-6 from the MLWF process.</p>
+<p><strong>In <code>INCAR</code>:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>WANNIER90_WIN</td>
+          <td>&ldquo;exclude_bands = 6&rdquo;</td>
+          <td>String that gets inserted in <code>wannier90.win</code>, how many bands to exclude from the overlap matrices</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>SCDM_MLWF_PATH <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./scdm_mlwf&#34;</span>
+</span></span><span style="display:flex;"><span>LOCPROJ_MLWF_PATH <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./locproj_mlwf&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dis_froz_min <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>dis_froz_max <span style="color:#666">=</span> <span style="color:#40a070">30</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_bands_mlwf <span style="color:#666">=</span> np<span style="color:#666">.</span>loadtxt(SCDM_MLWF_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.dat&#34;</span>)
+</span></span><span style="display:flex;"><span>scdm_mlwf_kpts <span style="color:#666">=</span> scdm_bands_mlwf[:, <span style="color:#40a070">0</span>]<span style="color:#666">.</span>reshape(num_wann_scdm, <span style="color:#666">-</span><span style="color:#40a070">1</span>)[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>scdm_mlwf      <span style="color:#666">=</span> scdm_bands_mlwf[:, <span style="color:#40a070">1</span>]<span style="color:#666">.</span>reshape(num_wann_scdm, <span style="color:#666">-</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>locproj_bands_mlwf <span style="color:#666">=</span> np<span style="color:#666">.</span>loadtxt(LOCPROJ_MLWF_PATH <span style="color:#666">+</span> <span style="color:#4070a0">&#34;/wannier90_band.dat&#34;</span>)
+</span></span><span style="display:flex;"><span>locproj_mlwf_kpts <span style="color:#666">=</span> locproj_bands_mlwf[:, <span style="color:#40a070">0</span>]<span style="color:#666">.</span>reshape(num_wann_locproj, <span style="color:#666">-</span><span style="color:#40a070">1</span>)[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>locproj_mlwf      <span style="color:#666">=</span> locproj_bands_mlwf[:, <span style="color:#40a070">1</span>]<span style="color:#666">.</span>reshape(num_wann_locproj, <span style="color:#666">-</span><span style="color:#40a070">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(<span style="color:#40a070">2</span>,<span style="color:#40a070">1</span>, dpi <span style="color:#666">=</span> <span style="color:#40a070">250</span>, figsize<span style="color:#666">=</span>(<span style="color:#40a070">2.5</span>,<span style="color:#40a070">4.5</span>), sharex<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>(fig,ax)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>plot(bs<span style="color:#666">.</span>distance, bs<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>T  <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;.&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;C0&#39;</span>, alpha<span style="color:#666">=</span><span style="color:#40a070">0.7</span>, ms<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>plot(scdm_mlwf_kpts,   scdm_mlwf<span style="color:#666">.</span>T      <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;-&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;k&#39;</span>, lw <span style="color:#666">=</span> <span style="color:#40a070">0.5</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>axhline(scdm_incar[<span style="color:#4070a0">&#39;CUTOFF_MU&#39;</span>] <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi,    ls<span style="color:#666">=</span><span style="color:#4070a0">&#39;-&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;r&#39;</span>, lw <span style="color:#666">=</span> <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$E-E_F$&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>plot(bs<span style="color:#666">.</span>distance, bs<span style="color:#666">.</span>bands[Spin<span style="color:#666">.</span>up]<span style="color:#666">.</span>T  <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;.&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;C0&#39;</span>, alpha<span style="color:#666">=</span><span style="color:#40a070">0.7</span>, ms<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>plot(locproj_mlwf_kpts,   locproj_mlwf<span style="color:#666">.</span>T      <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, <span style="color:#4070a0">&#39;-&#39;</span>, color <span style="color:#666">=</span> <span style="color:#4070a0">&#39;k&#39;</span>, lw <span style="color:#666">=</span> <span style="color:#40a070">0.5</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>fill_between(np<span style="color:#666">.</span>linspace(<span style="color:#40a070">0</span>,scdm_mlwf_kpts[<span style="color:#666">-</span><span style="color:#40a070">1</span>],<span style="color:#40a070">100</span>), dis_froz_min <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, dis_froz_max <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi, alpha<span style="color:#666">=</span><span style="color:#40a070">0.3</span>, color<span style="color:#666">=</span><span style="color:#4070a0">&#39;C1&#39;</span>, label <span style="color:#666">=</span> <span style="color:#4070a0">&#34;Frozen window&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_ylim(<span style="color:#666">-</span><span style="color:#40a070">60</span>,<span style="color:#40a070">40</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>axvline(x, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#39;k&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> scdm_ticks<span style="color:#666">.</span>dist]
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;SCDM + MLWF&#34;</span> )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>axvline(x, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#39;k&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> x <span style="color:#007020;font-weight:bold">in</span> scdm_ticks<span style="color:#666">.</span>dist]
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;LOCPROJ + MLWF&#34;</span> )
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$E-E_F$&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># limits</span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xticks(scdm_ticks<span style="color:#666">.</span>dist)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xticklabels(scdm_ticks<span style="color:#666">.</span>label)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xlim(scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#40a070">0</span>], scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#666">-</span><span style="color:#40a070">4</span>])
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylim(<span style="color:#666">-</span><span style="color:#40a070">60</span>,<span style="color:#40a070">40</span>)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].legend(loc=&#34;upper right&#34;)</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_22_0.png" alt="png"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2_wannier</span> <span style="color:#007020;font-weight:bold">import</span> get_omega
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pathlib</span> <span style="color:#007020;font-weight:bold">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SCDM_MLWF_PATH <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./scdm_mlwf&#34;</span>
+</span></span><span style="display:flex;"><span>LOCPROJ_MLWF_PATH <span style="color:#666">=</span> <span style="color:#4070a0">&#34;./locproj_mlwf&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_omega <span style="color:#666">=</span> {s: get_omega(Path(SCDM_MLWF_PATH, <span style="color:#4070a0">&#34;wannier90.wout&#34;</span>)) <span style="color:#007020;font-weight:bold">for</span> s <span style="color:#007020;font-weight:bold">in</span> Spin}
+</span></span><span style="display:flex;"><span>proj_omega <span style="color:#666">=</span> {s: get_omega(Path(LOCPROJ_MLWF_PATH, <span style="color:#4070a0">&#34;wannier90.wout&#34;</span>)) <span style="color:#007020;font-weight:bold">for</span> s <span style="color:#007020;font-weight:bold">in</span> Spin}
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># proj_omega = {s: get_omega(Path(dir, &#34;proj&#34;, f&#34;{elname}_{s.name}.wout&#34;)) for s in Spin}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(dpi  <span style="color:#666">=</span> <span style="color:#40a070">250</span> , figsize<span style="color:#666">=</span>(<span style="color:#40a070">4</span>,<span style="color:#40a070">2.4</span>))
+</span></span><span style="display:flex;"><span>(fig, ax)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>plot(scdm_omega[Spin<span style="color:#666">.</span>up][:,<span style="color:#666">-</span><span style="color:#40a070">1</span>], <span style="color:#4070a0">&#39;-C0&#39;</span>, label<span style="color:#666">=</span><span style="color:#4070a0">&#34;SCDM&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax.plot(scdm_omega[Spin.down][:,-1], &#39;-&#39;, label=&#34;PD+SCDM&#34;)</span>
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>plot(proj_omega[Spin<span style="color:#666">.</span>up][:,<span style="color:#666">-</span><span style="color:#40a070">1</span>], <span style="color:#4070a0">&#39;-C1&#39;</span>, label<span style="color:#666">=</span><span style="color:#4070a0">&#34;LOCPROJ&#34;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>text(<span style="color:#40a070">10</span><span style="color:#666">**</span><span style="color:#40a070">1</span>, <span style="color:#40a070">90</span>, <span style="color:#4070a0">&#34;LOCPROJ&#34;</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#34;C1&#34;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>text(<span style="color:#40a070">10</span><span style="color:#666">**</span><span style="color:#40a070">.5</span>, <span style="color:#40a070">55</span>, <span style="color:#4070a0">&#34;SCDM&#34;</span>, c<span style="color:#666">=</span><span style="color:#4070a0">&#34;C0&#34;</span>)
+</span></span><span style="display:flex;"><span>xticks <span style="color:#666">=</span> [<span style="color:#40a070">10</span><span style="color:#666">^</span>j <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(<span style="color:#40a070">3</span>)]
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>axvline(<span style="color:#40a070">500</span>, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, color<span style="color:#666">=</span><span style="color:#4070a0">&#39;gray&#39;</span>, ls<span style="color:#666">=</span><span style="color:#4070a0">&#34;--&#34;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xticks(xticks)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax.plot(proj_omega[Spin.up][:,-1], &#39;-C3&#39;, label=&#34;ED+AO&#34;)</span>
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>tick_params(axis<span style="color:#666">=</span><span style="color:#4070a0">&#39;y&#39;</span>, which<span style="color:#666">=</span><span style="color:#4070a0">&#39;both&#39;</span>, labelleft<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>, labelright<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;Sum of spreads $\Omega$ [$\AA^2$]&#34;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xlabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;Iterations&#34;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xscale(<span style="color:#4070a0">&#39;log&#39;</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xlim(<span style="color:#40a070">1</span>, <span style="color:#40a070">1e3</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_ylim(<span style="color:#40a070">10</span>, <span style="color:#40a070">130</span>)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax.legend()</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_23_0.png" alt="png"></p>
+<p>It seems the spread minimization of the <code>LOCPROJ</code> run did not reach finish optimizing, it would be best to increase the number of iterations.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2_wannier.utilities</span> <span style="color:#007020;font-weight:bold">import</span> parse_xyz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>distances <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> folder <span style="color:#007020;font-weight:bold">in</span> [SCDM_MLWF_PATH, LOCPROJ_MLWF_PATH]:
+</span></span><span style="display:flex;"><span>    closest <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span>    vasprun <span style="color:#666">=</span> Vasprun(Path(LOCPROJ_MLWF_PATH, <span style="color:#4070a0">&#34;vasprun.xml&#34;</span>))
+</span></span><span style="display:flex;"><span>    wann_centres <span style="color:#666">=</span> parse_xyz(Path(folder, <span style="color:#4070a0">&#34;wannier90_centres.xyz&#34;</span>))[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sites        <span style="color:#666">=</span> vasprun<span style="color:#666">.</span>final_structure<span style="color:#666">.</span>sites
+</span></span><span style="display:flex;"><span>    dist_to_atom <span style="color:#666">=</span> {site<span style="color:#666">.</span>label: [] <span style="color:#007020;font-weight:bold">for</span> site <span style="color:#007020;font-weight:bold">in</span> sites}
+</span></span><span style="display:flex;"><span>    struct       <span style="color:#666">=</span> vasprun<span style="color:#666">.</span>final_structure
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fracs <span style="color:#666">=</span> struct<span style="color:#666">.</span>lattice<span style="color:#666">.</span>get_fractional_coords(wann_centres)
+</span></span><span style="display:flex;"><span>    dist_array <span style="color:#666">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> (i,x0) <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">enumerate</span>(fracs):
+</span></span><span style="display:flex;"><span>        dist <span style="color:#666">=</span> {}
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">for</span> site <span style="color:#007020;font-weight:bold">in</span> struct<span style="color:#666">.</span>sites:
+</span></span><span style="display:flex;"><span>            d, _ <span style="color:#666">=</span> site<span style="color:#666">.</span>lattice<span style="color:#666">.</span>get_distance_and_image(x0, site<span style="color:#666">.</span>frac_coords)   
+</span></span><span style="display:flex;"><span>            dist[site] <span style="color:#666">=</span> d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic"># get site with smallest distance to wannier center</span>
+</span></span><span style="display:flex;"><span>        closest_site <span style="color:#666">=</span> <span style="color:#007020">min</span>(dist, key<span style="color:#666">=</span>dist<span style="color:#666">.</span>get)
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic"># distances.append({closest_site: dist[closest_site]})</span>
+</span></span><span style="display:flex;"><span>        dist_array<span style="color:#666">.</span>append({closest_site<span style="color:#666">.</span>label: dist[closest_site]})
+</span></span><span style="display:flex;"><span>        dist_to_atom[closest_site<span style="color:#666">.</span>label]<span style="color:#666">.</span>append(dist[closest_site])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    distances<span style="color:#666">.</span>append(dist_array)
+</span></span></code></pre></div><pre><code>Sanitized LOCPROJ: []
+Sanitized LOCPROJ: []
+
+
+/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/outputs.py:1353: UserWarning: No POTCAR file with matching TITEL fields was found in
+
+  if potcar := self.get_potcars(path):
+/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/outputs.py:1364: UserWarning: No POTCAR file with matching TITEL fields was found in
+
+  potcar = self.get_potcars(path)
+</code></pre>
+<h2 id="distance-to-atoms">Distance to atoms</h2>
+<p>Even though <code>SCDM</code> has a great spread and can be very automatic compared to the <code>LOCPROJ</code> method, it fails in both symmetry and selective-localization. In other words, the orbitals generated will most definitely be far away from the atomic positions, and thus will not be very useful for tasks that require assigning wavefunctions to atoms (like estimating exchange interactions in <a href="https://tb2j.readthedocs.io/en/latest/">TB2J</a>).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(<span style="color:#40a070">2</span>,<span style="color:#40a070">1</span>, dpi <span style="color:#666">=</span> <span style="color:#40a070">250</span>, figsize<span style="color:#666">=</span>(<span style="color:#40a070">2.5</span>,<span style="color:#40a070">4.5</span>), sharex<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>, sharey<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>(fig,ax)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>axhline(<span style="color:#40a070">0</span>, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, color<span style="color:#666">=</span><span style="color:#4070a0">&#34;gray&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>axhline(<span style="color:#40a070">0</span>, lw<span style="color:#666">=</span><span style="color:#40a070">0.5</span>, color<span style="color:#666">=</span><span style="color:#4070a0">&#34;gray&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bins <span style="color:#666">=</span> np<span style="color:#666">.</span>linspace(<span style="color:#40a070">0</span>,<span style="color:#40a070">4</span>,<span style="color:#40a070">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>color_dict <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;Nb&#34;</span>: <span style="color:#4070a0">&#34;#61A57D&#34;</span>, <span style="color:#4070a0">&#34;Ti&#34;</span>: <span style="color:#4070a0">&#34;#78caff&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lattice_const <span style="color:#666">=</span> struct<span style="color:#666">.</span>lattice<span style="color:#666">.</span>c
+</span></span><span style="display:flex;"><span>data <span style="color:#666">=</span> np<span style="color:#666">.</span>array([[[ val <span style="color:#666">/</span> c, color_dict[key]] <span style="color:#007020;font-weight:bold">for</span> key,val <span style="color:#007020;font-weight:bold">in</span> d<span style="color:#666">.</span>items()]  <span style="color:#007020;font-weight:bold">for</span> d <span style="color:#007020;font-weight:bold">in</span> distances[<span style="color:#40a070">0</span>]], dtype<span style="color:#666">=</span>np<span style="color:#666">.</span>object_)<span style="color:#666">.</span>squeeze()
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>plot(i, v[<span style="color:#40a070">0</span>], c<span style="color:#666">=</span>v[<span style="color:#40a070">1</span>], marker<span style="color:#666">=</span><span style="color:#4070a0">&#39;o&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> i,v <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">enumerate</span>(data)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data <span style="color:#666">=</span> np<span style="color:#666">.</span>array([[[ val <span style="color:#666">/</span> c, color_dict[key]] <span style="color:#007020;font-weight:bold">for</span> key,val <span style="color:#007020;font-weight:bold">in</span> d<span style="color:#666">.</span>items()]  <span style="color:#007020;font-weight:bold">for</span> d <span style="color:#007020;font-weight:bold">in</span> distances[<span style="color:#40a070">1</span>]], dtype<span style="color:#666">=</span>np<span style="color:#666">.</span>object_)<span style="color:#666">.</span>squeeze()
+</span></span><span style="display:flex;"><span>[ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>plot(i, v[<span style="color:#40a070">0</span>], c<span style="color:#666">=</span>v[<span style="color:#40a070">1</span>], marker<span style="color:#666">=</span><span style="color:#4070a0">&#39;o&#39;</span>) <span style="color:#007020;font-weight:bold">for</span> i,v <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">enumerate</span>(data)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xlabel(<span style="color:#4070a0">&#34;Wannier func. index&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_xticks(range(0,21,5))</span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;distance $ / a$&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;distance $ / a$&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ax[1].set_yticks([0,1])</span>
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">0</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;SCDM&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_title(<span style="color:#4070a0">&#34;LOCPROJ&#34;</span>)
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_yticks([<span style="color:#40a070">0</span>, <span style="color:#40a070">0.3</span>])
+</span></span><span style="display:flex;"><span>ax[<span style="color:#40a070">1</span>]<span style="color:#666">.</span>set_xticks(<span style="color:#007020">range</span>(<span style="color:#40a070">0</span>,<span style="color:#40a070">21</span>, <span style="color:#40a070">10</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_27_0.png" alt="png"></p>
+<h2 id="interpolating-the-hamiltonian-ourselves-optional">Interpolating the Hamiltonian ourselves (optional)</h2>
+<p>Wannier90 can interpolate the Hamiltonian in a path defined under <code>kpoint_path</code>. However, editing this file can become tedious. If we set <code>write_hr</code> and <code>write_xyz</code> to <code>.true.</code> in the <code>wannier90.win</code> file, then Wannier90 will write the Wannier Hamiltonian elements $\langle m\mathbf{0}| H |n\mathbf{R}\rangle$ and the cartesian lattice indices $\mathbf{R}$ needed to pefrorm the interpolation</p>
+<p>$$
+H_{mn}^W=\sum_{\mathbf{R}}e^{i\mathbf{k}\cdot\mathbf{R}}\langle m\mathbf{0}| H |n\mathbf{R}\rangle
+$$</p>
+<p>We will perform an interpolation through $\Gamma \rightarrow X\rightarrow M  \rightarrow \Gamma$</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kp_sym <span style="color:#666">=</span> \
+</span></span><span style="display:flex;"><span>    np<span style="color:#666">.</span>array([
+</span></span><span style="display:flex;"><span>        [<span style="color:#40a070">0.0</span>, <span style="color:#40a070">0.0</span>, <span style="color:#40a070">0.0</span>], <span style="color:#60a0b0;font-style:italic"># G</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#40a070">0.0</span>, <span style="color:#40a070">0.5</span>, <span style="color:#40a070">0.0</span>], <span style="color:#60a0b0;font-style:italic"># X</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#40a070">0.5</span>, <span style="color:#40a070">0.5</span>, <span style="color:#40a070">0.0</span>], <span style="color:#60a0b0;font-style:italic"># M</span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#40a070">0.0</span>, <span style="color:#40a070">0.0</span>, <span style="color:#40a070">0.0</span>], <span style="color:#60a0b0;font-style:italic"># G</span>
+</span></span><span style="display:flex;"><span>    ])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num_sym <span style="color:#666">=</span> kp_sym<span style="color:#666">.</span>shape[<span style="color:#40a070">0</span>]
+</span></span><span style="display:flex;"><span>nk_tot  <span style="color:#666">=</span> <span style="color:#40a070">2</span><span style="color:#666">**</span><span style="color:#40a070">8</span>
+</span></span><span style="display:flex;"><span>kpath_to_interpolate <span style="color:#666">=</span> np<span style="color:#666">.</span>vstack([np<span style="color:#666">.</span>linspace(kp_sym[j], kp_sym[j<span style="color:#666">+</span><span style="color:#40a070">1</span>], nk_tot <span style="color:#666">//</span> (num_sym <span style="color:#666">-</span> <span style="color:#40a070">1</span>), endpoint<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">False</span>) <span style="color:#007020;font-weight:bold">for</span> j <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">range</span>(num_sym <span style="color:#666">-</span> <span style="color:#40a070">1</span>)])
+</span></span><span style="display:flex;"><span>k_distance           <span style="color:#666">=</span> np<span style="color:#666">.</span>cumsum(np<span style="color:#666">.</span>linalg<span style="color:#666">.</span>norm(np<span style="color:#666">.</span>vstack([[<span style="color:#40a070">0</span>,<span style="color:#40a070">0</span>,<span style="color:#40a070">0</span>], np<span style="color:#666">.</span>diff(kpath_to_interpolate, axis<span style="color:#666">=</span><span style="color:#40a070">0</span>)]), axis<span style="color:#666">=</span><span style="color:#40a070">1</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">TB2J.wannier</span> <span style="color:#007020;font-weight:bold">import</span> parse_atoms, parse_ham, parse_xyz
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">scipy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">sp</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">gc</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num_wann, hr, rvecs <span style="color:#666">=</span> parse_ham(<span style="color:#4070a0">&#34;./scdm_mlwf/wannier90_hr.dat&#34;</span>)
+</span></span><span style="display:flex;"><span>xcart <span style="color:#666">=</span> parse_xyz(<span style="color:#4070a0">&#34;./scdm_mlwf/wannier90_centres.xyz&#34;</span>)  
+</span></span><span style="display:flex;"><span>atoms <span style="color:#666">=</span> parse_atoms(<span style="color:#4070a0">&#34;./scdm_mlwf/wannier90.win&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>degen <span style="color:#666">=</span> rvecs<span style="color:#666">.</span>astype(<span style="color:#007020">float</span>)  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>H_mnR_frac <span style="color:#666">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> R_frac, H <span style="color:#007020;font-weight:bold">in</span> hr<span style="color:#666">.</span>items():
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic"># R_frac is a tuple (i, j, k) in fractional coordinates</span>
+</span></span><span style="display:flex;"><span>    H_mnR_frac[R_frac] <span style="color:#666">=</span> H  <span style="color:#60a0b0;font-style:italic"># Key is (i, j, k) fractional</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>R_vecs  <span style="color:#666">=</span> np<span style="color:#666">.</span>array(<span style="color:#007020">list</span>(H_mnR_frac<span style="color:#666">.</span>keys()))  <span style="color:#60a0b0;font-style:italic"># fractional coordinates</span>
+</span></span><span style="display:flex;"><span>H_vals  <span style="color:#666">=</span> np<span style="color:#666">.</span>array(<span style="color:#007020">list</span>(H_mnR_frac<span style="color:#666">.</span>values()))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>H_vals_w <span style="color:#666">=</span> H_vals <span style="color:#666">/</span> degen[:, <span style="color:#007020;font-weight:bold">None</span>, <span style="color:#007020;font-weight:bold">None</span>]  <span style="color:#60a0b0;font-style:italic"># unfold crystal symmetry</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>phases  <span style="color:#666">=</span> np<span style="color:#666">.</span>exp(<span style="color:#40a070">2</span>j <span style="color:#666">*</span> np<span style="color:#666">.</span>pi <span style="color:#666">*</span> kpath_to_interpolate <span style="color:#666">@</span> R_vecs<span style="color:#666">.</span>T)
+</span></span><span style="display:flex;"><span>H_mnK   <span style="color:#666">=</span> (phases[:, :, <span style="color:#007020;font-weight:bold">None</span>, <span style="color:#007020;font-weight:bold">None</span>] <span style="color:#666">*</span> H_vals_w[<span style="color:#007020;font-weight:bold">None</span>, :, :, :])<span style="color:#666">.</span>sum(axis<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>H_mnK   <span style="color:#666">=</span> <span style="color:#40a070">2</span><span style="color:#666">*</span>H_mnK <span style="color:#60a0b0;font-style:italic"># idk why we need twice its value to match dft, maybe a cartesian / fractional convention</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># get eigenvalues</span>
+</span></span><span style="display:flex;"><span>E_nk, U_mnk    <span style="color:#666">=</span> sp<span style="color:#666">.</span>linalg<span style="color:#666">.</span>eigh(H_mnK)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gc<span style="color:#666">.</span>collect() <span style="color:#60a0b0;font-style:italic"># check if we can release some memory</span>
+</span></span></code></pre></div><pre><code>56602
+</code></pre>
+<h2 id="calculating-bloch-velocity">Calculating Bloch velocity</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">matplotlib.collections</span> <span style="color:#007020;font-weight:bold">import</span> LineCollection
+</span></span><span style="display:flex;"><span>fig, ax <span style="color:#666">=</span> plt<span style="color:#666">.</span>subplots(dpi<span style="color:#666">=</span><span style="color:#40a070">350</span>, figsize<span style="color:#666">=</span>(<span style="color:#40a070">6</span>,<span style="color:#40a070">3</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>band_velocities <span style="color:#666">=</span> np<span style="color:#666">.</span>array([np<span style="color:#666">.</span>gradient(band, k_distance) <span style="color:#007020;font-weight:bold">for</span> band <span style="color:#007020;font-weight:bold">in</span> E_nk<span style="color:#666">.</span>T])
+</span></span><span style="display:flex;"><span>vmin <span style="color:#666">=</span> np<span style="color:#666">.</span>min(band_velocities)
+</span></span><span style="display:flex;"><span>vmax <span style="color:#666">=</span> np<span style="color:#666">.</span>max(band_velocities)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vval <span style="color:#666">=</span> np<span style="color:#666">.</span>max([np<span style="color:#666">.</span>abs(vmin), vmax]) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>norm <span style="color:#666">=</span> plt<span style="color:#666">.</span>Normalize(vmin<span style="color:#666">=</span> <span style="color:#666">-</span>vval, vmax<span style="color:#666">=</span>vval)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> band, scalar_velocity <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>(E_nk<span style="color:#666">.</span>T, band_velocities):
+</span></span><span style="display:flex;"><span>    points <span style="color:#666">=</span> np<span style="color:#666">.</span>array([k_distance <span style="color:#666">/</span> k_distance[<span style="color:#666">-</span><span style="color:#40a070">1</span>], band <span style="color:#666">-</span> nscf<span style="color:#666">.</span>efermi])<span style="color:#666">.</span>T<span style="color:#666">.</span>reshape(<span style="color:#666">-</span><span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>)
+</span></span><span style="display:flex;"><span>    segments <span style="color:#666">=</span> np<span style="color:#666">.</span>concatenate([points[:<span style="color:#666">-</span><span style="color:#40a070">1</span>], points[<span style="color:#40a070">1</span>:]], axis<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Pass the norm object to LineCollection</span>
+</span></span><span style="display:flex;"><span>    lc <span style="color:#666">=</span> LineCollection(segments, cmap<span style="color:#666">=</span><span style="color:#4070a0">&#39;coolwarm&#39;</span>, norm<span style="color:#666">=</span>norm, lw<span style="color:#666">=</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># Set the values used for colormapping</span>
+</span></span><span style="display:flex;"><span>    lc<span style="color:#666">.</span>set_array(scalar_velocity)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ax<span style="color:#666">.</span>add_collection(lc)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xticks(scdm_ticks<span style="color:#666">.</span>dist <span style="color:#666">/</span> scdm_ticks<span style="color:#666">.</span>dist<span style="color:#666">.</span>iloc[<span style="color:#40a070">3</span>])
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xticklabels(scdm_ticks<span style="color:#666">.</span>label)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_xlim(<span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_ylim(<span style="color:#666">-</span><span style="color:#40a070">60</span>, <span style="color:#40a070">30</span>)
+</span></span><span style="display:flex;"><span>ax<span style="color:#666">.</span>set_ylabel(<span style="color:#4070a0">r</span><span style="color:#4070a0">&#34;$E_</span><span style="color:#70a0d0">{nk}</span><span style="color:#4070a0">$ (eV)&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cbar <span style="color:#666">=</span> fig<span style="color:#666">.</span>colorbar(lc, ax<span style="color:#666">=</span>ax, label<span style="color:#666">=</span><span style="color:#4070a0">r</span><span style="color:#4070a0">&#39;$dE/dk$ (eV $\AA$)&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#666">.</span>show()
+</span></span></code></pre></div><p><img src="output_32_0.png" alt="png"></p>
+
+        </div>
+    </article>
+    
+    
+    <aside class="toc-sidebar">
+        <div class="toc-content">
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#wannierization-in-vasp">Wannierization in VASP</a>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#requirements">Requirements</a>
+          <ul>
+            <li><a href="#notes-on-locproj">Notes on LOCPROJ</a></li>
+          </ul>
+        </li>
+        <li><a href="#interpolating-with-wannier90">Interpolating with Wannier90</a></li>
+        <li><a href="#mlwf">MLWF</a>
+          <ul>
+            <li><a href="#locproj">LOCPROJ</a></li>
+            <li><a href="#scdm">SCDM</a></li>
+          </ul>
+        </li>
+        <li><a href="#excluding-bands">Excluding bands</a></li>
+        <li><a href="#distance-to-atoms">Distance to atoms</a></li>
+        <li><a href="#interpolating-the-hamiltonian-ourselves-optional">Interpolating the Hamiltonian ourselves (optional)</a></li>
+        <li><a href="#calculating-bloch-velocity">Calculating Bloch velocity</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </aside>
+    
+</div>
+
+</main>
+<footer style="margin-top: 2rem;">
+  <center>
+    &copy; 2026 Alberto Ruiz Biestro. Photos licensed CC-BY-SA 3.0.
+  </center>
+</footer>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  const article = document.querySelector('article');
+  if (article) {
+    article.innerHTML = article.innerHTML.replace(
+      /\[\[(.*?)\]\]/g,
+      function(match, text) {
+        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
+        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
+      }
+    );
+  }
+
+  
+  const burger = document.getElementById('burger-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  burger.addEventListener('click', () => {
+    const expanded = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!expanded));
+    menu.setAttribute('aria-hidden', String(expanded));
+    menu.classList.toggle('is-open');
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.classList.remove('is-open');
+    });
+  });
+});
+
+
+const toggleBtn = document.getElementById('theme-toggle');
+const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+const htmlTag = document.documentElement;
+
+function setThemeLabel(isDark) {
+  const label = isDark ? "Light?" : "Dark?";
+  toggleBtn.innerText = label;
+  toggleBtnMobile.innerText = label;
+}
+
+function applyTheme(isDark) {
+  htmlTag.classList.toggle('dark-mode', isDark);
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  setThemeLabel(isDark);
+}
+
+setThemeLabel(htmlTag.classList.contains('dark-mode'));
+
+toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+</script>
+</body>
+</html>

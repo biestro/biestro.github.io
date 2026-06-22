@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
 <meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
 <script>
 const currentTheme = localStorage.getItem('theme');
@@ -51,22 +51,31 @@ window.MathJax = {
   </div>
 </nav>
 
-<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+
+
+<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
   
-  <a href="/">Alberto Ruiz-Biestro</a>
+  <li class="post-nav-row">
+    <a href="/posts/" class="post-nav-link">posts</a>
+  </li>
   
-  <a href="/posts/">posts</a>
+  <li class="post-nav-row">
+    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl" class="post-nav-link">code</a>
+  </li>
   
-  <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
+  <li class="post-nav-row">
+    <a href="/photos/" class="post-nav-link">photos</a>
+  </li>
   
-  <a href="/photos/">photos</a>
-  
-</div>
+  <li class="post-nav-row">
+    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
+  </li>
+</ul>
 
 <main>
   
-<div style="position: relative;">
-    <article style="position: relative;">
+<div style="display: flex; gap: 2rem; position: relative;">
+    <article style="position: relative; flex: 1; min-width: 0;">
         <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
             
                 <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
@@ -85,6 +94,15 @@ window.MathJax = {
             <!-- https://marginalia.blogs.rice.edu/2025/10/20/disability-through-history-a-review-by-alberto-ruiz/ -->
         </div>
     </article>
+    
+    
+    <aside class="toc-sidebar">
+        <div class="toc-content">
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
+    </aside>
+    
 </div>
 
 </main>
@@ -131,24 +149,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 const toggleBtn = document.getElementById('theme-toggle');
+const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 const htmlTag = document.documentElement;
 
-if (htmlTag.classList.contains('dark-mode')) {
-  toggleBtn.innerText = "Light?";
-} else {
-  toggleBtn.innerText = "Dark?";
+function setThemeLabel(isDark) {
+  const label = isDark ? "Light?" : "Dark?";
+  toggleBtn.innerText = label;
+  toggleBtnMobile.innerText = label;
 }
 
-toggleBtn.addEventListener('click', () => {
-  htmlTag.classList.toggle('dark-mode');
-  if (htmlTag.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-    toggleBtn.innerText = "Light?";
-  } else {
-    localStorage.setItem('theme', 'light');
-    toggleBtn.innerText = "Dark?";
-  }
-});
+function applyTheme(isDark) {
+  htmlTag.classList.toggle('dark-mode', isDark);
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  setThemeLabel(isDark);
+}
+
+setThemeLabel(htmlTag.classList.contains('dark-mode'));
+
+toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>
