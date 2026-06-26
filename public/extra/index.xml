@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extra on Alberto Ruiz Biestro</title>
-    <link>https://biestro.github.io/extra/</link>
+    <link>http://localhost:1313/extra/</link>
     <description>Recent content in Extra on Alberto Ruiz Biestro</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://biestro.github.io/extra/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/extra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My research (for my parents)</title>
-      <link>https://biestro.github.io/extra/research/</link>
+      <link>http://localhost:1313/extra/research/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/extra/research/</guid>
+      <guid>http://localhost:1313/extra/research/</guid>
       <description>&lt;h1 id=&#34;panorama&#34;&gt;Panorama&lt;/h1&gt;&#xA;&lt;p&gt;Muchas de las propiedades magnéticas y electrónicas de los materiales son explicadas por los electrones. El descubrimiento de la mecánica cuántica puso en&lt;/p&gt;&#xA;&lt;p&gt;Los limones vienen en distintas formas y tamaños. Cuando agarramos un limón del árbol, no nos preocupamos por saber en dónde están las semillas, pero sí en la forma (y el color) del limón.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../research/lemon.jpg&#34; alt=&#34;lemon&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Los orbitales atómicos son como los limones, y los electrones sus semillas. Cuentan con formas un poco más extrañas, pero al mirar detenidamente observamos que tienen mayor simetría que aquella de un limón natural. Estos orbitales originalmente fueron concebidos para el átomo de hidrógeno, y heredan un poco de la simetría rotacional del potencial de Coulomb.&lt;/p&gt;</description>
     </item>
   </channel>

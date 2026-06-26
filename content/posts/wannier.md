@@ -7,12 +7,15 @@ categories:
 tags: 
     - Research
     - PhD
-    - Miscellaneous
+    - Tutorial
 ---
 
 Tutorial for Wannierizing Nb-Ti (mp-1216634). We will run VASP using `atomate2`, followed by a MLWF with `Wannier90`, but you could run VASP "by hand" if you're not comfortable with `atomate2`.
 
 Regardless, make sure the folder structure is the same as the one stated here.
+
+> [!TIP]
+> You can find some slides in [here](./slides.pdf) that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)
 
 # Overview
 
@@ -20,32 +23,35 @@ In this tutorial you will run the following
 
 | Step | Task                                                               |
 | ---- | ------------------------------------------------------------------ |
-| 1    | SCF calculation in atomate2                                        |
-| 2    | Bandstructure (line mode) calculation in atomate2                  |
-| 3    | Bandstructure (uniform) calculation in atomate2                    |
-| 4    | Wannierization with SCDM using the result form Step 3, in atomate2 |
-| 5    | Wannierization with LOCPROJ directly in the terminal               |
-| 6    | MLWF post optimization of the generated wannier functions          |
+| 1    | Write the input files for SCF and NSCF (uniform and bands)         |
+| 2    | Wannierization with SCDM using the result form Step 3, in atomate2 |
+| 3    | Wannierization with LOCPROJ directly in the terminal               |
+| 4    | MLWF post optimization of the generated wannier functions          |
 
 # Requirements
-| Package | Version |
+| | |
 |------------|-----|
-| atomate2   |  0.1.4  |
-| jobflow   |  0.3.1  |
 | pymatgen   |  2026.4.16  |
 
 
 
 ```python
-from atomate2.vasp.jobs.core import StaticMaker, NonSCFMaker
-from atomate2.vasp.powerups import update_user_incar_settings, update_user_kpoints_settings
+from pymatgen.core import __version__ as p_ver
+print(f"pymatgen version {p_ver}")
+```
 
-from jobflow.core.flow import Flow
-from jobflow.managers.local import run_locally
+    pymatgen version 2026.4.16
 
+
+
+```python
+from pymatgen.io.vasp.sets import MPStaticSet, MPNonSCFSet
+from pymatgen.symmetry.bandstructure import HighSymmKpath
 from pymatgen.core import Structure, Lattice
 from pymatgen.io.vasp import Kpoints
 ```
+
+## Structure
 
 
 ```python
@@ -57,40 +63,13 @@ structure = Structure.from_spacegroup(
     "Cmmm",
     Lattice.orthorhombic(a,b,c),
     species=["Nb", "Ti"],
-    coords=[ [0, 0, 0], [1/2, 1/2, 1/2] ]
+    coords=[[0, 0, 0], [1/2, 1/2, 1/2]]
 ).get_primitive_structure()
 ```
 
+## Updates
 
-```python
-static_job    = StaticMaker(name=f"static").make(structure)
-
-line_job      = \
-    NonSCFMaker(name=f"line").make(
-        structure = static_job.output.structure,
-        prev_dir  = static_job.output.dir_name,
-        )
-
-uniform_job   = \
-    NonSCFMaker(name=f"bands").make(
-        structure = static_job.output.structure,
-        prev_dir  = static_job.output.dir_name,
-        )
-
-scdm_job   = \
-    NonSCFMaker(name=f"scdm").make(
-        structure = uniform_job.output.structure,
-        prev_dir  = uniform_job.output.dir_name,
-        )
-
-locproj_job   = \
-    NonSCFMaker(name=f"locproj").make(
-        structure = uniform_job.output.structure,
-        prev_dir  = uniform_job.output.dir_name,
-        )
-```
-
-Naively, one would proceed and run the computation. However, Wannierization works best when symmetry is turned off (helps with the gauge smoothness).
+Wannierization works best when symmetry is turned off (helps with the gauge smoothness).
 
 
 **NSCF INCAR updates**
@@ -129,32 +108,75 @@ For this examle, we choose $s$, $s$, $p$, $d$ to sum to 10 bands per element ($1
 ```python
 uniform_incar = {"ISYM": -1, "LWAVE": True, "NBANDS": 40}
 scdm_incar    = {"ALGO": "None", "ISTART": 2, "LWANNIER90": True, "LWRITE_MMN_AMN": True, "NUM_WANN": 20, "LSCDM": True, "CUTOFF_MU": 23.0, "CUTOFF_SIGMA": 0.5}
-
-static_kpts  = Kpoints.gamma_automatic((2,2,2))
-uniform_kpts = Kpoints.gamma_automatic((6,6,6))
-
-# update INCAR
-uniform_job = update_user_incar_settings(uniform_job, uniform_incar)
-scdm_job    = update_user_incar_settings(scdm_job,    scdm_incar)
-
-# update kpoints for runs
-static_job  = update_user_kpoints_settings(static_job , static_kpts)
-
-line_job    = update_user_kpoints_settings(line_job,    {"line_density": 10})
-
-uniform_job = update_user_kpoints_settings(uniform_job, uniform_kpts)
-scdm_job    = update_user_kpoints_settings(scdm_job,    uniform_kpts) # not really used as ALGO = None
-
-flow = Flow([static_job, line_job, uniform_job, scdm_job], name="full_flow")
-
+locproj_incar = {"ALGO": "None", "ISTART": 2, "LWANNIER90": True, "LWRITE_MMN_AMN": True}
 ```
 
 <div class="alert alert-warning">
-We are not adding a LOCPROJ job in the flow, as currently the default pymatgen cannot parse the string of projections (i.e. the LOCPROJ tag will not be written). Please copy the NSCF (bands) folder and run VASP directly
+The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot work with. For this reason, you must open the `INCAR` file in the directory and append the following
 </div>
 
+```fortran
+! NbTi/locproj/INCAR
+! ...
+LOCPROJ = "1 2 : s s p d : Hy"
+```
 
-## Notes on LOCPROJ
+
+```python
+kpath   = HighSymmKpath(structure)
+
+kpts_scf     = Kpoints.gamma_automatic((4,4,4))
+kpts_uniform = Kpoints.gamma_automatic((6,6,4))
+kpts_line    = Kpoints.automatic_linemode(5, kpath)
+
+scf_set     = MPStaticSet(structure=structure, user_kpoints_settings = kpts_scf,     user_potcar_functional="PBE_54")
+uniform_set = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_uniform, user_potcar_functional="PBE_54",  user_incar_settings = uniform_incar)
+line_set    = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_line,    user_potcar_functional="PBE_54",  user_incar_settings = uniform_incar)
+
+scdm_set    = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_uniform, user_potcar_functional="PBE_54",  user_incar_settings = scdm_incar)
+locproj_set = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_uniform, user_potcar_functional="PBE_54",  user_incar_settings = locproj_incar)
+```
+
+    /Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/symmetry/bandstructure.py:179: UserWarning: The input structure does not match the expected standard primitive! The path may be incorrect. Use at your own risk.
+      kpath = KPathSetyawanCurtarolo(self._structure, symprec, angle_tolerance, atol)
+    <string>:35: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
+    /Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/sets.py:1992: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
+      super().__post_init__()
+
+
+
+```python
+from pathlib import Path
+
+sets  = [scf_set, uniform_set, line_set, locproj_set, scdm_set]
+names = ["scf",  "uniform",   "line",   "locproj",   "scdm"]
+
+for (_key, _set) in zip(names, sets):
+    workdir = Path("NbTi", _key)
+    workdir.mkdir(exist_ok=True, parents=True)
+
+    _set.write_input(workdir)
+```
+
+The file-structure should look like the following
+
+```bash
+$ ls NbTi
+line    locproj scdm    scf     uniform
+```
+
+**Here is where you run VASP**
+
+(remember to edit the LOCPROJ tag by hand)
+
+**After running VASP** copy the `WAVECAR` and `CHGCAR` files to the Wannierization directories
+
+```bash
+$ cp NbTi/uniform/{WAVECAR,CHGCAR} NbTi/scdm/
+$ cp NbTi/uniform/{WAVECAR,CHGCAR} NbTi/locproj/
+```
+
+# Notes on LOCPROJ
 
 The local orbitals are defined as `sites : angular character : radial character`, and so `1 2 : s s p d: Hy` means "project onto two sets of $s$, one set of $p$ and $d$ Hydrogenic orbitals for both elements in sites 1 and 2 of the `POSCAR`". 
 
@@ -181,16 +203,18 @@ However, I would not recommend this as VASP does not support hybrid projections 
 
 Insert the following in the `wannier90.win` file that was created automatically by VASP. We will use the default gauge (i.e. no MLWF optimization)
 
-```terminal
-num_iter     = 0    # Don't optimize the spread
-dis_num_iter = 0    # Don't do any disentanglement
+```fortran
+! locproj/wannier90.win  & scdm/wannier90.win  & 
 
-write_hr = .true.   # writes TB hamiltonian data
-write_xyz = .true.  # writes atomic positions and Wannier centres in cartesian coordinates
+num_iter     = 0    ! Don't optimize the spread
+dis_num_iter = 0    ! Don't do any disentanglement
+
+write_hr = .true.   ! writes TB hamiltonian data
+write_xyz = .true.  ! writes atomic positions and Wannier centres in cartesian coordinates
 bands_plot = .true.
 bands_num_points = 200
 
-# kpath must match the one by VASP
+! kpath must match the one by VASP
 begin kpoint_path 
 G 0.0 0.0 0.0   X 0.0 0.5 0.0
 X 0.0 0.5 0.0   M 0.5 0.5 0.0
@@ -202,18 +226,12 @@ A 0.5 0.5 0.5   Z 0.0 0.0 0.5
 R 0.0 0.5 0.5   X 0.0 0.5 0.0
 M 0.5 0.5 0.0   A 0.5 0.5 0.5
 end kpoint_path
+
+! This part was generated automatically by VASP
+num_bands = 42
+num_wann = 20
+...
 ```
-
-
-<div class="alert alert-warning">
-Sometimes Custodian will alter NUM_BANDS. Make sure that the wannier90.win file has the correct number of bands in the wannier90.eig file.
-</div>
-
-
-
-
-Please rename the folders below to the corresponding output directories in your machine
-
 
 ```python
 from pymatgen.io.vasp import Vasprun

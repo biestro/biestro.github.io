@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Alberto Ruiz Biestro</title>
-    <link>https://biestro.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Alberto Ruiz Biestro</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://biestro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Miscellaneous</title>
-      <link>https://biestro.github.io/tags/miscellaneous/</link>
+      <link>http://localhost:1313/tags/miscellaneous/</link>
       <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/miscellaneous/</guid>
+      <guid>http://localhost:1313/tags/miscellaneous/</guid>
       <description></description>
     </item>
     <item>
       <title>PhD</title>
-      <link>https://biestro.github.io/tags/phd/</link>
+      <link>http://localhost:1313/tags/phd/</link>
       <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/phd/</guid>
+      <guid>http://localhost:1313/tags/phd/</guid>
       <description></description>
     </item>
     <item>
       <title>Research</title>
-      <link>https://biestro.github.io/tags/research/</link>
+      <link>http://localhost:1313/tags/research/</link>
       <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/research/</guid>
+      <guid>http://localhost:1313/tags/research/</guid>
       <description></description>
     </item>
     <item>
       <title>Blog</title>
-      <link>https://biestro.github.io/tags/blog/</link>
+      <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/blog/</guid>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Condensed Matter</title>
-      <link>https://biestro.github.io/tags/condensed-matter/</link>
+      <link>http://localhost:1313/tags/condensed-matter/</link>
       <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/condensed-matter/</guid>
+      <guid>http://localhost:1313/tags/condensed-matter/</guid>
       <description></description>
     </item>
     <item>
       <title>Simulation</title>
-      <link>https://biestro.github.io/tags/simulation/</link>
+      <link>http://localhost:1313/tags/simulation/</link>
       <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/simulation/</guid>
+      <guid>http://localhost:1313/tags/simulation/</guid>
       <description></description>
     </item>
     <item>
       <title>Quantum Chemistry</title>
-      <link>https://biestro.github.io/tags/quantum-chemistry/</link>
+      <link>http://localhost:1313/tags/quantum-chemistry/</link>
       <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/quantum-chemistry/</guid>
+      <guid>http://localhost:1313/tags/quantum-chemistry/</guid>
       <description></description>
     </item>
     <item>
       <title>Quantum Computing</title>
-      <link>https://biestro.github.io/tags/quantum-computing/</link>
+      <link>http://localhost:1313/tags/quantum-computing/</link>
       <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/quantum-computing/</guid>
+      <guid>http://localhost:1313/tags/quantum-computing/</guid>
       <description></description>
     </item>
     <item>
       <title>Quantum Mechanics</title>
-      <link>https://biestro.github.io/tags/quantum-mechanics/</link>
+      <link>http://localhost:1313/tags/quantum-mechanics/</link>
       <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://biestro.github.io/tags/quantum-mechanics/</guid>
+      <guid>http://localhost:1313/tags/quantum-mechanics/</guid>
       <description></description>
     </item>
   </channel>
