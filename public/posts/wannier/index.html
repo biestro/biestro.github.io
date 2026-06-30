@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
 <meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
 <script>
 const currentTheme = localStorage.getItem('theme');
@@ -85,7 +85,7 @@ window.MathJax = {
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Wannierizing with VASP</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>June 22, 2026</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">2552 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">2697 words</span>
             </div>
         </header>
         <hr>
@@ -114,26 +114,18 @@ window.MathJax = {
   <tbody>
       <tr>
           <td>1</td>
-          <td>SCF calculation in atomate2</td>
+          <td>Write the input files for SCF and NSCF (uniform and bands)</td>
       </tr>
       <tr>
           <td>2</td>
-          <td>Bandstructure (line mode) calculation in atomate2</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>Bandstructure (uniform) calculation in atomate2</td>
-      </tr>
-      <tr>
-          <td>4</td>
           <td>Wannierization with SCDM using the result form Step 3, in atomate2</td>
       </tr>
       <tr>
-          <td>5</td>
+          <td>3</td>
           <td>Wannierization with LOCPROJ directly in the terminal</td>
       </tr>
       <tr>
-          <td>6</td>
+          <td>4</td>
           <td>MLWF post optimization of the generated wannier functions</td>
       </tr>
   </tbody>
@@ -142,34 +134,27 @@ window.MathJax = {
 <table>
   <thead>
       <tr>
-          <th>Package</th>
-          <th>Version</th>
+          <th></th>
+          <th></th>
       </tr>
   </thead>
   <tbody>
-      <tr>
-          <td>atomate2</td>
-          <td>0.1.4</td>
-      </tr>
-      <tr>
-          <td>jobflow</td>
-          <td>0.3.1</td>
-      </tr>
       <tr>
           <td>pymatgen</td>
           <td>2026.4.16</td>
       </tr>
   </tbody>
 </table>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2.vasp.jobs.core</span> <span style="color:#007020;font-weight:bold">import</span> StaticMaker, NonSCFMaker
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">atomate2.vasp.powerups</span> <span style="color:#007020;font-weight:bold">import</span> update_user_incar_settings, update_user_kpoints_settings
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">jobflow.core.flow</span> <span style="color:#007020;font-weight:bold">import</span> Flow
-</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">jobflow.managers.local</span> <span style="color:#007020;font-weight:bold">import</span> run_locally
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.core</span> <span style="color:#007020;font-weight:bold">import</span> __version__ <span style="color:#007020;font-weight:bold">as</span> p_ver
+</span></span><span style="display:flex;"><span><span style="color:#007020">print</span>(<span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;pymatgen version </span><span style="color:#70a0d0">{</span>p_ver<span style="color:#70a0d0">}</span><span style="color:#4070a0">&#34;</span>)
+</span></span></code></pre></div><pre><code>pymatgen version 2026.4.16
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.io.vasp.sets</span> <span style="color:#007020;font-weight:bold">import</span> MPStaticSet, MPNonSCFSet
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.symmetry.bandstructure</span> <span style="color:#007020;font-weight:bold">import</span> HighSymmKpath
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.core</span> <span style="color:#007020;font-weight:bold">import</span> Structure, Lattice
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.io.vasp</span> <span style="color:#007020;font-weight:bold">import</span> Kpoints
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#666">=</span> <span style="color:#40a070">2.84</span>
+</span></span></code></pre></div><h2 id="structure">Structure</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#666">=</span> <span style="color:#40a070">2.84</span>
 </span></span><span style="display:flex;"><span>b <span style="color:#666">=</span> <span style="color:#40a070">2.84</span>
 </span></span><span style="display:flex;"><span>c <span style="color:#666">=</span> <span style="color:#40a070">4.65</span>
 </span></span><span style="display:flex;"><span>
@@ -177,34 +162,10 @@ window.MathJax = {
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;Cmmm&#34;</span>,
 </span></span><span style="display:flex;"><span>    Lattice<span style="color:#666">.</span>orthorhombic(a,b,c),
 </span></span><span style="display:flex;"><span>    species<span style="color:#666">=</span>[<span style="color:#4070a0">&#34;Nb&#34;</span>, <span style="color:#4070a0">&#34;Ti&#34;</span>],
-</span></span><span style="display:flex;"><span>    coords<span style="color:#666">=</span>[ [<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>], [<span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>] ]
+</span></span><span style="display:flex;"><span>    coords<span style="color:#666">=</span>[[<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>], [<span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>]]
 </span></span><span style="display:flex;"><span>)<span style="color:#666">.</span>get_primitive_structure()
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>static_job    <span style="color:#666">=</span> StaticMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;static&#34;</span>)<span style="color:#666">.</span>make(structure)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>line_job      <span style="color:#666">=</span> \
-</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;line&#34;</span>)<span style="color:#666">.</span>make(
-</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
-</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>uniform_job   <span style="color:#666">=</span> \
-</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;bands&#34;</span>)<span style="color:#666">.</span>make(
-</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
-</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> static_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scdm_job   <span style="color:#666">=</span> \
-</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;scdm&#34;</span>)<span style="color:#666">.</span>make(
-</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
-</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>locproj_job   <span style="color:#666">=</span> \
-</span></span><span style="display:flex;"><span>    NonSCFMaker(name<span style="color:#666">=</span><span style="color:#4070a0">f</span><span style="color:#4070a0">&#34;locproj&#34;</span>)<span style="color:#666">.</span>make(
-</span></span><span style="display:flex;"><span>        structure <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>structure,
-</span></span><span style="display:flex;"><span>        prev_dir  <span style="color:#666">=</span> uniform_job<span style="color:#666">.</span>output<span style="color:#666">.</span>dir_name,
-</span></span><span style="display:flex;"><span>        )
-</span></span></code></pre></div><p>Naively, one would proceed and run the computation. However, Wannierization works best when symmetry is turned off (helps with the gauge smoothness).</p>
+</span></span></code></pre></div><h2 id="updates">Updates</h2>
+<p>Wannierization works best when symmetry is turned off (helps with the gauge smoothness).</p>
 <p><strong>NSCF INCAR updates</strong></p>
 <table>
   <thead>
@@ -311,27 +272,50 @@ window.MathJax = {
 <p>For this examle, we choose $s$, $s$, $p$, $d$ to sum to 10 bands per element ($1+1+3+5$).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>uniform_incar <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ISYM&#34;</span>: <span style="color:#666">-</span><span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;LWAVE&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;NBANDS&#34;</span>: <span style="color:#40a070">40</span>}
 </span></span><span style="display:flex;"><span>scdm_incar    <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ALGO&#34;</span>: <span style="color:#4070a0">&#34;None&#34;</span>, <span style="color:#4070a0">&#34;ISTART&#34;</span>: <span style="color:#40a070">2</span>, <span style="color:#4070a0">&#34;LWANNIER90&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;LWRITE_MMN_AMN&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;NUM_WANN&#34;</span>: <span style="color:#40a070">20</span>, <span style="color:#4070a0">&#34;LSCDM&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;CUTOFF_MU&#34;</span>: <span style="color:#40a070">23.0</span>, <span style="color:#4070a0">&#34;CUTOFF_SIGMA&#34;</span>: <span style="color:#40a070">0.5</span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>static_kpts  <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>gamma_automatic((<span style="color:#40a070">2</span>,<span style="color:#40a070">2</span>,<span style="color:#40a070">2</span>))
-</span></span><span style="display:flex;"><span>uniform_kpts <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>gamma_automatic((<span style="color:#40a070">6</span>,<span style="color:#40a070">6</span>,<span style="color:#40a070">6</span>))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># update INCAR</span>
-</span></span><span style="display:flex;"><span>uniform_job <span style="color:#666">=</span> update_user_incar_settings(uniform_job, uniform_incar)
-</span></span><span style="display:flex;"><span>scdm_job    <span style="color:#666">=</span> update_user_incar_settings(scdm_job,    scdm_incar)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># update kpoints for runs</span>
-</span></span><span style="display:flex;"><span>static_job  <span style="color:#666">=</span> update_user_kpoints_settings(static_job , static_kpts)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>line_job    <span style="color:#666">=</span> update_user_kpoints_settings(line_job,    {<span style="color:#4070a0">&#34;line_density&#34;</span>: <span style="color:#40a070">10</span>})
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>uniform_job <span style="color:#666">=</span> update_user_kpoints_settings(uniform_job, uniform_kpts)
-</span></span><span style="display:flex;"><span>scdm_job    <span style="color:#666">=</span> update_user_kpoints_settings(scdm_job,    uniform_kpts) <span style="color:#60a0b0;font-style:italic"># not really used as ALGO = None</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>flow <span style="color:#666">=</span> Flow([static_job, line_job, uniform_job, scdm_job], name<span style="color:#666">=</span><span style="color:#4070a0">&#34;full_flow&#34;</span>)
+</span></span><span style="display:flex;"><span>locproj_incar <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ALGO&#34;</span>: <span style="color:#4070a0">&#34;None&#34;</span>, <span style="color:#4070a0">&#34;ISTART&#34;</span>: <span style="color:#40a070">2</span>, <span style="color:#4070a0">&#34;LWANNIER90&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;LWRITE_MMN_AMN&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>}
 </span></span></code></pre></div><div class="alert alert-warning">
-We are not adding a LOCPROJ job in the flow, as currently the default pymatgen cannot parse the string of projections (i.e. the LOCPROJ tag will not be written). Please copy the NSCF (bands) folder and run VASP directly
+The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot work with. For this reason, you must open the `INCAR` file in the directory and append the following
 </div>
-<h2 id="notes-on-locproj">Notes on LOCPROJ</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! NbTi/locproj/INCAR
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! ...
+</span></span></span><span style="display:flex;"><span>LOCPROJ<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;1 2 : s s p d : Hy&#34;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>kpath   <span style="color:#666">=</span> HighSymmKpath(structure)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kpts_scf     <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>gamma_automatic((<span style="color:#40a070">4</span>,<span style="color:#40a070">4</span>,<span style="color:#40a070">4</span>))
+</span></span><span style="display:flex;"><span>kpts_uniform <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>gamma_automatic((<span style="color:#40a070">6</span>,<span style="color:#40a070">6</span>,<span style="color:#40a070">4</span>))
+</span></span><span style="display:flex;"><span>kpts_line    <span style="color:#666">=</span> Kpoints<span style="color:#666">.</span>automatic_linemode(<span style="color:#40a070">5</span>, kpath)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scf_set     <span style="color:#666">=</span> MPStaticSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_scf,     user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>)
+</span></span><span style="display:flex;"><span>uniform_set <span style="color:#666">=</span> MPNonSCFSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_uniform, user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>,  user_incar_settings <span style="color:#666">=</span> uniform_incar)
+</span></span><span style="display:flex;"><span>line_set    <span style="color:#666">=</span> MPNonSCFSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_line,    user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>,  user_incar_settings <span style="color:#666">=</span> uniform_incar)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scdm_set    <span style="color:#666">=</span> MPNonSCFSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_uniform, user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>,  user_incar_settings <span style="color:#666">=</span> scdm_incar)
+</span></span><span style="display:flex;"><span>locproj_set <span style="color:#666">=</span> MPNonSCFSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_uniform, user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>,  user_incar_settings <span style="color:#666">=</span> locproj_incar)
+</span></span></code></pre></div><pre><code>/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/symmetry/bandstructure.py:179: UserWarning: The input structure does not match the expected standard primitive! The path may be incorrect. Use at your own risk.
+  kpath = KPathSetyawanCurtarolo(self._structure, symprec, angle_tolerance, atol)
+&lt;string&gt;:35: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
+/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/sets.py:1992: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
+  super().__post_init__()
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pathlib</span> <span style="color:#007020;font-weight:bold">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sets  <span style="color:#666">=</span> [scf_set, uniform_set, line_set, locproj_set, scdm_set]
+</span></span><span style="display:flex;"><span>names <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;scf&#34;</span>,  <span style="color:#4070a0">&#34;uniform&#34;</span>,   <span style="color:#4070a0">&#34;line&#34;</span>,   <span style="color:#4070a0">&#34;locproj&#34;</span>,   <span style="color:#4070a0">&#34;scdm&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> (_key, _set) <span style="color:#007020;font-weight:bold">in</span> <span style="color:#007020">zip</span>(names, sets):
+</span></span><span style="display:flex;"><span>    workdir <span style="color:#666">=</span> Path(<span style="color:#4070a0">&#34;NbTi&#34;</span>, _key)
+</span></span><span style="display:flex;"><span>    workdir<span style="color:#666">.</span>mkdir(exist_ok<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>, parents<span style="color:#666">=</span><span style="color:#007020;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    _set<span style="color:#666">.</span>write_input(workdir)
+</span></span></code></pre></div><p>The file-structure should look like the following</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls NbTi
+</span></span><span style="display:flex;"><span>line    locproj scdm    scf     uniform
+</span></span></code></pre></div><p><strong>Here is where you run VASP</strong></p>
+<p>(remember to edit the LOCPROJ tag by hand)</p>
+<p><strong>After running VASP</strong> copy the <code>WAVECAR</code> and <code>CHGCAR</code> files to the Wannierization directories</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cp NbTi/uniform/<span style="color:#666">{</span>WAVECAR,CHGCAR<span style="color:#666">}</span> NbTi/scdm/
+</span></span><span style="display:flex;"><span>$ cp NbTi/uniform/<span style="color:#666">{</span>WAVECAR,CHGCAR<span style="color:#666">}</span> NbTi/locproj/
+</span></span></code></pre></div><h1 id="notes-on-locproj">Notes on LOCPROJ</h1>
 <p>The local orbitals are defined as <code>sites : angular character : radial character</code>, and so <code>1 2 : s s p d: Hy</code> means &ldquo;project onto two sets of $s$, one set of $p$ and $d$ Hydrogenic orbitals for both elements in sites 1 and 2 of the <code>POSCAR</code>&rdquo;.</p>
 <div class="alert alert-warning">
 The multiple specifications in LOCPROJ requires a semicolon or a multiline string, which will cause problems anytime Custodian or pymatgen wants to edit/pase the INCAR file. This may result in a failed vasprun.xml.
@@ -345,31 +329,34 @@ The multiple specifications in LOCPROJ requires a semicolon or a multiline strin
 </span></span></span></code></pre></div><p>However, I would not recommend this as VASP does not support hybrid projections in this format (e.g. the $sp-2$ projection will work when specified through <code>LOCPROJ = 1 : sp-2 : Hy</code>, but not through the <code>wannier90.win</code> file!)</p>
 <h1 id="interpolating-with-wannier90">Interpolating with Wannier90</h1>
 <p>Insert the following in the <code>wannier90.win</code> file that was created automatically by VASP. We will use the default gauge (i.e. no MLWF optimization)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>num_iter     = 0    # Don&#39;t optimize the spread
-</span></span><span style="display:flex;"><span>dis_num_iter = 0    # Don&#39;t do any disentanglement
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>write_hr = .true.   # writes TB hamiltonian data
-</span></span><span style="display:flex;"><span>write_xyz = .true.  # writes atomic positions and Wannier centres in cartesian coordinates
-</span></span><span style="display:flex;"><span>bands_plot = .true.
-</span></span><span style="display:flex;"><span>bands_num_points = 200
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span># kpath must match the one by VASP
-</span></span><span style="display:flex;"><span>begin kpoint_path 
-</span></span><span style="display:flex;"><span>G 0.0 0.0 0.0   X 0.0 0.5 0.0
-</span></span><span style="display:flex;"><span>X 0.0 0.5 0.0   M 0.5 0.5 0.0
-</span></span><span style="display:flex;"><span>M 0.5 0.5 0.0   G 0.0 0.0 0.0
-</span></span><span style="display:flex;"><span>G 0.0 0.0 0.0   Z 0.0 0.0 0.5
-</span></span><span style="display:flex;"><span>Z 0.0 0.0 0.5   R 0.0 0.5 0.5
-</span></span><span style="display:flex;"><span>R 0.0 0.5 0.5   A 0.5 0.5 0.5
-</span></span><span style="display:flex;"><span>A 0.5 0.5 0.5   Z 0.0 0.0 0.5
-</span></span><span style="display:flex;"><span>R 0.0 0.5 0.5   X 0.0 0.5 0.0
-</span></span><span style="display:flex;"><span>M 0.5 0.5 0.0   A 0.5 0.5 0.5
-</span></span><span style="display:flex;"><span>end kpoint_path
-</span></span></code></pre></div><div class="alert alert-warning">
-Sometimes Custodian will alter NUM_BANDS. Make sure that the wannier90.win file has the correct number of bands in the wannier90.eig file.
-</div>
-<p>Please rename the folders below to the corresponding output directories in your machine</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.io.vasp</span> <span style="color:#007020;font-weight:bold">import</span> Vasprun
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! locproj/wannier90.win  &amp; scdm/wannier90.win  &amp; 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>num_iter<span style="color:#bbb">     </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">! Don&#39;t optimize the spread
+</span></span></span><span style="display:flex;"><span>dis_num_iter<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">0</span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">! Don&#39;t do any disentanglement
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>write_hr<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>.true.<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">! writes TB hamiltonian data
+</span></span></span><span style="display:flex;"><span>write_xyz<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>.true.<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">! writes atomic positions and Wannier centres in cartesian coordinates
+</span></span></span><span style="display:flex;"><span>bands_plot<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>.true.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>bands_num_points<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">200</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! kpath must match the one by VASP
+</span></span></span><span style="display:flex;"><span>begin<span style="color:#bbb"> </span>kpoint_path<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span>G<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">   </span>X<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>X<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">   </span>M<span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>M<span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">   </span>G<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>G<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">   </span>Z<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>Z<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">   </span>R<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>R<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">   </span>A<span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>A<span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">   </span>Z<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>R<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">   </span>X<span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>M<span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.0</span><span style="color:#bbb">   </span>A<span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb"> </span><span style="color:#40a070">0.5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">end</span><span style="color:#bbb"> </span>kpoint_path<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! This part was generated automatically by VASP
+</span></span></span><span style="display:flex;"><span>num_bands<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">42</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>num_wann<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#40a070">20</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span>...<span style="color:#bbb">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.io.vasp</span> <span style="color:#007020;font-weight:bold">import</span> Vasprun
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.electronic_structure.plotter</span> <span style="color:#007020;font-weight:bold">import</span> BSPlotter
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.electronic_structure.bandstructure</span> <span style="color:#007020;font-weight:bold">import</span> BandStructure, BandStructureSymmLine, Kpoint
 </span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pymatgen.electronic_structure.core</span> <span style="color:#007020;font-weight:bold">import</span> Spin
@@ -836,9 +823,11 @@ $$</p>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#requirements">Requirements</a>
       <ul>
-        <li><a href="#notes-on-locproj">Notes on LOCPROJ</a></li>
+        <li><a href="#structure">Structure</a></li>
+        <li><a href="#updates">Updates</a></li>
       </ul>
     </li>
+    <li><a href="#notes-on-locproj">Notes on LOCPROJ</a></li>
     <li><a href="#interpolating-with-wannier90">Interpolating with Wannier90</a></li>
     <li><a href="#mlwf">MLWF</a>
       <ul>
