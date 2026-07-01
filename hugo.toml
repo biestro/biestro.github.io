@@ -63,7 +63,8 @@ title = 'Alberto Ruiz Biestro'
   # Path relative to the 'static' folder
   # profileImage = "/images/wos.gif"
   # profileImage = "/images/prof/me_dither_1.png"
-  profileImage = "/images/klimt_crop.jpeg"
+  # profileImage = "/images/klimt_crop.jpeg"
+  profileImage = "/images/profile1.jpeg"
   favicon = "/images/icosahedron.gif"
   # profileImageLink = "/posts/walk-on-spheres"
   profileImageLink = "/images/klimt.jpeg"
