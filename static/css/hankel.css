@@ -304,7 +304,7 @@ html.dark-mode .hljs-meta {
 ul li a {
     /* color:  var(--link-color); */
     /* text-decoration: none; */
-    text-decoration: none !important;
+    /* text-decoration: none !important; */
     color: inherit; /* uses parent text color */
 }
 
@@ -313,7 +313,7 @@ ul li a:not(:hover) {
 }
 
 ul li a:hover {
-    color: var(--link-color);
+    /* color: var(--link-color); */
     text-decoration: underline;
 
 }
@@ -361,7 +361,8 @@ table {
 table th,
 table td {
   border: 1px solid var(--nav-border);
-  padding: 0.5rem 0.75rem;
+  padding: 0.35rem 0.85rem;
+  margin: 0;
   text-align: left;
 }
 
@@ -384,12 +385,12 @@ html.dark-mode table th {
 .resume-content th {
   text-align: left;
   font-weight: 600;
-  padding: 0.3rem 0;
+  padding: 0.35rem 0.85rem;
   border-bottom: 1px solid #ddd;
 }
 
 .resume-content td {
-  padding: 0.3rem 0;
+  padding: 0.35rem 0.85rem;
   vertical-align: top;
 }
 
