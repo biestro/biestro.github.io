@@ -7,9 +7,13 @@ categories:
     - PhD
 ---
 
-# VASP2WANNIER
-> [!ERROR]
-> 
+# VASP2WANNIER modes
+
+VASP has two modes for calculating Wannier functions, either setting everything in the `INCAR`, or having a `wannier90.win` file beforehand (the so called *legacy* mode). The former is the recommended way to run a Wannierization nowadays.
+
+# Common errors
+
+When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only read them when specified in the `LOCPROJ` tag. Placing them in the `wannier90.win` file's `begin projections` block will give an error similar to
 
 ```terminal
  Computing AMN (projections onto localized orbitals)

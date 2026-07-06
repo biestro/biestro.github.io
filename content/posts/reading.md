@@ -10,14 +10,14 @@ tags:
     - Miscellaneous
 ---
 
-> [!Tip]
-> Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.
+> [!Tip] ""
+>  Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.
 
 Reading (correctly) is arguably the most important, overlooked part of a PhD. Keeping up with *all*  of the literature is an impossible task, and anyone that tries to do so is bound to fail. Dedicate some time to finding a flow that works for you (i.e. one that you consistently use), and after you find this, don't spend more time modifying it. If it works, don't fix it!
 
 I hope that what I write here might help someone else too in organizing their research ideas just as it helped me when I started getting serious about research (and my future self whenever he forgets this flow).
 
-# **Reccomendations**
+# Reccomendations
 
 1. Set up an RSS feed collection, I use [NetNewsWire](https://netnewswire.com/) because it is *libre* and just works!
 
@@ -43,7 +43,7 @@ I hope that what I write here might help someone else too in organizing their re
     - You only get around 4 hours of useful brain power. Use it wisely, and keep less intensive tasks towards the end of the day.
    
 
-## **Reading checklist**
+## Reading checklist
 
 I recommend having these questions in mind when reading a paper.
 
@@ -58,25 +58,25 @@ I recommend having these questions in mind when reading a paper.
 
 Here are some journals that I follow through their RSS feeds.
 
-> [!WARNING]
+> [!WARNING] ""
 > When you add the RSS feeds for any journal, it will be overwhelmingly full of articles. You might be tempted to skip through them all just to get rid of the `100+ unread` notification. Dedicate some time to reading the titles+abstracts, this will prove useful for consistency.
 
 
 - Materials Science and Computational Materials
 
-  - Nature Materials
+  - [Nature Materials](https://www.nature.com/nmat.rss)
 
-  - npj Computational Materials
+  - [npj Computational Materials](http://www.nature.com/npjcompumats.rss)
 
-  - Physical Reveiw Materials
+  - [Physical Reveiw Materials](https://feeds.aps.org/rss/prmaterialssuggestions.xml)
   
   - IOP 2D Materials
 
 - Editor's Suggestions
 
-  - PRB, PRE, PRL
+  - [PRB](https://feeds.aps.org/rss/prbsuggestions.xml), [PRE](https://feeds.aps.org/rss/presuggestions.xml), [PRL](https://feeds.aps.org/rss/recent/prlsuggestions.xml)
 
-    - I would generally stay away from the APS' entire journals selection, as these journals become either irrelevant or way too general to follow; the editors are already filtering the journal for you, and it will not be as useful to your research as a custom alert
+    - I would generally not have the APS' entire journals selection, the editors are already filtering the journal for you. If you need more specific content, you can also have a custom alert in google scholar.
   
 
 

@@ -37,30 +37,8 @@ window.MathJax = {
   </div>
   <div class="nav-right">
     <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
-    <button id="burger-toggle" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 </nav>
-
-<!-- <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-  {{ range after 1 .Site.Menus.main.ByWeight }}
-  <a href="{{ .URL }}">{{ .Name }}</a>
-  {{ end }}
-</div> -->
-
-<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
-  {{ range after 1 .Site.Menus.main.ByWeight }}
-  <li class="post-nav-row">
-    <a href="{{ .URL }}" class="post-nav-link">{{ .Name }}</a>
-  </li>
-  {{ end }}
-  <li class="post-nav-row">
-    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
-  </li>
-</ul>
 
 <main>
   {{ block "main" . }}{{ end }}
@@ -73,7 +51,6 @@ window.MathJax = {
 </div>
 
 <script>
-// 1. WIKILINK LOGIC
 document.addEventListener("DOMContentLoaded", function() {
   const article = document.querySelector('article');
   if (article) {
@@ -85,36 +62,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     );
   }
-
-  // BURGER LOGIC
-  const burger = document.getElementById('burger-toggle');
-  const menu = document.getElementById('mobile-menu');
-
-  burger.addEventListener('click', () => {
-    const expanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!expanded));
-    menu.setAttribute('aria-hidden', String(expanded));
-    menu.classList.toggle('is-open');
-  });
-
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.classList.remove('is-open');
-    });
-  });
 });
 
-// 2. TOGGLE BUTTON LOGIC
 const toggleBtn = document.getElementById('theme-toggle');
-const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 const htmlTag = document.documentElement;
 
 function setThemeLabel(isDark) {
   const label = isDark ? "Light?" : "Dark?";
   toggleBtn.innerText = label;
-  toggleBtnMobile.innerText = label;
 }
 
 function applyTheme(isDark) {
@@ -126,7 +81,6 @@ function applyTheme(isDark) {
 setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
 toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
-toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>

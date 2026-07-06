@@ -43,34 +43,8 @@ window.MathJax = {
   </div>
   <div class="nav-right">
     <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
-    <button id="burger-toggle" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 </nav>
-
-
-
-<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
-  
-  <li class="post-nav-row">
-    <a href="/posts/" class="post-nav-link">posts</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl" class="post-nav-link">code</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <a href="/photos/" class="post-nav-link">photos</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
-  </li>
-</ul>
 
 <main>
   
@@ -81,20 +55,17 @@ window.MathJax = {
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Common errors in VASP2WANNIER interface</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>July 5, 2026</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">129 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">202 words</span>
             </div>
         </header>
         <hr>
 
         <div class="post-content">
-            <h1 id="vasp2wannier">VASP2WANNIER</h1>
-
-            <link rel="stylesheet" href="/css/vendors/admonitions.53cd9f8afa9d9a8ac09093f668df057bc6d0f4bbd0886f39991a7b99934a7432.css" integrity="sha256-U82fivqdmorAkJP2aN8Fe8bQ9LvQiG85mRp7mZNKdDI=" crossorigin="anonymous">
-    <div class="admonition error">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
-        <span>Error</span>
-      </div>
-    </div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> Computing AMN (projections onto localized orbitals)
+            <h1 id="vasp2wannier-modes">VASP2WANNIER modes</h1>
+<p>VASP has two modes for calculating Wannier functions, either setting everything in the <code>INCAR</code>, or having a <code>wannier90.win</code> file beforehand (the so called <em>legacy</em> mode). The former is the recommended way to run a Wannierization nowadays.</p>
+<h1 id="common-errors">Common errors</h1>
+<p>When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only read them when specified in the <code>LOCPROJ</code> tag. Placing them in the <code>wannier90.win</code> file&rsquo;s <code>begin projections</code> block will give an error similar to</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> Computing AMN (projections onto localized orbitals)
 </span></span><span style="display:flex;"><span> -----------------------------------------------------------------------------
 </span></span><span style="display:flex;"><span>|                                                                             |
 </span></span><span style="display:flex;"><span>|     EEEEEEE  RRRRRR   RRRRRR   OOOOOOO  RRRRRR      ###     ###     ###     |
@@ -120,7 +91,8 @@ window.MathJax = {
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#vasp2wannier">VASP2WANNIER</a></li>
+    <li><a href="#vasp2wannier-modes">VASP2WANNIER modes</a></li>
+    <li><a href="#common-errors">Common errors</a></li>
   </ul>
 </nav>
         </div>
@@ -137,7 +109,6 @@ window.MathJax = {
 </div>
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function() {
   const article = document.querySelector('article');
   if (article) {
@@ -149,36 +120,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     );
   }
-
-  
-  const burger = document.getElementById('burger-toggle');
-  const menu = document.getElementById('mobile-menu');
-
-  burger.addEventListener('click', () => {
-    const expanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!expanded));
-    menu.setAttribute('aria-hidden', String(expanded));
-    menu.classList.toggle('is-open');
-  });
-
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.classList.remove('is-open');
-    });
-  });
 });
 
-
 const toggleBtn = document.getElementById('theme-toggle');
-const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 const htmlTag = document.documentElement;
 
 function setThemeLabel(isDark) {
   const label = isDark ? "Light?" : "Dark?";
   toggleBtn.innerText = label;
-  toggleBtnMobile.innerText = label;
 }
 
 function applyTheme(isDark) {
@@ -190,7 +139,6 @@ function applyTheme(isDark) {
 setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
 toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
-toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>

@@ -133,6 +133,27 @@ html.dark-mode .nav-x {
     font-size: 0.8rem;
 }
 
+/* Mobile site title above nav */
+.mobile-site-title {
+  display: none;
+}
+.mobile-site-title a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+@media (max-width: 640px) {
+  .mobile-site-title {
+    display: block;
+    text-align: center;
+    margin: 0.5rem 0 0.25rem 0;
+  }
+  .nav-x {
+    padding-top: 0.25rem;
+  }
+}
+
 a.wikilink {
     color: var(--wikilink-color) !important;
     text-decoration: none;
@@ -405,6 +426,7 @@ html.dark-mode table th {
   padding: 0.5rem;
   margin: 1rem 0;
 }
+
 
 
 img { display: block; margin: 0 auto; max-height: 300px; max-width: 100%}
@@ -726,47 +748,6 @@ html.dark-mode .markdown-toggle {
 
 /* Burger menu */
 
-.nav-right {
-  display: flex;
-  align-items: stretch;
-  align-self: stretch;
-}
-
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0 8px;
-  width: 40px;
-  border-right: 1.25px solid var(--nav-border);
-  align-self: stretch;
-}
-
-.burger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: currentColor;
-  border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  transform-origin: center;
-}
-
-.burger[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.burger[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
-}
-.burger[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -783,11 +764,8 @@ html.dark-mode .markdown-toggle {
 }
 
 @media (max-width: 640px) {
-  .nav-links a:not(:first-child) {
+  .nav-links a:first-child {
     display: none;
-  }
-  .burger {
-    display: flex;
   }
 }
 
@@ -797,7 +775,7 @@ html.dark-mode .markdown-toggle {
   }
 }
 
-button.post-nav-link {
+/* button.post-nav-link {
   background: none;
   border-top: none;
   border-bottom: none;
@@ -805,19 +783,19 @@ button.post-nav-link {
   font-size: 1em;
   cursor: pointer;
   text-align: left;
-}
+} */
 
 
 
-.mobile-menu {
+/* .mobile-menu {
   display: none;
   margin: 0 0 1.2em 0;
   padding: 0;
   overflow: hidden;
-}
+} */
 
 
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */

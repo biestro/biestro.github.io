@@ -43,61 +43,33 @@ window.MathJax = {
   </div>
   <div class="nav-right">
     <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
-    <button id="burger-toggle" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 </nav>
 
-
-
-<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
-  
-  <li class="post-nav-row">
-    <a href="/posts/" class="post-nav-link">posts</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl" class="post-nav-link">code</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <a href="/photos/" class="post-nav-link">photos</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
-  </li>
-</ul>
-
 <main>
   
-<div class="container-x">
-  <article>
-      <header>
-          <h1 class="post-title">Condensed Matter</h1>
-      </header>
+<article>
+    <header>
+        <h1 class="post-title">Condensed Matter</h1>
+    </header>
 
-            <table class="post-list-table">
-                <tbody>
-                    
-                    <tr class="post-list-row">
-                        <td class="post-list-date">2025-04-09</td>
-                        <td class="post-list-title-cell">
-                            <a class="post-list-link" href="/posts/mean-field/" >
-                                <span>Mean field theory</span>
-                                
-                                
-                            </a>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-  </article>
-</div>
+    <table class="post-list-table">
+        <tbody>
+            
+            <tr class="post-list-row">
+                <td class="post-list-date">2025-04-09</td>
+                <td class="post-list-title-cell">
+                    <a class="post-list-link" href="/posts/mean-field/" >
+                        <span>Mean field theory</span>
+                        
+                        
+                    </a>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</article>
 
 </main>
 <footer style="margin-top: 2rem;">
@@ -108,7 +80,6 @@ window.MathJax = {
 </div>
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function() {
   const article = document.querySelector('article');
   if (article) {
@@ -120,36 +91,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     );
   }
-
-  
-  const burger = document.getElementById('burger-toggle');
-  const menu = document.getElementById('mobile-menu');
-
-  burger.addEventListener('click', () => {
-    const expanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!expanded));
-    menu.setAttribute('aria-hidden', String(expanded));
-    menu.classList.toggle('is-open');
-  });
-
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.classList.remove('is-open');
-    });
-  });
 });
 
-
 const toggleBtn = document.getElementById('theme-toggle');
-const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 const htmlTag = document.documentElement;
 
 function setThemeLabel(isDark) {
   const label = isDark ? "Light?" : "Dark?";
   toggleBtn.innerText = label;
-  toggleBtnMobile.innerText = label;
 }
 
 function applyTheme(isDark) {
@@ -161,7 +110,6 @@ function applyTheme(isDark) {
 setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
 toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
-toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>

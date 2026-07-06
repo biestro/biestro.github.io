@@ -43,34 +43,8 @@ window.MathJax = {
   </div>
   <div class="nav-right">
     <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
-    <button id="burger-toggle" class="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </div>
 </nav>
-
-
-
-<ul id="mobile-menu" class="mobile-menu post-nav-table list-unstyled" aria-hidden="true">
-  
-  <li class="post-nav-row">
-    <a href="/posts/" class="post-nav-link">posts</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl" class="post-nav-link">code</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <a href="/photos/" class="post-nav-link">photos</a>
-  </li>
-  
-  <li class="post-nav-row">
-    <button id="theme-toggle-mobile" class="post-nav-link" aria-label="Toggle Dark Mode">Dark?</button>
-  </li>
-</ul>
 
 <main>
   
@@ -81,7 +55,7 @@ window.MathJax = {
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Wannierizing with VASP</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>June 22, 2026</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">2697 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">2578 words</span>
             </div>
         </header>
         <hr>
@@ -91,10 +65,7 @@ window.MathJax = {
 <p>Regardless, make sure the folder structure is the same as the one stated here.</p>
 
             <link rel="stylesheet" href="/css/vendors/admonitions.53cd9f8afa9d9a8ac09093f668df057bc6d0f4bbd0886f39991a7b99934a7432.css" integrity="sha256-U82fivqdmorAkJP2aN8Fe8bQ9LvQiG85mRp7mZNKdDI=" crossorigin="anonymous">
-    <div class="admonition tip">
-      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
-        <span>Tip</span>
-      </div>
+    <div class="admonition tip admonition--headless">
       <div class="admonition-content">
         <p>You can find some slides in <a href="./slides.pdf">here</a> that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)</p>
       </div>
@@ -158,7 +129,7 @@ window.MathJax = {
 </span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;Cmmm&#34;</span>,
 </span></span><span style="display:flex;"><span>    Lattice<span style="color:#666">.</span>orthorhombic(a,b,c),
 </span></span><span style="display:flex;"><span>    species<span style="color:#666">=</span>[<span style="color:#4070a0">&#34;Nb&#34;</span>, <span style="color:#4070a0">&#34;Ti&#34;</span>],
-</span></span><span style="display:flex;"><span>    coords<span style="color:#666">=</span>[[<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>], [<span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>]]
+</span></span><span style="display:flex;"><span>    coords <span style="color:#666">=</span>[ [<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>], [<span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>, <span style="color:#40a070">1</span><span style="color:#666">/</span><span style="color:#40a070">2</span>] ]
 </span></span><span style="display:flex;"><span>)<span style="color:#666">.</span>get_primitive_structure()
 </span></span></code></pre></div><h2 id="updates">Updates</h2>
 <p>Wannierization works best when symmetry is turned off (helps with the gauge smoothness).</p>
@@ -269,9 +240,10 @@ window.MathJax = {
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>uniform_incar <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ISYM&#34;</span>: <span style="color:#666">-</span><span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;LWAVE&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;NBANDS&#34;</span>: <span style="color:#40a070">40</span>}
 </span></span><span style="display:flex;"><span>scdm_incar    <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ALGO&#34;</span>: <span style="color:#4070a0">&#34;None&#34;</span>, <span style="color:#4070a0">&#34;ISTART&#34;</span>: <span style="color:#40a070">2</span>, <span style="color:#4070a0">&#34;LWANNIER90&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;LWRITE_MMN_AMN&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;NUM_WANN&#34;</span>: <span style="color:#40a070">20</span>, <span style="color:#4070a0">&#34;LSCDM&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;CUTOFF_MU&#34;</span>: <span style="color:#40a070">23.0</span>, <span style="color:#4070a0">&#34;CUTOFF_SIGMA&#34;</span>: <span style="color:#40a070">0.5</span>}
 </span></span><span style="display:flex;"><span>locproj_incar <span style="color:#666">=</span> {<span style="color:#4070a0">&#34;ALGO&#34;</span>: <span style="color:#4070a0">&#34;None&#34;</span>, <span style="color:#4070a0">&#34;ISTART&#34;</span>: <span style="color:#40a070">2</span>, <span style="color:#4070a0">&#34;LWANNIER90&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>, <span style="color:#4070a0">&#34;LWRITE_MMN_AMN&#34;</span>: <span style="color:#007020;font-weight:bold">True</span>}
-</span></span></code></pre></div><div class="alert alert-warning">
-The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot work with. For this reason, you must open the `INCAR` file in the directory and append the following
-</div>
+</span></span></code></pre></div><blockquote>
+<p>[!WARNING ]&quot;&quot;
+The <code>LOCPROJ</code> tag requires a multiline string, which current pymatgen cannot work with. For this reason, you must open the <code>INCAR</code> file in the directory and append the following</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! NbTi/locproj/INCAR
 </span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">! ...
 </span></span></span><span style="display:flex;"><span>LOCPROJ<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;1 2 : s s p d : Hy&#34;</span><span style="color:#bbb">
@@ -287,13 +259,7 @@ The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot wor
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scdm_set    <span style="color:#666">=</span> MPNonSCFSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_uniform, user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>,  user_incar_settings <span style="color:#666">=</span> scdm_incar)
 </span></span><span style="display:flex;"><span>locproj_set <span style="color:#666">=</span> MPNonSCFSet(structure<span style="color:#666">=</span>structure, user_kpoints_settings <span style="color:#666">=</span> kpts_uniform, user_potcar_functional<span style="color:#666">=</span><span style="color:#4070a0">&#34;PBE_54&#34;</span>,  user_incar_settings <span style="color:#666">=</span> locproj_incar)
-</span></span></code></pre></div><pre><code>/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/symmetry/bandstructure.py:179: UserWarning: The input structure does not match the expected standard primitive! The path may be incorrect. Use at your own risk.
-  kpath = KPathSetyawanCurtarolo(self._structure, symprec, angle_tolerance, atol)
-&lt;string&gt;:35: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
-/Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/sets.py:1992: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
-  super().__post_init__()
-</code></pre>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pathlib</span> <span style="color:#007020;font-weight:bold">import</span> Path
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">from</span> <span style="color:#0e84b5;font-weight:bold">pathlib</span> <span style="color:#007020;font-weight:bold">import</span> Path
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>sets  <span style="color:#666">=</span> [scf_set, uniform_set, line_set, locproj_set, scdm_set]
 </span></span><span style="display:flex;"><span>names <span style="color:#666">=</span> [<span style="color:#4070a0">&#34;scf&#34;</span>,  <span style="color:#4070a0">&#34;uniform&#34;</span>,   <span style="color:#4070a0">&#34;line&#34;</span>,   <span style="color:#4070a0">&#34;locproj&#34;</span>,   <span style="color:#4070a0">&#34;scdm&#34;</span>]
@@ -313,9 +279,12 @@ The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot wor
 </span></span><span style="display:flex;"><span>$ cp NbTi/uniform/<span style="color:#666">{</span>WAVECAR,CHGCAR<span style="color:#666">}</span> NbTi/locproj/
 </span></span></code></pre></div><h1 id="notes-on-locproj">Notes on LOCPROJ</h1>
 <p>The local orbitals are defined as <code>sites : angular character : radial character</code>, and so <code>1 2 : s s p d: Hy</code> means &ldquo;project onto two sets of $s$, one set of $p$ and $d$ Hydrogenic orbitals for both elements in sites 1 and 2 of the <code>POSCAR</code>&rdquo;.</p>
-<div class="alert alert-warning">
-The multiple specifications in LOCPROJ requires a semicolon or a multiline string, which will cause problems anytime Custodian or pymatgen wants to edit/pase the INCAR file. This may result in a failed vasprun.xml.
-</div>
+
+    <div class="admonition warning admonition--headless">
+      <div class="admonition-content">
+        <p>The multiple specifications in LOCPROJ requires a semicolon or a multiline string, which will cause problems anytime Custodian or pymatgen wants to edit/pase the INCAR file. This may result in a failed vasprun.xml.</p>
+      </div>
+    </div></div>
 <p>The VASP section on <a href="https://vasp.at/wiki/LOCPROJ">LOCPROJ</a> has more information about the types of orbital projections one can use.</p>
 <p>Alternatively, for projections one can create a <code>wannier90.win</code> file beforehand with a projections block (similar to Q.E.)</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span>begin<span style="color:#bbb"> </span>projections<span style="color:#bbb">
@@ -466,10 +435,12 @@ The multiple specifications in LOCPROJ requires a semicolon or a multiline strin
 <p>Note that SCDM gets a much better band-structure without any optimization (although we provided disentanglement options, whereas with LOCPROJ we did not disentangle, so not really an apples to apples comparison).</p>
 <h1 id="mlwf">MLWF</h1>
 <p>The <code>VASP2WANNIER90</code> can insert more information into the <code>wannier90.win</code> file through the <code>WANNIER90_WIN</code> tag. However, doing so requires multiline strings, which are not handled well by pymatgen (yet).</p>
-<div class="alert alert-warning">
-If we need to modify the Wannierization process, we must remove the <code>wannier90.win</code> file before running VASP or else VASP will read this file and use the settings written in this file (e.g. when increasing k-points in the NSCF calculation, not removing the previous <code>wannier90.win</code> file will result in an error.)
-</div>
-<p>I detail here the parameters for MLWF generation through <code>wannier90.x</code>.</p>
+
+    <div class="admonition warning admonition--headless">
+      <div class="admonition-content">
+        <p>If we need to modify the Wannierization process, we must remove the <code>wannier90.win</code> file before running VASP or else VASP will read this file and use the settings written in this file (e.g. when increasing k-points in the NSCF calculation, not removing the previous <code>wannier90.win</code> file will result in an error.)</p>
+      </div>
+    </div><p>I detail here the parameters for MLWF generation through <code>wannier90.x</code>.</p>
 <p><strong>In <code>WANNIER90_WIN</code> tag or <code>wannier90.win</code> file</strong></p>
 <h2 id="locproj">LOCPROJ</h2>
 <table>
@@ -525,10 +496,12 @@ If we need to modify the Wannierization process, we must remove the <code>wannie
       </tr>
   </tbody>
 </table>
-<div class="alert alert-warning">
-Disentanglement and energy windows are <b>not</b> shifted to the Fermi energy.
-</div>
-<h1 id="excluding-bands">Excluding bands</h1>
+
+    <div class="admonition warning admonition--headless">
+      <div class="admonition-content">
+        <p>Disentanglement and energy windows are <b>not</b> shifted to the Fermi energy.</p>
+      </div>
+    </div><h1 id="excluding-bands">Excluding bands</h1>
 <p>Usually, we are not interested in semi-core states, such as the ones below -50 eV. There is no tag in the <code>INCAR</code> for this, it is a parameter in the <code>*.win</code> file.</p>
 <p>Unfortunately, for VASP&lt;6.5.0 versions, the interface will not take into account the <code>exclude_bands</code> tag.</p>
 <p>In the above example we have 2 semi-core states ($s$ orbitals) and six valence states ($p$ orbitals), so we exclude states 1-6 from the MLWF process.</p>
@@ -851,7 +824,6 @@ $$</p>
 </div>
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function() {
   const article = document.querySelector('article');
   if (article) {
@@ -863,36 +835,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     );
   }
-
-  
-  const burger = document.getElementById('burger-toggle');
-  const menu = document.getElementById('mobile-menu');
-
-  burger.addEventListener('click', () => {
-    const expanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!expanded));
-    menu.setAttribute('aria-hidden', String(expanded));
-    menu.classList.toggle('is-open');
-  });
-
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
-      menu.classList.remove('is-open');
-    });
-  });
 });
 
-
 const toggleBtn = document.getElementById('theme-toggle');
-const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
 const htmlTag = document.documentElement;
 
 function setThemeLabel(isDark) {
   const label = isDark ? "Light?" : "Dark?";
   toggleBtn.innerText = label;
-  toggleBtnMobile.innerText = label;
 }
 
 function applyTheme(isDark) {
@@ -904,7 +854,6 @@ function applyTheme(isDark) {
 setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
 toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
-toggleBtnMobile.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>

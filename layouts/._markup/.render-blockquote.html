@@ -1,10 +1,11 @@
 {{ $text := .Text }}
+{{ $lowerText := lower $text }}
 
-{{ if hasPrefix $text "[!WARNING]" }}
+{{ if hasPrefix $lowerText "[!warning]" }}
   {{ $type := "warning" }}
   {{ $clean := $text | replace "[!WARNING]" "" }}
   <div class="admonition {{ $type }}">
-    <strong>⚠ Warning</strong>
+    <strong>Warning</strong>
     <div>{{ $clean | markdownify }}</div>
   </div>
 {{ else if hasPrefix $text "[!NOTE]" }}

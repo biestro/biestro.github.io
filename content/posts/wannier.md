@@ -14,7 +14,7 @@ Tutorial for Wannierizing Nb-Ti (mp-1216634). We will run VASP using `atomate2`,
 
 Regardless, make sure the folder structure is the same as the one stated here.
 
-> [!TIP]
+> [!TIP] ""
 > You can find some slides in [here](./slides.pdf) that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)
 
 # Overview
@@ -63,7 +63,7 @@ structure = Structure.from_spacegroup(
     "Cmmm",
     Lattice.orthorhombic(a,b,c),
     species=["Nb", "Ti"],
-    coords=[[0, 0, 0], [1/2, 1/2, 1/2]]
+    coords =[ [0, 0, 0], [1/2, 1/2, 1/2] ]
 ).get_primitive_structure()
 ```
 
@@ -111,9 +111,9 @@ scdm_incar    = {"ALGO": "None", "ISTART": 2, "LWANNIER90": True, "LWRITE_MMN_AM
 locproj_incar = {"ALGO": "None", "ISTART": 2, "LWANNIER90": True, "LWRITE_MMN_AMN": True}
 ```
 
-<div class="alert alert-warning">
-The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot work with. For this reason, you must open the `INCAR` file in the directory and append the following
-</div>
+> [!WARNING ]""
+> The `LOCPROJ` tag requires a multiline string, which current pymatgen cannot work with. For this reason, you must open the `INCAR` file in the directory and append the following
+
 
 ```fortran
 ! NbTi/locproj/INCAR
@@ -136,12 +136,6 @@ line_set    = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_line
 scdm_set    = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_uniform, user_potcar_functional="PBE_54",  user_incar_settings = scdm_incar)
 locproj_set = MPNonSCFSet(structure=structure, user_kpoints_settings = kpts_uniform, user_potcar_functional="PBE_54",  user_incar_settings = locproj_incar)
 ```
-
-    /Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/symmetry/bandstructure.py:179: UserWarning: The input structure does not match the expected standard primitive! The path may be incorrect. Use at your own risk.
-      kpath = KPathSetyawanCurtarolo(self._structure, symprec, angle_tolerance, atol)
-    <string>:35: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
-    /Users/ar/venvs/atomate2/lib/python3.12/site-packages/pymatgen/io/vasp/sets.py:1992: BadInputSetWarning: Overriding the POTCAR functional is generally not recommended  as it significantly affects the results of calculations and compatibility with other calculations done with the same input set. Note that some POTCAR symbols specified in the configuration file may not be available in the selected functional.
-      super().__post_init__()
 
 
 
@@ -180,8 +174,8 @@ $ cp NbTi/uniform/{WAVECAR,CHGCAR} NbTi/locproj/
 
 The local orbitals are defined as `sites : angular character : radial character`, and so `1 2 : s s p d: Hy` means "project onto two sets of $s$, one set of $p$ and $d$ Hydrogenic orbitals for both elements in sites 1 and 2 of the `POSCAR`". 
 
-<div class="alert alert-warning">
-The multiple specifications in LOCPROJ requires a semicolon or a multiline string, which will cause problems anytime Custodian or pymatgen wants to edit/pase the INCAR file. This may result in a failed vasprun.xml.
+> [!WARNING] ""
+> The multiple specifications in LOCPROJ requires a semicolon or a multiline string, which will cause problems anytime Custodian or pymatgen wants to edit/pase the INCAR file. This may result in a failed vasprun.xml.
 </div>
 
 The VASP section on [LOCPROJ](https://vasp.at/wiki/LOCPROJ) has more information about the types of orbital projections one can use.
@@ -373,9 +367,9 @@ Note that SCDM gets a much better band-structure without any optimization (altho
 
 The `VASP2WANNIER90` can insert more information into the `wannier90.win` file through the `WANNIER90_WIN` tag. However, doing so requires multiline strings, which are not handled well by pymatgen (yet).
 
-<div class="alert alert-warning">
-If we need to modify the Wannierization process, we must remove the <code>wannier90.win</code> file before running VASP or else VASP will read this file and use the settings written in this file (e.g. when increasing k-points in the NSCF calculation, not removing the previous <code>wannier90.win</code> file will result in an error.)
-</div>
+> [!WARNING] ""
+> If we need to modify the Wannierization process, we must remove the <code>wannier90.win</code> file before running VASP or else VASP will read this file and use the settings written in this file (e.g. when increasing k-points in the NSCF calculation, not removing the previous <code>wannier90.win</code> file will result in an error.)
+
 
 I detail here the parameters for MLWF generation through `wannier90.x`.
 
@@ -396,9 +390,9 @@ I detail here the parameters for MLWF generation through `wannier90.x`.
 | dis_num_iter | 0     | Subspace is already disentangled, disentangling again can worsen the quality of the WFs |
 
 
-<div class="alert alert-warning">
-Disentanglement and energy windows are <b>not</b> shifted to the Fermi energy.
-</div>
+> [!WARNING] ""
+> Disentanglement and energy windows are <b>not</b> shifted to the Fermi energy.
+
 
 # Excluding bands
 Usually, we are not interested in semi-core states, such as the ones below -50 eV. There is no tag in the `INCAR` for this, it is a parameter in the `*.win` file. 
