@@ -1,7 +1,7 @@
 ---
 title: "Tutorial for running Wannierization workflows in VASP"
 date: 2026-02-20
-icon: "/images/mail3.gif"
+# icon: "/images/mail3.gif"
 draft: true
 ---
 

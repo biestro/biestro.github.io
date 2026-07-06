@@ -10,7 +10,7 @@ if (currentTheme === 'dark') {
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research  Alberto Ruiz Biestro</title>
+<title>Common errors in VASP2WANNIER interface  Alberto Ruiz Biestro</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/hankel.css">
 
@@ -74,44 +74,58 @@ window.MathJax = {
 
 <main>
   
-<div class="container-x">
-  <article>
-      <header>
-          <h1 class="post-title">Research</h1>
-      </header>
+<div style="display: flex; gap: 2rem; position: relative;">
+    <article style="position: relative; flex: 1; min-width: 0;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Common errors in VASP2WANNIER interface</h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>July 5, 2026</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">129 words</span>
+            </div>
+        </header>
+        <hr>
 
-            <table class="post-list-table">
-                <tbody>
-                    
-                    <tr class="post-list-row">
-                        <td class="post-list-date">2026-06-22</td>
-                        <td class="post-list-title-cell">
-                            <a class="post-list-link" href="/posts/errors/" >
-                                <span>Wannierizing with VASP</span>
-                                
-                                    <img src="/images/type.gif" class="post-icon" alt="">
-                                
-                                
-                            </a>
-                        </td>
-                    </tr>
-                    
-                    <tr class="post-list-row">
-                        <td class="post-list-date">2026-06-11</td>
-                        <td class="post-list-title-cell">
-                            <a class="post-list-link" href="/posts/reading/" >
-                                <span>Reading 101</span>
-                                
-                                    <img src="/images/reading.gif" class="post-icon" alt="">
-                                
-                                
-                            </a>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-  </article>
+        <div class="post-content">
+            <h1 id="vasp2wannier">VASP2WANNIER</h1>
+
+            <link rel="stylesheet" href="/css/vendors/admonitions.53cd9f8afa9d9a8ac09093f668df057bc6d0f4bbd0886f39991a7b99934a7432.css" integrity="sha256-U82fivqdmorAkJP2aN8Fe8bQ9LvQiG85mRp7mZNKdDI=" crossorigin="anonymous">
+    <div class="admonition error">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+        <span>Error</span>
+      </div>
+    </div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> Computing AMN (projections onto localized orbitals)
+</span></span><span style="display:flex;"><span> -----------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>|                                                                             |
+</span></span><span style="display:flex;"><span>|     EEEEEEE  RRRRRR   RRRRRR   OOOOOOO  RRRRRR      ###     ###     ###     |
+</span></span><span style="display:flex;"><span>|     E        R     R  R     R  O     O  R     R     ###     ###     ###     |
+</span></span><span style="display:flex;"><span>|     E        R     R  R     R  O     O  R     R     ###     ###     ###     |
+</span></span><span style="display:flex;"><span>|     EEEEE    RRRRRR   RRRRRR   O     O  RRRRRR       #       #       #      |
+</span></span><span style="display:flex;"><span>|     E        R   R    R   R    O     O  R   R                               |
+</span></span><span style="display:flex;"><span>|     E        R    R   R    R   O     O  R    R      ###     ###     ###     |
+</span></span><span style="display:flex;"><span>|     EEEEEEE  R     R  R     R  OOOOOOO  R     R     ###     ###     ###     |
+</span></span><span style="display:flex;"><span>|                                                                             |
+</span></span><span style="display:flex;"><span>|     WANNIER90_ORBITAL_DEFINITIONS: ERROR: L= 0 M= 0 not implemented         |
+</span></span><span style="display:flex;"><span>|                                                                             |
+</span></span><span style="display:flex;"><span>|       ----&gt;  I REFUSE TO CONTINUE WITH THIS SICK JOB ... BYE!!! &lt;----       |
+</span></span><span style="display:flex;"><span>|                                                                             |
+</span></span><span style="display:flex;"><span> -----------------------------------------------------------------------------
+</span></span></code></pre></div>
+        </div>
+    </article>
+    
+    
+    <aside class="toc-sidebar">
+        <div class="toc-content">
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vasp2wannier">VASP2WANNIER</a></li>
+  </ul>
+</nav>
+        </div>
+    </aside>
+    
 </div>
 
 </main>

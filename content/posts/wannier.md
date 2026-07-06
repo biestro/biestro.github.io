@@ -1,7 +1,7 @@
 ---
 title: "Wannierizing with VASP"
 date: '2026-06-22'
-icon: "/images/type.gif"
+# icon: "/images/type.gif"
 categories: 
     - Posts
 tags: 
@@ -714,4 +714,3 @@ plt.show()
     
 <img src="output_32_0.png" alt="png" style="width: 100%; max-width: 1000px; height: auto; max-height: none;" />
     
-

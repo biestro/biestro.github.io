@@ -2,7 +2,7 @@
 title: "Solving the heat equation with Markov Chains"
 date: '2025-11-08'
 draft: false
-icon: "/images/wos.gif"
+# icon: "/images/wos.gif"
 categories:
   - Posts
 tags:
@@ -11,11 +11,14 @@ tags:
 
 # Problem
 
-Meshing is hard
+Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a "meshing error". Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive. 
+
+Nowadays, as computing power increased, our need for alternatives to FD/FEM decreased; the downsides too mesh-free methods (e.g. the dense-matrices that arise in BEM), although some advancements have been made that highlight their . (e.g. see [this paper](https://doi.org/10.1021/acsphotonics.2c01072)). Nevertheless, FD and FEM methods have historically remained the most widely developed and taught.
+
+Anyways, consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem within the following domain.
 
 ![OWL](../walk-on-spheres/owl_mesh.png)
 
-Consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem 
 
 $$\Delta u(x)=0,\quad u(x)\big|_{\partial\Omega}=h(x),$$
 
@@ -82,6 +85,7 @@ for _ in 1:num_iter
   # optional: do a convergence break
 end
 ```
+
 
 # Further reading
 

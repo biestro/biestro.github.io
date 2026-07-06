@@ -1,7 +1,7 @@
 ---
 title: "Reading 101"
 date: '2026-06-11'
-icon: "/images/reading.gif"
+# icon: "/images/reading.gif"
 categories: 
     - Posts
 tags: 

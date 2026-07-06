@@ -78,23 +78,20 @@ window.MathJax = {
     <article style="position: relative; flex: 1; min-width: 0;">
         <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
             
-                <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
-                    <img src="/images/wos.gif" alt="icon" style="width: 60px; height: auto; max-width: 100%; display: block; object-fit: contain;" />
-                </div>
-            
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Solving the heat equation with Markov Chains</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>November 8, 2025</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">354 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">477 words</span>
             </div>
         </header>
         <hr>
 
         <div class="post-content">
             <h1 id="problem">Problem</h1>
-<p>Meshing is hard</p>
+<p>Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a &ldquo;meshing error&rdquo;. Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive.</p>
+<p>Nowadays, as computing power increased, our need for alternatives to FD/FEM decreased; the downsides too mesh-free methods (e.g. the dense-matrices that arise in BEM), although some advancements have been made that highlight their . (e.g. see <a href="https://doi.org/10.1021/acsphotonics.2c01072">this paper</a>). Nevertheless, FD and FEM methods have historically remained the most widely developed and taught.</p>
+<p>Anyways, consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem within the following domain.</p>
 <p><img src="../walk-on-spheres/owl_mesh.png" alt="OWL"></p>
-<p>Consider a simple problem with Dirichlet boundary conditions, i.e. a boundary-value problem</p>
 <p>$$\Delta u(x)=0,\quad u(x)\big|_{\partial\Omega}=h(x),$$</p>
 <p>where (for mathematicians) $\Delta \equiv \partial^2_{j}$.</p>
 <h2 id="walk-on-spheres">Walk-on-spheres</h2>

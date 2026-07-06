@@ -1,7 +1,7 @@
 ---
 title: "ICTP - Quantinuum Hackathon"
 date: '2023-04-17'
-icon: "/images/mol1.gif"
+# icon: "/images/mol1.gif"
 categories: 
     - Posts
 tags: 

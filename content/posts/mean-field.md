@@ -1,7 +1,7 @@
 ---
 title: Mean field theory
 date: '2025-04-09'
-icon: "/images/waves.gif"
+# icon: "/images/waves.gif"
 categories:
   - Posts
 tags:

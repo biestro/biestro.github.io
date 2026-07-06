@@ -76,7 +76,7 @@ body {
 h1, h2, h3 { color: var(--heading-color) !important; }
 
 .container-x {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -154,7 +154,7 @@ a.wikilink {
     filter: invert(1); 
 } */
 
-html.dark-mode img:not(.icon-sm):not(figure img) {
+html.dark-mode img:not(.icon-sm):not(figure img):not(.profile-pic) {
   filter: invert(0.9);
 }
 
@@ -411,6 +411,7 @@ img { display: block; margin: 0 auto; max-height: 300px; max-width: 100%}
 a {
   position: relative;
   display: inline-block;
+  color: var(--link-color);
 }
 
 a::after {

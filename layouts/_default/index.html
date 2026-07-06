@@ -10,10 +10,10 @@
                 {{ with .Site.Params.profileImage }}
                     {{ if $.Site.Params.profileImageLink }}
                         <a href="{{ $.Site.Params.profileImageLink }}">
-                        <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3" style="max-width: 200px;">
+                        <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3 profile-pic" style="max-width: 200px;">
                         </a>
                     {{ else }}
-                        <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3" style="max-width: 200px;">
+                        <img src="{{ . | relURL }}" alt="Profile Picture" class="img-fluid mb-3 profile-pic" style="max-width: 200px;">
                     {{ end }}
                 {{ end }}
 
