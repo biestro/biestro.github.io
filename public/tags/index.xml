@@ -30,13 +30,6 @@
       <description></description>
     </item>
     <item>
-      <title>Miscellaneous</title>
-      <link>http://localhost:1313/tags/miscellaneous/</link>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/miscellaneous/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Blog</title>
       <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
@@ -76,6 +69,13 @@
       <link>http://localhost:1313/tags/quantum-mechanics/</link>
       <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/quantum-mechanics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Miscellaneous</title>
+      <link>http://localhost:1313/tags/miscellaneous/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/miscellaneous/</guid>
       <description></description>
     </item>
   </channel>

@@ -17,6 +17,28 @@ Reading (correctly) is arguably the most important, overlooked part of a PhD. Ke
 
 I hope that what I write here might help someone else too in organizing their research ideas just as it helped me when I started getting serious about research (and my future self whenever he forgets this flow).
 
+
+
+# Reading checklist
+
+Overall, anytime someone mentions their reading questions, these points should definitely pop up. 
+
+| Checklist    | Explanation                                                                |
+|--------------|----------------------------------------------------------------------------|
+| Problem      | What problem is the research addressing?                                   |
+| Context      | What previous research has led to this problem? What is the current state? |
+| Importance   | Relevance of the problem?  Why is it worth doing?                          |
+| Goal         | What is the paper's main objective?                                        |
+| Methods      | Key mechanism. Why is it effective in addressing the problem?              |
+| Results      | Meaning and interpretation. Are the results novel?                         |
+| Implications | Ramifications in theory, applications, or future research?                 |
+
+
+Note that these questions get more specific as they go down, i.e. there is a difference between the **Problem** and the **Goal**. One tries to go from *big-picture* and narrow down to *specifics*.
+
+It should also be stated that any critiques should be always written or expressed. In other words, be critical!
+
+
 # Reccomendations
 
 1. Set up an RSS feed collection, I use [NetNewsWire](https://netnewswire.com/) because it is *libre* and just works!
@@ -43,17 +65,9 @@ I hope that what I write here might help someone else too in organizing their re
     - You only get around 4 hours of useful brain power. Use it wisely, and keep less intensive tasks towards the end of the day.
    
 
-## Reading checklist
-
-I recommend having these questions in mind when reading a paper.
-
-- [ ] Problem: Gap the paper is trying to fill?
-  - [ ] Challenges: What makes the problem tough? 
-- [ ] Goal: What is the paper's main objective?
-- [ ] Method & Result: Key mechanism and it's effectiveness in addressing the problem
-- [ ] Strengths & Weaknesses: What the paper does well, and where is it lacking?
 
    
+  
 # Journal list
 
 Here are some journals that I follow through their RSS feeds.
