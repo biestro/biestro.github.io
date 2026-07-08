@@ -5,17 +5,26 @@ tags:
     - Notes
 ---
 
-It is often stated in paper abstracts that "One cannot build [[Wannier Functions]] for [[Topological Insulators]]", and when one reads the introduction, the statement changes to "One cannot build **exponentially localized** [[Wannier Functions]] for [[Topological Insulators]]". Where does this distinction come from, and is it relevant for building WFs in practice?
+It is often stated in paper abstracts that 
+
+    "One cannot build [[Wannier Functions]] for [[Topological Insulators]]", 
+
+and when one reads the introduction, the statement changes to 
+
+    "One cannot build **exponentially localized** [[Wannier Functions]] 
+    for [[Topological Insulators]]". 
+
+Where does this distinction come from, and is it relevant for building WFs in practice?
 
 # The insulator picture
 
-In a paper by Prodan [@prodanNearsightednessElectronicMatter2006] he builds on top of Kohn's idea of [[Nearsightedness]]
+In a seminal paper [@prodanNearsightednessElectronicMatter2006],  Prodan builds on top of Kohn's idea of [[Nearsightedness]] in electronic matter.
 
 # SSH model
 
 ---
 bibliography: biblio.bib
-citation-style: nature.csl
+citation-style: ieee.csl
 link-citations: true
 reference-section-title: References
 ---
