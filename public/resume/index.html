@@ -20,7 +20,7 @@ if (currentTheme === 'dark') {
 window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true
   }
 };
@@ -39,6 +39,8 @@ window.MathJax = {
     <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
     
     <a href="/photos/">photos</a>
+    
+    <a href="/zettelkasten/">notes</a>
     
   </div>
   <div class="nav-right">
@@ -64,50 +66,52 @@ window.MathJax = {
             <p>Click <a href="https://raw.githubusercontent.com/ModifiedBear/Resume/master/cv.pdf">here</a> for a <code>.pdf</code> version.</p>
 <h2 id="teaching-experience">Teaching Experience</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Start</th>
-          <th>End</th>
-          <th>Course</th>
-          <th>Institute</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Jan 2026</td>
-          <td>Jun 2026</td>
-          <td>PHYS 526: Statistical Physics</td>
-          <td>Rice University</td>
-      </tr>
-      <tr>
-          <td>Aug 2025</td>
-          <td>Dec 2025</td>
-          <td>PHYS 201: Waves, Light, and Heat</td>
-          <td>Rice University</td>
-      </tr>
-      <tr>
-          <td>Jan 2025</td>
-          <td>Jun 2025</td>
-          <td>PHYS 202: Modern Physics</td>
-          <td>Rice University</td>
-      </tr>
-      <tr>
-          <td>Aug 2023</td>
-          <td>Dec 2023</td>
-          <td>F1009: Mathematical Methods</td>
-          <td>Tec de Monterrey</td>
-      </tr>
-      <tr>
-          <td>Aug 2022</td>
-          <td>Jun 2023</td>
-          <td>F2017: Modern E&amp;M</td>
-          <td>Tec de Monterrey</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Start</th>
+					<th>End</th>
+					<th>Course</th>
+					<th>Institute</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Jan 2026</td>
+					<td>Jun 2026</td>
+					<td>PHYS 526: Statistical Physics</td>
+					<td>Rice University</td>
+			</tr>
+			<tr>
+					<td>Aug 2025</td>
+					<td>Dec 2025</td>
+					<td>PHYS 201: Waves, Light, and Heat</td>
+					<td>Rice University</td>
+			</tr>
+			<tr>
+					<td>Jan 2025</td>
+					<td>Jun 2025</td>
+					<td>PHYS 202: Modern Physics</td>
+					<td>Rice University</td>
+			</tr>
+			<tr>
+					<td>Aug 2023</td>
+					<td>Dec 2023</td>
+					<td>F1009: Mathematical Methods</td>
+					<td>Tec de Monterrey</td>
+			</tr>
+			<tr>
+					<td>Aug 2022</td>
+					<td>Jun 2023</td>
+					<td>F2017: Modern E&amp;M</td>
+					<td>Tec de Monterrey</td>
+			</tr>
+	</tbody>
 </table>
 
         </div>
     </article>
+    
+    
     
     
     <aside class="toc-sidebar">
@@ -135,37 +139,43 @@ window.MathJax = {
 </footer>
 </div>
 
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const article = document.querySelector('article');
-  if (article) {
-    article.innerHTML = article.innerHTML.replace(
-      /\[\[(.*?)\]\]/g,
-      function(match, text) {
-        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
-        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
-      }
-    );
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const article = document.querySelector('article');
+    if (article) {
+      article.innerHTML = article.innerHTML.replace(
+        /\[\[(.*?)\]\]/g,
+        function(match, text) {
+          
+          const parts = text.split('|');
+          const label = parts[0].trim();
+          const target = (parts[1] || parts[0]).trim();
+          const slug = target.toLowerCase().replace(/\s+/g, '-');
+          return '<a href="/zettelkasten/' + slug + '" class="wikilink">' + label + '</a>';
+        }
+      );
+    }
+  });
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  const htmlTag = document.documentElement;
+
+  function setThemeLabel(isDark) {
+    const label = isDark ? "Light?" : "Dark?";
+    toggleBtn.innerText = label;
   }
-});
 
-const toggleBtn = document.getElementById('theme-toggle');
-const htmlTag = document.documentElement;
+  function applyTheme(isDark) {
+    htmlTag.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setThemeLabel(isDark);
+  }
 
-function setThemeLabel(isDark) {
-  const label = isDark ? "Light?" : "Dark?";
-  toggleBtn.innerText = label;
-}
+  setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
-function applyTheme(isDark) {
-  htmlTag.classList.toggle('dark-mode', isDark);
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  setThemeLabel(isDark);
-}
-
-setThemeLabel(htmlTag.classList.contains('dark-mode'));
-
-toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+  toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>

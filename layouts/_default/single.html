@@ -20,11 +20,25 @@
         </div>
     </article>
     
-    {{ if .TableOfContents }}
+    {{ $toc := .TableOfContents }}
+    {{ if eq (len $toc) 0 }}
+        {{ $headings := findRESubmatch `<h([1-6]) id="([^"]+)">(.*?)</h[1-6]>` .Content }}
+        {{ if gt (len $headings) 0 }}
+            {{ $toc = `<nav id="TableOfContents"><ul>` | safeHTML }}
+            {{ range $headings }}
+                {{ $level := int (index . 1) }}
+                {{ $id := index . 2 }}
+                {{ $headingText := index . 3 }}
+                {{ $toc = printf `%s<li><a href="#%s">%s</a></li>` $toc $id $headingText | safeHTML }}
+            {{ end }}
+            {{ $toc = printf `%s</ul></nav>` $toc | safeHTML }}
+        {{ end }}
+    {{ end }}
+    {{ with $toc }}
     <aside class="toc-sidebar">
         <div class="toc-content">
             <h3>Contents</h3>
-            {{ .TableOfContents }}
+            {{ . }}
         </div>
     </aside>
     {{ end }}

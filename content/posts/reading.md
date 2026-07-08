@@ -36,7 +36,9 @@ Overall, anytime someone mentions their reading questions, these points should d
 
 Note that these questions get more specific as they go down, i.e. there is a difference between the **Problem** and the **Goal**. One tries to go from *big-picture* and narrow down to *specifics*.
 
-It should also be stated that any critiques should be always written or expressed. In other words, be critical!
+It should also be stated that any critiques of a paper should be always written or expressed. In other words, don't be afraid to question what has been written! Worst case, you'll learn something new.
+
+Furthermore, these questions should also be useful to guide your **scientific writing**. Check any piece of written work you have made, could someone easily answer the above checklist?
 
 
 # Reccomendations

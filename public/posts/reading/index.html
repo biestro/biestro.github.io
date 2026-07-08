@@ -20,7 +20,7 @@ if (currentTheme === 'dark') {
 window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true
   }
 };
@@ -40,6 +40,8 @@ window.MathJax = {
     
     <a href="/photos/">photos</a>
     
+    <a href="/zettelkasten/">notes</a>
+    
   </div>
   <div class="nav-right">
     <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
@@ -55,14 +57,14 @@ window.MathJax = {
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Reading 101</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>June 11, 2026</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">568 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">612 words</span>
             </div>
         </header>
         <hr>
 
         <div class="post-content">
             
-            <link rel="stylesheet" href="/css/vendors/admonitions.53cd9f8afa9d9a8ac09093f668df057bc6d0f4bbd0886f39991a7b99934a7432.css" integrity="sha256-U82fivqdmorAkJP2aN8Fe8bQ9LvQiG85mRp7mZNKdDI=" crossorigin="anonymous">
+          <link rel="stylesheet" href="/css/vendors/admonitions.css">
     <div class="admonition tip admonition--headless">
       <div class="admonition-content">
         <p>Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.</p>
@@ -72,45 +74,46 @@ window.MathJax = {
 <h1 id="reading-checklist">Reading checklist</h1>
 <p>Overall, anytime someone mentions their reading questions, these points should definitely pop up.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Checklist</th>
-          <th>Explanation</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Problem</td>
-          <td>What problem is the research addressing?</td>
-      </tr>
-      <tr>
-          <td>Context</td>
-          <td>What previous research has led to this problem? What is the current state?</td>
-      </tr>
-      <tr>
-          <td>Importance</td>
-          <td>Relevance of the problem?  Why is it worth doing?</td>
-      </tr>
-      <tr>
-          <td>Goal</td>
-          <td>What is the paper&rsquo;s main objective?</td>
-      </tr>
-      <tr>
-          <td>Methods</td>
-          <td>Key mechanism. Why is it effective in addressing the problem?</td>
-      </tr>
-      <tr>
-          <td>Results</td>
-          <td>Meaning and interpretation. Are the results novel?</td>
-      </tr>
-      <tr>
-          <td>Implications</td>
-          <td>Ramifications in theory, applications, or future research?</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Checklist</th>
+					<th>Explanation</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Problem</td>
+					<td>What problem is the research addressing?</td>
+			</tr>
+			<tr>
+					<td>Context</td>
+					<td>What previous research has led to this problem? What is the current state?</td>
+			</tr>
+			<tr>
+					<td>Importance</td>
+					<td>Relevance of the problem?  Why is it worth doing?</td>
+			</tr>
+			<tr>
+					<td>Goal</td>
+					<td>What is the paper&rsquo;s main objective?</td>
+			</tr>
+			<tr>
+					<td>Methods</td>
+					<td>Key mechanism. Why is it effective in addressing the problem?</td>
+			</tr>
+			<tr>
+					<td>Results</td>
+					<td>Meaning and interpretation. Are the results novel?</td>
+			</tr>
+			<tr>
+					<td>Implications</td>
+					<td>Ramifications in theory, applications, or future research?</td>
+			</tr>
+	</tbody>
 </table>
 <p>Note that these questions get more specific as they go down, i.e. there is a difference between the <strong>Problem</strong> and the <strong>Goal</strong>. One tries to go from <em>big-picture</em> and narrow down to <em>specifics</em>.</p>
-<p>It should also be stated that any critiques should be always written or expressed. In other words, be critical!</p>
+<p>It should also be stated that any critiques of a paper should be always written or expressed. In other words, don&rsquo;t be afraid to question what has been written! Worst case, you&rsquo;ll learn something new.</p>
+<p>Furthermore, these questions should also be useful to guide your <strong>scientific writing</strong>. Check any piece of written work you have made, could someone easily answer the above checklist?</p>
 <h1 id="reccomendations">Reccomendations</h1>
 <ol>
 <li>
@@ -191,6 +194,8 @@ window.MathJax = {
     </article>
     
     
+    
+    
     <aside class="toc-sidebar">
         <div class="toc-content">
             <h3>Contents</h3>
@@ -214,37 +219,43 @@ window.MathJax = {
 </footer>
 </div>
 
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const article = document.querySelector('article');
-  if (article) {
-    article.innerHTML = article.innerHTML.replace(
-      /\[\[(.*?)\]\]/g,
-      function(match, text) {
-        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
-        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
-      }
-    );
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const article = document.querySelector('article');
+    if (article) {
+      article.innerHTML = article.innerHTML.replace(
+        /\[\[(.*?)\]\]/g,
+        function(match, text) {
+          
+          const parts = text.split('|');
+          const label = parts[0].trim();
+          const target = (parts[1] || parts[0]).trim();
+          const slug = target.toLowerCase().replace(/\s+/g, '-');
+          return '<a href="/zettelkasten/' + slug + '" class="wikilink">' + label + '</a>';
+        }
+      );
+    }
+  });
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  const htmlTag = document.documentElement;
+
+  function setThemeLabel(isDark) {
+    const label = isDark ? "Light?" : "Dark?";
+    toggleBtn.innerText = label;
   }
-});
 
-const toggleBtn = document.getElementById('theme-toggle');
-const htmlTag = document.documentElement;
+  function applyTheme(isDark) {
+    htmlTag.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setThemeLabel(isDark);
+  }
 
-function setThemeLabel(isDark) {
-  const label = isDark ? "Light?" : "Dark?";
-  toggleBtn.innerText = label;
-}
+  setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
-function applyTheme(isDark) {
-  htmlTag.classList.toggle('dark-mode', isDark);
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  setThemeLabel(isDark);
-}
-
-setThemeLabel(htmlTag.classList.contains('dark-mode'));
-
-toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+  toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Notes on Alberto Ruiz Biestro</title>
+		<link>http://localhost:1313/zettelkasten/</link>
+		<description>Recent content in Notes on Alberto Ruiz Biestro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/zettelkasten/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Topology and Wannier Functions</title>
+				<link>http://localhost:1313/zettelkasten/topology-and-wannier-functions/</link>
+				<pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/zettelkasten/topology-and-wannier-functions/</guid>
+				<description>&lt;p&gt;It is often stated in paper abstracts that “One cannot build&#xA;[[Wannier Functions]] for [[Topological Insulators]]”, and when one&#xA;reads the introduction, the statement changes to “One cannot build&#xA;&lt;strong&gt;exponentially localized&lt;/strong&gt; [[Wannier Functions]] for&#xA;[[Topological Insulators]]”. Where does this distinction come from, and&#xA;is it relevant for building WFs in practice?&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-insulator-picture&#34;&gt;The insulator picture&lt;/h1&gt;&#xA;&lt;p&gt;In a paper by Prodan&lt;span class=&#34;citation&#34;&#xA;data-cites=&#34;prodanNearsightednessElectronicMatter2006&#34;&gt;&lt;sup&gt;&lt;a&#xA;href=&#34;#ref-prodanNearsightednessElectronicMatter2006&#34;&#xA;role=&#34;doc-biblioref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/span&gt; he builds on top of Kohn’s idea&#xA;of [[Nearsightedness]]&lt;/p&gt;&#xA;&lt;h1 id=&#34;ssh-model&#34;&gt;SSH model&lt;/h1&gt;&#xA;&lt;h1 class=&#34;unnumbered&#34; id=&#34;bibliography&#34;&gt;References&lt;/h1&gt;&#xA;&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body&#34; data-entry-spacing=&#34;0&#34;&#xA;data-line-spacing=&#34;2&#34; role=&#34;list&#34;&gt;&#xA;&lt;div id=&#34;ref-prodanNearsightednessElectronicMatter2006&#34;&#xA;class=&#34;csl-entry&#34; role=&#34;listitem&#34;&gt;&#xA;&lt;div class=&#34;csl-left-margin&#34;&gt;1. &lt;/div&gt;&lt;div&#xA;class=&#34;csl-right-inline&#34;&gt;Prodan, E. &lt;a&#xA;href=&#34;https://doi.org/10.1103/PhysRevB.73.085108&#34;&gt;Nearsightedness of&#xA;electronic matter in one dimension&lt;/a&gt;. &lt;em&gt;Physical Review B&lt;/em&gt;&#xA;&lt;strong&gt;73&lt;/strong&gt;, 085108 (2006).&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
+			</item>
+			<item>
+				<title>Wannier Functions</title>
+				<link>http://localhost:1313/zettelkasten/wannier-functions/</link>
+				<pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/zettelkasten/wannier-functions/</guid>
+				<description>&lt;h1 id=&#34;definition&#34;&gt;Definition&lt;/h1&gt;&#xA;&lt;p&gt;Wannier functions (WFs) are a dual representation of Bloch&#xA;wavefunctions from the periodic potential problem. They are defined as&#xA;Fourier transform’s of Bloch wavefunctions (i.e. a linear combination&#xA;with plane-wave weights)&lt;/p&gt;&#xA;&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[&#xA;{w_{n\mathbf{R}_j}}=\frac{1}{N}\sum_{\mathbf{k}}e^{-i\mathbf{k}\cdot\mathbf{R}_j}{\psi_{n\mathbf{k}}},&#xA;\]&lt;/span&gt;&lt;/p&gt;&#xA;&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{R}_j\)&lt;/span&gt; is the&#xA;lattice vector, &lt;span class=&#34;math inline&#34;&gt;\(\mathbf{k}\)&lt;/span&gt; the&#xA;crystal momentum, and &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; the band&#xA;index; we assume a discrete &lt;span&#xA;class=&#34;math inline&#34;&gt;\(\mathbf{k}\)&lt;/span&gt;-point mesh, and thus &lt;span&#xA;class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; represents the number of mesh points in&#xA;the Brillouin Zone.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

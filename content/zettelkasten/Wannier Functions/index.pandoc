@@ -1,0 +1,30 @@
+---
+title: "Wannier Functions"
+date: 2026-07-08
+tags:
+    - Notes
+---
+
+# Definition
+
+Wannier functions (WFs) are a dual representation of Bloch wavefunctions from the periodic potential problem. They are defined as Fourier transform's of Bloch wavefunctions (i.e. a linear combination with plane-wave weights)
+
+$$
+{w_{n\mathbf{R}_j}}=\frac{1}{N}\sum_{\mathbf{k}}e^{-i\mathbf{k}\cdot\mathbf{R}_j}{\psi_{n\mathbf{k}}},
+$$
+
+where $\mathbf{R}_j$ is the lattice vector, $\mathbf{k}$ the crystal momentum, and $n$ the band index; we assume a discrete $\mathbf{k}$-point mesh, and thus $N$ represents the number of mesh points in the Brillouin Zone. 
+
+$$
+{w_{n\mathbf{R}_j}}=\frac{1}{N}\sum_{\mathbf{k}}
+$$
+
+
+
+
+
+---
+bibliography: biblio.bib
+citation-style: ieee.csl
+link-citations: true
+---

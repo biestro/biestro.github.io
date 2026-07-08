@@ -1,6 +1,12 @@
 
 
 /* Make markdown content headings smaller than the main post title */
+
+.post-title {
+  font-size: 1.8rem;
+  /* font-: 1.8rem; */
+}
+
 .post-content h1 {
   font-size: 1.5rem;
   margin-top: 1.5em;
@@ -25,7 +31,7 @@
     --heading-color: #111111;
     --link-color: #0000ff;
     --nav-border: #ccc;
-    --wikilink-color: #d63384; 
+    --wikilink-color: #e20b3d; 
     /* --code-bg: #dedede; */
 }
 
@@ -157,10 +163,16 @@ html.dark-mode .nav-x {
 a.wikilink {
     color: var(--wikilink-color) !important;
     text-decoration: none;
-    font-family: "Menlo";
+    font-family: "Consolas";
     font-size: 16px;
-    border-bottom: 1px dotted var(--wikilink-color);
+    /* border-bottom: 1px solid var(--wikilink-color); */
 }
+
+a.wikilink:hover {
+    /* border-bottom: 1px solid var(--wikilink-color); */
+    text-decoration: underline;
+}
+
 
 /* icon size */
 .icon-sm {
@@ -435,7 +447,13 @@ a {
   position: relative;
   display: inline-block;
   color: var(--link-color);
+  text-decoration: none;
 }
+
+a:hover{
+  text-decoration: underline;
+}
+
 
 a::after {
   content: '';
@@ -447,6 +465,7 @@ a::after {
 
 a:hover::after {
   background: rgba(255, 230, 50, 0.15);
+  /* text-decoration: underline; */
 }
 
 
@@ -630,20 +649,46 @@ a:hover::after {
 }
 
 figcaption {
-    width: 600px;
-    border: 1px solid var(--nav-border);
-    color: var(--caption-color);
+  /* width: 600px; */
+  border: 1px solid var(--nav-border);
+  color: var(--caption-color);
+      /* width: min(100%, 600px); */
+  /* max-width: 600px;    */
+  border: 1px solid var(--nav-border);
+  color: var(--caption-color);
+  /* text-align: center; */
+
+  /* width: min(100%,600px); */
+  /* max-width: 600px; */
+  margin: 0.35rem auto 0;
+  text-align: center;
+  /* color: var(--caption-color); */
+  /* font-size: 0.95rem; */
 }
 
 figure {
-    width: 600px;
-    margin: 0 auto;
-    /* border: 1px solid var(--text-color); */
+  /* width: 600px; */
+  /* margin: 0 auto; */
+  width: min(100%, 600px);
+  /* max-width: 600px; */
+  /* text-align: center; */
+  /* margin: 0 auto 1rem; */
+  max-height: min(100%,400px);
+
+/* width: min(100%, 600px); */
+  margin: 0 auto 1rem;
+/* text-align: center; */
+  /* border: 1px solid var(--text-color); */
+  /* border: 1px solid var(--text-color); */
+  /* border: 1px solid var(--text-color); */
 }
 
+
 figure img {
-    max-height: unset;
-    width: 100%;
+    /* max-height: unset; */
+    width: 600px;
+
+
 }
 
 /* Collapsible markdown sections */
@@ -744,6 +789,8 @@ html.dark-mode .markdown-toggle {
         display: none;
     }
 }
+
+
 
 
 /* Burger menu */

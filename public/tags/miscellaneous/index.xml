@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Miscellaneous on Alberto Ruiz Biestro</title>
-    <link>http://localhost:1313/tags/miscellaneous/</link>
-    <description>Recent content in Miscellaneous on Alberto Ruiz Biestro</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Reading 101</title>
-      <link>http://localhost:1313/posts/reading/</link>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/reading/</guid>
-      <description>&lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;p&gt;Reading (correctly) is arguably the most important, overlooked part of a PhD. Keeping up with &lt;em&gt;all&lt;/em&gt;  of the literature is an impossible task, and anyone that tries to do so is bound to fail. Dedicate some time to finding a flow that works for you (i.e. one that you consistently use), and after you find this, don&amp;rsquo;t spend more time modifying it. If it works, don&amp;rsquo;t fix it!&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Miscellaneous on Alberto Ruiz Biestro</title>
+		<link>http://localhost:1313/tags/miscellaneous/</link>
+		<description>Recent content in Miscellaneous on Alberto Ruiz Biestro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Reading 101</title>
+				<link>http://localhost:1313/posts/reading/</link>
+				<pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/reading/</guid>
+				<description>&lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;p&gt;Reading (correctly) is arguably the most important, overlooked part of a PhD. Keeping up with &lt;em&gt;all&lt;/em&gt;  of the literature is an impossible task, and anyone that tries to do so is bound to fail. Dedicate some time to finding a flow that works for you (i.e. one that you consistently use), and after you find this, don&amp;rsquo;t spend more time modifying it. If it works, don&amp;rsquo;t fix it!&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

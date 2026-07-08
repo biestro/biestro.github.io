@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blog on Alberto Ruiz Biestro</title>
-    <link>http://localhost:1313/tags/blog/</link>
-    <description>Recent content in Blog on Alberto Ruiz Biestro</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Solving the heat equation with Markov Chains</title>
-      <link>http://localhost:1313/posts/walk-on-spheres/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/walk-on-spheres/</guid>
-      <description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a &amp;ldquo;meshing error&amp;rdquo;. Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Marginalia Review</title>
-      <link>http://localhost:1313/posts/marginalia/</link>
-      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/marginalia/</guid>
-      <description>&lt;!-- https://marginalia.blogs.rice.edu/2025/10/20/disability-through-history-a-review-by-alberto-ruiz/ --&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Blog on Alberto Ruiz Biestro</title>
+		<link>http://localhost:1313/tags/blog/</link>
+		<description>Recent content in Blog on Alberto Ruiz Biestro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 08 Nov 2025 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Solving the heat equation with Markov Chains</title>
+				<link>http://localhost:1313/posts/walk-on-spheres/</link>
+				<pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/walk-on-spheres/</guid>
+				<description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a &amp;ldquo;meshing error&amp;rdquo;. Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Marginalia Review</title>
+				<link>http://localhost:1313/posts/marginalia/</link>
+				<pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/marginalia/</guid>
+				<description>&lt;!-- https://marginalia.blogs.rice.edu/2025/10/20/disability-through-history-a-review-by-alberto-ruiz/ --&gt;</description>
+			</item>
+	</channel>
 </rss>

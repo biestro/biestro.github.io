@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Alberto Ruiz Biestro</title>
-    <link>http://localhost:1313/categories/posts/</link>
-    <description>Recent content in Posts on Alberto Ruiz Biestro</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Common errors in VASP2WANNIER interface</title>
-      <link>http://localhost:1313/posts/errors/</link>
-      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/errors/</guid>
-      <description>&lt;h1 id=&#34;vasp2wannier-modes&#34;&gt;VASP2WANNIER modes&lt;/h1&gt;&#xA;&lt;p&gt;VASP has two modes for calculating Wannier functions, either setting everything in the &lt;code&gt;INCAR&lt;/code&gt;, or having a &lt;code&gt;wannier90.win&lt;/code&gt; file beforehand (the so called &lt;em&gt;legacy&lt;/em&gt; mode). The former is the recommended way to run a Wannierization nowadays.&lt;/p&gt;&#xA;&lt;h1 id=&#34;common-errors&#34;&gt;Common errors&lt;/h1&gt;&#xA;&lt;p&gt;When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only read them when specified in the &lt;code&gt;LOCPROJ&lt;/code&gt; tag. Placing them in the &lt;code&gt;wannier90.win&lt;/code&gt; file&amp;rsquo;s &lt;code&gt;begin projections&lt;/code&gt; block will give an error similar to&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Wannierizing with VASP</title>
-      <link>http://localhost:1313/posts/wannier/</link>
-      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/wannier/</guid>
-      <description>&lt;p&gt;Tutorial for Wannierizing Nb-Ti (mp-1216634). We will run VASP using &lt;code&gt;atomate2&lt;/code&gt;, followed by a MLWF with &lt;code&gt;Wannier90&lt;/code&gt;, but you could run VASP &amp;ldquo;by hand&amp;rdquo; if you&amp;rsquo;re not comfortable with &lt;code&gt;atomate2&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Regardless, make sure the folder structure is the same as the one stated here.&lt;/p&gt;&#xA;&#xA;    &lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;You can find some slides in &lt;a href=&#34;./slides.pdf&#34;&gt;here&lt;/a&gt; that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reading 101</title>
-      <link>http://localhost:1313/posts/reading/</link>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/reading/</guid>
-      <description>&lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;p&gt;Reading (correctly) is arguably the most important, overlooked part of a PhD. Keeping up with &lt;em&gt;all&lt;/em&gt;  of the literature is an impossible task, and anyone that tries to do so is bound to fail. Dedicate some time to finding a flow that works for you (i.e. one that you consistently use), and after you find this, don&amp;rsquo;t spend more time modifying it. If it works, don&amp;rsquo;t fix it!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Solving the heat equation with Markov Chains</title>
-      <link>http://localhost:1313/posts/walk-on-spheres/</link>
-      <pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/walk-on-spheres/</guid>
-      <description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a &amp;ldquo;meshing error&amp;rdquo;. Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Mean field theory</title>
-      <link>http://localhost:1313/posts/mean-field/</link>
-      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mean-field/</guid>
-      <description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see &lt;a href=&#34;https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945&#34;&gt;Kardar&amp;rsquo;s book&lt;/a&gt;).&#xA;Here, $m(\vec{x})$ can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ICTP - Quantinuum Hackathon</title>
-      <link>http://localhost:1313/posts/ictp/</link>
-      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ictp/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Posts on Alberto Ruiz Biestro</title>
+		<link>http://localhost:1313/categories/posts/</link>
+		<description>Recent content in Posts on Alberto Ruiz Biestro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Common errors in VASP2WANNIER interface</title>
+				<link>http://localhost:1313/posts/errors/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/errors/</guid>
+				<description>&lt;h1 id=&#34;vasp2wannier-modes&#34;&gt;VASP2WANNIER modes&lt;/h1&gt;&#xA;&lt;p&gt;VASP has two modes for calculating Wannier functions, either setting everything in the &lt;code&gt;INCAR&lt;/code&gt;, or having a &lt;code&gt;wannier90.win&lt;/code&gt; file beforehand (the so called &lt;em&gt;legacy&lt;/em&gt; mode). The former is the recommended way to run a Wannierization nowadays.&lt;/p&gt;&#xA;&lt;h1 id=&#34;common-errors&#34;&gt;Common errors&lt;/h1&gt;&#xA;&lt;p&gt;When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only read them when specified in the &lt;code&gt;LOCPROJ&lt;/code&gt; tag. Placing them in the &lt;code&gt;wannier90.win&lt;/code&gt; file&amp;rsquo;s &lt;code&gt;begin projections&lt;/code&gt; block will give an error similar to&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Wannierizing with VASP</title>
+				<link>http://localhost:1313/posts/wannier_vasp/</link>
+				<pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/wannier_vasp/</guid>
+				<description>&lt;p&gt;Tutorial for Wannierizing Nb-Ti (mp-1216634). We will run VASP using &lt;code&gt;pymatgen&lt;/code&gt;. For a theory overview of Wannier functions, see the [[wannier]] notes.&lt;/p&gt;&#xA;&lt;p&gt;Regardless, make sure the folder structure is the same as the one stated here.&lt;/p&gt;&#xA;&#xA;    &lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;You can find some slides in &lt;a href=&#34;./slides.pdf&#34;&gt;here&lt;/a&gt; that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;In this tutorial you will run the following&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Reading 101</title>
+				<link>http://localhost:1313/posts/reading/</link>
+				<pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/reading/</guid>
+				<description>&lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;Most of us enter the PhD thinking that we can read. Most of us are embarrasingly wrong.&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;p&gt;Reading (correctly) is arguably the most important, overlooked part of a PhD. Keeping up with &lt;em&gt;all&lt;/em&gt;  of the literature is an impossible task, and anyone that tries to do so is bound to fail. Dedicate some time to finding a flow that works for you (i.e. one that you consistently use), and after you find this, don&amp;rsquo;t spend more time modifying it. If it works, don&amp;rsquo;t fix it!&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Solving the heat equation with Markov Chains</title>
+				<link>http://localhost:1313/posts/walk-on-spheres/</link>
+				<pubDate>Sat, 08 Nov 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/walk-on-spheres/</guid>
+				<description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a &amp;ldquo;meshing error&amp;rdquo;. Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Mean field theory</title>
+				<link>http://localhost:1313/posts/mean-field/</link>
+				<pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/mean-field/</guid>
+				<description>&lt;h2 id=&#34;landau-ginzburg-theory&#34;&gt;Landau-Ginzburg theory&lt;/h2&gt;&#xA;&lt;p&gt;Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its&#xA;gradients while satisfying the proposed symmetries. The coarse-grained extension&#xA;to the Ising Hamiltonian is given by a &lt;em&gt;Landau-Ginzburg&lt;/em&gt; Hamiltonian&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;H[m] = \int d\vec{r}\left[ \frac{a}{2}m^2 + bm^4 + \frac{K}{2} (\nabla m)^2 +\dots\right]&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;This has profound consequences in the statistical theory of fields (using&#xA;saddle-point approximations to recover Landau&amp;rsquo;s theory),&#xA;but I won&amp;rsquo;t discuss this here (see &lt;a href=&#34;https://www.cambridge.org/core/books/statistical-physics-of-fields/06F49D11030FB3108683F413269DE945&#34;&gt;Kardar&amp;rsquo;s book&lt;/a&gt;).&#xA;Here, $m(\vec{x})$ can be interpreted to be order-parameters, but in essence&#xA;are random fields, i.e. a field with a Boltzmann weight.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>ICTP - Quantinuum Hackathon</title>
+				<link>http://localhost:1313/posts/ictp/</link>
+				<pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/ictp/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.ictp.it/news/2023/4/hackathon-prize-winners-announced&#34;&gt;We won! (second place)&lt;/a&gt;. After a week of lectures and 48 hours of intense coding and learning, I&amp;rsquo;m proud to announce that our team was awarded the &lt;strong&gt;Best Team Project&lt;/strong&gt; prize by &lt;a href=&#34;https://www.quantinuum.com/&#34;&gt;Quantinuum&lt;/a&gt; and the &lt;a href=&#34;https://www.ictp.it/&#34;&gt;International Centre for Theoretical Physics&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;From the &lt;a href=&#34;https://indico.ictp.it/event/10163&#34;&gt;event&amp;rsquo;s website&lt;/a&gt;, &amp;ldquo;&lt;em&gt;The ICTP-Quantinuum Quantum Hackathon invites 18 international teams of students to the International Centre for Theoretical Physics to learn and develop quantum algorithms and apply them in the context of real-world use-cases with leading industrial partners.&lt;/em&gt;&amp;rdquo;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

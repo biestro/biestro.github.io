@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>PhD on Alberto Ruiz Biestro</title>
-    <link>http://localhost:1313/categories/phd/</link>
-    <description>Recent content in PhD on Alberto Ruiz Biestro</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/phd/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Common errors in VASP2WANNIER interface</title>
-      <link>http://localhost:1313/posts/errors/</link>
-      <pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/errors/</guid>
-      <description>&lt;h1 id=&#34;vasp2wannier-modes&#34;&gt;VASP2WANNIER modes&lt;/h1&gt;&#xA;&lt;p&gt;VASP has two modes for calculating Wannier functions, either setting everything in the &lt;code&gt;INCAR&lt;/code&gt;, or having a &lt;code&gt;wannier90.win&lt;/code&gt; file beforehand (the so called &lt;em&gt;legacy&lt;/em&gt; mode). The former is the recommended way to run a Wannierization nowadays.&lt;/p&gt;&#xA;&lt;h1 id=&#34;common-errors&#34;&gt;Common errors&lt;/h1&gt;&#xA;&lt;p&gt;When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only read them when specified in the &lt;code&gt;LOCPROJ&lt;/code&gt; tag. Placing them in the &lt;code&gt;wannier90.win&lt;/code&gt; file&amp;rsquo;s &lt;code&gt;begin projections&lt;/code&gt; block will give an error similar to&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>PhD on Alberto Ruiz Biestro</title>
+		<link>http://localhost:1313/categories/phd/</link>
+		<description>Recent content in PhD on Alberto Ruiz Biestro</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 05 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/phd/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Common errors in VASP2WANNIER interface</title>
+				<link>http://localhost:1313/posts/errors/</link>
+				<pubDate>Sun, 05 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/errors/</guid>
+				<description>&lt;h1 id=&#34;vasp2wannier-modes&#34;&gt;VASP2WANNIER modes&lt;/h1&gt;&#xA;&lt;p&gt;VASP has two modes for calculating Wannier functions, either setting everything in the &lt;code&gt;INCAR&lt;/code&gt;, or having a &lt;code&gt;wannier90.win&lt;/code&gt; file beforehand (the so called &lt;em&gt;legacy&lt;/em&gt; mode). The former is the recommended way to run a Wannierization nowadays.&lt;/p&gt;&#xA;&lt;h1 id=&#34;common-errors&#34;&gt;Common errors&lt;/h1&gt;&#xA;&lt;p&gt;When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only read them when specified in the &lt;code&gt;LOCPROJ&lt;/code&gt; tag. Placing them in the &lt;code&gt;wannier90.win&lt;/code&gt; file&amp;rsquo;s &lt;code&gt;begin projections&lt;/code&gt; block will give an error similar to&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -20,7 +20,7 @@ if (currentTheme === 'dark') {
 window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true
   }
 };
@@ -39,6 +39,8 @@ window.MathJax = {
     <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
     
     <a href="/photos/">photos</a>
+    
+    <a href="/zettelkasten/">notes</a>
     
   </div>
   <div class="nav-right">
@@ -484,6 +486,8 @@ window.MathJax = {
     </article>
     
     
+    
+    
     <aside class="toc-sidebar">
         <div class="toc-content">
             <h3>Contents</h3>
@@ -506,37 +510,43 @@ window.MathJax = {
 </footer>
 </div>
 
+
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const article = document.querySelector('article');
-  if (article) {
-    article.innerHTML = article.innerHTML.replace(
-      /\[\[(.*?)\]\]/g,
-      function(match, text) {
-        const slug = text.trim().toLowerCase().replace(/\s+/g, '-');
-        return `<a href="/posts/${slug}" class="wikilink">${text}</a>`;
-      }
-    );
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const article = document.querySelector('article');
+    if (article) {
+      article.innerHTML = article.innerHTML.replace(
+        /\[\[(.*?)\]\]/g,
+        function(match, text) {
+          
+          const parts = text.split('|');
+          const label = parts[0].trim();
+          const target = (parts[1] || parts[0]).trim();
+          const slug = target.toLowerCase().replace(/\s+/g, '-');
+          return '<a href="/zettelkasten/' + slug + '" class="wikilink">' + label + '</a>';
+        }
+      );
+    }
+  });
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  const htmlTag = document.documentElement;
+
+  function setThemeLabel(isDark) {
+    const label = isDark ? "Light?" : "Dark?";
+    toggleBtn.innerText = label;
   }
-});
 
-const toggleBtn = document.getElementById('theme-toggle');
-const htmlTag = document.documentElement;
+  function applyTheme(isDark) {
+    htmlTag.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setThemeLabel(isDark);
+  }
 
-function setThemeLabel(isDark) {
-  const label = isDark ? "Light?" : "Dark?";
-  toggleBtn.innerText = label;
-}
+  setThemeLabel(htmlTag.classList.contains('dark-mode'));
 
-function applyTheme(isDark) {
-  htmlTag.classList.toggle('dark-mode', isDark);
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  setThemeLabel(isDark);
-}
-
-setThemeLabel(htmlTag.classList.contains('dark-mode'));
-
-toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+  toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
 </script>
 </body>
 </html>
