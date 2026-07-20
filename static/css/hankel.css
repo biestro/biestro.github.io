@@ -716,10 +716,10 @@ html.dark-mode .markdown-toggle {
 }
 
 .markdown-toggle summary::before {
-  content: ">";
+  /* content: ">"; */
   display: inline-block;
   margin-right: 0.5rem;
-  transition: transform 0.15s ease;
+  transition: transform 0.00s ease;
 }
 
 .markdown-toggle[open] summary::before {

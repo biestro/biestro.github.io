@@ -7,12 +7,12 @@ tags:
 
 It is often stated in paper abstracts that 
 
-    "One cannot build [[Wannier Functions]] for [[Topological Insulators]]", 
+"One cannot build [[Wannier Functions]] for [[Topological Insulators]]",
+
+"One cannot build **exponentially localized** [[Wannier Functions]] for [[Topological Insulators]]",
 
 and when one reads the introduction, the statement changes to 
 
-    "One cannot build **exponentially localized** [[Wannier Functions]] 
-    for [[Topological Insulators]]". 
 
 Where does this distinction come from, and is it relevant for building WFs in practice?
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="en"> <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 <meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
 <script>
 const currentTheme = localStorage.getItem('theme');
@@ -10,7 +9,7 @@ if (currentTheme === 'dark') {
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My research (for specialists)  Alberto Ruiz Biestro</title>
+<title>My research (detailed)  Alberto Ruiz Biestro</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/hankel.css">
 
@@ -54,24 +53,29 @@ window.MathJax = {
     <article style="position: relative; flex: 1; min-width: 0;">
         <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
             
-                <div style="position: absolute; left: calc(-1 * (60px + 1.2em)); top: 0; height: 100%; width: 60px; display: flex; align-items: center; justify-content: flex-start; z-index:2;">
-                    <img src="/images/dodecahedron.gif" alt="icon" style="width: 60px; height: auto; max-width: 100%; display: block; object-fit: contain;" />
-                </div>
-            
-            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">My research (for specialists)</h1>
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">My research (detailed)</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>June 30, 2026</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">105 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">318 words</span>
             </div>
         </header>
         <hr>
 
         <div class="post-content">
             <h1 id="panorama">Panorama</h1>
-<p>DFT is the workhorse of any modern computational materials, but it is limited by its implementation. Even with High-Performance-Computing centers, the ever-growing demands of materials science makes DFT calculations expensive (sometimes even prohibitely expensive).</p>
+<p>DFT is the workhorse of any modern computational materials, but it is limited by its computational implementation. Even with High-Performance-Computing centers, the ever-growing demands of materials science makes DFT calculations expensive (sometimes even prohibitely expensive).</p>
 <p>I work with a technique called <em>Wannierization</em> that can be applied after an inexpensive DFT calculation, albeit not highly accurate, in order to reduce the complexity of any <em>a posteriori</em> calculation that requires higher accuracy (say interpolation, magnetic-force-theorem, etc.).</p>
 <p>Wannierization in itself is an interesting problem, but the <strong>main goal</strong> of using such tools is to discover new materials with interesting magnetic behaviour (high-throughput searches).</p>
 <h1 id="questions-we-want-to-answer">Questions we want to answer</h1>
+<p>Picture the <em>magnetic exchange interaction</em>. Starting from a very simple two-body configuration, it is through localized orbitals that one obtains an exchange of the form</p>
+<p>$$
+J=J_D + \frac{U}{4}-\sqrt{t^2+\frac{U^2}{16}},
+$$</p>
+<p>where $U$ and $t$ are integrals related to the on-site Coulomb interaction and the hopping parameter. From the picture below, it</p>
+<p><img src="overlap.svg" alt="overlap"></p>
+<p>Of course, this is anlogous to how exchange is studied in molecules. Here, a localized <em>atomic orbital</em> basis may suffice (though not always). In solids, however, Wannier functions are a complete description of the electronic structure. In other words, there is a direct way to build these Wannier orbitals starting from the Bloch wavefunctions. In practice, this construction is obstructed by numerous details that fit better in <a href="../../zettelkasten/wannier">another post</a>. Furthermore, assuming that one gets the localized orbital picture, the methods for obtaining $J$ starting from such basis functions is also its own <a href="https://tb2j.readthedocs.io/en/latest/src/faq.html">challenge</a>.</p>
+<p>Nonetheless, expressions like this bring a lot of intuition (e.g. an orbital-decomposed $J$), and while their predictions might be off for certain materials, these limits also tell a nice story of what&rsquo;s going on with the electrons in a material, and that&rsquo;s what makes them valuable.</p>
+<p>More standard applications of Wannier functions are interpolating band-structure (in a Slater-Koster sense), evaluation of transport quantities (from a Berry phase approach).</p>
 
         </div>
     </article>
