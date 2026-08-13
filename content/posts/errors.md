@@ -34,3 +34,17 @@ When setting hybrid orbitals as projections, e.g. $sp^2$ orbitals, VASP can only
  -----------------------------------------------------------------------------
 ```
 
+Setting `ISYM=-1` and saving the `WAVECAR` files might incur in a very large initialization memory usage. Add the following line if you see 
+
+```
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source
+libc.so.6          00007F6971E3E6F0  Unknown               Unknown  Unknown
+vasp_std           000000000087BD2B  Unknown               Unknown  Unknown
+...
+```
+
+```bash
+# Solution
+ulimit -s unlimited
+```

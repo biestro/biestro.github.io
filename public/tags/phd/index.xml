@@ -21,7 +21,7 @@
 				<description>&lt;p&gt;Tutorial for Wannierizing Nb-Ti (mp-1216634). We will run VASP using &lt;code&gt;pymatgen&lt;/code&gt;. For a theory overview of Wannier functions, see the [[wannier]] notes.&lt;/p&gt;&#xA;&lt;p&gt;Regardless, make sure the folder structure is the same as the one stated here.&lt;/p&gt;&#xA;&#xA;    &lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;You can find some slides in &lt;a href=&#34;./slides.pdf&#34;&gt;here&lt;/a&gt; that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;In this tutorial you will run the following&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Reading 101</title>
+				<title>How to properly read research papers</title>
 				<link>http://localhost:1313/posts/reading/</link>
 				<pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/reading/</guid>

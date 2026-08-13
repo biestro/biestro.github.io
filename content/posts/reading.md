@@ -1,5 +1,5 @@
 ---
-title: "Reading 101"
+title: "How to properly read research papers"
 date: '2026-06-11'
 # icon: "/images/reading.gif"
 categories: 

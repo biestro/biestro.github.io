@@ -14,7 +14,7 @@
 		
 			<atom:link href="http://localhost:1313/tags/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Reading 101</title>
+				<title>How to properly read research papers</title>
 				<link>http://localhost:1313/posts/reading/</link>
 				<pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/reading/</guid>

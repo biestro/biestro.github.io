@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"> <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta name="google-site-verification" content="OA7xUcI_lajVaUMI6oPygbMosk8zq5AQHFRHE83N48Y" />
+<script>
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  document.documentElement.classList.add('dark-mode');
+}
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mie Theory  Alberto Ruiz Biestro</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/hankel.css">
+
+<link rel="icon" href="/images/icosahedron.gif" type="image/x-icon">
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="container-x">
+<nav class="nav-x">
+  <div class="nav-links">
+    
+    <a href="/">Alberto Ruiz-Biestro</a>
+    
+    <a href="/posts/">posts</a>
+    
+    <a href="https://github.com/biestro/BoundaryWall.jl?tab=readme-ov-file#boundarywalljl">code</a>
+    
+    <a href="/photos/">photos</a>
+    
+    <a href="/zettelkasten/">notes</a>
+    
+  </div>
+  <div class="nav-right">
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">Theme</button>
+  </div>
+</nav>
+
+<main>
+  
+<div style="display: flex; gap: 2rem; position: relative;">
+    <article style="position: relative; flex: 1; min-width: 0;">
+        <header style="display: flex; align-items: center; position: relative; justify-content: space-between; width: 100%;">
+            
+            <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Mie Theory</h1>
+            <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+                <span>September 30, 2025</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">660 words</span>
+            </div>
+        </header>
+        <hr>
+
+        <div class="post-content">
+            <p>Tutorial for how to calculate the absorption of light for spherical nanoparticles.</p>
+<h2 id="build-bessel-and-hankel-functions">Build Bessel and Hankel functions</h2>
+<p>The objective is to calculate the extinction, scattering, and absorption spectra using Mie theory, for which we will need the spherical Bessel functions $j_n$. They are the following:</p>
+<p>$$
+\begin{align}
+j_0(z)&amp;=\frac{\sin(z)}{z},\\
+j_1(z)&amp;=\frac{\sin(z)}{z^2} - \frac{\cos(z)}{z},
+\end{align}
+$$</p>
+<p>and then using the recursion formula
+$$
+j_{\nu+1}(z)=\frac{2\nu+1}{z}j_\nu-j_{\nu-1},\quad \nu \geq 1
+$$</p>
+<p>which is all we need for the program. The scattering coefficients do not require negative order Bessel functions. Similarly for the Bessel function of the second kind,</p>
+<p>$$
+\begin{align}
+y_0(z)&amp;=-\frac{\cos(z)}{z}\\
+y_1(z)&amp;=-\frac{\cos(z)}{z^2}-\frac{\sin(z)}{z}.
+\end{align}
+$$
+They follow the same recurrence as $j_n$. We actually need the travelling wave solutions of the Bessel equation, i.e.
+$$
+h^{\pm}_n(z)=j_n(z)\pm i y_n(z)
+$$</p>
+<p>Building recursion formulas will save you a TON of time since normally using hypergeometric special functions take longer to run! (although sometimes they can be harder to converge, like with Weber functions).</p>
+<p>Recursive formula is useful because we can allocate an array for $N$ discretized-functions that we will use later in a summation involving
+$$
+\sum_{n=1}^\infty f_n\approx \sum_{n=1}^{N}f_n;, \quad N\gg 1.
+$$
+In other words, our lowest order for functions is $\nu=1$, and the highest will determine the best accuracy of the method.</p>
+<p><img src="mie1.svg" alt="Bessel functions"></p>
+<p>Built-in method probably evaluates $\Gamma$ function, which is why it takes longer (although mine fails a bit near the origin, but we don&rsquo;t really care about the origin). Not only that, we need to evaluate for every $\nu$, which calls the function many times (bad). A useful (and free) scientific library to use is <a href="https://www.gnu.org/software/gsl/doc/html/">GSL</a>, which has similar functions to the one I implemented. I get higher memory usage in my version because of the extra stored space for the previous functions ${j_0, j_1, \dots, j_n}$.</p>
+<p>The derivative of the Bessel spherical functions can be written, for any $j_n$ or $h^{(1)}_n$ as (see <a href="https://dlmf.nist.gov/10.51">here</a> for details)</p>
+<p>$$
+f_{n+1}&rsquo;(z)=f_{n}(z) - \frac{n+2}{z}f_{n+1}(z),
+$$</p>
+<p>and thus</p>
+<p>$$
+\begin{align}
+[zf_{n}(z)]&rsquo;&amp;=f_{n}(z)+zf_{n}&rsquo;(z),\\
+&amp;=f_{n}(z)+zf_{n-1}(z)-(n+1)f_{n}(z),\\
+&amp;=zf_{n-1}(z) -nf_{n}(z).
+\end{align}
+$$</p>
+<p>We compare the result with a finite-difference evaluation</p>
+<p><img src="mie2.svg" alt="Bessel derivatives"></p>
+<h2 id="mie-coefficients">Mie Coefficients</h2>
+<p>We calculate
+$$
+\begin{align}
+a_n(\omega; x) &amp;= \frac{
+m^2[x j_n(x)]&lsquo;j_n(mx)-j_n(x)[mx j_n(mx)]&rsquo;
+}{
+m^2[x h_n(x)]&lsquo;j_n(mx)-h_n(x)[mx j_n(mx)]&rsquo;
+},
+\end{align}
+$$</p>
+<p>and</p>
+<p>$$
+\begin{align}
+b_n(\omega; x) &amp;= \frac{
+j_n(mx)[x j_n(x)]&rsquo;-j_n(x)[mx j_n(mx)]'
+}{
+j_n(mx)[x h_n(x)]&rsquo;-h_n(x)[mx j_n(mx)]'
+},
+\end{align}
+$$</p>
+<p>with $m=n_1/n$, $x_1=mx$, and $x=ka=2\pi a n/\lambda$. We then iterate through $\lambda$. Setting <code>N_max</code> to <code>17</code> already gives good results.</p>
+<p><img src="mie3.svg" alt="Mie scattering simple"></p>
+<h2 id="mie-scattering-for-drude-permitivitty">Mie scattering for Drude permitivitty</h2>
+<p>Essentialyl the same as before, we just modify the $mx$ vector to include the permitivitty dependence, i.e. $m(\varepsilon) x$. With the help of some more functions (see the <a href="#appendix-lorenz-mie-theory">Appendix</a>), we can visualize pretty well at what wavelengths the nanoparticles absorb light.</p>
+<h3 id="recap-of-drude-model">Recap of Drude model</h3>
+<p>Let $\varepsilon_\infty$ be the background permitivitty. Then, starting with</p>
+<p>$$
+\mathbf{D}=\mathbf{E}+4\pi \mathbf{P}=\varepsilon(\omega)\mathbf{E},
+$$</p>
+<p>whereby solving the <strong>telegraph equation</strong> (EM waves in conductive medium) we get that</p>
+<p>$$
+\begin{align}
+k^2&amp;=\varepsilon_\infty\frac{\omega^2}{c^2}+\frac{4\pi\sigma i\omega }{c^2}=\frac{\omega^2}{c^2}n^2,
+\end{align}
+$$</p>
+<p>and so by the refractive index we get the meaning for the permittivity,</p>
+<p>$$
+n^2=\varepsilon(\omega)= \varepsilon_\infty +\frac{4\pi i\sigma(\omega)}{\omega}.
+$$</p>
+<p>Then, using the Drude conductivity, we get</p>
+<p>$$
+\begin{align}
+\frac{i\sigma(\omega)}{\omega}&amp;=\frac{i}{\omega}\frac{\sigma_0}{1-i\omega \tau},\\
+&amp;=\frac{i\sigma_0}{\omega-i\omega^2\tau},\\
+&amp;=-\frac{\sigma_0}{i\omega+\omega^2\tau},\\
+&amp;=-\frac{\sigma_0}{i\omega+\omega^2\tau},
+\end{align}
+$$
+wherein $\sigma_0=n_ee^2\tau/m_e$,
+$$
+\begin{align}
+&amp;=-\frac{n_ee^2}{m_e}\frac{\tau}{i\omega+\omega^2\tau},\\
+&amp;=-\frac{n_ee^2}{m_e}\frac{1}{i\omega\tau^{-1}+\omega^2}.
+\end{align}
+$$
+Therefore, we have</p>
+<p>$$
+\begin{align}
+\varepsilon(\omega)&amp;=\varepsilon_\infty-\frac{4\pi \frac{n_ee^2}{m_e}}{i\omega\tau^{-1}+\omega^2},\\
+&amp;=\varepsilon_\infty-\frac{\omega_B^2}{i\omega\tau^{-1}+\omega^2},
+\end{align}
+$$</p>
+<p>Where we identify $\omega_B$ as the <strong>Plasma frequency</strong>. In other words, for every $\omega$ (i.e. for every $\lambda$) we have a different $\varepsilon$, from which we get the refractive index $n=\sqrt{\varepsilon}$. We calculate $\omega$ through</p>
+<p>Note that we started with Gaussian units, but the result is independent of such choice (although the units and value of $\omega_B$ will change).</p>
+<p><img src="mie4.svg" alt="Drude permitivitty"></p>
+<p><img src="mie5.svg" alt="Mie scattering for Drude permitivitty"></p>
+<!-- <figure><img src="/posts/mie_theory/mie5.svg"
+			alt="Mie scattering for Drude permitivitty" width="600px">
+</figure>
+ -->
+<h2 id="appendix-lorenz-mie-theory">Appendix: Lorenz-Mie theory</h2>
+<p>From chapter 4 in <a href="https://link.springer.com/book/10.1007/978-3-642-28738-1">The Mie theory: basics and applications. Springer, 2012.</a>, the phase function $p(\theta)$ is a normalized distribution of scattered light, useful for quantifying radiative transfer,</p>
+<p>$$
+p(\theta)\propto |S_1|^2+|S_2|^2\quad (\text{unpolarized light}),
+$$</p>
+<p>Lorenz and Mie showed that for spherical symmetry,</p>
+<p>$$
+\begin{align}
+S_1(\theta) &amp;= \sum_{n=1}^{\infty} \frac{2n+1}{n(n+1)}\Big( a_n ,\pi_n(\theta) + b_n ,\tau_n(\theta) \Big),\\
+S_2(\theta) &amp;= \sum_{n=1}^{\infty} \frac{2n+1}{n(n+1)}\Big( a_n ,\tau_n(\theta) + b_n ,\pi_n(\theta) \Big),
+\end{align}
+$$</p>
+<p>with $\pi_n(\theta)=P_n^1(\cos(\theta))/\sin(\theta)$, and $\tau_n(\theta)=\partial_\theta P_n^1(\cos(\theta))$.</p>
+
+        </div>
+    </article>
+    
+    
+    
+    
+    <aside class="toc-sidebar">
+        <div class="toc-content">
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#build-bessel-and-hankel-functions">Build Bessel and Hankel functions</a></li>
+        <li><a href="#mie-coefficients">Mie Coefficients</a></li>
+        <li><a href="#mie-scattering-for-drude-permitivitty">Mie scattering for Drude permitivitty</a>
+          <ul>
+            <li><a href="#recap-of-drude-model">Recap of Drude model</a></li>
+          </ul>
+        </li>
+        <li><a href="#appendix-lorenz-mie-theory">Appendix: Lorenz-Mie theory</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </aside>
+    
+</div>
+
+</main>
+<footer style="margin-top: 2rem;">
+  <center>
+    &copy; 2026 Alberto Ruiz Biestro. Photos licensed CC-BY-SA 3.0.
+  </center>
+</footer>
+</div>
+
+
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const article = document.querySelector('article');
+    if (article) {
+      article.innerHTML = article.innerHTML.replace(
+        /\[\[(.*?)\]\]/g,
+        function(match, text) {
+          
+          const parts = text.split('|');
+          const label = parts[0].trim();
+          const target = (parts[1] || parts[0]).trim();
+          const slug = target.toLowerCase().replace(/\s+/g, '-');
+          return '<a href="/zettelkasten/' + slug + '" class="wikilink">' + label + '</a>';
+        }
+      );
+    }
+  });
+
+  const toggleBtn = document.getElementById('theme-toggle');
+  const htmlTag = document.documentElement;
+
+  function setThemeLabel(isDark) {
+    const label = isDark ? "Light?" : "Dark?";
+    toggleBtn.innerText = label;
+  }
+
+  function applyTheme(isDark) {
+    htmlTag.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    setThemeLabel(isDark);
+  }
+
+  setThemeLabel(htmlTag.classList.contains('dark-mode'));
+
+  toggleBtn.addEventListener('click', () => applyTheme(!htmlTag.classList.contains('dark-mode')));
+</script>
+</body>
+</html>

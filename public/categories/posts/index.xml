@@ -28,7 +28,7 @@
 				<description>&lt;p&gt;Tutorial for Wannierizing Nb-Ti (mp-1216634). We will run VASP using &lt;code&gt;pymatgen&lt;/code&gt;. For a theory overview of Wannier functions, see the [[wannier]] notes.&lt;/p&gt;&#xA;&lt;p&gt;Regardless, make sure the folder structure is the same as the one stated here.&lt;/p&gt;&#xA;&#xA;    &lt;div class=&#34;admonition tip admonition--headless&#34;&gt;&#xA;      &lt;div class=&#34;admonition-content&#34;&gt;&#xA;        &lt;p&gt;You can find some slides in &lt;a href=&#34;./slides.pdf&#34;&gt;here&lt;/a&gt; that explain what Wannier functions are, why they matter, and some of this tutorial (if further explanation needed)&lt;/p&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;&#xA;&lt;p&gt;In this tutorial you will run the following&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>Reading 101</title>
+				<title>How to properly read research papers</title>
 				<link>http://localhost:1313/posts/reading/</link>
 				<pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/posts/reading/</guid>
@@ -42,11 +42,11 @@
 				<description>&lt;h1 id=&#34;problem&#34;&gt;Problem&lt;/h1&gt;&#xA;&lt;p&gt;Meshing is hard, and can sometimes be the main bottleneck of finite-element method (FEM) calculations. Even storing the mesh and loading it to memory can be problematic; a simple web-search results in numerous forums answering questions regarding a &amp;ldquo;meshing error&amp;rdquo;. Some methods, like that of boundary-integrals (i.e. method of moments, boundary-element method [BEM]) and smoothed-particle hydrodynamics, emerged during a time when finite-difference (FD) or finite-elements were still very expensive.&lt;/p&gt;</description>
 			</item>
 			<item>
-				<title>A problem on magnetism</title>
-				<link>http://localhost:1313/posts/magnetism/</link>
-				<pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/posts/magnetism/</guid>
-				<description>&lt;p&gt;This was a problem in my final exam for the Classical Mechanics course imparted by the wonderful Kaden Hazzard. I will&#xA;attempt to describe its solution (thank you Kaden for the exam and solution manual on part &lt;em&gt;b&lt;/em&gt;!)&lt;/p&gt;&#xA;&lt;h2 id=&#34;statement&#34;&gt;Statement&lt;/h2&gt;&#xA;&lt;p&gt;Symmetries are useful for constructing Lagrangians (for an example see, my post on &lt;a href=&#34;../mean-field/&#34;&gt;mean field&lt;/a&gt;). The&#xA;Lagrangian for this system is&lt;/p&gt;&#xA;&lt;p&gt;[&#xA;\mathcal{L}=i\sum_a w^*_a\partial_t w_a - c^2\sum_j\partial_j \vec{n}\cdot\partial_j\vec{n},&#xA;]&lt;/p&gt;&#xA;&lt;p&gt;where (\partial_j\equiv\partial/\partial x_j), and (w(\vec{x}, t)) is a two-component field, which is nothing new if you&amp;rsquo;ve done any field theory in classical mechanics (Stone&amp;rsquo;s book on mathematical methods &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; is a good reference for this). The first term represents the kinetic energy and the last term is clearly potential energy.&lt;/p&gt;</description>
+				<title>Mie Theory</title>
+				<link>http://localhost:1313/posts/mie_theory/</link>
+				<pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/mie_theory/</guid>
+				<description>&lt;p&gt;Tutorial for how to calculate the absorption of light for spherical nanoparticles.&lt;/p&gt;&#xA;&lt;h2 id=&#34;build-bessel-and-hankel-functions&#34;&gt;Build Bessel and Hankel functions&lt;/h2&gt;&#xA;&lt;p&gt;The objective is to calculate the extinction, scattering, and absorption spectra using Mie theory, for which we will need the spherical Bessel functions $j_n$. They are the following:&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\begin{align}&#xA;j_0(z)&amp;amp;=\frac{\sin(z)}{z},\\&#xA;j_1(z)&amp;amp;=\frac{\sin(z)}{z^2} - \frac{\cos(z)}{z},&#xA;\end{align}&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;and then using the recursion formula&#xA;$$&#xA;j_{\nu+1}(z)=\frac{2\nu+1}{z}j_\nu-j_{\nu-1},\quad \nu \geq 1&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;which is all we need for the program. The scattering coefficients do not require negative order Bessel functions. Similarly for the Bessel function of the second kind,&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Mean field theory</title>

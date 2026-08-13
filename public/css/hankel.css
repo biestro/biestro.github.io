@@ -441,7 +441,13 @@ html.dark-mode table th {
 
 
 
-img { display: block; margin: 0 auto; max-height: 300px; max-width: 100%}
+img { 
+  display: block; 
+  margin: 0 auto; 
+  width: auto;       /* Displays at natural native width */
+  max-width: 100%;   /* Prevents overflowing off mobile screens */
+  height: auto;      /* Preserves original aspect ratio */
+}
 
 a {
   position: relative;
