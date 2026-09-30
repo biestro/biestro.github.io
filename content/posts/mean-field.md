@@ -9,6 +9,40 @@ tags:
   - Simulation
 ---
 
+## Hartree Fock theory
+
+For chemists, Hartree Fock (HF) theory is just one of the first approaches to modelling from first principles. However, in a physics language, HF could be thought of as an ab-initio mean field theory.
+
+From this point of view, the statement where "correlations are everything that cannot be treated by HF" becomes more apparent, as correlations are not part of mean-field theory. (More formally, mean-field theory constitutes of only non-correlated degrees of freedom.)
+
+Let us begin by stating the main Hamiltonian,
+
+$$
+H=\sum_{ij} t_{ij} a_i^\dagger a_j + \sum_{ijkl}V_{ijkl}a^\dagger_ia^\dagger_j a_k a_l,
+$$
+
+where I have written all operators without $\hat{}$ to make my life easier. $V_{ijkl}$ is any two-body potential, which is usually the Coulomb interaction. The first term is the kinetic energy, which is easy to treat. However, the Coulomb interaction is the source of most of our inability to tackle the problem. Let's start by re-expressing the creation-annhilation operators in a more convenient way. For this we use the fact that, for fermions,
+
+$$
+a^\dagger_ja_k-a_ka_j^\dagger = -\delta_{jk},
+$$
+
+and so
+
+$$
+\begin{aligned}
+a_i^\dagger a_j^\dagger a_ka_l  = N[a^\dagger_ia^\dagger_ja_ka_l] &+ n_l\delta_{jl}N[a_i^\dagger a_k]\\\\
+&+n_k\delta_{ik}N[a^\dagger_ja_l]\\\\
+&-n_l\delta_{il}N[a_j^\dagger a_k]\\\\
+&-n_k\delta_{jk}N[a_u^\dagger a_l]\\\\
+&+(n_l\delta_{jl}n_k\delta_{ik}-n_l\delta_{il}n_k\delta_{jk}).
+\end{aligned}
+$$
+
+This looks way worse than what we started with, but bear with me. **Normal ordering**, denoted by $N[\cdots]$, means that all the annhilation operators are to the left of the creation operators. By definition, they follow $N[a_i^\dagger]$
+
+The one-body density matrix $\langle \phi_0  | a_p^\dagger a_q|\phi_0 \rangle$
+
 ## Landau-Ginzburg theory
 
 Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its 

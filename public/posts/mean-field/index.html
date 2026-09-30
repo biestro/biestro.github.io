@@ -56,13 +56,36 @@ window.MathJax = {
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Mean field theory</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>April 9, 2025</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">909 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">1148 words</span>
             </div>
         </header>
         <hr>
 
         <div class="post-content">
-            <h2 id="landau-ginzburg-theory">Landau-Ginzburg theory</h2>
+            <h2 id="hartree-fock-theory">Hartree Fock theory</h2>
+<p>For chemists, Hartree Fock (HF) theory is just one of the first approaches to modelling from first principles. However, in a physics language, HF could be thought of as an ab-initio mean field theory.</p>
+<p>From this point of view, the statement where &ldquo;correlations are everything that cannot be treated by HF&rdquo; becomes more apparent, as correlations are not part of mean-field theory. (More formally, mean-field theory constitutes of only non-correlated degrees of freedom.)</p>
+<p>Let us begin by stating the main Hamiltonian,</p>
+<p>$$
+H=\sum_{ij} t_{ij} a_i^\dagger a_j + \sum_{ijkl}V_{ijkl}a^\dagger_ia^\dagger_j a_k a_l,
+$$</p>
+<p>where I have written all operators without $\hat{}$ to make my life easier. $V_{ijkl}$ is any two-body potential, which is usually the Coulomb interaction. The first term is the kinetic energy, which is easy to treat. However, the Coulomb interaction is the source of most of our inability to tackle the problem. Let&rsquo;s start by re-expressing the creation-annhilation operators in a more convenient way. For this we use the fact that, for fermions,</p>
+<p>$$
+a^\dagger_ja_k-a_ka_j^\dagger = -\delta_{jk},
+$$</p>
+<p>and so</p>
+<p>$$
+\begin{aligned}
+a_i^\dagger a_j^\dagger a_ka_l  = N[a^\dagger_ia^\dagger_ja_ka_l] &amp;+ n_l\delta_{jl}N[a_i^\dagger a_k]\\
+&amp;+n_k\delta_{ik}N[a^\dagger_ja_l]\\
+&amp;-n_l\delta_{il}N[a_j^\dagger a_k]\\
+&amp;-n_k\delta_{jk}N[a_u^\dagger a_l]\\
+&amp;+(n_l\delta_{jl}n_k\delta_{ik}-n_l\delta_{il}n_k\delta_{jk}).
+\end{aligned}
+$$</p>
+<p>This looks way worse than what we started with, but bear with me. <strong>Normal ordering</strong>, denoted by $N[\cdots]$, means that all the annhilation operators are to the left of the creation operators. By definition, they follow $N[a_i^\dagger]$</p>
+<p>The one-body density matrix $\langle \phi_0  | a_p^\dagger a_q|\phi_0 \rangle$</p>
+<h2 id="landau-ginzburg-theory">Landau-Ginzburg theory</h2>
 <p>Essentiaylly, one expands the free energy functional $F[m]$ in $m$ and its
 gradients while satisfying the proposed symmetries. The coarse-grained extension
 to the Ising Hamiltonian is given by a <em>Landau-Ginzburg</em> Hamiltonian</p>
@@ -158,6 +181,7 @@ velocity in each time-step as to account for random fluctuations.</p>
   <ul>
     <li>
       <ul>
+        <li><a href="#hartree-fock-theory">Hartree Fock theory</a></li>
         <li><a href="#landau-ginzburg-theory">Landau-Ginzburg theory</a></li>
         <li><a href="#solving-the-time-dependent-landau-ginzburg-equation">Solving the time-dependent Landau-Ginzburg equation</a>
           <ul>

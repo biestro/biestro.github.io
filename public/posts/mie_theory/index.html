@@ -56,7 +56,7 @@ window.MathJax = {
             <h1 class="post-title" style="margin:0; display:inline-block; vertical-align:middle;">Mie Theory</h1>
             <div class="post-meta" style="min-width:170px; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
                 <span>September 30, 2025</span>
-                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">660 words</span>
+                <span style="font-size:0.95em; opacity:0.7; margin-top:0.1em;">745 words</span>
             </div>
         </header>
         <hr>
@@ -129,7 +129,7 @@ j_n(mx)[x h_n(x)]&rsquo;-h_n(x)[mx j_n(mx)]'
 },
 \end{align}
 $$</p>
-<p>with $m=n_1/n$, $x_1=mx$, and $x=ka=2\pi a n/\lambda$. We then iterate through $\lambda$. Setting <code>N_max</code> to <code>17</code> already gives good results.</p>
+<p>with $m=n_1/n$, $x_1=mx$, and $x=ka=2\pi a n/\lambda$. We then iterate through $\lambda$. Setting <code>N_max</code> to <code>10</code> already gives good results, but it is instructive to start from lower <code>N_max</code> as each term in the summation represents some multipolar order of the magnetic and electric fields! (e.g. $n=1$ corresponds to the dipolar term).</p>
 <p><img src="mie3.svg" alt="Mie scattering simple"></p>
 <h2 id="mie-scattering-for-drude-permitivitty">Mie scattering for Drude permitivitty</h2>
 <p>Essentialyl the same as before, we just modify the $mx$ vector to include the permitivitty dependence, i.e. $m(\varepsilon) x$. With the help of some more functions (see the <a href="#appendix-lorenz-mie-theory">Appendix</a>), we can visualize pretty well at what wavelengths the nanoparticles absorb light.</p>
@@ -171,9 +171,10 @@ Therefore, we have</p>
 &amp;=\varepsilon_\infty-\frac{\omega_B^2}{i\omega\tau^{-1}+\omega^2},
 \end{align}
 $$</p>
-<p>Where we identify $\omega_B$ as the <strong>Plasma frequency</strong>. In other words, for every $\omega$ (i.e. for every $\lambda$) we have a different $\varepsilon$, from which we get the refractive index $n=\sqrt{\varepsilon}$. We calculate $\omega$ through</p>
+<p>Where we identify $\omega_B$ as the <strong>Plasma frequency</strong>. In other words, for every $\omega$ (i.e. for every $\lambda$) we have a different $\varepsilon$, from which we get the refractive index $n=\sqrt{\varepsilon}$. $\tau$ represents the average time in-between electron collisions. Note that a positive part of $\rm{Im} ;[\varepsilon(\omega)]$ means absorption.</p>
 <p>Note that we started with Gaussian units, but the result is independent of such choice (although the units and value of $\omega_B$ will change).</p>
 <p><img src="mie4.svg" alt="Drude permitivitty"></p>
+<p>Mie scattering is truly fascinating because its only assumption about the particles is that they must be spherical (or approximately spherical). Plotting the scattering, absorption, and extinction coefficients for different particle sizes reveals the complex nature of the process.</p>
 <p><img src="mie5.svg" alt="Mie scattering for Drude permitivitty"></p>
 <!-- <figure><img src="/posts/mie_theory/mie5.svg"
 			alt="Mie scattering for Drude permitivitty" width="600px">

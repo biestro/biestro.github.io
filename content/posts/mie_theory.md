@@ -95,7 +95,7 @@ j_n(mx)[x h_n(x)]'-h_n(x)[mx j_n(mx)]'
 \end{align}
 $$
 
-with $m=n_1/n$, $x_1=mx$, and $x=ka=2\pi a n/\lambda$. We then iterate through $\lambda$. Setting `N_max` to `17` already gives good results.
+with $m=n_1/n$, $x_1=mx$, and $x=ka=2\pi a n/\lambda$. We then iterate through $\lambda$. Setting `N_max` to `10` already gives good results, but it is instructive to start from lower `N_max` as each term in the summation represents some multipolar order of the magnetic and electric fields! (e.g. $n=1$ corresponds to the dipolar term).
 
 ![Mie scattering simple](mie3.svg)
 
@@ -150,11 +150,13 @@ $$
 \end{align}
 $$
 
-Where we identify $\omega_B$ as the **Plasma frequency**. In other words, for every $\omega$ (i.e. for every $\lambda$) we have a different $\varepsilon$, from which we get the refractive index $n=\sqrt{\varepsilon}$. We calculate $\omega$ through
+Where we identify $\omega_B$ as the **Plasma frequency**. In other words, for every $\omega$ (i.e. for every $\lambda$) we have a different $\varepsilon$, from which we get the refractive index $n=\sqrt{\varepsilon}$. $\tau$ represents the average time in-between electron collisions. Note that a positive part of $\rm{Im} \;[\varepsilon(\omega)]$ means absorption.
 
 Note that we started with Gaussian units, but the result is independent of such choice (although the units and value of $\omega_B$ will change).
 
 ![Drude permitivitty](mie4.svg)
+
+Mie scattering is truly fascinating because its only assumption about the particles is that they must be spherical (or approximately spherical). Plotting the scattering, absorption, and extinction coefficients for different particle sizes reveals the complex nature of the process.
 
 ![Mie scattering for Drude permitivitty](mie5.svg)
 
